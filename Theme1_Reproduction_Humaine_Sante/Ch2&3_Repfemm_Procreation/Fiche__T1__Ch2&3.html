@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>4ème Sec. · Thème 1 · Ch.2 &amp; Ch.3 — Reproduction chez la femme &amp; Procréation | SVT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --em:#be185d;--em-d:#9d174d;--em-lt:#fdf2f8;--em-md:#db2777;
+  --teal:#0f766e;--teal-lt:#f0fdfa;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --blue:#1e5fa3;--blue-lt:#eff6ff;
+  --red:#b91c1c;--red-lt:#fef2f2;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --green:#047857;--green-lt:#ecfdf5;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 12px rgba(0,0,0,.07);--shadow-md:0 4px 20px rgba(0,0,0,.11);
+  --radius:10px;--radius-sm:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:#fdf2f8;color:var(--gray8);font-size:15px;line-height:1.7}
+header{background:linear-gradient(135deg,#9d174d 0%,var(--em) 60%,#ec4899 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 20px rgba(190,24,93,.4);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05)}
+header::after{content:'';position:absolute;left:30%;bottom:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.hdr-title{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;line-height:1.2}
+.hdr-sub{opacity:.75;font-size:1rem;font-weight:400;margin-top:3px}
+.hdr-right{text-align:right;font-size:12px;opacity:.8;line-height:2;z-index:1}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1}
+.progress-wrap{background:rgba(0,0,0,.15);height:4px}
+.progress-bar{height:4px;background:linear-gradient(90deg,#f9a8d4,#f472b6);width:0%;transition:width .4s}
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 28px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:14px 16px;background:none;border:none;cursor:pointer;font-family:'Source Sans 3',sans-serif;font-size:12.5px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:6px}
+.tab-btn:hover{color:var(--em);background:var(--em-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--em);border-bottom-color:var(--em)}
+.tab-panel{display:none;padding:28px 36px;max-width:1100px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--em-d);border-left:4px solid var(--em);padding-left:12px;margin:32px 0 16px;display:flex;align-items:center;gap:10px}
+.sub-title{font-size:1rem;font-weight:700;color:var(--teal);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.sub-title::before{content:'';display:block;width:22px;height:2.5px;background:var(--teal);border-radius:2px}
+.sub-title.purple{color:var(--purple)}.sub-title.purple::before{background:var(--purple)}
+.sub-title.red{color:var(--red)}.sub-title.red::before{background:var(--red)}
+.sub-title.blue{color:var(--blue)}.sub-title.blue::before{background:var(--blue)}
+.sub-title.amber{color:var(--amber)}.sub-title.amber::before{background:var(--amber)}
+.sub-title.green{color:var(--green)}.sub-title.green::before{background:var(--green)}
+.def-box{background:var(--em-lt);border:1.5px solid #f9a8d4;border-radius:var(--radius);padding:14px 18px;margin:12px 0}
+.def-box .lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--em);margin-bottom:6px}
+.def-box p{font-size:14.5px}
+.info-box{border-left:4px solid var(--amber);background:var(--amber-lt);border-radius:0 var(--radius) var(--radius) 0;padding:11px 16px;margin:12px 0;font-size:13.5px}
+.info-box.blue{border-left-color:var(--blue);background:var(--blue-lt)}
+.info-box.red{border-left-color:var(--red);background:var(--red-lt)}
+.info-box.green{border-left-color:var(--green);background:var(--green-lt)}
+.info-box.teal{border-left-color:var(--teal);background:var(--teal-lt)}
+.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}
+.info-box.pink{border-left-color:var(--em);background:var(--em-lt)}
+.info-box strong{color:var(--amber)}
+.info-box.blue strong{color:var(--blue)}.info-box.red strong{color:var(--red)}
+.info-box.green strong{color:var(--green)}.info-box.teal strong{color:var(--teal)}
+.info-box.purple strong{color:var(--purple)}.info-box.pink strong{color:var(--em)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 0}
+.card{background:#fff;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);border-top:3px solid var(--em)}
+.card.teal{border-top-color:var(--teal)}.card.purple{border-top-color:var(--purple)}
+.card.amber{border-top-color:var(--amber)}.card.red{border-top-color:var(--red)}
+.card.blue{border-top-color:var(--blue)}.card.green{border-top-color:var(--green)}
+.card h4{font-size:.9rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.card ul{padding-left:18px;font-size:13.5px;color:var(--gray6)}.card ul li{margin-bottom:5px}
+.card p{font-size:13.5px;color:var(--gray6)}
+.img-wrap{background:var(--gray1);border:2px dashed var(--gray3);border-radius:var(--radius);padding:8px;margin:14px 0;text-align:center;overflow:hidden}
+.img-wrap img{max-width:100%;max-height:280px;border-radius:var(--radius-sm);display:block;margin:0 auto;object-fit:contain}
+.img-fallback{padding:20px 16px;color:var(--gray6);font-size:12.5px}
+.img-fallback .ico-ph{font-size:28px;display:block;margin-bottom:6px}
+.img-fallback strong{display:block;font-size:13px;color:var(--gray8);margin-bottom:4px}
+.img-caption{font-size:11.5px;color:var(--gray6);text-align:center;margin-top:5px;font-style:italic}
+.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.img-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.tbl-wrap{overflow-x:auto;margin:14px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;background:#fff}
+th{background:var(--em-d);color:#fff;padding:10px 14px;font-size:12.5px;font-weight:600;text-align:left}
+th.teal{background:var(--teal)}th.purple{background:var(--purple)}th.blue{background:var(--blue)}
+th.amber{background:var(--amber)}th.red{background:var(--red)}th.green{background:var(--green)}
+td{padding:9px 14px;font-size:13px;border-bottom:1px solid var(--gray2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--gray1)}
+.activity{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden;border:1.5px solid var(--gray2)}
+.activity-header{background:linear-gradient(135deg,#9d174d 0%,var(--em) 100%);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.activity-header.teal{background:linear-gradient(135deg,var(--teal) 0%,#0d9488 100%)}
+.activity-header.purple{background:linear-gradient(135deg,var(--purple) 0%,#6d28d9 100%)}
+.activity-header.amber{background:linear-gradient(135deg,var(--amber) 0%,#f59e0b 100%)}
+.activity-header.green{background:linear-gradient(135deg,var(--green) 0%,#059669 100%)}
+.activity-header.blue{background:linear-gradient(135deg,var(--blue) 0%,#2563eb 100%)}
+.activity-header h3{font-size:.95rem;font-weight:700;display:flex;align-items:center;gap:10px}
+.activity-header .toggle-ico{font-size:18px;transition:transform .3s}
+.activity-header.open .toggle-ico{transform:rotate(180deg)}
+.activity-body{padding:18px 20px;display:none}
+.activity-body.open{display:block}
+.schema-expression{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:18px 0;padding:16px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+.schema-box{background:var(--em-lt);border:2px solid var(--em);border-radius:var(--radius-sm);padding:10px 16px;text-align:center;font-weight:700;font-size:13px;color:var(--em-d)}
+.schema-box.teal{background:var(--teal-lt);border-color:var(--teal);color:var(--teal)}
+.schema-box.purple{background:var(--purple-lt);border-color:var(--purple);color:var(--purple)}
+.schema-box.amber{background:var(--amber-lt);border-color:var(--amber);color:#92400e}
+.schema-box.green{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.schema-box.blue{background:var(--blue-lt);border-color:var(--blue);color:var(--blue)}
+.schema-arrow{font-size:22px;color:var(--gray3);font-weight:700}
+.schema-label{font-size:10px;color:var(--gray6);display:block;font-weight:400;margin-top:2px}
+.qcm-item{background:#fff;border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin:14px 0;border:1.5px solid var(--gray2)}
+.qcm-item .qnum{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--em);margin-bottom:8px}
+.qcm-item .qtxt{font-size:14.5px;font-weight:700;margin-bottom:14px;line-height:1.4;color:var(--gray8)}
+.qcm-opt{display:flex;align-items:flex-start;gap:10px;padding:9px 13px;border-radius:var(--radius-sm);cursor:pointer;margin-bottom:6px;font-size:13.5px;border:1.5px solid var(--gray2);transition:all .15s;user-select:none}
+.qcm-opt:hover{background:var(--em-lt);border-color:#f9a8d4}
+.qcm-opt.correct{background:#d1fae5;border-color:#059669;color:#065f46;pointer-events:none}
+.qcm-opt.wrong{background:#fee2e2;border-color:#dc2626;color:#991b1b;pointer-events:none}
+.qcm-opt input[type=radio]{accent-color:var(--em);width:15px;height:15px;flex-shrink:0;margin-top:2px}
+.btn-verify{margin-top:12px;padding:9px 22px;background:var(--em);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;font-weight:700;font-size:13px;font-family:'Source Sans 3',sans-serif;transition:background .2s}
+.btn-verify:hover{background:var(--em-d)}
+.qcm-fb{margin-top:10px;padding:13px 16px;border-radius:var(--radius-sm);font-size:13.5px;display:none;line-height:1.7}
+.qcm-fb.show{display:block}
+.qcm-fb.ok{background:#d1fae5;color:#065f46;border:1px solid #059669}
+.qcm-fb.ko{background:#fff7ed;color:#7c2d12;border:1px solid #fb923c}
+.prereq-q{background:#fff;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);margin:12px 0;border-left:4px solid var(--purple)}
+.prereq-q .qlbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:8px}
+.prereq-q .qtxt{font-size:14px;font-weight:600;margin-bottom:12px}
+.prereq-opt{padding:8px 14px;border-radius:var(--radius-sm);cursor:pointer;font-size:13.5px;border:1.5px solid var(--gray2);margin-bottom:6px;transition:all .2s;user-select:none;display:block;width:100%;text-align:left;background:#fff;font-family:'Source Sans 3',sans-serif}
+.prereq-opt:hover{background:var(--purple-lt);border-color:var(--purple)}
+.prereq-opt.correct-ans{background:#d1fae5;border-color:#059669;color:#065f46;pointer-events:none}
+.prereq-opt.wrong-ans{background:#fee2e2;border-color:#dc2626;color:#991b1b;pointer-events:none}
+.gap-text{font-size:14.5px;line-height:2.8;background:#fff;border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow);margin:14px 0;border:1.5px solid var(--gray2)}
+.gap-select{display:inline-block;padding:2px 6px;border:1.5px solid var(--em);border-radius:4px;background:#fff;font-family:'Source Sans 3',sans-serif;font-size:13.5px;color:var(--gray8);cursor:pointer;vertical-align:middle;min-width:130px}
+.gap-select:focus{outline:none;border-color:var(--em-d)}
+.gap-select.correct{background:#d1fae5;border-color:#059669;color:#065f46}
+.gap-select.wrong{background:#fee2e2;border-color:#dc2626;color:#991b1b}
+.btn-check-gap{margin-top:12px;padding:8px 20px;background:var(--teal);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;font-weight:700;font-size:13px;font-family:'Source Sans 3',sans-serif;transition:background .2s;display:block}
+.btn-check-gap:hover{background:var(--em)}
+.gap-score{margin-top:10px;font-size:13.5px;font-weight:700;display:none}
+.gap-score.show{display:block}
+.dna-seq{font-family:'Courier New',monospace;font-size:12.5px;background:var(--gray1);border:1.5px solid var(--gray2);border-radius:var(--radius-sm);padding:12px 16px;margin:10px 0;overflow-x:auto;white-space:pre;line-height:1.9}
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:16px 0}
+.fc{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);cursor:pointer;min-height:140px;perspective:900px;transition:transform .2s}
+.fc:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.fc-inner{position:relative;width:100%;min-height:140px;transform-style:preserve-3d;transition:transform .45s}
+.fc.flipped .fc-inner{transform:rotateY(180deg)}
+.fc-front,.fc-back{position:absolute;inset:0;padding:16px 18px;border-radius:var(--radius);backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:140px}
+.fc-front{background:linear-gradient(135deg,#9d174d 0%,var(--em) 100%);color:#fff}
+.fc-back{background:#fff;color:var(--gray8);transform:rotateY(180deg);border:1.5px solid var(--gray2)}
+.fc-front .qlbl{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;opacity:.65;margin-bottom:7px}
+.fc-front .qtxt{font-size:13.5px;font-weight:600;line-height:1.4}
+.fc-front .qhint{font-size:10px;opacity:.55;margin-top:8px}
+.fc-back .albl{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--em);font-weight:700;margin-bottom:7px}
+.fc-back .atxt{font-size:13px;line-height:1.55}
+.cnt{font-size:10px;opacity:.4;align-self:flex-end}
+.score-wrap{background:var(--em-d);color:#fff;border-radius:var(--radius);padding:16px 22px;margin-top:18px;text-align:center;display:none}
+.score-wrap.show{display:block}
+.score-wrap .score-num{font-family:'Playfair Display',serif;font-size:2rem;margin:8px 0}
+#mindmap-canvas{border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);display:block;margin:0 auto;max-width:100%}
+footer{text-align:center;padding:20px 16px;color:var(--gray6);font-size:12px;border-top:1px solid var(--gray2);margin-top:40px;background:#fff}
+footer strong{color:var(--em)}
+@media(max-width:640px){
+  header{flex-direction:column;gap:12px;padding:18px 20px}
+  .hdr-right{text-align:left}
+  .tab-panel{padding:18px 16px}
+  .img-trio{grid-template-columns:1fr}
+  .schema-expression{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="hdr-badge">🔬 SVT · 4ème Secondaire · Thème 1 — Reproduction humaine &amp; Santé</div>
+    <div class="hdr-title">Ch.2 — Fonction reproductrice chez la femme &amp; Ch.3 — Procréation</div>
+    <div class="hdr-sub">Ovogenèse · Cycles ovarien et utérin · Régulation · Fécondation · Embryon · Contraception · PMA · Hygiène</div>
+  </div>
+  <div class="hdr-right">
+    <strong>INGÉNIEUR Mohamed CHAGRAOUI</strong>
+    Candidat CAPES SVT 2026<br>
+    Programme officiel tunisien · Fiche interactive
+  </div>
+</header>
+<div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('app',this)">🫀 Appareil féminin</button>
+  <button class="tab-btn" onclick="showTab('ovogenese',this)">🥚 Ovogenèse</button>
+  <button class="tab-btn" onclick="showTab('cycles',this)">📅 Cycles sexuels</button>
+  <button class="tab-btn" onclick="showTab('regulation',this)">🔄 Régulation cycle</button>
+  <button class="tab-btn" onclick="showTab('fecondation',this)">🔬 Fécondation &amp; Embryon</button>
+  <button class="tab-btn" onclick="showTab('maitrise',this)">💊 Maîtrise procréation</button>
+  <button class="tab-btn" onclick="showTab('synthese',this)">🗺️ Synthèse</button>
+  <button class="tab-btn" onclick="showTab('eval',this)">✅ Exercices BAC</button>
+</nav>
+
+<!-- CONTEXTE -->
+<div class="tab-panel active" id="tab-contexte">
+  <h2 class="section-title">🔬 Thème 1 · Ch.2 &amp; Ch.3 — Vue d'ensemble</h2>
+  <div class="def-box">
+    <div class="lbl">Fil conducteur</div>
+    <p>Ce chapitre double explore le fonctionnement cyclique de l'appareil reproducteur féminin (Ch.2) et les mécanismes de la procréation humaine (Ch.3) : fécondation, développement embryonnaire, contraception, PMA et hygiène de la grossesse.</p>
+  </div>
+  <div class="card-grid">
+    <div class="card"><h4 style="color:var(--em)">🫀 Appareil génital féminin</h4><p>Ovaires, trompes, utérus, vagin. Fonctions des organes.</p></div>
+    <div class="card teal"><h4 style="color:var(--teal)">🥚 Ovogenèse</h4><p>Folliculogenèse. Ovocyte II. Comparaison ovogenèse/spermatogenèse.</p></div>
+    <div class="card purple"><h4 style="color:var(--purple)">📅 Cycles sexuels</h4><p>Cycle ovarien 28j (folliculaire, ovulation, lutéale). Cycle utérin (règles, prolifération, sécrétion).</p></div>
+    <div class="card amber"><h4 style="color:var(--amber)">🔄 Régulation</h4><p>GnRH → FSH/LH → ovaires. Oestradiol et progestérone. Rétrocontrôles (−) et (+).</p></div>
+    <div class="card blue"><h4 style="color:var(--blue)">🔬 Fécondation</h4><p>Conditions. Étapes : rencontre, pénétration, caryogamie. Segmentation. Nidation. Placenta.</p></div>
+    <div class="card green"><h4 style="color:var(--green)">💊 Maîtrise</h4><p>Pilule (oestro-progestatifs). Stérilité masculine/féminine. FIVETE. IA. ISIC. Hygiène grossesse.</p></div>
+  </div>
+  <h2 class="section-title">📋 Préacquis</h2>
+  <div id="prereq-container"></div>
+</div>
+
+<!-- APPAREIL FÉMININ -->
+<div class="tab-panel" id="tab-app">
+  <h2 class="section-title">🫀 I — Appareil reproducteur de la femme</h2>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>🔬 Activité 1 — Organes et fonctions</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_appareil_feminin_face.png" alt="Appareil féminin face" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_appareil_feminin_face.png</strong>Doc.1a p.28 — Appareil génital féminin vue de face : ovaires, trompes, utérus, vagin</div>
+          </div>
+          <div class="img-caption">Doc.1a — Vue de face</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_appareil_feminin_profil.png" alt="Appareil féminin profil" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_appareil_feminin_profil.png</strong>Doc.1b p.28 — Appareil génital féminin vue de profil : rapport avec vessie et rectum</div>
+          </div>
+          <div class="img-caption">Doc.1b — Vue de profil</div>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Organe</th><th class="teal">Catégorie</th><th class="blue">Rôle</th></tr>
+          <tr><td><strong>Ovaires ×2</strong></td><td>Gonades</td><td>Produisent les gamètes femelles (ovocytes) + hormones sexuelles femelles (œstradiol, progestérone)</td></tr>
+          <tr><td><strong>Pavillons ×2</strong></td><td>Voies génitales</td><td>Reçoivent l'ovocyte expulsé lors de l'ovulation</td></tr>
+          <tr><td><strong>Trompes (oviductes) ×2</strong></td><td>Voies génitales</td><td>Conduisent l'ovocyte (ou l'œuf) vers l'utérus. Lieu de la <strong>fécondation</strong> (tiers supérieur)</td></tr>
+          <tr><td><strong>Utérus</strong></td><td>Voies génitales</td><td>Lieu de la <strong>nidation</strong> et de la <strong>grossesse</strong>. Endomètre (muqueuse) + myomètre (muscle)</td></tr>
+          <tr><td><strong>Vagin</strong></td><td>Organe de copulation</td><td>Reçoit le sperme lors de l'éjaculation + voie d'accouchement</td></tr>
+          <tr><td><strong>Vulve</strong> (grandes lèvres, petites lèvres, clitoris)</td><td>Organes externes</td><td>Organes génitaux externes</td></tr>
+        </table>
+      </div>
+      <div class="info-box pink">
+        <strong>Différences avec l'appareil masculin :</strong> Chez la femme, les fonctions de copulation (vagin) et d'évacuation urinaire (urètre) sont séparées, contrairement à l'homme où l'urètre est commun. La fécondation se produit dans les trompes, pas dans l'utérus.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OVOGENÈSE -->
+<div class="tab-panel" id="tab-ovogenese">
+  <h2 class="section-title">🥚 II — Formation du gamète femelle : ovogenèse</h2>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>🔬 Activités 2-3-4 — Ovocyte, folliculogenèse et ovogenèse</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="sub-title">A — Structure et caractéristiques de l'ovocyte II</div>
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_ovocyte_photo.png" alt="Photo ovocyte II" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_ovocyte_photo.png</strong>Doc.3a p.29 — Photo d'un ovocyte II (×400) avec corona radiata et zone pellucide</div>
+          </div>
+          <div class="img-caption">Doc.3a — Ovocyte II (×400)</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_ovocyte_schéma.png" alt="Schéma ovocyte II" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_ovocyte_schéma.png</strong>Doc.3b p.29 — Schéma d'interprétation ovocyte II : matériel nucléaire métaphase II, zone pellucide, 1er globule polaire, corona radiata</div>
+          </div>
+          <div class="img-caption">Doc.3b — Schéma ovocyte II</div>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Critère</th><th class="purple">Ovocyte II</th><th class="blue">Spermatozoïde</th></tr>
+          <tr><td><strong>Haploïdie</strong></td><td>n = 23 chromosomes ✅</td><td>n = 23 chromosomes ✅</td></tr>
+          <tr><td><strong>Taille</strong></td><td>≈ 100 μm (grande cellule)</td><td>≈ 60 μm (petite cellule)</td></tr>
+          <tr><td><strong>Forme</strong></td><td>Sphérique</td><td>Allongée (tête + PI + flagelle)</td></tr>
+          <tr><td><strong>Mobilité</strong></td><td>Immobile</td><td>Mobile (flagelle + mitochondries)</td></tr>
+          <tr><td><strong>Réserves</strong></td><td>Cytoplasme volumineux, riche en réserves</td><td>Cytoplasme réduit au minimum</td></tr>
+          <tr><td><strong>Méiose</strong></td><td>Bloquée en métaphase II → s'achève lors de la fécondation</td><td>Méiose complète (4 spermatides → 4 SPZ)</td></tr>
+        </table>
+      </div>
+      <div class="sub-title blue">B — Folliculogenèse</div>
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_coupe_ovaire.png" alt="Coupe ovaire follicules" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_coupe_ovaire.png</strong>Doc.4a p.30 — Coupe d'un ovaire de femme (×15) avec follicules à différents stades</div>
+          </div>
+          <div class="img-caption">Doc.4a — Coupe d'ovaire (×15)</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_folliculogenèse_stades.png" alt="Stades folliculogenèse" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_folliculogenèse_stades.png</strong>Doc.5b p.32 — Stades de la folliculogenèse : primordial → primaire → secondaire → cavitaire → follicule de De Graaf</div>
+          </div>
+          <div class="img-caption">Doc.5b — Stades de la folliculogenèse</div>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Stade folliculaire</th><th class="teal">Structure</th><th class="blue">Moment</th></tr>
+          <tr><td><strong>Primordial</strong></td><td>Ovocyte I + 3–4 cellules folliculaires aplaties</td><td>Dès la naissance</td></tr>
+          <tr><td><strong>Primaire</strong></td><td>Ovocyte I + 1 assise de cellules folliculaires</td><td>Début puberté</td></tr>
+          <tr><td><strong>Secondaire</strong></td><td>Ovocyte I + plusieurs couches + thèques interne (sécrétrice) et externe (protectrice)</td><td>Phase folliculaire</td></tr>
+          <tr><td><strong>Tertiaire (cavitaire)</strong></td><td>Idem + cavité folliculaire (liquide folliculaire)</td><td>Phase folliculaire</td></tr>
+          <tr><td><strong>De Graaf (mûr)</strong></td><td>Grande cavité (antrum). Fait saillie en surface. Se rompt → ovulation</td><td>Jour 14 du cycle</td></tr>
+        </table>
+      </div>
+      <div class="sub-title purple">C — Comparaison Ovogenèse vs Spermatogenèse</div>
+      <div class="dna-seq">OVOGENÈSE — Particularités clés (≠ Spermatogenèse)
+
+Multiplication (avant naissance) : Ovogonies → mitoses → ovocytes I
+  → 7 millions d'ovogonies (vie fœtale) → dégénérescence → ~1 million à la naissance
+  → dégénérescence → ~400 000 à la puberté
+
+Début méiose I : avant la naissance (prophase I) → ARRÊT jusqu'à la puberté
+
+Reprise à la puberté (chaque cycle) :
+  Phase folliculaire : développement du follicule + fin méiose I juste avant l'ovulation
+     → Ovocyte I (2n=46) → méiose I → Ovocyte II (n=23) + 1er globule polaire (n=23)
+  Ovulation : expulsion de l'Ovocyte II bloqué en MÉTAPHASE II
+
+Si fécondation : reprise méiose II → ovocyte II → ovule (n=23) + 2ème globule polaire
+  → fusion noyaux = caryogamie → œuf (2n=46)
+Si pas de fécondation : l'ovocyte II dégénère
+
+BILAN : 1 ovocyte I → 1 ovule (≠ spermatogenèse : 1 spermatocyte I → 4 spermatozoïdes)
+Durée de l'ovogenèse : toute la vie génitale de la femme (puberté → ménopause)
+Nombre total d'ovules produits : ~400 seulement (un par cycle)</div>
+      <div class="info-box">
+        <strong>Différences clés Ovogenèse ≠ Spermatogenèse :</strong><br>
+        — Ovogenèse commence avant la naissance / Spermatogenèse commence à la puberté<br>
+        — Méiose de l'ovocyte est bloquée en méiose II et s'achève à la fécondation<br>
+        — 1 ovocyte I → 1 ovule seulement (3 globules polaires produits → atrophiés)<br>
+        — Pas de phase de différenciation (spermiogenèse) dans l'ovogenèse
+      </div>
+      <div class="sub-title">Texte à trous — Ovogenèse</div>
+      <div class="gap-text" id="gap-ovo">
+        L'ovogenèse débute <select class="gap-select" data-answer="avant la naissance"><option value="">…</option><option>avant la naissance</option><option>à la puberté</option><option>au premier cycle</option></select>. L'ovocyte I est bloqué en <select class="gap-select" data-answer="prophase I"><option value="">…</option><option>prophase I</option><option>métaphase II</option><option>anaphase I</option></select> jusqu'à la puberté. Juste avant l'ovulation, la méiose I se termine et donne un <select class="gap-select" data-answer="ovocyte II"><option value="">…</option><option>ovocyte II</option><option>ovule</option><option>spermatide</option></select> haploïde (n=23) et un 1er globule polaire. L'ovocyte II est alors bloqué en <select class="gap-select" data-answer="métaphase II"><option value="">…</option><option>métaphase II</option><option>prophase I</option><option>anaphase II</option></select>. La méiose II ne s'achève que lors de la <select class="gap-select" data-answer="fécondation"><option value="">…</option><option>fécondation</option><option>nidation</option><option>puberté</option></select>. L'ovocyte est <select class="gap-select" data-answer="immobile"><option value="">…</option><option>immobile</option><option>mobile grâce à un flagelle</option><option>très petite cellule</option></select> et riche en substances de réserve. 1 ovocyte I donne <select class="gap-select" data-answer="1 seul ovule"><option value="">…</option><option>1 seul ovule</option><option>4 ovules</option><option>2 ovules</option></select> (≠ spermatogenèse qui produit 4 spermatozoïdes).
+      </div>
+      <button class="btn-check-gap" onclick="checkGap('gap-ovo','score-ovo')">Vérifier</button>
+      <div class="gap-score" id="score-ovo"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CYCLES SEXUELS -->
+<div class="tab-panel" id="tab-cycles">
+  <h2 class="section-title">📅 III-IV — Les cycles sexuels (ovarien et utérin)</h2>
+  <div class="def-box">
+    <div class="lbl">Concept clé</div>
+    <p>Le cycle sexuel dure <strong>28 jours</strong> en moyenne et comporte deux cycles synchronisés et coordonnés : le <strong>cycle ovarien</strong> (évolution des structures ovariennes) et le <strong>cycle utérin</strong> (évolution de la muqueuse utérine).</p>
+  </div>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>📊 Activité 5 — Cycle ovarien : 3 phases</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_cycle_ovarien_schéma.png" alt="Cycle ovarien schéma" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_cycle_ovarien_schéma.png</strong>Doc.7 p.34 — Phases du cycle ovarien : folliculaire (j1-14), ovulation (j14), lutéale (j14-28)</div>
+          </div>
+          <div class="img-caption">Doc.7 — Phases du cycle ovarien</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_corps_jaune.png" alt="Corps jaune après ovulation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_corps_jaune.png</strong>Docs 6a et 6b p.33 — Corps jaune formé après l'ovulation à partir des cellules de la granulosa (cellules lutéiniques)</div>
+          </div>
+          <div class="img-caption">Docs 6a/6b — Formation du corps jaune</div>
+        </div>
+      </div>
+      <div class="dna-seq">CYCLE OVARIEN — 28 jours
+
+J1 → J14  : PHASE FOLLICULAIRE (pré-ovulatoire)
+  • Développement du follicule primordial → primaire → secondaire → cavitaire → De Graaf
+  • Sécrétion progressive d'ŒSTRADIOL par la thèque interne et la granulosa
+  • Reprise et achèvement de la méiose I : ovocyte I (2n) → ovocyte II (n) + 1er globule polaire
+
+J14          : OVULATION
+  • Pic de LH → rupture du follicule mûr → expulsion de l'ovocyte II dans le pavillon
+  • L'ovocyte II est bloqué en métaphase II et entouré de la corona radiata + zone pellucide
+
+J14 → J28 : PHASE LUTÉALE (post-ovulatoire)
+  • Follicule rompu → CORPS JAUNE (cellules de la granulosa + thèques se lutéinisent)
+  • Corps jaune sécrète PROGESTÉRONE + ŒSTRADIOL
+  • Maximum développement corps jaune : J21
+
+Si fécondation    → Corps jaune persiste (maintenu par HCG) → grossesse (9 mois)
+Si pas de fécond. → Corps jaune régresse (J28) → corps blanc → chute hormones → règles</div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="activity-header teal" onclick="toggleActivity(this)">
+      <h3>📊 Activité 6 — Cycle utérin : synchrone avec le cycle ovarien</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_cycle_utérin.png" alt="Modifications muqueuse utérine" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_cycle_utérin.png</strong>Doc.8 p.35 — Modifications de l'utérus au cours du cycle sexuel : règles → prolifération → dentelle utérine</div>
+          </div>
+          <div class="img-caption">Doc.8 — Cycle utérin (28 jours)</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_glaire_cervicale.png" alt="Glaire cervicale" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_glaire_cervicale.png</strong>Doc.10 p.36 — État de la glaire cervicale : j8 (maillage serré), j14 (filante, maillage lâche), j24 (serré)</div>
+          </div>
+          <div class="img-caption">Doc.10 — Glaire cervicale aux j8, j14, j24</div>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Phase</th><th class="teal">Jours</th><th class="blue">État de la muqueuse utérine (endomètre)</th><th class="amber">Hormone responsable</th></tr>
+          <tr><td><strong>Menstruation (règles)</strong></td><td>J1 → J5</td><td>Nécrose + desquamation de la partie supérieure → hémorragie (4–5 jours). Muqueuse réduite à 1 mm.</td><td>Chute œstradiol + progestérone (régression corps jaune)</td></tr>
+          <tr><td><strong>Phase post-menstruelle (prolifération)</strong></td><td>J5 → J14</td><td>Épaississement (1→3 mm), vascularisation, développement des glandes en tubes</td><td>Œstradiol (follicule en développement)</td></tr>
+          <tr><td><strong>Phase pré-menstruelle (sécrétion)</strong></td><td>J14 → J28</td><td>Épaississement (3→7 mm), glandes sinueuses «dentelle utérine», vaisseaux spiralés, sécrétions. Prépare la nidation.</td><td>Œstradiol + Progestérone (corps jaune)</td></tr>
+        </table>
+      </div>
+      <div class="info-box teal">
+        <strong>La glaire cervicale :</strong> mucus du col de l'utérus variable selon le cycle :<br>
+        — J8 et J24 : maillage serré → imperméable aux spermatozoïdes<br>
+        — J14 (ovulation) : filante, maillage lâche → perméable aux spermatozoïdes → favorise la fécondation<br>
+        <strong>Rôle :</strong> Protège les spermatozoïdes (pH hostile du vagin) et décape les protéines de décapacitation pour permettre la capacitation.
+      </div>
+      <div class="info-box">
+        <strong>Température interne et ovulation :</strong> La progestérone a un effet <strong>thermogène</strong> → la température corporelle basale augmente de ~0,3–0,5°C à partir du J14 (ovulation). Cette élévation est un indicateur de l'ovulation (méthode des températures).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RÉGULATION DU CYCLE -->
+<div class="tab-panel" id="tab-regulation">
+  <h2 class="section-title">🔄 V — Régulation du cycle sexuel féminin</h2>
+  <div class="def-box">
+    <div class="lbl">Concept clé</div>
+    <p>Le cycle sexuel est contrôlé par l'axe <strong>hypothalamus → hypophyse → ovaires → utérus</strong> avec des rétrocontrôles à la fois <strong>négatifs</strong> ET <strong>positifs</strong> de l'œstradiol sur l'axe H-H selon sa concentration.</p>
+  </div>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>⚗️ Activités 8-9 — Contrôle hormonal et rétrocontrôles</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_courbes_FSH_LH_cycle.png" alt="Courbes FSH LH cycle" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_courbes_FSH_LH_cycle.png</strong>Doc.13 p.41 — Courbes de variation FSH et LH au cours du cycle avec phases folliculaire et lutéale</div>
+          </div>
+          <div class="img-caption">Doc.13 — Variation FSH et LH au cours du cycle</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch2_courbes_hormones_simultanées.png" alt="Courbes simultanées hormones" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch2_courbes_hormones_simultanées.png</strong>Doc.15 p.42 — Variation simultanée taux oestradiol, progestérone, FSH et LH au cours du cycle sexuel</div>
+          </div>
+          <div class="img-caption">Doc.15 — Variation simultanée de toutes les hormones du cycle</div>
+        </div>
+      </div>
+      <div class="sub-title">A — Rôles de FSH et LH sur les ovaires</div>
+      <div class="card-grid">
+        <div class="card blue">
+          <h4 style="color:var(--blue)">🔵 FSH (Follicle Stimulating Hormone)</h4>
+          <ul><li>Stimule le développement des follicules (phase folliculaire)</li><li>Stimule la sécrétion d'œstradiol par la thèque interne et la granulosa</li><li>Élevée en début de cycle (J1-J7) → décroît progressivement</li></ul>
+        </div>
+        <div class="card purple">
+          <h4 style="color:var(--purple)">🟣 LH (Luteinizing Hormone)</h4>
+          <ul><li>Pic de LH au J14 → déclenche l'<strong>ovulation</strong></li><li>Transforme le follicule rompu en <strong>corps jaune</strong></li><li>Stimule la sécrétion d'œstradiol et de <strong>progestérone</strong> par le corps jaune</li></ul>
+        </div>
+      </div>
+      <div class="sub-title">B — Rétrocontrôles ovariensur l'axe H-H</div>
+      <div class="dna-seq">RÉTROCONTRÔLES DE L'ŒSTRADIOL (3 phases)
+
+Phase 1 : Début cycle (J1 → J10) — rétrocontrôle NÉGATIF
+  Oestradiol ↑ faiblement → inhibe FSH et LH → ↓ gonadostimulines
+  Rôle : évite trop de follicules en maturation simultanée
+
+Phase 2 : Fin phase folliculaire (J10 → J13) — rétrocontrôle POSITIF
+  Oestradiol ↑↑↑ fortement (pic) → STIMULE LH → PIC DE LH → OVULATION !
+  ⚠️ L'œstradiol à FORTE DOSE exerce un rétrocontrôle POSITIF (unique en endocrinologie)
+
+Phase 3 : Phase lutéale (J14 → J28) — rétrocontrôle NÉGATIF
+  Oestradiol + Progestérone ↑ → inhibent FSH et LH
+  → évite un nouveau follicule pendant la grossesse potentielle
+  J28 : corps jaune régresse → hormones ovariennes ↓↓ → levée inhibition → FSH ↑ → nouveau cycle</div>
+      <div class="info-box purple">
+        <strong>Cas de la femme ovariectomisée ou ménopausée (doc.14) :</strong> Plus d'ovaires → plus de rétrocontrôle négatif → LH et FSH très élevés et non cycliques. → Preuve du rétrocontrôle négatif ovarien sur l'axe H-H. Cliniquement : dosage de FSH/LH pour diagnostiquer la ménopause ou l'insuffisance ovarienne.
+      </div>
+      <div class="sub-title">Texte à trous — Régulation du cycle</div>
+      <div class="gap-text" id="gap-regul">
+        Le cycle ovarien est contrôlé par deux hormones hypophysaires : la <select class="gap-select" data-answer="FSH"><option value="">…</option><option>FSH</option><option>LH</option><option>GnRH</option></select> qui stimule le développement des follicules et la sécrétion d'œstradiol, et la <select class="gap-select" data-answer="LH"><option value="">…</option><option>LH</option><option>FSH</option><option>HCG</option></select> dont le pic déclenche l'<select class="gap-select" data-answer="ovulation"><option value="">…</option><option>ovulation</option><option>menstruation</option><option>nidation</option></select> au J14. L'œstradiol à faible dose exerce un rétrocontrôle <select class="gap-select" data-answer="négatif"><option value="">…</option><option>négatif</option><option>positif</option><option>nul</option></select> sur l'axe H-H. L'œstradiol à <select class="gap-select" data-answer="forte dose"><option value="">…</option><option>forte dose</option><option>faible dose</option><option>dose nulle</option></select> exerce un rétrocontrôle <select class="gap-select" data-answer="positif"><option value="">…</option><option>positif</option><option>négatif</option><option>nul</option></select> qui provoque le pic de LH. La progestérone est sécrétée par le <select class="gap-select" data-answer="corps jaune"><option value="">…</option><option>corps jaune</option><option>follicule primaire</option><option>endomètre</option></select>. La chute des hormones ovariennes en fin de cycle provoque la <select class="gap-select" data-answer="menstruation"><option value="">…</option><option>menstruation</option><option>ovulation</option><option>nidation</option></select>.
+      </div>
+      <button class="btn-check-gap" onclick="checkGap('gap-regul','score-regul')">Vérifier</button>
+      <div class="gap-score" id="score-regul"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FÉCONDATION ET EMBRYON -->
+<div class="tab-panel" id="tab-fecondation">
+  <h2 class="section-title">🔬 Ch.3 A — Fécondation et premières étapes embryonnaires</h2>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>🔬 Activité 1 — Conditions de la fécondation</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="card-grid">
+        <div class="card"><h4 style="color:var(--em)">💧 Sperme normal et fécondant</h4><ul><li>Volume : 3–4 mL par éjaculation</li><li>pH alcalin (7–8)</li><li>Numération &gt; 60 millions/mL</li><li>&lt; 40% de formes atypiques</li><li>Capacitation (acquisition pouvoir fécondant) dans l'épididyme</li></ul></div>
+        <div class="card teal"><h4 style="color:var(--teal)">📅 Période fertile du cycle</h4><ul><li>Ovulation : J14 (14 jours avant les règles)</li><li>Survie ovocyte : 2 jours</li><li>Survie spermatozoïdes : 3 jours dans les voies génitales féminines</li><li>Période fertile : J12 → J17</li></ul></div>
+        <div class="card purple"><h4 style="color:var(--purple)">🔓 Glaire cervicale perméable</h4><ul><li>Perméable seulement au J14 (maillage lâche)</li><li>Décape les protéines de décapacitation</li><li>Imperméable le reste du cycle (maillage serré)</li></ul></div>
+        <div class="card amber"><h4 style="color:var(--amber)">🛡️ Voies génitales saines</h4><ul><li>Sécrétions vaginales pas trop acides</li><li>Trompes perméables (pas d'obstruction)</li><li>Endomètre réceptif</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="activity-header teal" onclick="toggleActivity(this)">
+      <h3>🔬 Activité 2 — Étapes de la fécondation</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch3_étapes_fécondation_photos.png" alt="Photos fécondation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch3_étapes_fécondation_photos.png</strong>Doc.4a p.61 — Microphotographies des stades de la fécondation in vitro</div>
+          </div>
+          <div class="img-caption">Doc.4a — Stades de la fécondation</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch3_monospermie.png" alt="Mécanisme monospermie" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch3_monospermie.png</strong>Doc.5 p.62 — Mécanisme de pénétration du spermatozoïde et monospermie : granules corticaux → hydrolysent les récepteurs de la zone pellucide</div>
+          </div>
+          <div class="img-caption">Doc.5 — Monospermie (granules corticaux)</div>
+        </div>
+      </div>
+      <div class="dna-seq">ÉTAPES DE LA FÉCONDATION (dans le tiers supérieur de la trompe)
+
+1. RENCONTRE DES GAMÈTES
+   • Ovocyte : descend par contractions utérines + cils des trompes
+   • Spermatozoïdes : remontent dans les sécrétions utérines et tubaires
+   • Piégeage entre les cellules de la corona radiata
+
+2. PÉNÉTRATION D'UN SEUL SPERMATOZOÏDE
+   a) Reconnaissance : antigènes membranaires SPZ ↔ récepteurs zone pellucide
+   b) Réaction acrosomique : libération enzymes acrosomiales → hydrolyse zone pellucide
+   c) Fusion des membranes plasmiques → noyau SPZ + aster proximal pénètrent dans ovocyte II
+
+3. TRANSFORMATIONS CYTOLOGIQUES (monospermie)
+   Granules corticaux → déversent enzymes → hydrolysent récepteurs SPZ dans la zone pellucide
+   → Zone pellucide imperméable → 1 seul SPZ entre → MONOSPERMIE assurée
+
+4. TRANSFORMATIONS NUCLÉAIRES (caryogamie)
+   a) Pénétration SPZ déclenche reprise méiose II de l'ovocyte :
+      Ovocyte II → Anaphase II → Télophase II → ovule (n=23) + 2ème globule polaire (n=23)
+   b) Noyau SPZ (n=23) + noyau ovule (n=23) → fusion des pronuclei = CARYOGAMIE → Œuf (2n=46)
+
+RÉSULTAT : 1 œuf diploïde (2n=46) = zygote → origine du nouvel être humain</div>
+      <div class="info-box blue">
+        <strong>La monospermie — mécanisme fondamental :</strong> Si plusieurs spermatozoïdes pénétraient → polyspermie → zygote anormal (mortel). La libération des granules corticaux est le mécanisme de protection : en 30 secondes après la pénétration du 1er SPZ, tous les récepteurs de la zone pellucide sont détruits → aucun autre SPZ ne peut pénétrer.
+      </div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="activity-header purple" onclick="toggleActivity(this)">
+      <h3>🌱 Activité 3 — Premières étapes embryonnaires et placenta</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch3_segmentation_nidation.png" alt="Segmentation et nidation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch3_segmentation_nidation.png</strong>Doc.7 p.63 — Première semaine : de la fécondation à la nidation. Segmentation (2, 4 cellules → morula → blastocyste)</div>
+          </div>
+          <div class="img-caption">Doc.7 — Segmentation et nidation (semaine 1)</div>
+        </div>
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch3_placenta_échanges.png" alt="Placenta échanges" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch3_placenta_échanges.png</strong>Doc.10 p.64 — Structure du placenta : villosités trophoblastiques + échanges fœto-maternels (O2, nutriments, CO2, déchets)</div>
+          </div>
+          <div class="img-caption">Doc.10 — Placenta : structure d'échange</div>
+        </div>
+      </div>
+      <div class="schema-expression">
+        <div class="schema-box">Œuf (2n=46)<span class="schema-label">trompe — J0</span></div>
+        <div style="text-align:center"><div class="schema-arrow">→</div><div style="font-size:10px;color:var(--gray6)">Segmentation<br>(mitoses)</div></div>
+        <div class="schema-box teal">Morula<span class="schema-label">32–64 cellules</span></div>
+        <div class="schema-arrow">→</div>
+        <div class="schema-box purple">Blastocyste<span class="schema-label">cavité + trophoblaste</span></div>
+        <div style="text-align:center"><div class="schema-arrow">→</div><div style="font-size:10px;color:var(--green)">NIDATION<br>(J6–J7)</div></div>
+        <div class="schema-box green">Embryon implanté<span class="schema-label">dans endomètre</span></div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Rôle du placenta</th><th class="teal">Détail</th></tr>
+          <tr><td><strong>Échanges nutritifs</strong></td><td>Sang maternel → O₂, nutriments, eau, minéraux, vitamines, anticorps → sang fœtal via villosités</td></tr>
+          <tr><td><strong>Échanges excréteurs</strong></td><td>Sang fœtal → CO₂ + urée → sang maternel → éliminés par poumons et reins de la mère</td></tr>
+          <tr><td><strong>Barrière sélective</strong></td><td>Bactéries et parasites : ne passent PAS. Virus, alcool, nicotine, cocaïne, médicaments : PASSENT → danger pour le fœtus</td></tr>
+          <tr><td><strong>Fonction endocrine</strong></td><td>Dès nidation : trophoblaste sécrète <strong>HCG</strong> (maintient corps jaune). À partir de la 11ème semaine : placenta sécrète progestérone + œstrogènes (relais du corps jaune)</td></tr>
+        </table>
+      </div>
+      <div class="info-box green">
+        <strong>HCG et test de grossesse :</strong> L'hormone gonadotrophine chorionique (HCG) est sécrétée dès la nidation. Elle est détectable dans les urines dès J+10 après la fécondation → base des tests de grossesse urinaires. Son rôle : maintenir le corps jaune qui produit la progestérone pour prévenir les règles et maintenir la grossesse (jusqu'à la 11ème semaine où le placenta prend le relais).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAÎTRISE PROCRÉATION -->
+<div class="tab-panel" id="tab-maitrise">
+  <h2 class="section-title">💊 Ch.3 B&amp;C — Maîtrise de la procréation et hygiène</h2>
+  <div class="activity">
+    <div class="activity-header open" onclick="toggleActivity(this)">
+      <h3>💊 Activité 4A — La pilule contraceptive</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="img-row">
+        <div>
+          <div class="img-wrap">
+            <img src="images/ch3_pilule_cycle_comparaison.png" alt="Comparaison cycle normal vs pilule" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+            <div class="img-fallback" style="display:none"><span class="ico-ph">🖼️</span><strong>ch3_pilule_cycle_comparaison.png</strong>Doc.13 p.65 — Dosage hormones cycle normal vs cycle sous pilule combinée</div>
+          </div>
+          <div class="img-caption">Doc.13 — Hormones cycle normal vs cycle sous pilule</div>
+        </div>
+      </div>
+      <div class="def-box">
+        <div class="lbl">La pilule combinée (oestro-progestative)</div>
+        <p>Composition : <strong>progestatif de synthèse</strong> (acétate de cyprotérone) + <strong>œstrogène de synthèse</strong> (éthinyloestradiol). Prise quotidienne pendant 21 jours, arrêt 7 jours (→ règles de privation).</p>
+      </div>
+      <div class="dna-seq">MÉCANISME D'ACTION DE LA PILULE COMBINÉE
+
+Œstrogènes + Progestatifs de synthèse → maintiennent en permanence des taux élevés
+  → Rétrocontrôle NÉGATIF continu sur l'axe H-H
+  → GnRH ↓ → FSH ↓ et LH ↓
+  → Pas de développement folliculaire → pas d'ovulation
+  → Pas de pic de LH → OVULATION BLOQUÉE ★
+
+Effets supplémentaires :
+  • Glaire cervicale épaissie → imperméable aux spermatozoïdes
+  • Endomètre peu développé → défavorable à la nidation
+  • Myomètre : réduction des contractions
+
+Arrêt de la pilule (7 jours) :
+  → Chute des hormones de synthèse → levée du rétrocontrôle négatif
+  → Légère sécrétion de gonadostimulines → saignements de privation (≠ vraies règles)</div>
+      <div class="info-box red">
+        <strong>Contraceptif ≠ Contragestif :</strong> La pilule empêche l'ovulation → aucun embryon n'est formé → c'est un contraceptif. Un contragestif (pilule du lendemain, stérilet) agit après la fécondation en empêchant la nidation ou en détruisant l'embryon.
+      </div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="activity-header teal" onclick="toggleActivity(this)">
+      <h3>🏥 Activité 4B — Stérilité et Procréation Médicalement Assistée (PMA)</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="card-grid">
+        <div class="card red">
+          <h4 style="color:var(--red)">♂ Stérilité masculine</h4>
+          <ul><li>Azoospermie : absence de spermatozoïdes</li><li>Oligospermie : &lt; 60 M SPZ/mL</li><li>Asthénospermie : mobilité insuffisante</li><li>Tératospermie : &gt; 40% formes atypiques</li></ul>
+        </div>
+        <div class="card amber">
+          <h4 style="color:var(--amber)">♀ Stérilité féminine</h4>
+          <ul><li>Causes hormonales : anomalie ovulation (manque FSH, LH ou GnRH)</li><li>Glaire cervicale absente, infectée ou hostile</li><li>Obstruction bilatérale des trompes</li><li>Malformation ou pathologie utérine</li></ul>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Technique PMA</th><th class="teal">Principe</th><th class="blue">Indication</th></tr>
+          <tr><td><strong>IA (Insémination Artificielle)</strong></td><td>Dépôt de spermatozoïdes dans la cavité utérine par sonde (IAC = avec sperme du conjoint)</td><td>Oligospermie modérée, glaire cervicale hostile</td></tr>
+          <tr><td><strong>FIVETE</strong> (Fécondation In Vitro et Transfert d'Embryon)</td><td>1. Stimulation ovarienne (FSH) → ponction ovocytes. 2. Mise en contact gamètes in vitro → embryon. 3. Transfert embryon dans l'utérus.</td><td>Obstruction des trompes, stérilité masculine modérée</td></tr>
+          <tr><td><strong>ISIC</strong> (Injection Intra-Cytoplasmique)</td><td>Sélection d'1 spermatozoïde → injection directe dans le cytoplasme de l'ovocyte à la micropipette</td><td>Stérilité masculine sévère (très peu de SPZ, mobilité très réduite)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="activity-header green" onclick="toggleActivity(this)">
+      <h3>🏥 Activité 5 — Hygiène de la grossesse</h3><span class="toggle-ico">▼</span>
+    </div>
+    <div class="activity-body open">
+      <div class="info-box red">
+        <strong>Perméabilité placentaire :</strong> Le placenta laisse passer : virus, alcool, nicotine, cocaïne, caféine, sulfamides, antibiotiques → ces substances peuvent provoquer des <strong>malformations congénitales</strong> (tératogénèse) ou la mort du fœtus. La perméabilité augmente en fin de grossesse.
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Substance</th><th class="red">Risques pour le fœtus</th></tr>
+          <tr><td><strong>Alcool</strong></td><td>SAF (Syndrome d'Alcoolisation Fœtale) : microcéphalie, retard mental, malformations du visage. Risque × 3–4. Mortalité embryonnaire précoce ↑.</td></tr>
+          <tr><td><strong>Tabac (nicotine)</strong></td><td>Bec de lièvre (risque × 2–3), poids réduit (−170 g), taille réduite, mortalité périnatale ↑</td></tr>
+          <tr><td><strong>Cocaïne, drogues</strong></td><td>Malformations multiples, retard croissance, mort in utero</td></tr>
+          <tr><td><strong>Médicaments (tétracyclines, barbituriques, thalidomide…)</strong></td><td>Anomalies dentaires, convulsions, phocomélie (membres soudés au tronc)</td></tr>
+          <tr><td><strong>Virus</strong></td><td>Rubéole → surdité, malformations cardiaques. VIH → transmission mère-enfant</td></tr>
+        </table>
+      </div>
+      <div class="card-grid">
+        <div class="card green"><h4 style="color:var(--green)">✅ Règles d'hygiène</h4><ul><li>Zéro alcool pendant la grossesse</li><li>Arrêt total du tabac</li><li>Aucune drogue ni automédication</li><li>Vaccinations à jour (rubéole++)</li><li>Sport adapté (marche, natation, gym spéciale)</li><li>Suivi médical régulier (échographies)</li></ul></div>
+        <div class="card blue"><h4 style="color:var(--blue)">🏊 Bénéfices du sport</h4><ul><li>Réduit avortements et morts in utero</li><li>Facilite l'accouchement</li><li>Réduit les détresses respiratoires néonatales</li><li>Sports recommandés : marche, natation, gym spéciale</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SYNTHÈSE -->
+<div class="tab-panel" id="tab-synthese">
+  <h2 class="section-title">🗺️ Synthèse — Ch.2 &amp; Ch.3</h2>
+  <canvas id="mindmap-canvas" style="width:100%;height:520px;cursor:pointer"></canvas>
+  <div class="fc-grid" id="fc-grid"></div>
+</div>
+
+<!-- ÉVALUATION BAC -->
+<div class="tab-panel" id="tab-eval">
+  <h2 class="section-title">✅ Exercices BAC — QCM avec feedback explicatif</h2>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°1 (cycle ovarien)</div>
+    <div class="qtxt">L'utérus de la femme est le lieu de :</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b1')"><input type="radio" name="b1"> a. La fécondation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b1')"><input type="radio" name="b1"> b. L'ovulation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b1')"><input type="radio" name="b1"> c. La nidation et de la menstruation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b1')"><input type="radio" name="b1"> d. La folliculogenèse</div>
+    <button class="btn-verify" onclick="verifyQCM('b1',2,'✅ Réponse c ! L\'utérus est le lieu de deux phénomènes importants :<br>1. La <strong>nidation</strong> : implantation du blastocyste dans l\'endomètre (J6–J7 après fécondation)<br>2. La <strong>menstruation</strong> : desquamation de la partie superficielle de l\'endomètre en début de cycle<br>La fécondation a lieu dans le tiers supérieur de la <em>trompe</em>. L\'ovulation est l\'expulsion de l\'ovocyte par l\'<em>ovaire</em>. La folliculogenèse se passe dans l\'<em>ovaire</em>.','❌ La fécondation se produit dans le tiers supérieur de la trompe de Fallope. L\'ovulation est le phénomène par lequel l\'ovaire expulse l\'ovocyte. La folliculogenèse se passe dans le cortex de l\'ovaire. L\'utérus est le lieu de la <strong>nidation</strong> (implantation de l\'embryon) et de la <strong>menstruation</strong> (dégradation de la muqueuse utérine).')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b1"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°2 (hormones ovariennes)</div>
+    <div class="qtxt">La menstruation est déclenchée par :</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b2')"><input type="radio" name="b2"> a. Une décharge de LH (pic de LH)</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b2')"><input type="radio" name="b2"> b. Une élévation du taux d'œstradiol et de progestérone</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b2')"><input type="radio" name="b2"> c. Une chute du taux d'œstrogènes et de progestérone suite à la régression du corps jaune</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b2')"><input type="radio" name="b2"> d. Une rupture du follicule mûr</div>
+    <button class="btn-verify" onclick="verifyQCM('b2',2,'✅ Réponse c ! Mécanisme de la menstruation :<br>En fin de cycle (J26–J28) → corps jaune régresse → arrêt sécrétion œstradiol + progestérone → <strong>chute brutale</strong> des deux hormones → privation hormonale → artérioles spiralées de l\'endomètre se contractent → nécrose de la partie supérieure de la muqueuse → saignements = menstruation.<br>La menstruation marque donc la fois la FIN d\'un cycle (mort du corps jaune sans fécondation) et le DÉBUT du cycle suivant (J1).','❌ Le pic de LH déclenche l\'ovulation (J14), pas la menstruation. L\'élévation des hormones ovariennes favorise le développement de l\'endomètre (phase sécrétion). La rupture du follicule mûr = ovulation. La menstruation est due à la <strong>chute</strong> des hormones ovariennes suite à la dégénérescence du corps jaune en fin de cycle.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b2"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°3 (rétrocontrôles)</div>
+    <div class="qtxt">Juste avant l'ovulation, le taux d'œstradiol atteint un pic très élevé. Quel est l'effet de ce pic sur l'axe H-H ?</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b3')"><input type="radio" name="b3"> a. Rétrocontrôle négatif → inhibition de LH → pas d'ovulation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b3')"><input type="radio" name="b3"> b. Rétrocontrôle positif → pic de LH → déclenchement de l'ovulation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b3')"><input type="radio" name="b3"> c. Aucun effet → la LH est sécrétée indépendamment de l'œstradiol</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b3')"><input type="radio" name="b3"> d. Rétrocontrôle négatif sur FSH uniquement, pas sur LH</div>
+    <button class="btn-verify" onclick="verifyQCM('b3',1,'✅ Réponse b ! C\'est le <strong>rétrocontrôle positif</strong> de l\'œstradiol, unique et spectaculaire. Vers J12–J13, le follicule mûr sécrète massivement l\'œstradiol (pic &gt; 200 pg/mL). Ce taux élevé provoque paradoxalement une décharge massive de LH (pic de LH) → ovulation au J14. C\'est l\'un des rares exemples de <strong>rétrocontrôle positif</strong> en endocrinologie humaine. Si l\'œstradiol était toujours inhibiteur (rétrocontrôle négatif uniquement), il n\'y aurait jamais d\'ovulation — ce serait le principe de la pilule contraceptive !','❌ L\'œstradiol n\'a pas le même effet à toutes les concentrations. À <em>faible dose</em> : rétrocontrôle négatif (inhibe FSH et LH). À <em>forte dose</em> (pic pré-ovulatoire) : rétrocontrôle <strong>positif</strong> → stimule l\'hypophyse → pic de LH → ovulation. Ce mécanisme de double rétrocontrôle selon la dose est une particularité importante du cycle féminin.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b3"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°4 (ovogenèse)</div>
+    <div class="qtxt">L'ovocyte II expulsé lors de l'ovulation est bloqué en métaphase II. Qu'est-ce qui déclenche la reprise et l'achèvement de la méiose II ?</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b4')"><input type="radio" name="b4"> a. Le pic de FSH au moment de l'ovulation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b4')"><input type="radio" name="b4"> b. La pénétration d'un spermatozoïde dans l'ovocyte lors de la fécondation</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b4')"><input type="radio" name="b4"> c. La progression de l'ovocyte dans la trompe</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b4')"><input type="radio" name="b4"> d. La progestérone sécrétée par le corps jaune</div>
+    <button class="btn-verify" onclick="verifyQCM('b4',1,'✅ Réponse b ! L\'ovocyte II est bloqué en métaphase II depuis l\'ovulation. La reprise de la méiose II est déclenchée par la <strong>pénétration du spermatozoïde</strong> dans son cytoplasme. Si aucun spermatozoïde ne pénètre, l\'ovocyte dégénère sans achever la méiose II. Si un SPZ pénètre → méiose II reprend → anaphase II → télophase II → ovule (n=23) + 2ème globule polaire (n=23) → puis caryogamie (fusion noyaux) → œuf (2n=46). C\'est pourquoi techniquement on dit que la «vraie» fécondation est l\'achèvement de la méiose II déclenché par le SPZ.','❌ Ni la FSH, ni le trajet dans la trompe, ni la progestérone ne déclenchent la reprise de la méiose II. Seule la <strong>pénétration du spermatozoïde</strong> dans le cytoplasme de l\'ovocyte déclenche ce processus. C\'est pourquoi on dit que la fécondation est la condition de l\'achèvement de la méiose féminine.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b4"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°5 (monospermie)</div>
+    <div class="qtxt">Le mécanisme qui assure la monospermie (pénétration d'un seul spermatozoïde) est :</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b5')"><input type="radio" name="b5"> a. La zone pellucide est trop épaisse pour que 2 spermatozoïdes la traversent simultanément</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b5')"><input type="radio" name="b5"> b. Après la pénétration du 1er SPZ, les granules corticaux libèrent des enzymes qui détruisent les récepteurs de la zone pellucide → imperméable aux autres SPZ</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b5')"><input type="radio" name="b5"> c. L'acrosome du 1er SPZ détruit tous les autres spermatozoïdes</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b5')"><input type="radio" name="b5"> d. La corona radiata empêche les autres spermatozoïdes d'approcher l'ovocyte</div>
+    <button class="btn-verify" onclick="verifyQCM('b5',1,'✅ Réponse b ! La <strong>réaction corticale</strong> est le mécanisme de la monospermie. Dès que le 1er spermatozoïde pénètre dans l\'ovocyte → les <strong>granules corticaux</strong> (vésicules sous la membrane plasmique) se déversent dans l\'espace périvitellin → libèrent des enzymes hydrolytiques → détruisent les glycoprotéines-récepteurs pour spermatozoïdes dans la zone pellucide → la zone pellucide devient imperméable → aucun autre SPZ ne peut pénétrer. Ce mécanisme est déclenché en quelques secondes, évitant la polyspermie qui produirait un zygote aneuploïde (létal).','❌ L\'épaisseur de la zone pellucide n\'est pas une barrière sélective (des millions de SPZ la traversent). L\'acrosome libère des enzymes pour pénétrer la zone pellucide, pas pour détruire les autres SPZ. La corona radiata est traversée par de nombreux SPZ. La vraie barrière est la <strong>réaction corticale</strong> : les granules corticaux détruisent les récepteurs SPZ de la zone pellucide.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b5"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°6 (pilule)</div>
+    <div class="qtxt">La pilule combinée (œstro-progestative) empêche la grossesse principalement en :</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b6')"><input type="radio" name="b6"> a. Détruisant les spermatozoïdes dans le vagin grâce à son pH acide</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b6')"><input type="radio" name="b6"> b. Bloquant l'ovulation par rétrocontrôle négatif continu sur l'axe H-H → pas de pic de LH</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b6')"><input type="radio" name="b6"> c. Empêchant la nidation uniquement — l'ovulation reste possible</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b6')"><input type="radio" name="b6"> d. Stimulant la sécrétion de FSH et LH pour maintenir le cycle artificiel</div>
+    <button class="btn-verify" onclick="verifyQCM('b6',1,'✅ Réponse b ! La pilule combinée contient des hormones de synthèse (œstrogène + progestatif) qui maintiennent en permanence des taux hormonaux élevés → <strong>rétrocontrôle négatif continu</strong> sur l\'axe H-H → GnRH ↓ → FSH ↓ et LH ↓ → <strong>PAS de pic de LH</strong> → <strong>OVULATION BLOQUÉE</strong>. Effets complémentaires : glaire cervicale épaissie (imperméable aux SPZ) + endomètre peu développé (défavorable à la nidation). La pilule est donc un contraceptif (empêche la conception), pas un contragestif.','❌ La pilule ne détruit pas les SPZ par le pH. L\'endomètre peu développé est un effet secondaire, pas le mécanisme principal — l\'ovulation est bloquée donc même si les SPZ pénétraient, il n\'y a pas d\'ovocyte à féconder. La pilule <em>inhibe</em> FSH et LH (ne les stimule pas).')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b6"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°7 (placenta)</div>
+    <div class="qtxt">Pourquoi une femme enceinte dont le corps jaune est retiré chirurgicalement avant la 11ème semaine de grossesse avorte-t-elle, alors que la même opération après la 11ème semaine n'interrompt pas la grossesse ?</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b7')"><input type="radio" name="b7"> a. Avant 11 semaines : le placenta n'est pas encore formé → le corps jaune est la seule source de progestérone → sa suppression → arrêt de la grossesse. Après 11 semaines : le placenta sécrète la progestérone → relais du corps jaune</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b7')"><input type="radio" name="b7"> b. Avant 11 semaines : le corps jaune sécrète des œstrogènes indispensables à la nidation. Après : ce n'est plus nécessaire</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b7')"><input type="radio" name="b7"> c. Avant 11 semaines : le fœtus n'a pas encore de circulation sanguine propre. Après : il est autonome</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b7')"><input type="radio" name="b7"> d. La différence est due à la sensibilité de l'utérus, pas au corps jaune ni au placenta</div>
+    <button class="btn-verify" onclick="verifyQCM('b7',0,'✅ Réponse a ! C\'est la démonstration du <strong>relais hormonal corps jaune → placenta</strong> :<br>— Avant 11 semaines : le corps jaune (maintenu par l\'HCG du trophoblaste) est la seule source de progestérone. La progestérone maintient l\'endomètre développé et prévient les contractions utérines → grossesse maintenue. Sa suppression → endomètre se dégrade → avortement.<br>— À partir de la 11ème semaine : le <strong>placenta</strong> prend le relais et sécrète lui-même progestérone + œstrogènes en quantité suffisante. Le corps jaune n\'est plus indispensable → son ablation ne compromet pas la grossesse.','❌ Le mécanisme clé est le <strong>relais hormonal</strong>. Avant la 11ème semaine, le maintien de la grossesse dépend de la progestérone produite par le corps jaune (stimulé par HCG). Après, le placenta prend le relais. Ce n\'est pas une question de circulation fœtale ou de sensibilité utérine.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b7"></div>
+  </div>
+
+  <div class="qcm-item">
+    <div class="qnum">BAC — n°8 (comparaison gamètes)</div>
+    <div class="qtxt">Parmi les affirmations suivantes sur les gamètes humains, laquelle est correcte ?</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b8')"><input type="radio" name="b8"> a. Le spermatozoïde et l'ovocyte sont tous deux mobiles grâce à un flagelle</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b8')"><input type="radio" name="b8"> b. L'ovocyte est diploïde (2n=46) et le spermatozoïde est haploïde (n=23)</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b8')"><input type="radio" name="b8"> c. Les deux gamètes sont haploïdes (n=23) mais l'ovocyte est plus grand et immobile</div>
+    <div class="qcm-opt" onclick="selectOpt(this,'b8')"><input type="radio" name="b8"> d. Le spermatozoïde est riche en réserves pour nourrir l'embryon après la fécondation</div>
+    <button class="btn-verify" onclick="verifyQCM('b8',2,'✅ Réponse c ! Le seul <strong>point commun</strong> entre les deux gamètes est l\'<strong>haploïdie</strong> (n=23 chromosomes). Les différences sont nombreuses :<br>— Taille : ovocyte ≈ 100 μm (grand) vs SPZ ≈ 60 μm (petit)<br>— Mobilité : ovocyte IMMOBILE vs SPZ MOBILE (flagelle + mitochondries)<br>— Réserves : ovocyte RICHE en réserves (pour les premières divisions de l\'embryon) vs SPZ quasiment SANS réserves<br>— Méiose : ovocyte bloqué en métaphase II / SPZ : méiose complète<br>La haploïdie des deux permet la restauration de la diploïdie (2n=46) à la fécondation.','❌ Réponse a : seul le SPZ est mobile (flagelle). L\'ovocyte est immobile (il est transporté passivement par les cils des trompes). Réponse b : les DEUX sont haploïdes (n=23) — l\'ovocyte n\'est pas diploïde. Réponse d : c\'est l\'ovocyte qui est riche en réserves (cytoplasme volumineux), pas le spermatozoïde.')">Vérifier</button>
+    <div class="qcm-fb" id="fb-b8"></div>
+  </div>
+
+  <button class="btn-verify" style="font-size:14px;padding:12px 32px;margin-top:8px;display:block" onclick="showScore()">📊 Voir mon score global</button>
+  <div class="score-wrap" id="score-global">
+    <div>Votre score BAC :</div>
+    <div class="score-num" id="score-num">—</div>
+    <div id="score-msg"></div>
+  </div>
+</div>
+
+<footer>
+  <strong>INGÉNIEUR Mohamed CHAGRAOUI</strong><br>
+  Enseignant SVT · Candidat CAPES SVT 2026 · Tunisie<br>
+  4ème Secondaire · Thème 1 · Ch.2 (Femme) + Ch.3 (Procréation)
+</footer>
+
+<!--
+═══════════════════════════════════════════════
+LISTE DES IMAGES — placer dans dossier images/
+═══════════════════════════════════════════════
+CHAPITRE 2 — Fonction reproductrice chez la femme :
+ch2_appareil_feminin_face.png          → Doc.1a p.28 : Vue de face de l'appareil génital féminin
+ch2_appareil_feminin_profil.png        → Doc.1b p.28 : Vue de profil de l'appareil génital féminin
+ch2_ovocyte_photo.png                  → Doc.3a p.29 : Photo ovocyte II (×400) avec corona radiata
+ch2_ovocyte_schéma.png                 → Doc.3b p.29 : Schéma d'interprétation ovocyte II
+ch2_coupe_ovaire.png                   → Doc.4a p.30 : Coupe d'ovaire (×15) — follicules différents stades
+ch2_folliculogenèse_stades.png         → Doc.5b p.32 : Stades de la folliculogenèse (primordial → De Graaf)
+ch2_cycle_ovarien_schéma.png           → Doc.7 p.34  : Phases du cycle ovarien (28 jours)
+ch2_corps_jaune.png                    → Docs 6a/6b p.33 : Corps jaune formé après l'ovulation
+ch2_cycle_utérin.png                   → Doc.8 p.35  : Modifications muqueuse utérine au cours du cycle
+ch2_glaire_cervicale.png               → Doc.10 p.36 : États glaire cervicale j8, j14, j24
+ch2_courbes_FSH_LH_cycle.png           → Doc.13 p.41 : Variation FSH et LH au cours d'un cycle (phases)
+ch2_courbes_hormones_simultanées.png   → Doc.15 p.42 : Variation simultanée de toutes les hormones du cycle
+
+CHAPITRE 3 — Procréation :
+ch3_étapes_fécondation_photos.png      → Doc.4a p.61 : Microphotographies des stades de la fécondation
+ch3_monospermie.png                    → Doc.5 p.62  : Mécanisme monospermie (granules corticaux)
+ch3_segmentation_nidation.png          → Doc.7 p.63  : Segmentation de l'œuf + nidation (semaine 1)
+ch3_placenta_échanges.png              → Doc.10 p.64 : Structure placenta et échanges fœto-maternels
+ch3_pilule_cycle_comparaison.png       → Doc.13 p.65 : Dosage hormones cycle normal vs cycle sous pilule
+═══════════════════════════════════════════════
+TOTAL : 17 images
+═══════════════════════════════════════════════
+-->
+
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  updateProgress();
+  if(id==='synthese')setTimeout(drawMindMap,120);
+}
+function toggleActivity(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
+function updateProgress(){
+  const tabs=document.querySelectorAll('.tab-btn');
+  const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));
+  document.getElementById('progress-bar').style.width=((idx+1)/tabs.length*100)+'%';
+}
+updateProgress();
+const prereqData=[
+  {q:"L'ovulation se produit généralement :",opts:["Au 1er jour du cycle","Au 14ème jour du cycle (14 jours avant les règles) ✓","Au 28ème jour du cycle"],ans:1},
+  {q:"La progestérone est sécrétée par :",opts:["Le follicule mûr uniquement","Le corps jaune (et secondairement le placenta) ✓","L'antéhypophyse"],ans:1},
+  {q:"La fécondation se réalise dans :",opts:["L'utérus","Le tiers supérieur de la trompe de Fallope ✓","L'ovaire"],ans:1},
+  {q:"La pilule combinée empêche principalement :",opts:["La fécondation","L'ovulation (par rétrocontrôle négatif sur l'axe H-H) ✓","La nidation uniquement"],ans:1},
+];
+const pc=document.getElementById('prereq-container');
+prereqData.forEach((d,i)=>{
+  const div=document.createElement('div');div.className='prereq-q';
+  div.innerHTML=`<div class="qlbl">Préacquis ${i+1}</div><div class="qtxt">${d.q}</div>`
+    +d.opts.map((o,j)=>`<button class="prereq-opt" onclick="answerPrereq(this,${j===d.ans})">${o.replace(' ✓','')}</button>`).join('');
+  pc.appendChild(div);
+});
+function answerPrereq(btn,correct){
+  if(btn.parentElement.querySelector('.correct-ans,.wrong-ans'))return;
+  btn.classList.add(correct?'correct-ans':'wrong-ans');
+  if(!correct){
+    const items=document.querySelectorAll('.prereq-q');
+    const qIdx=Array.from(items).indexOf(btn.parentElement);
+    btn.parentElement.querySelectorAll('.prereq-opt')[prereqData[qIdx].ans].classList.add('correct-ans');
+  }
+}
+function selectOpt(opt,group){
+  const parent=opt.closest('.qcm-item');
+  if(parent.querySelector('.correct,.wrong,.missed'))return;
+  const inp=opt.querySelector('input');
+  if(inp&&inp.type==='radio'){parent.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false);inp.checked=true;}
+}
+function verifyQCM(group,correctIdx,msgOk,msgKo){
+  const btn=document.querySelector(`.btn-verify[onclick*="'${group}'"]`);
+  const parent=btn.closest('.qcm-item');
+  const opts=parent.querySelectorAll('.qcm-opt');
+  let chosen=-1;
+  opts.forEach((o,i)=>{if(o.querySelector('input')&&o.querySelector('input').checked)chosen=i;});
+  if(chosen===-1)return;
+  opts.forEach((o,i)=>{
+    if(i===correctIdx)o.classList.add('correct');
+    else if(i===chosen)o.classList.add('wrong');
+    o.style.pointerEvents='none';
+  });
+  btn.disabled=true;btn.style.opacity='.5';
+  const fb=document.getElementById('fb-'+group);
+  const isOk=chosen===correctIdx;
+  fb.classList.add('show',isOk?'ok':'ko');
+  fb.innerHTML=isOk?(msgOk||'✅ Correct !'):(msgKo||'❌ Incorrect — la bonne réponse est surlignée en vert.');
+  if(!window._scores)window._scores={};
+  if(window._scores[group]===undefined)window._scores[group]=isOk?1:0;
+}
+function checkGap(cid,sid){
+  const c=document.getElementById(cid);
+  const sels=c.querySelectorAll('.gap-select');
+  let correct=0;
+  sels.forEach(s=>{
+    s.classList.remove('correct','wrong');
+    if(s.value==='')return;
+    if(s.value===s.dataset.answer){s.classList.add('correct');correct++;}
+    else s.classList.add('wrong');
+  });
+  const sc=document.getElementById(sid);
+  sc.classList.add('show');
+  sc.style.color=correct===sels.length?'var(--green)':'var(--red)';
+  sc.textContent=`Score : ${correct} / ${sels.length} ${correct===sels.length?'🎉 Parfait !':'— Corrections en rouge.'}`;
+}
+function showScore(){
+  if(!window._scores)window._scores={};
+  const entries=Object.values(window._scores);
+  const total=entries.length,ok=entries.reduce((a,b)=>a+b,0);
+  const pct=total?Math.round(ok/total*100):0;
+  document.getElementById('score-num').textContent=`${ok} / ${total}  (${pct}%)`;
+  const msgs=['📚 À réviser','👍 Passable','✅ Bien !','🎉 Excellent ! Prêt pour le BAC'];
+  document.getElementById('score-msg').textContent=msgs[pct<40?0:pct<60?1:pct<80?2:3];
+  document.getElementById('score-global').classList.add('show');
+  document.getElementById('score-global').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+const fcData=[
+  {q:"Quelles sont les 3 phases du cycle ovarien ?",a:"1. Phase folliculaire (J1→J14) : développement follicule + sécrétion œstradiol. 2. Ovulation (J14) : pic de LH → rupture follicule → expulsion ovocyte II. 3. Phase lutéale (J14→J28) : corps jaune → progestérone + œstradiol. Corps jaune régresse J28 si pas fécondation."},
+  {q:"Qu'est-ce que le corps jaune ? Que produit-il ?",a:"Le corps jaune se forme à partir du follicule mûr après l'ovulation (cellules de la granulosa se lutéinisent). Il sécrète progestérone + œstradiol. Persiste si fécondation (maintenu par HCG). Régresse sans fécondation (J28) → chute hormonale → menstruation."},
+  {q:"Comment la menstruation est-elle déclenchée ?",a:"Fin de cycle (J26–J28) → corps jaune régresse → chute de l'œstradiol et de la progestérone → privation hormonale → artérioles spiralées de l'endomètre se contractent → nécrose et desquamation de la partie superficielle de la muqueuse → saignements = menstruation."},
+  {q:"Quels sont les deux rétrocontrôles de l'œstradiol ?",a:"1. Rétrocontrôle NÉGATIF (faible dose, début cycle) : inhibe FSH et LH. 2. Rétrocontrôle POSITIF (forte dose, fin phase folliculaire J12–J13) : stimule le pic de LH → déclenche l'ovulation. La progestérone (phase lutéale) : rétrocontrôle négatif uniquement sur FSH et LH."},
+  {q:"Quelles sont les conditions nécessaires à la fécondation ?",a:"1. Sperme normal et fécondant (≥60M SPZ/mL, capacitation dans épididyme). 2. Rapport sexuel pendant la période fertile (J12–J17). 3. Glaire cervicale perméable (filante au J14). 4. Voies génitales féminines saines et perméables. 5. Sécrétions vaginales pas trop acides."},
+  {q:"Quelles sont les étapes de la fécondation ?",a:"1. Rencontre des gamètes dans le tiers supérieur de la trompe. 2. Pénétration : reconnaissance (récepteurs zone pellucide) + réaction acrosomique (enzymes hydrolysent zone pellucide). 3. Monospermie (granules corticaux détruisent récepteurs SPZ). 4. Transformations nucléaires : reprise méiose II → caryogamie → œuf 2n=46."},
+  {q:"Qu'est-ce que la nidation ? Comment se produit-elle ?",a:"La nidation est l'implantation de l'embryon dans l'endomètre. J6–J7 : blastocyste (cavité + trophoblaste) → trophoblaste s'intègre dans l'endomètre → formation du placenta. Le trophoblaste sécrète HCG → maintient le corps jaune → maintient la progestérone → grossesse."},
+  {q:"Quels sont les rôles du placenta ?",a:"1. Échanges nutritifs : O₂, nutriments, vitamines, anticorps → sang fœtal. 2. Échanges excréteurs : CO₂, urée → sang maternel. 3. Barrière sélective : bactéries non, virus oui, alcool oui, médicaments oui. 4. Fonction endocrine : HCG (trophoblaste) puis progestérone + œstrogènes (placenta à partir de 11ème semaine)."},
+  {q:"Comment la pilule combinée agit-elle ?",a:"Œstrogènes + progestatifs de synthèse → maintiennent taux hormonaux élevés en permanence → rétrocontrôle négatif continu sur axe H-H → GnRH ↓ → FSH ↓ et LH ↓ → PAS de pic de LH → ovulation bloquée. Effets supplémentaires : glaire cervicale épaissie + endomètre peu développé."},
+  {q:"Quelle est la différence entre FIVETE et ISIC ?",a:"FIVETE : ponction ovocytes + mise en contact avec sperme in vitro → embryon → transfert utérus. Indiquée si trompes obstruées. ISIC (injection intracytoplasmique) : injection d'1 spermatozoïde directement dans le cytoplasme de l'ovocyte. Indiquée si stérilité masculine sévère (très peu de SPZ mobiles)."},
+  {q:"Quelles substances traversent le placenta et pourquoi est-ce dangereux ?",a:"Passent : virus, alcool, nicotine, cocaïne, caféine, sulfamides, antibiotiques. Ne passent pas : bactéries, parasites. Dangereux car le fœtus ne peut pas éliminer ces substances → accumulation → tératogénèse (malformations) ou mort fœtale. Règle : zéro alcool, zéro tabac, pas d'automédication pendant la grossesse."},
+  {q:"Qu'est-ce que l'HCG et quel est son rôle ?",a:"HCG (hormone gonadotrophique chorionique) : sécrétée par le trophoblaste dès la nidation (J6–J7). Rôle : maintient le corps jaune qui continue à sécréter progestérone et œstradiol → maintien de l'endomètre → grossesse maintenue. Base des tests de grossesse urinaires (HCG détectable dès J+10). À partir de la 11ème semaine, le placenta prend le relais."},
+];
+document.addEventListener('DOMContentLoaded',function(){
+  const grid=document.getElementById('fc-grid');
+  if(grid){
+    grid.innerHTML='';
+    fcData.forEach((d,i)=>{
+      grid.innerHTML+=`<div class="fc" onclick="this.classList.toggle('flipped')">
+        <div class="fc-inner">
+          <div class="fc-front"><div class="qlbl">Question</div><div class="qtxt">${d.q}</div><div class="qhint">Cliquer pour la réponse</div></div>
+          <div class="fc-back"><div class="albl">Réponse</div><div class="atxt">${d.a}</div><div class="cnt">${i+1}/${fcData.length}</div></div>
+        </div></div>`;
+    });
+  }
+});
+function drawMindMap(){
+  const canvas=document.getElementById('mindmap-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||1000;
+  canvas.width=W;canvas.height=520;
+  ctx.clearRect(0,0,W,520);
+  const cx=W/2;
+  const nodes=[
+    {id:'root',x:cx,y:260,text:'Th.1 Ch.2+Ch.3\nReproduction ♀',color:'#9d174d',tc:'#fff',w:165,h:50,bold:true},
+    {id:'app',x:cx-300,y:110,text:'Appareil\nféminin',color:'#be185d',tc:'#fff',w:120,h:46},
+    {id:'a1',x:cx-430,y:65,text:'Ovaires → gamètes+hormones',color:'#fce7f3',tc:'#9d174d',w:180,h:26},
+    {id:'a2',x:cx-430,y:100,text:'Trompes → fécondation',color:'#fce7f3',tc:'#9d174d',w:165,h:26},
+    {id:'a3',x:cx-430,y:135,text:'Utérus → nidation+grossesse',color:'#fce7f3',tc:'#9d174d',w:180,h:26},
+    {id:'cyc',x:cx+300,y:110,text:'Cycles\nsexuels',color:'#0f766e',tc:'#fff',w:120,h:46},
+    {id:'c1',x:cx+430,y:65,text:'Folliculaire (J1-J14)',color:'#99f6e4',tc:'#134e4a',w:155,h:26},
+    {id:'c2',x:cx+430,y:100,text:'Ovulation (J14)',color:'#d97706',tc:'#fff',w:130,h:26},
+    {id:'c3',x:cx+430,y:135,text:'Lutéale (J14-J28)',color:'#99f6e4',tc:'#134e4a',w:145,h:26},
+    {id:'reg',x:cx-300,y:410,text:'Régulation\ncycle',color:'#7c3aed',tc:'#fff',w:130,h:46},
+    {id:'r1',x:cx-430,y:365,text:'FSH → follicules',color:'#ede9fe',tc:'#4c1d95',w:135,h:26},
+    {id:'r2',x:cx-430,y:400,text:'LH → ovulation+CJ',color:'#ede9fe',tc:'#4c1d95',w:150,h:26},
+    {id:'r3',x:cx-430,y:435,text:'Rétrocontrôle (−) et (+)',color:'#b91c1c',tc:'#fff',w:165,h:26},
+    {id:'proc',x:cx+300,y:410,text:'Procréation',color:'#1e5fa3',tc:'#fff',w:130,h:46},
+    {id:'p1',x:cx+430,y:365,text:'Fécondation (trompe)',color:'#bfdbfe',tc:'#1e3a8a',w:165,h:26},
+    {id:'p2',x:cx+430,y:400,text:'Nidation+Placenta',color:'#bfdbfe',tc:'#1e3a8a',w:150,h:26},
+    {id:'p3',x:cx+430,y:435,text:'Pilule+FIVETE+Hygiène',color:'#047857',tc:'#fff',w:170,h:26},
+  ];
+  const links=[
+    ['root','app'],['root','cyc'],['root','reg'],['root','proc'],
+    ['app','a1'],['app','a2'],['app','a3'],
+    ['cyc','c1'],['cyc','c2'],['cyc','c3'],
+    ['reg','r1'],['reg','r2'],['reg','r3'],
+    ['proc','p1'],['proc','p2'],['proc','p3'],
+  ];
+  ctx.lineWidth=1.5;
+  links.forEach(([a,b])=>{
+    const nA=nodes.find(n=>n.id===a),nB=nodes.find(n=>n.id===b);
+    if(!nA||!nB)return;
+    ctx.beginPath();ctx.strokeStyle='#f9a8d4';
+    ctx.moveTo(nA.x,nA.y);
+    ctx.bezierCurveTo((nA.x+nB.x)/2,nA.y,(nA.x+nB.x)/2,nB.y,nB.x,nB.y);
+    ctx.stroke();
+  });
+  nodes.forEach(n=>{
+    ctx.beginPath();
+    if(ctx.roundRect)ctx.roundRect(n.x-n.w/2,n.y-n.h/2,n.w,n.h,8);
+    else ctx.rect(n.x-n.w/2,n.y-n.h/2,n.w,n.h);
+    ctx.fillStyle=n.color;ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,.2)';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=n.tc;
+    const lines=n.text.split('\n');
+    lines.forEach((line,li)=>{
+      ctx.font=`${n.bold?'bold ':''}12px 'Source Sans 3',sans-serif`;
+      ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(line,n.x,n.y+(li-(lines.length-1)/2)*14);
+    });
+  });
+}
+</script>
+</body>
+</html>
