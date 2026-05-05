@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 4 — Fiche 2 : Muscle · Pression Artérielle · Hygiène SN | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;--navy3:#263d56;
+  --rose:#be185d;--rose-lt:#fdf2f8;--rose-md:#db2777;--rose-dk:#9d174d;
+  --red:#dc2626;--red-lt:#fef2f2;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --green:#059669;--green-lt:#ecfdf5;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(190,24,93,.08);--shadow-md:0 4px 24px rgba(190,24,93,.13);
+  --radius:10px;--radius-sm:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fdf2f8;color:var(--gray8);font-size:15px;line-height:1.72}
+
+/* HEADER */
+header{background:linear-gradient(135deg,var(--rose-dk) 0%,var(--rose) 55%,var(--rose-md) 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(157,23,77,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(219,39,119,.08)}
+header::after{content:'';position:absolute;left:28%;bottom:-25px;width:130px;height:130px;border-radius:50%;background:rgba(190,24,93,.06)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#fbcfe8}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.7rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#f9a8d4}
+.hdr-sub{opacity:.7;font-size:.95rem;margin-top:3px;color:#fce7f3}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#fce7f3}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(219,39,119,.25);border:1px solid rgba(219,39,119,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#fbcfe8;margin-top:6px;letter-spacing:.5px}
+
+/* PROGRESS */
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#f9a8d4,#f472b6);width:0%;transition:width .4s}
+
+/* TABS */
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 28px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:13px 12px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:6px}
+.tab-btn:hover{color:var(--rose);background:var(--rose-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--rose);border-bottom-color:var(--rose)}
+
+/* PANELS */
+.tab-panel{display:none;padding:28px 36px;max-width:1120px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* TYPOGRAPHY */
+.section-title{font-family:'Crimson Pro',serif;font-size:1.25rem;color:var(--rose-dk);border-left:4px solid var(--rose);padding-left:12px;margin:32px 0 16px;display:flex;align-items:center;gap:10px}
+.sub-title{font-size:.95rem;font-weight:600;color:var(--amber);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.sub-title::before{content:'';display:block;width:20px;height:2.5px;background:var(--amber);border-radius:2px}
+
+/* BOXES */
+.def-box{background:var(--rose-lt);border:1.5px solid #fbcfe8;border-radius:var(--radius);padding:14px 18px;margin:12px 0}
+.def-box .lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--rose-dk);margin-bottom:6px}
+.def-box p{font-size:14.5px}
+.info-box{border-left:4px solid var(--rose);background:var(--rose-lt);border-radius:0 var(--radius) var(--radius) 0;padding:11px 16px;margin:12px 0;font-size:13.5px}
+.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}
+.info-box.green{border-left-color:var(--green);background:var(--green-lt)}
+.info-box.red{border-left-color:var(--red);background:var(--red-lt)}
+.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}
+.info-box strong{color:var(--rose-dk)}
+.info-box.amber strong{color:var(--amber)}
+.info-box.green strong{color:var(--green)}
+.info-box.red strong{color:var(--red)}
+.info-box.purple strong{color:var(--purple)}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:14px 0}
+.card{background:#fff;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);border-top:3px solid var(--rose)}
+.card.amber{border-top-color:var(--amber)}.card.green{border-top-color:var(--green)}
+.card.red{border-top-color:var(--red)}.card.purple{border-top-color:var(--purple)}
+.card.navy{border-top-color:var(--navy)}
+.card h4{font-size:.9rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;color:var(--gray8)}
+.card ul{padding-left:18px;font-size:13.5px;color:var(--gray6)}.card ul li{margin-bottom:5px}
+.card p{font-size:13.5px;color:var(--gray6)}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+thead tr{background:var(--rose-dk);color:#fff}
+th{padding:10px 14px;font-weight:600;text-align:left}
+td{padding:9px 14px;border-bottom:1px solid var(--gray2)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--gray1)}
+
+/* DIAGRAM BOXES */
+.diagram-box{background:#fff;border:2px solid var(--gray2);border-radius:var(--radius);padding:20px;margin:14px 0;box-shadow:var(--shadow)}
+.diagram-box.rose{border-color:#fbcfe8;background:var(--rose-lt)}
+
+/* FLOW */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0}
+.flow-step{background:#fff;border:2px solid var(--rose);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--rose-dk);text-align:center;min-width:90px}
+.flow-step.active-step{background:var(--rose);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:18px;font-weight:700}
+
+/* ACTIVITIES */
+.activity-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:20px 0;overflow:hidden}
+.activity-header{background:linear-gradient(135deg,var(--rose-dk),var(--rose-md));color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.activity-header .act-num{background:rgba(255,255,255,.15);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.activity-header h3{font-size:1rem;font-weight:600}
+.activity-body{padding:20px}
+.fill-text{font-size:14.5px;line-height:2.2;color:var(--gray8)}
+.blank-select{display:inline-block;margin:0 4px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--rose);border-radius:6px;padding:3px 8px;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--rose-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:var(--green-lt);border-style:solid;color:var(--green)}
+.blank-select select.wrong{border-color:var(--red);background:var(--red-lt);border-style:solid;color:var(--red)}
+.check-btn{margin-top:14px;background:var(--rose);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--rose-dk)}
+.score-badge{display:inline-block;margin-left:12px;background:var(--gray2);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}
+.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:8px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--rose);color:var(--rose)}
+
+/* QCM */
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:16px 0;overflow:hidden;border-left:4px solid var(--rose)}
+.qcm-item.correct-item{border-left-color:var(--green)}
+.qcm-item.wrong-item{border-left-color:var(--red)}
+.qcm-q{padding:14px 18px 10px;font-weight:600;font-size:14.5px;color:var(--gray8)}
+.qcm-q .qnum{color:var(--rose);margin-right:6px}
+.qcm-options{padding:0 18px 14px}
+.qcm-opt{display:flex;align-items:flex-start;gap:10px;padding:7px 10px;border-radius:6px;margin:4px 0;cursor:pointer;transition:background .15s;font-size:14px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--rose);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:#fffbeb;color:var(--amber)}
+.qcm-feedback{margin:10px 18px 16px;padding:12px 16px;border-radius:8px;font-size:13.5px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.submit-qcm{background:var(--rose-dk);color:#fff;border:none;border-radius:8px;padding:10px 26px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;margin-right:10px}
+.submit-qcm:hover{background:var(--rose)}
+.qcm-global-score{background:var(--rose-dk);color:#fff;border-radius:10px;padding:18px 24px;margin:20px 0;display:none;text-align:center}
+.qcm-global-score.show{display:block}
+.score-big{font-size:2.5rem;font-weight:700;color:#f9a8d4}
+.score-msg{font-size:14px;color:#fce7f3;margin-top:4px}
+.reset-qcm{background:transparent;color:#f9a8d4;border:1px solid rgba(249,168,212,.4);border-radius:8px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;margin-top:12px;transition:all .2s}
+.reset-qcm:hover{border-color:#f9a8d4}
+
+/* IMAGE PLACEHOLDERS */
+.img-placeholder{border:2.5px dashed var(--rose-md);border-radius:var(--radius);background:var(--rose-lt);padding:18px;margin:14px 0;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;position:relative}
+.img-placeholder:hover{border-color:var(--rose-dk);background:#fce7f3}
+.img-placeholder .ph-icon{font-size:2rem;opacity:.5}
+.img-placeholder .ph-label{font-size:12px;font-weight:700;color:var(--rose-dk);text-transform:uppercase;letter-spacing:1px}
+.img-placeholder .ph-sub{font-size:12px;color:var(--gray6);text-align:center}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:6px;right:8px;background:var(--red);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:13px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.img-row.triple{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:640px){.img-row{grid-template-columns:1fr}.img-row.triple{grid-template-columns:1fr}}
+
+/* BILAN */
+.bilan-block{background:var(--rose-dk);color:#fce7f3;border-radius:12px;padding:20px 24px;margin:14px 0}
+.bilan-block h4{color:#f9a8d4;font-family:'Crimson Pro',serif;font-size:1.1rem;margin-bottom:12px}
+.bilan-block ul{padding-left:20px}
+.bilan-block ul li{margin-bottom:7px;font-size:13.5px;color:#fce7f3}
+.bilan-block ul li strong{color:#fbcfe8}
+
+/* MOBILE */
+@media(max-width:640px){
+  header{padding:18px 18px 16px;flex-direction:column;gap:10px;align-items:flex-start}
+  .tab-panel{padding:18px 16px}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 4 — <span>Fiche 2</span></div>
+    <div class="hdr-sub">Muscle squelettique · Pression artérielle · Hygiène du SN</div>
+    <div class="hdr-pill">Chapitres 3 · 4 · 5</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Neurophysiologie</strong>
+    pp. 208 – 263<br/>
+    8 activités · 8 onglets<br/>
+    15 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('muscle',this)">💪 Ch.3 — Muscle</button>
+  <button class="tab-btn" onclick="showTab('contraction',this)">⚡ Contraction</button>
+  <button class="tab-btn" onclick="showTab('pression',this)">🫀 Ch.4 — Pression</button>
+  <button class="tab-btn" onclick="showTab('hygiene',this)">🧠 Ch.5 — Hygiène</button>
+  <button class="tab-btn" onclick="showTab('activites',this)">📝 Activités</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN</button>
+  <button class="tab-btn" onclick="showTab('qcm',this)">✅ QCM CAPES</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Pourquoi cette fiche ?</div>
+  <p style="font-size:15px;color:var(--gray6);margin-bottom:18px">Cette fiche couvre les <strong>3 derniers chapitres</strong> du Thème 4 — Neurophysiologie : le fonctionnement du muscle squelettique (effecteur moteur), la régulation de la pression artérielle (intégration neuro-hormonale) et l'hygiène du système nerveux (stress, drogues, prévention).</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>💪 Ch.3 — Muscle squelettique</h4>
+      <ul><li>Structure (fibre, myofibrille, sarcomère)</li><li>Transmission neuromusculaire (plaque motrice, acétylcholine)</li><li>Mécanisme de la contraction (ATP, Ca²⁺, glissement)</li><li>Régénération de l'ATP (phosphocréatine, respiration, fermentation)</li></ul>
+    </div>
+    <div class="card amber">
+      <h4>🫀 Ch.4 — Pression artérielle</h4>
+      <ul><li>Paramètres (débit cardiaque, vasomotricité, volémie)</li><li>Régulation nerveuse (barorécepteurs, réflexes)</li><li>Régulation hormonale (adrénaline, rénine-angiotensine, ADH)</li><li>Maladies cardiovasculaires et prévention</li></ul>
+    </div>
+    <div class="card purple">
+      <h4>🧠 Ch.5 — Hygiène du SN</h4>
+      <ul><li>Stress (phases, mécanismes neuro-hormonaux)</li><li>Drogues (classification, mode d'action — cocaïne/dopamine)</li><li>Toxicomanie (tolérance, dépendance)</li><li>Prévention et règles d'hygiène</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CH.3 MUSCLE ==================== -->
+<div class="tab-panel" id="tab-muscle">
+  <div class="section-title">I. Structure du muscle squelettique</div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 1 — Schéma du muscle</div><div class="ph-sub">Coupe transversale et longitudinale (p.210)</div><img class="ph-img" src="images/T4Ch3_Doc01_schema_muscle.PNG" alt="Doc 1" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 2 — Fibres musculaires MO</div><div class="ph-sub">Observation microscopique x312 (p.210)</div><img class="ph-img" src="images/T4Ch3_Doc02_fibres_musculaires_MO.PNG" alt="Doc 2" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 3 — Structure fibre musculaire</div><div class="ph-sub">Sarcolemme, noyaux, myofibrilles (p.210)</div><img class="ph-img" src="images/T4Ch3_Doc03_structure_fibre_musculaire.PNG" alt="Doc 3" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 4 — Ultrastructure myofibrille</div><div class="ph-sub">Sarcomère, bandes A/I, strie Z (p.211)</div><img class="ph-img" src="images/T4Ch3_Doc04_ultrastructure_myofibrille.PNG" alt="Doc 4" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>🔬 Fibre musculaire</h4>
+      <ul><li>Cellule géante (1-5 cm, Ø 10-100 μm)</li><li>Plusieurs noyaux périphériques</li><li>Sarcolemme (membrane), sarcoplasme (cytoplasme)</li><li>Riche en mitochondries et glycogène</li><li>Contient des <strong>myofibrilles</strong> parallèles</li></ul>
+    </div>
+    <div class="card amber">
+      <h4>🏗️ Myofibrille</h4>
+      <ul><li>Alternance disques clairs (I) / sombres (A)</li><li><strong>Sarcomère</strong> = unité entre 2 stries Z</li><li>Filaments fins d'<strong>actine</strong> (ancrés sur strie Z)</li><li>Filaments épais de <strong>myosine</strong> (zone A)</li><li>Zone H = myosine seule au centre</li></ul>
+    </div>
+    <div class="card green">
+      <h4>🔗 Jonction neuromusculaire</h4>
+      <ul><li><strong>Unité motrice</strong> = 1 motoneurone + fibres innervées</li><li>Plaque motrice : terminaison axonale + fente + membrane musculaire plissée</li><li><strong>Acétylcholine</strong> = unique neurotransmetteur</li></ul>
+    </div>
+  </div>
+
+  <div class="section-title">II. Transmission neuromusculaire</div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 5 — Unité motrice</div><div class="ph-sub">Ramification fibre motrice (p.211)</div><img class="ph-img" src="images/T4Ch3_Doc05_ramification_fibre_motrice.PNG" alt="Doc 5" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 6 — Ultrastructure plaque motrice</div><div class="ph-sub">ME : vésicules, appareil sous-neural (p.211)</div><img class="ph-img" src="images/T4Ch3_Doc06_ultrastructure_plaque_motrice.PNG" alt="Doc 6" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="flow" style="flex-direction:column;align-items:flex-start;gap:8px">
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">① PA dans terminaison axonale</div><span style="color:var(--gray6);font-size:13px">→ Ouverture canaux Ca²⁺ voltage-dépendants</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">② Exocytose vésicules d'ACh</div><span style="color:var(--gray6);font-size:13px">→ Libération acétylcholine dans fente</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">③ Fixation ACh sur récepteurs</div><span style="color:var(--gray6);font-size:13px">→ Ouverture canaux Na⁺ chimiodépendants</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">④ Potentiel de plaque motrice</div><span style="color:var(--gray6);font-size:13px">→ Dépolarisation membrane musculaire</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">⑤ PA musculaire → contraction</div><span style="color:var(--gray6);font-size:13px">Propagation le long du sarcolemme</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step" style="min-width:200px;border-color:var(--red);color:var(--red)">⑥ Acétylcholinestérase dégrade ACh</div><span style="color:var(--gray6);font-size:13px">→ Arrêt de la transmission</span></div>
+  </div>
+
+  <div class="info-box amber">
+    <strong>PPM vs PPSE :</strong> Le potentiel de plaque motrice est TOUJOURS supra-liminaire → chaque PPM déclenche un PA musculaire. Contrairement aux PPSE qui peuvent nécessiter une sommation.
+  </div>
+</div>
+
+<!-- ==================== CONTRACTION ==================== -->
+<div class="tab-panel" id="tab-contraction">
+  <div class="section-title">I. La secousse musculaire isolée</div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Myogramme secousse isolée</div><div class="ph-sub">Phases L, C, R (p.214)</div><img class="ph-img" src="images/T4Ch3_Doc10_myogramme_secousse_isolee.PNG" alt="Doc 10" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — Enregistrement simultané PAm + myogramme</div><div class="ph-sub">PAm précède contraction (p.214)</div><img class="ph-img" src="images/T4Ch3_Doc11_enregistrement_simultane_PAm_myogramme.PNG" alt="Doc 11" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card"><h4>📈 Secousse isolée (0,1 s)</h4><ul><li><strong>Phase L</strong> (latence) : entre stimulation et début contraction</li><li><strong>Phase C</strong> (contraction) : raccourcissement</li><li><strong>Phase R</strong> (relâchement) : retour longueur initiale</li><li>Le PAm se situe dans la <strong>phase de latence</strong></li></ul></div>
+    <div class="card amber"><h4>🔥 Chaleur</h4><ul><li><strong>Chaleur initiale</strong> : pendant la secousse</li><li><strong>Chaleur retardée</strong> : après la secousse (plusieurs minutes)</li><li>Provient de l'hydrolyse de l'ATP et des réactions de régénération</li></ul></div>
+  </div>
+
+  <div class="section-title">II. Mécanisme moléculaire de la contraction</div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 14 — Nécessité ATP et Ca²⁺</div><div class="ph-sub">Myofibrilles isolées (p.215)</div><img class="ph-img" src="images/T4Ch3_Doc14_necessite_ATP_Ca_contraction.PNG" alt="Doc 14" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Énergie thermique</div><div class="ph-sub">Aiguilles thermoélectriques (p.214)</div><img class="ph-img" src="images/T4Ch3_Doc12_enregistrement_energie_thermique.PNG" alt="Doc 12" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="flow" style="flex-direction:column;align-items:flex-start;gap:8px;margin:16px 0">
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">① PA musculaire → tubules T</div><span style="color:var(--gray6);font-size:13px">Dépolarisation atteint réticulum</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">② Libération Ca²⁺ du réticulum</div><span style="color:var(--gray6);font-size:13px">Diffusion dans sarcoplasme</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">③ Fixation Ca²⁺ sur troponine</div><span style="color:var(--gray6);font-size:13px">→ Déplacement tropomyosine → sites actine libres</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">④ Attachement têtes myosine-actine</div><span style="color:var(--gray6);font-size:13px">→ Hydrolyse ATP → pivotement têtes</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">⑤ Glissement filaments + raccourcissement</div><span style="color:var(--gray6);font-size:13px">Sarcomère se raccourcit</span></div>
+    <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step" style="min-width:200px;border-color:var(--green);color:var(--green)">⑥ Recapture active Ca²⁺ → relâchement</div><span style="color:var(--gray6);font-size:13px">Consomme ATP</span></div>
+  </div>
+
+  <div class="section-title">III. Régénération de l'ATP</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 15 — Expériences muscles de grenouille</div><div class="ph-sub">Régénération ATP (p.217)</div><img class="ph-img" src="images/T4Ch3_Doc15_experiences_muscles_grenouille.PNG" alt="Doc 15" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Voie</th><th>Réaction</th><th>Délai</th><th>Rendement</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Phosphocréatine</strong></td><td>ADP + PCr → ATP + Cr</td><td>Immédiat (&lt;30 s)</td><td>1 ATP/PCr</td></tr>
+        <tr><td><strong>Glycolyse + Respiration</strong></td><td>Glucose + 6O₂ → 6CO₂ + 6H₂O</td><td>Lent (minutes)</td><td>36 ATP/glucose</td></tr>
+        <tr><td><strong>Fermentation lactique</strong></td><td>Glucose → 2 acide lactique</td><td>Rapide (anaérobie)</td><td>2 ATP/glucose</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box green">
+    <strong>Rôle ATP :</strong> L'ATP est utilisé pour : ① le pivotement des têtes de myosine (contraction), ② la recapture du Ca²⁺ dans le réticulum (relâchement), ③ le fonctionnement de la pompe Na⁺/K⁺ (maintien du PR). Le muscle ne contient que très peu d'ATP → régénération permanente indispensable.
+  </div>
+</div>
+
+<!-- ==================== CH.4 PRESSION ==================== -->
+<div class="tab-panel" id="tab-pression">
+  <div class="section-title">I. Paramètres de la pression artérielle</div>
+
+  <div class="def-box">
+    <div class="lbl">Définition</div>
+    <p>La <strong>pression artérielle</strong> est la pression exercée par le sang sur la paroi des artères. Elle oscille entre une valeur maximale (<strong>systolique</strong> ≈ 12-13 cm Hg) et une valeur minimale (<strong>diastolique</strong> ≈ 8 cm Hg).</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card"><h4>❤️ Pompe cardiaque</h4><p>↑ fréquence cardiaque = ↑ PA<br/>↓ fréquence = ↓ PA</p></div>
+    <div class="card amber"><h4>🩸 Vasomotricité</h4><p>↑ calibre vaisseaux (vasodilatation) = ↓ PA<br/>↓ calibre (vasoconstriction) = ↑ PA</p></div>
+    <div class="card green"><h4>💧 Volémie</h4><p>↑ volume sanguin = ↑ PA<br/>↓ volume (hémorragie) = ↓ PA</p></div>
+  </div>
+
+  <div class="section-title">II. Innervation cardio-vasculaire</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 1 — Innervation du cœur et des vaisseaux</div><div class="ph-sub">Schéma parasympathique + orthosympathique (p.232)</div><img class="ph-img" src="images/T4Ch4_Doc01_innervation_coeur_vaisseaux.PNG" alt="Doc 1" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Système</th><th>Nerf</th><th>Neurotransmetteur</th><th>Effet cardiaque</th><th>Effet vasculaire</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="color:var(--green)">Parasympathique</strong></td><td>Nerf X (pneumogastrique)</td><td>Acétylcholine</td><td>↓ rythme (cardiomodérateur)</td><td>—</td></tr>
+        <tr><td><strong style="color:var(--red)">Orthosympathique</strong></td><td>Nerfs sympathiques</td><td>Noradrénaline</td><td>↑ rythme (cardioaccélérateur)</td><td>Vasoconstriction</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">III. Régulation nerveuse — Les réflexes correcteurs</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 2 — Expériences sinus carotidien</div><div class="ph-sub">Hypertension localisée (p.232)</div><img class="ph-img" src="images/T4Ch4_Doc02_experiences_sinus_carotidien.PNG" alt="Doc 2" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 3 — Expériences section nerfs</div><div class="ph-sub">Nerfs de Cyon et Héring (p.233)</div><img class="ph-img" src="images/T4Ch4_Doc03_experiences_section_nerfs.PNG" alt="Doc 3" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card"><h4>📍 Barorécepteurs</h4><ul><li><strong>Sinus carotidien</strong> (nerf de Héring)</li><li><strong>Crosse aortique</strong> (nerf de Cyon)</li><li>Sensibles à l'étirement → codent PA en fréquence</li><li>↑ PA = ↑ fréquence PA afférents</li></ul></div>
+    <div class="card amber"><h4>🧠 Centres bulbaires</h4><ul><li><strong>Centre cardiomodérateur</strong> (noyau du X)</li><li><strong>Centre vasomoteur</strong> (orthosympathique)</li><li>Intègrent les messages des barorécepteurs</li></ul></div>
+    <div class="card red"><h4>⚡ Réflexe hypertension</h4><ul><li>↑PA → ↑barorécepteurs → ↑X → ↓rythme cardiaque</li><li>+ inhibition centre vasomoteur → vasodilatation</li><li>→ ↓PA (rétrocontrôle négatif)</li></ul></div>
+    <div class="card green"><h4>⚡ Réflexe hypotension</h4><ul><li>↓PA → ↓barorécepteurs → levée inhibition</li><li>→ ↑orthosympathique → ↑rythme + vasoconstriction</li><li>+ adrénaline (médullosurrénale) → ↑PA</li></ul></div>
+  </div>
+
+  <div class="section-title">IV. Régulation hormonale et schéma de synthèse</div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 5 — Schéma régulation PA</div><div class="ph-sub">Voies nerveuses + hormonales (p.240)</div><img class="ph-img" src="images/T4Ch4_Doc05_schema_regulation_PA.PNG" alt="Doc 5" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 6 — Synthèse régulation neuro-hormonale</div><div class="ph-sub">Intégration des mécanismes (p.243)</div><img class="ph-img" src="images/T4Ch4_Doc06_synthese_regulation.PNG" alt="Doc 6" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Hormone</th><th>Origine</th><th>Action</th><th>Délai</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Adrénaline</strong></td><td>Médullosurrénale</td><td>↑rythme cardiaque, vasoconstriction → ↑PA</td><td>Court terme</td></tr>
+        <tr><td><strong>Angiotensine</strong></td><td>Foie (angiotensinogène) + rein (rénine)</td><td>Vasoconstriction + ↑aldostérone</td><td>Moyen terme</td></tr>
+        <tr><td><strong>Aldostérone</strong></td><td>Corticosurrénale</td><td>Réabsorption Na⁺ → ↑volémie → ↑PA</td><td>Long terme</td></tr>
+        <tr><td><strong>ADH</strong></td><td>Posthypophyse</td><td>Réabsorption H₂O → ↑volémie → ↑PA</td><td>Long terme</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">V. Maladies cardiovasculaires et prévention</div>
+  <div class="card-grid">
+    <div class="card red"><h4>⚠️ Pathologies</h4><ul><li><strong>Athérosclérose</strong> : plaques d'athérome dans artères</li><li><strong>Angine de poitrine</strong> : rétrécissement coronaires</li><li><strong>Infarctus du myocarde</strong> : occlusion coronaire aiguë</li><li><strong>AVC</strong> : hémorragie cérébrale par hypertension</li></ul></div>
+    <div class="card green"><h4>🛡️ Prévention</h4><ul><li>Alimentation équilibrée (huile d'olive, légumes)</li><li>Activité physique régulière</li><li>Arrêt du tabac</li><li>Gestion du stress</li><li>Contrôle régulier de la PA</li></ul></div>
+  </div>
+
+  <div class="info-box amber">
+    <strong>Expérience de Lœwi (1921) :</strong> Deux cœurs de grenouille perfusés en cascade. Stimulation du nerf vago-sympathique du cœur A → ralentissement de A puis de B. Preuve que la transmission est <strong>chimique</strong> (acétylcholine libérée dans le liquide de perfusion).
+  </div>
+</div>
+
+<!-- ==================== CH.5 HYGIÈNE ==================== -->
+<div class="tab-panel" id="tab-hygiene">
+  <div class="section-title">I. Le stress</div>
+
+  <div class="def-box">
+    <div class="lbl">Définition</div>
+    <p>Le <strong>stress</strong> est une réaction de défense de l'organisme face à des agressions physiques ou psychologiques qui tendent à rompre son <strong>homéostasie</strong>.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Phase</th><th>Durée</th><th>Hormones</th><th>Effets</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Alarme</strong></td><td>Très brève</td><td>Noradrénaline, Adrénaline</td><td>↑rythme cardiaque, ↑PA, ↑glycémie, horripilation</td></tr>
+        <tr><td><strong>Résistance/Adaptation</strong></td><td>Quelques heures</td><td>Cortisol, Thyroxine</td><td>Néoglucogenèse, glycogénogenèse, ↑métabolisme énergétique</td></tr>
+        <tr><td><strong>Épuisement</strong></td><td>Variable</td><td>Épuisement hormonal</td><td>Maladies psychosomatiques, dépression immunitaire</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 4 — Mécanismes physiologiques du stress</div><div class="ph-sub">Schéma neuro-hormonal (p.260)</div><img class="ph-img" src="images/T4Ch5_Doc04_mecanismes_stress.PNG" alt="Doc 4" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+
+  <div class="flow" style="justify-content:center;flex-wrap:wrap;margin:16px 0">
+    <div class="flow-step active-step">Stimuli stressants</div><div class="flow-arrow">→</div>
+    <div class="flow-step">Cortex<br/>+ Système limbique</div><div class="flow-arrow">→</div>
+    <div class="flow-step">Hypothalamus</div><div class="flow-arrow">→</div>
+    <div class="flow-step">Hypophyse<br/>(ACTH)</div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">Surrénales<br/>(Cortisol + Adrénaline)</div>
+  </div>
+
+  <div class="section-title">II. Les drogues et leurs effets</div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 1 — Classification des drogues</div><div class="ph-sub">Tableau : origine et effets (p.256)</div><img class="ph-img" src="images/T4Ch5_Doc01_classification_drogues.PNG" alt="Doc 1" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+
+  <div class="card-grid">
+    <div class="card red"><h4>💊 Types de drogues</h4><ul><li><strong>Stupéfiants</strong> : opium, morphine, héroïne</li><li><strong>Excitants</strong> : cocaïne, amphétamines</li><li><strong>Hallucinogènes</strong> : cannabis, LSD</li><li><strong>Sédatifs</strong> : barbituriques, alcool</li></ul></div>
+    <div class="card amber"><h4>⚠️ Toxicomanie</h4><ul><li><strong>Tolérance</strong> : besoin d'augmenter les doses</li><li><strong>Dépendance physique</strong> : syndrome de manque</li><li><strong>Dépendance psychique</strong> : besoin irrésistible</li><li>Risque d'<strong>overdose</strong></li></ul></div>
+  </div>
+
+  <div class="section-title">III. Mode d'action des drogues — Exemple de la cocaïne</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 2 — Action de la cocaïne sur la synapse</div><div class="ph-sub">Blocage recapture dopamine (p.257)</div><img class="ph-img" src="images/T4Ch5_Doc02_action_cocaine_synapse.PNG" alt="Doc 2" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 3 — Système limbique</div><div class="ph-sub">Centres des émotions et du plaisir (p.257)</div><img class="ph-img" src="images/T4Ch5_Doc03_systeme_limbique.PNG" alt="Doc 3" onerror="this.parentElement.classList.remove('has-img');this.style.display='none'"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="diagram-box rose">
+    <p style="text-align:center;font-weight:700;color:var(--rose-dk);margin-bottom:14px">Mode d'action de la cocaïne sur une synapse dopaminergique</p>
+    <div class="flow" style="flex-direction:column;align-items:flex-start;gap:8px">
+      <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:180px">① Libération dopamine</div><span style="color:var(--gray6);font-size:13px">dans la fente synaptique</span></div>
+      <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:180px">② Fixation sur récepteurs</div><span style="color:var(--gray6);font-size:13px">→ sensation de plaisir</span></div>
+      <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="flow-step" style="min-width:180px;border-color:var(--red);color:var(--red)">③ Normalement : recapture dopamine</div><span style="color:var(--gray6);font-size:13px">par transporteurs spécifiques</span></div>
+      <div style="padding-left:30px;color:var(--gray3);font-size:20px">↓</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:180px;background:var(--red);color:#fff">④ Cocaïne bloque les transporteurs</div><span style="color:var(--gray6);font-size:13px">→ dopamine s'accumule → plaisir prolongé</span></div>
+    </div>
+  </div>
+
+  <div class="section-title">IV. Prévention et hygiène</div>
+  <div class="card-grid">
+    <div class="card green"><h4>🛡️ Prévention toxicomanie</h4><ul><li>Éducation à la santé dès le jeune âge</li><li>Développer des attitudes responsables</li><li>Informer sur les dangers réels des drogues</li><li>Répression du trafic</li></ul></div>
+    <div class="card"><h4>🧘 Hygiène du SN</h4><ul><li>Pratiquer du sport régulièrement</li><li>Dormir suffisamment (≈8h/jour)</li><li>Alimentation saine et variée</li><li>Éviter tabac, alcool, drogues</li><li>Gérer son stress (loisirs, relaxation)</li></ul></div>
+  </div>
+</div>
+
+<!-- ==================== ACTIVITÉS ==================== -->
+<div class="tab-panel" id="tab-activites">
+  <div class="section-title">📝 Textes à trous — Activités des chapitres</div>
+  <p style="color:var(--gray6);font-size:14px;margin-bottom:20px">Complète chaque texte en choisissant les bons termes.</p>
+
+  <!-- ACTIVITE 1 : Muscle -->
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">1</div><div><h3>Structure du muscle squelettique</h3><div style="font-size:12px;opacity:.75">Ch.3 — Activité 1</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill1">
+        Le muscle squelettique est formé d'un ventre rouge et de <span class="blank-select"><select id="s1_1"><option value="">—</option><option value="tendons">tendons</option><option value="os">os</option></select></span> blancs. Chaque fibre musculaire est une cellule géante contenant plusieurs <span class="blank-select"><select id="s1_2"><option value="">—</option><option value="noyaux">noyaux</option><option value="mitochondries">mitochondries</option></select></span> disposés en périphérie. Le cytoplasme (sarcoplasme) contient de nombreuses <span class="blank-select"><select id="s1_3"><option value="">—</option><option value="myofibrilles">myofibrilles</option><option value="hématies">hématies</option></select></span> parallèles. Chaque myofibrille présente une alternance de disques <span class="blank-select"><select id="s1_4"><option value="">—</option><option value="clairs (I) et sombres (A)">clairs (I) et sombres (A)</option><option value="rouges et bleus">rouges et bleus</option></select></span>. L'unité fonctionnelle est le <span class="blank-select"><select id="s1_5"><option value="">—</option><option value="sarcomère">sarcomère</option><option value="sarcolemme">sarcolemme</option></select></span> délimité par deux stries <span class="blank-select"><select id="s1_6"><option value="">—</option><option value="Z">Z</option><option value="H">H</option></select></span>. Il est constitué de filaments fins d'<span class="blank-select"><select id="s1_7"><option value="">—</option><option value="actine">actine</option><option value="myosine">myosine</option></select></span> et de filaments épais de <span class="blank-select"><select id="s1_8"><option value="">—</option><option value="myosine">myosine</option><option value="actine">actine</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill(1,['tendons','noyaux','myofibrilles','clairs (I) et sombres (A)','sarcomère','Z','actine','myosine'])">Vérifier</button>
+        <span id="score1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill(1,8)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITE 2 : Contraction -->
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">2</div><div><h3>Mécanisme de la contraction musculaire</h3><div style="font-size:12px;opacity:.75">Ch.3 — Activité 4</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill2">
+        Le PA musculaire se propage le long du sarcolemme et pénètre via les tubules <span class="blank-select"><select id="s2_1"><option value="">—</option><option value="transverses">transverses</option><option value="longitudinaux">longitudinaux</option></select></span> jusqu'au réticulum endoplasmique. Celui-ci libère alors des ions <span class="blank-select"><select id="s2_2"><option value="">—</option><option value="Ca²⁺">Ca²⁺</option><option value="Na⁺">Na⁺</option></select></span> dans le sarcoplasme. Ces ions se fixent sur la <span class="blank-select"><select id="s2_3"><option value="">—</option><option value="troponine">troponine</option><option value="myosine">myosine</option></select></span>, ce qui déplace la tropomyosine et démasque les sites d'attachement sur l'<span class="blank-select"><select id="s2_4"><option value="">—</option><option value="actine">actine</option><option value="myosine">myosine</option></select></span>. Les têtes de myosine s'y fixent et hydrolysent l'<span class="blank-select"><select id="s2_5"><option value="">—</option><option value="ATP">ATP</option><option value="ADP">ADP</option></select></span>, libérant de l'énergie. Cette énergie provoque le <span class="blank-select"><select id="s2_6"><option value="">—</option><option value="pivotement">pivotement</option><option value="raccourcissement">raccourcissement</option></select></span> des têtes de myosine, ce qui entraîne le <span class="blank-select"><select id="s2_7"><option value="">—</option><option value="glissement">glissement</option><option value="gonflement">gonflement</option></select></span> des filaments d'actine entre les filaments de myosine. Le sarcomère se <span class="blank-select"><select id="s2_8"><option value="">—</option><option value="raccourcit">raccourcit</option><option value="allonge">allonge</option></select></span>. La recapture active du Ca²⁺ par le réticulum permet le <span class="blank-select"><select id="s2_9"><option value="">—</option><option value="relâchement">relâchement</option><option value="raccourcissement">raccourcissement</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill(2,['transverses','Ca²⁺','troponine','actine','ATP','pivotement','glissement','raccourcit','relâchement'])">Vérifier</button>
+        <span id="score2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill(2,9)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITE 3 : Pression artérielle -->
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">3</div><div><h3>Régulation de la pression artérielle</h3><div style="font-size:12px;opacity:.75">Ch.4 — Activités 3 &amp; 4</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill3">
+        La PA est détectée par des <span class="blank-select"><select id="s3_1"><option value="">—</option><option value="barorécepteurs">barorécepteurs</option><option value="chémorécepteurs">chémorécepteurs</option></select></span> situés dans le sinus carotidien et la crosse aortique. Les messages sont transmis par les nerfs de <span class="blank-select"><select id="s3_2"><option value="">—</option><option value="Héring et Cyon">Héring et Cyon</option><option value="X et Y">X et Y</option></select></span> vers le bulbe rachidien. En cas d'<span class="blank-select"><select id="s3_3"><option value="">—</option><option value="hypertension">hypertension</option><option value="hypotension">hypotension</option></select></span>, le centre cardiomodérateur est activé → ralentissement cardiaque via le nerf <span class="blank-select"><select id="s3_4"><option value="">—</option><option value="X (pneumogastrique)">X (pneumogastrique)</option><option value="splanchnique">splanchnique</option></select></span> + inhibition du centre vasomoteur → <span class="blank-select"><select id="s3_5"><option value="">—</option><option value="vasodilatation">vasodilatation</option><option value="vasoconstriction">vasoconstriction</option></select></span>. En cas d'<span class="blank-select"><select id="s3_6"><option value="">—</option><option value="hypotension">hypotension</option><option value="hypertension">hypertension</option></select></span>, l'orthosympathique est activé → ↑rythme cardiaque + vasoconstriction + sécrétion d'<span class="blank-select"><select id="s3_7"><option value="">—</option><option value="adrénaline">adrénaline</option><option value="insuline">insuline</option></select></span> par la médullosurrénale. Le système <span class="blank-select"><select id="s3_8"><option value="">—</option><option value="rénine-angiotensine-aldostérone">rénine-angiotensine-aldostérone</option><option value="insuline-glucagon">insuline-glucagon</option></select></span> assure une régulation à long terme.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill(3,['barorécepteurs','Héring et Cyon','hypertension','X (pneumogastrique)','vasodilatation','hypotension','adrénaline','rénine-angiotensine-aldostérone'])">Vérifier</button>
+        <span id="score3" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill(3,8)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITE 4 : Stress -->
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">4</div><div><h3>Le stress et les drogues</h3><div style="font-size:12px;opacity:.75">Ch.5 — Activités 1 à 4</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill4">
+        Le stress se déroule en 3 phases : alarme, <span class="blank-select"><select id="s4_1"><option value="">—</option><option value="résistance">résistance</option><option value="rémission">rémission</option></select></span> et épuisement. La phase d'alarme mobilise le système <span class="blank-select"><select id="s4_2"><option value="">—</option><option value="orthosympathique">orthosympathique</option><option value="parasympathique">parasympathique</option></select></span> (noradrénaline + adrénaline). La phase de résistance fait intervenir le <span class="blank-select"><select id="s4_3"><option value="">—</option><option value="cortisol">cortisol</option><option value="glucagon">glucagon</option></select></span> sécrété par la corticosurrénale. La cocaïne agit en bloquant la <span class="blank-select"><select id="s4_4"><option value="">—</option><option value="recapture de la dopamine">recapture de la dopamine</option><option value="libération de dopamine">libération de dopamine</option></select></span>, ce qui prolonge la sensation de <span class="blank-select"><select id="s4_5"><option value="">—</option><option value="plaisir">plaisir</option><option value="douleur">douleur</option></select></span>. La consommation répétée de drogues conduit à la <span class="blank-select"><select id="s4_6"><option value="">—</option><option value="toxicomanie">toxicomanie</option><option value="guérison">guérison</option></select></span> caractérisée par la tolérance et la <span class="blank-select"><select id="s4_7"><option value="">—</option><option value="dépendance">dépendance</option><option value="liberté">liberté</option></select></span>. L'hygiène du SN repose sur le sport, le sommeil, une alimentation saine et l'éviction des <span class="blank-select"><select id="s4_8"><option value="">—</option><option value="drogues">drogues</option><option value="vitamines">vitamines</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill(4,['résistance','orthosympathique','cortisol','recapture de la dopamine','plaisir','toxicomanie','dépendance','drogues'])">Vérifier</button>
+        <span id="score4" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill(4,8)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BILAN ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèses du manuel</div>
+  <p style="color:var(--gray6);font-size:14px;margin-bottom:20px">Textes de synthèse à compléter pour les 3 chapitres.</p>
+
+  <div class="bilan-block">
+    <h4>💪 Ch.3 — Contraction musculaire (pp.218-222)</h4>
+    <ul>
+      <li>Le <strong>sarcomère</strong> est l'unité fonctionnelle — constitué de filaments d'<strong>actine</strong> (fins) et de <strong>myosine</strong> (épais)</li>
+      <li>Le PA musculaire libère le <strong>Ca²⁺</strong> du réticulum → fixation sur troponine → démasquage sites actine</li>
+      <li>L'<strong>hydrolyse de l'ATP</strong> par la myosine fournit l'énergie du <strong>pivotement</strong> des têtes → glissement → raccourcissement</li>
+      <li>Régénération ATP : <strong>phosphocréatine</strong> (rapide) → glycolyse → respiration cellulaire (lente, 36 ATP)</li>
+      <li>En anaérobiose : <strong>fermentation lactique</strong> (2 ATP, acide lactique)</li>
+    </ul>
+  </div>
+
+  <div class="bilan-block" style="background:var(--amber);color:#78350f">
+    <h4 style="color:#92400e">🫀 Ch.4 — Pression artérielle (pp.239-242)</h4>
+    <ul>
+      <li>PA dépend : débit cardiaque, <strong>vasomotricité</strong> (calibre vaisseaux), <strong>volémie</strong> (volume sanguin)</li>
+      <li><strong>Barorécepteurs</strong> (sinus carotidien, crosse aortique) → nerfs Héring/Cyon → centres bulbaires</li>
+      <li>Hypertension → activation <strong>parasympathique</strong> (X) → ↓rythme + vasodilatation → ↓PA</li>
+      <li>Hypotension → activation <strong>orthosympathique</strong> → ↑rythme + vasoconstriction + <strong>adrénaline</strong> → ↑PA</li>
+      <li>Régulation hormonale : <strong>rénine-angiotensine-aldostérone</strong> (long terme), <strong>ADH</strong> (rétention eau)</li>
+    </ul>
+  </div>
+
+  <div class="bilan-block" style="background:var(--purple);color:#ede9fe">
+    <h4 style="color:#c4b5fd">🧠 Ch.5 — Hygiène du SN (pp.259-262)</h4>
+    <ul>
+      <li><strong>Stress</strong> = réaction de défense en 3 phases : alarme (orthosympathique, adrénaline) → résistance (<strong>cortisol</strong>) → épuisement</li>
+      <li><strong>Drogues</strong> = substances modifiant le fonctionnement cérébral → sensation de plaisir éphémère</li>
+      <li><strong>Toxicomanie</strong> = <strong>tolérance</strong> (↑doses) + <strong>dépendance</strong> physique et psychique</li>
+      <li><strong>Cocaïne</strong> : bloque la recapture de la <strong>dopamine</strong> → accumulation dans fente synaptique → plaisir prolongé</li>
+      <li>Prévention : éducation, sport, sommeil, alimentation saine, éviter tabac/alcool/drogues</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== QCM CAPES ==================== -->
+<div class="tab-panel" id="tab-qcm">
+  <div class="section-title">✅ 15 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13.5px;margin-bottom:6px">Chaque question peut avoir <strong>une ou plusieurs réponses correctes</strong>.</p>
+  <div class="info-box amber" style="margin-bottom:24px;font-size:13px">⚠️ Une question n'est totalement juste que si vous cochez <strong>toutes</strong> les bonnes réponses et <strong>aucune</strong> mauvaise.</div>
+
+  <div id="qcm-container">
+    <!-- Q1 à Q15 générées comme dans la fiche 1, adaptées aux Ch.3-4-5 -->
+    <div class="qcm-item" id="qi1"><div class="qcm-q"><span class="qnum">Q1.</span>La fibre musculaire striée :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="1" data-v="a"/> a. possède plusieurs noyaux</label><label class="qcm-opt"><input type="checkbox" data-q="1" data-v="b"/> b. contient de l'hémoglobine</label><label class="qcm-opt"><input type="checkbox" data-q="1" data-v="c"/> c. possède des tubules transverses</label><label class="qcm-opt"><input type="checkbox" data-q="1" data-v="d"/> d. est dépourvue de mitochondries</label></div><div class="qcm-feedback" id="fb1"></div></div>
+
+    <div class="qcm-item" id="qi2"><div class="qcm-q"><span class="qnum">Q2.</span>Le raccourcissement du sarcomère résulte :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="2" data-v="a"/> a. du raccourcissement des filaments de myosine</label><label class="qcm-opt"><input type="checkbox" data-q="2" data-v="b"/> b. du raccourcissement des filaments d'actine</label><label class="qcm-opt"><input type="checkbox" data-q="2" data-v="c"/> c. du glissement des filaments d'actine le long des filaments de myosine</label><label class="qcm-opt"><input type="checkbox" data-q="2" data-v="d"/> d. du glissement des filaments de myosine le long des filaments d'actine</label></div><div class="qcm-feedback" id="fb2"></div></div>
+
+    <div class="qcm-item" id="qi3"><div class="qcm-q"><span class="qnum">Q3.</span>L'acétylcholine au niveau de la plaque motrice :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="3" data-v="a"/> a. est stockée dans les vésicules postsynaptiques</label><label class="qcm-opt"><input type="checkbox" data-q="3" data-v="b"/> b. est l'unique neurotransmetteur de la synapse neuromusculaire</label><label class="qcm-opt"><input type="checkbox" data-q="3" data-v="c"/> c. a une action inhibitrice sur la fibre musculaire</label><label class="qcm-opt"><input type="checkbox" data-q="3" data-v="d"/> d. est détruite par l'acétylcholinestérase</label></div><div class="qcm-feedback" id="fb3"></div></div>
+
+    <div class="qcm-item" id="qi4"><div class="qcm-q"><span class="qnum">Q4.</span>La régénération rapide de l'ATP musculaire se fait :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="4" data-v="a"/> a. à partir de la phosphocréatine</label><label class="qcm-opt"><input type="checkbox" data-q="4" data-v="b"/> b. par la respiration cellulaire</label><label class="qcm-opt"><input type="checkbox" data-q="4" data-v="c"/> c. par transfert du phosphate d'une molécule d'ADP sur une autre</label><label class="qcm-opt"><input type="checkbox" data-q="4" data-v="d"/> d. par la glycolyse</label></div><div class="qcm-feedback" id="fb4"></div></div>
+
+    <div class="qcm-item" id="qi5"><div class="qcm-q"><span class="qnum">Q5.</span>La pression artérielle dépend :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="5" data-v="a"/> a. de l'activité de la pompe cardiaque</label><label class="qcm-opt"><input type="checkbox" data-q="5" data-v="b"/> b. de la vasomotricité</label><label class="qcm-opt"><input type="checkbox" data-q="5" data-v="c"/> c. de la masse sanguine (volémie)</label><label class="qcm-opt"><input type="checkbox" data-q="5" data-v="d"/> d. de la température corporelle uniquement</label></div><div class="qcm-feedback" id="fb5"></div></div>
+
+    <div class="qcm-item" id="qi6"><div class="qcm-q"><span class="qnum">Q6.</span>Les barorécepteurs sont situés :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="6" data-v="a"/> a. dans le sinus carotidien</label><label class="qcm-opt"><input type="checkbox" data-q="6" data-v="b"/> b. dans la crosse aortique</label><label class="qcm-opt"><input type="checkbox" data-q="6" data-v="c"/> c. dans les ventricules cardiaques</label><label class="qcm-opt"><input type="checkbox" data-q="6" data-v="d"/> d. dans les veines caves</label></div><div class="qcm-feedback" id="fb6"></div></div>
+
+    <div class="qcm-item" id="qi7"><div class="qcm-q"><span class="qnum">Q7.</span>Une hypertension artérielle au niveau du sinus carotidien entraîne :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="7" data-v="a"/> a. une cardioaccélération</label><label class="qcm-opt"><input type="checkbox" data-q="7" data-v="b"/> b. une cardiomodération</label><label class="qcm-opt"><input type="checkbox" data-q="7" data-v="c"/> c. une vasodilatation</label><label class="qcm-opt"><input type="checkbox" data-q="7" data-v="d"/> d. une hypotension réflexe</label></div><div class="qcm-feedback" id="fb7"></div></div>
+
+    <div class="qcm-item" id="qi8"><div class="qcm-q"><span class="qnum">Q8.</span>L'orthosympathique exerce :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="8" data-v="a"/> a. un effet cardioaccélérateur</label><label class="qcm-opt"><input type="checkbox" data-q="8" data-v="b"/> b. un effet cardiomodérateur</label><label class="qcm-opt"><input type="checkbox" data-q="8" data-v="c"/> c. un effet vasoconstricteur</label><label class="qcm-opt"><input type="checkbox" data-q="8" data-v="d"/> d. un effet vasodilatateur</label></div><div class="qcm-feedback" id="fb8"></div></div>
+
+    <div class="qcm-item" id="qi9"><div class="qcm-q"><span class="qnum">Q9.</span>L'expérience de Lœwi a prouvé :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="9" data-v="a"/> a. que la transmission nerveuse est électrique</label><label class="qcm-opt"><input type="checkbox" data-q="9" data-v="b"/> b. que la transmission est chimique</label><label class="qcm-opt"><input type="checkbox" data-q="9" data-v="c"/> c. que le parasympathique libère de l'acétylcholine</label><label class="qcm-opt"><input type="checkbox" data-q="9" data-v="d"/> d. que le cœur B est stimulé électriquement</label></div><div class="qcm-feedback" id="fb9"></div></div>
+
+    <div class="qcm-item" id="qi10"><div class="qcm-q"><span class="qnum">Q10.</span>La phase d'alarme du stress mobilise :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="10" data-v="a"/> a. le système orthosympathique</label><label class="qcm-opt"><input type="checkbox" data-q="10" data-v="b"/> b. l'adrénaline des médullosurrénales</label><label class="qcm-opt"><input type="checkbox" data-q="10" data-v="c"/> c. le cortisol des corticosurrénales</label><label class="qcm-opt"><input type="checkbox" data-q="10" data-v="d"/> d. le système parasympathique</label></div><div class="qcm-feedback" id="fb10"></div></div>
+
+    <div class="qcm-item" id="qi11"><div class="qcm-q"><span class="qnum">Q11.</span>La cocaïne agit en :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="11" data-v="a"/> a. bloquant la recapture de la dopamine</label><label class="qcm-opt"><input type="checkbox" data-q="11" data-v="b"/> b. stimulant la libération de dopamine</label><label class="qcm-opt"><input type="checkbox" data-q="11" data-v="c"/> c. détruisant les récepteurs postsynaptiques</label><label class="qcm-opt"><input type="checkbox" data-q="11" data-v="d"/> d. inhibant l'acétylcholinestérase</label></div><div class="qcm-feedback" id="fb11"></div></div>
+
+    <div class="qcm-item" id="qi12"><div class="qcm-q"><span class="qnum">Q12.</span>La toxicomanie se caractérise par :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="12" data-v="a"/> a. la tolérance</label><label class="qcm-opt"><input type="checkbox" data-q="12" data-v="b"/> b. la dépendance physique</label><label class="qcm-opt"><input type="checkbox" data-q="12" data-v="c"/> c. la dépendance psychique</label><label class="qcm-opt"><input type="checkbox" data-q="12" data-v="d"/> d. l'absence de syndrome de manque</label></div><div class="qcm-feedback" id="fb12"></div></div>
+
+    <div class="qcm-item" id="qi13"><div class="qcm-q"><span class="qnum">Q13.</span>Le système rénine-angiotensine-aldostérone :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="13" data-v="a"/> a. provoque une vasoconstriction</label><label class="qcm-opt"><input type="checkbox" data-q="13" data-v="b"/> b. augmente la réabsorption de Na⁺</label><label class="qcm-opt"><input type="checkbox" data-q="13" data-v="c"/> c. diminue la volémie</label><label class="qcm-opt"><input type="checkbox" data-q="13" data-v="d"/> d. élève la pression artérielle</label></div><div class="qcm-feedback" id="fb13"></div></div>
+
+    <div class="qcm-item" id="qi14"><div class="qcm-q"><span class="qnum">Q14.</span>L'athérosclérose est :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="14" data-v="a"/> a. l'accumulation de plaques d'athérome dans les artères</label><label class="qcm-opt"><input type="checkbox" data-q="14" data-v="b"/> b. une maladie des valves cardiaques</label><label class="qcm-opt"><input type="checkbox" data-q="14" data-v="c"/> c. favorisée par le tabagisme</label><label class="qcm-opt"><input type="checkbox" data-q="14" data-v="d"/> d. une cause d'infarctus du myocarde</label></div><div class="qcm-feedback" id="fb14"></div></div>
+
+    <div class="qcm-item" id="qi15"><div class="qcm-q"><span class="qnum">Q15.</span>Les ions Ca²⁺ dans la contraction musculaire :</div><div class="qcm-options"><label class="qcm-opt"><input type="checkbox" data-q="15" data-v="a"/> a. sont stockés dans le réticulum endoplasmique</label><label class="qcm-opt"><input type="checkbox" data-q="15" data-v="b"/> b. sont libérés suite au PA musculaire</label><label class="qcm-opt"><input type="checkbox" data-q="15" data-v="c"/> c. permettent l'attachement actine-myosine</label><label class="qcm-opt"><input type="checkbox" data-q="15" data-v="d"/> d. sont recaptés passivement après la contraction</label></div><div class="qcm-feedback" id="fb15"></div></div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;align-items:center;flex-wrap:wrap;gap:10px">
+    <button class="submit-qcm" onclick="submitQCM()">📊 Voir les résultats</button>
+    <button class="reset-qcm" onclick="resetQCM()">🔄 Recommencer</button>
+  </div>
+
+  <div class="qcm-global-score" id="qcm-global">
+    <div class="score-big" id="qcm-score-num">0/15</div>
+    <div class="score-msg" id="qcm-score-msg">Calcul en cours…</div>
+    <button class="reset-qcm" onclick="resetQCM()">🔄 Recommencer le QCM</button>
+  </div>
+</div>
+
+<script>
+// ===== IMAGE PLACEHOLDERS =====
+function initPlaceholders(){
+  document.querySelectorAll('.img-placeholder').forEach(ph=>{
+    const inp=ph.querySelector('input[type=file]');
+    const img=ph.querySelector('img.ph-img');
+    const btn=ph.querySelector('.ph-remove');
+    if(!inp||!img)return;
+    if(img.src&&img.src.includes('images/')){
+      img.style.display='block';
+      ph.classList.add('has-img');
+    }
+    inp.addEventListener('change',e=>{
+      const file=e.target.files[0];
+      if(!file)return;
+      const reader=new FileReader();
+      reader.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};
+      reader.readAsDataURL(file);
+    });
+    if(btn) btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded',initPlaceholders);
+
+function showTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  updateProgress();
+}
+function updateProgress(){
+  const tabs=document.querySelectorAll('.tab-btn');
+  const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));
+  document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';
+}
+document.addEventListener('DOMContentLoaded',updateProgress);
+
+// ===== FILL IN THE BLANKS =====
+const fillAnswers={
+  1:['tendons','noyaux','myofibrilles','clairs (I) et sombres (A)','sarcomère','Z','actine','myosine'],
+  2:['transverses','Ca²⁺','troponine','actine','ATP','pivotement','glissement','raccourcit','relâchement'],
+  3:['barorécepteurs','Héring et Cyon','hypertension','X (pneumogastrique)','vasodilatation','hypotension','adrénaline','rénine-angiotensine-aldostérone'],
+  4:['résistance','orthosympathique','cortisol','recapture de la dopamine','plaisir','toxicomanie','dépendance','drogues']
+};
+
+function checkFill(n, answers){
+  const num=answers.length;
+  let correct=0;
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById('s'+n+'_'+i);
+    if(!sel)continue;
+    const ok=sel.value===answers[i-1];
+    sel.className='';
+    if(sel.value!==''){
+      if(ok){sel.className='correct';correct++;}
+      else sel.className='wrong';
+    }
+  }
+  const badge=document.getElementById('score'+n);
+  badge.textContent=correct+'/'+num;
+  badge.className='score-badge '+(correct===num?'good':'bad');
+}
+function resetFill(n,num){
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById('s'+n+'_'+i);
+    if(sel){sel.value='';sel.className='';}
+  }
+  const badge=document.getElementById('score'+n);
+  badge.textContent='';badge.className='score-badge';
+}
+
+// ===== QCM =====
+const qcmCorrect={
+  1:['a','c'],2:['c'],3:['b','d'],4:['a','c'],5:['a','b','c'],
+  6:['a','b'],7:['b','c','d'],8:['a','c'],9:['b','c'],10:['a','b'],
+  11:['a'],12:['a','b','c'],13:['a','b','d'],14:['a','c','d'],15:['a','b','c']
+};
+const qcmFeedbacks={
+  1:'✅ a et c. La fibre musculaire contient de la MYOGLOBINE (pas hémoglobine) et possède de nombreuses mitochondries.',
+  2:'✅ c. Les filaments ne changent pas de longueur, ils GLISSENT les uns par rapport aux autres.',
+  3:'✅ b et d. L\'ACh est stockée dans les vésicules PRÉSYNAPTIQUES et a une action EXCITATRICE.',
+  4:'✅ a et c. La phosphocréatine (a) et la myokinase (c) sont les voies rapides. La respiration est lente.',
+  5:'✅ a, b, c. Les 3 paramètres principaux. La température n\'est pas un déterminant direct.',
+  6:'✅ a et b. Sinus carotidien + crosse aortique. Pas dans les ventricules ni les veines.',
+  7:'✅ b, c, d. L\'hypertension réflexe déclenche cardiomodération + vasodilatation → hypotension.',
+  8:'✅ a et c. Orthosympathique = cardioaccélérateur + vasoconstricteur via noradrénaline.',
+  9:'✅ b et c. Lœwi prouve la transmission CHIMIQUE : le parasympathique libère de l\'acétylcholine.',
+  10:'✅ a et b. Phase d\'alarme = orthosympathique + adrénaline. Le cortisol intervient en phase de résistance.',
+  11:'✅ a. La cocaïne bloque les transporteurs de recapture de la dopamine.',
+  12:'✅ a, b, c. La toxicomanie = tolérance + dépendance physique + dépendance psychique.',
+  13:'✅ a, b, d. Ce système ↑PA par vasoconstriction et rétention Na⁺/eau (↑volémie).',
+  14:'✅ a, c, d. Plaques d\'athérome (a), favorisées par tabac (c), peuvent causer infarctus (d).',
+  15:'✅ a, b, c. Le Ca²⁺ est recapté ACTIVEMENT (pas passivement) → d est faux.'
+};
+
+function submitQCM(){
+  let totalScore=0;
+  for(let q=1;q<=15;q++){
+    const checkboxes=document.querySelectorAll(`input[data-q="${q}"]`);
+    const checked=Array.from(checkboxes).filter(c=>c.checked).map(c=>c.dataset.v);
+    const correct=qcmCorrect[q];
+    const isFullyCorrect=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+    const isPartial=!isFullyCorrect&&checked.some(v=>correct.includes(v));
+    
+    checkboxes.forEach(cb=>{
+      const opt=cb.closest('.qcm-opt');
+      opt.classList.remove('opt-correct','opt-wrong','opt-missed');
+      if(correct.includes(cb.dataset.v)&&cb.checked) opt.classList.add('opt-correct');
+      else if(!correct.includes(cb.dataset.v)&&cb.checked) opt.classList.add('opt-wrong');
+      else if(correct.includes(cb.dataset.v)&&!cb.checked) opt.classList.add('opt-missed');
+    });
+
+    const fb=document.getElementById('fb'+q);
+    fb.className='qcm-feedback show '+(isFullyCorrect?'fb-ok':isPartial?'fb-partial':'fb-ko');
+    fb.innerHTML=(isFullyCorrect?'✅ Parfait ! ':'❌ ')+ qcmFeedbacks[q];
+
+    const item=document.getElementById('qi'+q);
+    item.classList.remove('correct-item','wrong-item');
+    item.classList.add(isFullyCorrect?'correct-item':'wrong-item');
+
+    if(isFullyCorrect) totalScore++;
+    checkboxes.forEach(cb=>cb.disabled=true);
+  }
+  const global=document.getElementById('qcm-global');
+  global.classList.add('show');
+  document.getElementById('qcm-score-num').textContent=totalScore+'/15';
+  const pct=Math.round(totalScore/15*100);
+  let msg=pct>=90?'🏆 Excellent !':pct>=70?'👍 Bien !':pct>=50?'📚 Moyen':'💪 Continue !';
+  document.getElementById('qcm-score-msg').textContent=msg;
+}
+
+function resetQCM(){
+  for(let q=1;q<=15;q++){
+    document.querySelectorAll(`input[data-q="${q}"]`).forEach(cb=>{cb.checked=false;cb.disabled=false;});
+    document.querySelectorAll(`#qi${q} .qcm-opt`).forEach(o=>o.classList.remove('opt-correct','opt-wrong','opt-missed'));
+    const fb=document.getElementById('fb'+q);
+    fb.className='qcm-feedback';fb.innerHTML='';
+    document.getElementById('qi'+q).classList.remove('correct-item','wrong-item');
+  }
+  document.getElementById('qcm-global').classList.remove('show');
+}
+</script>
+</body>
+</html>
