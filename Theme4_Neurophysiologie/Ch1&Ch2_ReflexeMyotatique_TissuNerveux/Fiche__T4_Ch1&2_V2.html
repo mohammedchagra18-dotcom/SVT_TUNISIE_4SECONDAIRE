@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 4 — Fiche 1 : Le Message Nerveux | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;--navy3:#263d56;
+  --blue:#2563eb;--blue-lt:#eff6ff;--blue-md:#3b82f6;--blue-dk:#1d4ed8;
+  --cyan:#0891b2;--cyan-lt:#ecfeff;
+  --green:#059669;--green-lt:#ecfdf5;
+  --red:#dc2626;--red-lt:#fef2f2;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(37,99,235,.08);--shadow-md:0 4px 24px rgba(37,99,235,.13);
+  --radius:10px;--radius-sm:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f0f6ff;color:var(--gray8);font-size:15px;line-height:1.72}
+header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(13,27,42,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(59,130,246,.08)}
+header::after{content:'';position:absolute;left:28%;bottom:-25px;width:130px;height:130px;border-radius:50%;background:rgba(8,145,178,.06)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#93c5fd}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.8rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#60a5fa}
+.hdr-sub{opacity:.7;font-size:.95rem;margin-top:3px;color:#bfdbfe}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#bfdbfe}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#93c5fd;margin-top:6px;letter-spacing:.5px}
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#60a5fa,#22d3ee);width:0%;transition:width .4s}
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 28px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:13px 16px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:6px}
+.tab-btn:hover{color:var(--blue);background:var(--blue-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
+.tab-panel{display:none;padding:28px 36px;max-width:1120px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-family:'Crimson Pro',serif;font-size:1.3rem;color:var(--blue-dk);border-left:4px solid var(--blue);padding-left:12px;margin:32px 0 16px;display:flex;align-items:center;gap:10px}
+.sub-title{font-size:.95rem;font-weight:600;color:var(--cyan);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.sub-title::before{content:'';display:block;width:20px;height:2.5px;background:var(--cyan);border-radius:2px}
+.def-box{background:var(--blue-lt);border:1.5px solid #bfdbfe;border-radius:var(--radius);padding:14px 18px;margin:12px 0}
+.def-box .lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--blue-dk);margin-bottom:6px}
+.info-box{border-left:4px solid var(--blue);background:var(--blue-lt);border-radius:0 var(--radius) var(--radius) 0;padding:11px 16px;margin:12px 0;font-size:13.5px}
+.info-box.cyan{border-left-color:var(--cyan);background:var(--cyan-lt)}.info-box.green{border-left-color:var(--green);background:var(--green-lt)}
+.info-box.red{border-left-color:var(--red);background:var(--red-lt)}.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}
+.info-box strong{color:var(--blue-dk)}.info-box.cyan strong{color:var(--cyan)}.info-box.green strong{color:var(--green)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 0}
+.card{background:#fff;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);border-top:3px solid var(--blue)}
+.card.cyan{border-top-color:var(--cyan)}.card.green{border-top-color:var(--green)}.card.red{border-top-color:var(--red)}
+.card.amber{border-top-color:var(--amber)}.card.purple{border-top-color:var(--purple)}.card.navy{border-top-color:var(--navy)}
+.card h4{font-size:.9rem;font-weight:700;margin-bottom:8px;color:var(--gray8)}
+.card ul{padding-left:18px;font-size:13.5px;color:var(--gray6)}.card ul li{margin-bottom:5px}.card p{font-size:13.5px;color:var(--gray6)}
+.table-wrap{overflow-x:auto;margin:14px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+thead tr{background:var(--navy2);color:#fff}th{padding:10px 14px;font-weight:600;text-align:left}
+td{padding:9px 14px;border-bottom:1px solid var(--gray2)}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:var(--gray1)}
+.diagram-box{background:#fff;border:2px solid var(--gray2);border-radius:var(--radius);padding:20px;margin:14px 0;box-shadow:var(--shadow)}
+.diagram-box.blue{border-color:#bfdbfe;background:var(--blue-lt)}
+.neuron-schema{display:flex;align-items:center;gap:0;margin:16px 0;flex-wrap:wrap;justify-content:center}
+.neuron-part{background:var(--navy2);color:#fff;padding:10px 14px;border-radius:6px;font-size:12.5px;font-weight:600;text-align:center;min-width:90px}
+.arrow-h{color:var(--gray3);font-size:20px;padding:0 4px}
+.synapse-schema{display:grid;grid-template-columns:1fr 80px 1fr;gap:10px;align-items:center;margin:14px 0}
+.syn-pre{background:var(--navy2);color:#fff;border-radius:8px;padding:12px;font-size:13px;text-align:center}
+.syn-gap{background:var(--amber-lt);border:1.5px dashed var(--amber);border-radius:6px;padding:10px 6px;font-size:12px;text-align:center;color:var(--amber)}
+.syn-post{background:var(--cyan-lt);border:2px solid var(--cyan);border-radius:8px;padding:12px;font-size:13px;text-align:center}
+.formula{background:var(--navy);color:#60a5fa;border-radius:8px;padding:10px 16px;font-family:monospace;font-size:14px;margin:10px 0;display:flex;align-items:center;gap:10px}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0}
+.flow-step{background:#fff;border:2px solid var(--blue);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--blue-dk);text-align:center;min-width:100px}
+.flow-step.active-step{background:var(--blue);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:18px;font-weight:700}
+.activity-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:20px 0;overflow:hidden}
+.activity-header{background:linear-gradient(135deg,var(--navy2),var(--navy3));color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.activity-header .act-num{background:rgba(255,255,255,.15);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.activity-header h3{font-size:1rem;font-weight:600}
+.activity-body{padding:20px}
+.fill-text{font-size:14.5px;line-height:2.2;color:var(--gray8)}
+.blank-select{display:inline-block;margin:0 4px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--blue);border-radius:6px;padding:3px 8px;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--blue-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:var(--green-lt);border-style:solid;color:var(--green)}
+.blank-select select.wrong{border-color:var(--red);background:var(--red-lt);border-style:solid;color:var(--red)}
+.check-btn{margin-top:14px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--blue-dk)}.check-btn.green-btn{background:var(--green)}.check-btn.green-btn:hover{background:#047857}
+.score-badge{display:inline-block;margin-left:12px;background:var(--gray2);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:8px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--blue);color:var(--blue)}
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:16px 0;overflow:hidden;border-left:4px solid var(--blue)}
+.qcm-item.correct-item{border-left-color:var(--green)}.qcm-item.wrong-item{border-left-color:var(--red)}.qcm-item.partial-item{border-left-color:var(--amber)}
+.qcm-q{padding:14px 18px 10px;font-weight:600;font-size:14.5px;color:var(--gray8)}
+.qcm-q .qnum{color:var(--blue);margin-right:6px}
+.qcm-options{padding:0 18px 14px}
+.qcm-opt{display:flex;align-items:flex-start;gap:10px;padding:7px 10px;border-radius:6px;margin:4px 0;cursor:pointer;transition:background .15s;font-size:14px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--blue);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:#fffbeb;color:var(--amber)}
+.qcm-feedback{margin:10px 18px 16px;padding:12px 16px;border-radius:8px;font-size:13.5px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.qcm-feedback.fb-correction{background:var(--cyan-lt);border:1px solid #67e8f9;color:#155e75}
+.qcm-buttons{display:flex;align-items:center;gap:10px;padding:0 18px 16px;flex-wrap:wrap}
+.qcm-verify-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:7px 16px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.qcm-verify-btn:hover{background:#047857}
+.qcm-correct-btn{background:var(--cyan);color:#fff;border:none;border-radius:6px;padding:7px 16px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.qcm-correct-btn:hover{background:#0e7490}
+.qcm-refresh-btn{background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:6px;padding:7px 16px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s}
+.qcm-refresh-btn:hover{border-color:var(--blue);color:var(--blue)}
+.bilan-block{background:var(--navy);color:#e2e8f0;border-radius:12px;padding:20px 24px;margin:14px 0}
+.bilan-block h4{color:#60a5fa;font-family:'Crimson Pro',serif;font-size:1.1rem;margin-bottom:12px}
+.bilan-block ul{padding-left:20px}.bilan-block ul li{margin-bottom:7px;font-size:13.5px;color:#cbd5e1}.bilan-block ul li strong{color:#93c5fd}
+.bilan-fill{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:20px 0;overflow:hidden}
+.bilan-fill-header{background:linear-gradient(135deg,#059669,#047857);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.bilan-fill-header h3{font-size:1rem;font-weight:600}
+.bilan-fill-body{padding:20px}.bilan-fill-body .fill-text{font-size:14px;line-height:2.2}
+.bilan-fill-body .blank-select select{border-color:var(--green);background:var(--green-lt)}
+.bilan-fill-body .blank-select select.correct{border-color:var(--green);background:#d1fae5;color:#065f46}
+.bilan-fill-body .blank-select select.wrong{border-color:var(--red);background:var(--red-lt);color:#991b1b}
+.bilan-fill-body .check-btn{background:var(--green)}.bilan-fill-body .check-btn:hover{background:#047857}
+.img-placeholder{border:2.5px dashed var(--blue-md);border-radius:var(--radius);background:var(--blue-lt);padding:18px;margin:14px 0;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all .2s;position:relative;cursor:pointer}
+.img-placeholder:hover{border-color:var(--blue-dk);background:#dbeafe}
+.img-placeholder .ph-icon{font-size:2rem;opacity:.5}
+.img-placeholder .ph-label{font-size:12px;font-weight:700;color:var(--blue-dk);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.img-placeholder .ph-sub{font-size:12px;color:var(--gray6);text-align:center}
+.img-placeholder .ph-comment{font-size:11px;color:var(--cyan);text-align:center;font-style:italic;margin-top:4px}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub,.img-placeholder.has-img .ph-comment{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:6px;right:8px;background:var(--red);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:13px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.img-row.triple{grid-template-columns:1fr 1fr 1fr}
+.signature{text-align:center;padding:18px;margin-top:32px;font-size:12px;color:var(--gray3);border-top:1px solid var(--gray2)}
+@media(max-width:640px){
+  header{padding:18px 18px 16px;flex-direction:column;gap:10px;align-items:flex-start}
+  .tab-panel{padding:18px 16px}.card-grid{grid-template-columns:1fr}.neuron-schema{flex-direction:column}
+  .synapse-schema{grid-template-columns:1fr}.img-row{grid-template-columns:1fr}.img-row.triple{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 4 — <span>Fiche 1</span></div>
+    <div class="hdr-sub">Le tissu nerveux &amp; Le réflexe myotatique</div>
+    <div class="hdr-pill">Chapitres 1 &amp; 2</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Neurophysiologie</strong>
+    pp. 162 – 207<br/>
+    5 onglets · 37 images<br/>
+    15 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('ch1',this)">🧠 Ch.1 — Tissu nerveux</button>
+  <button class="tab-btn" onclick="showTab('ch2',this)">⚡ Ch.2 — Réflexe myotatique</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN</button>
+  <button class="tab-btn" onclick="showTab('qcm',this)">✅ QCM CAPES</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Pourquoi ce thème ?</div>
+  <p style="font-size:15px;color:var(--gray6);margin-bottom:18px">Le système nerveux est le système de <strong>communication rapide</strong> de l'organisme. Cette fiche couvre ses bases structurales (Ch.1) et la genèse, propagation et transmission du message nerveux dans le contexte du réflexe myotatique (Ch.2).</p>
+  <div class="card-grid">
+    <div class="card navy"><h4>📚 Chapitres couverts</h4><ul><li>Ch.1 : Le tissu nerveux (pp.162–173)</li><li>Ch.2 : Le réflexe myotatique (pp.174–207)</li></ul></div>
+    <div class="card blue"><h4>🎯 Objectifs globaux</h4><ul><li>Structure du neurone et du tissu nerveux</li><li>Potentiel de repos et potentiel d'action</li><li>Propagation et transmission synaptique</li><li>Circuit du réflexe myotatique</li></ul></div>
+    <div class="card cyan"><h4>🔑 Concepts clés</h4><ul><li>Neurone, axone, myéline, synapse</li><li>PA — loi du tout ou rien</li><li>PPSE / PPSI, intégration postsynaptique</li><li>Réflexe monosynaptique / innervation réciproque</li></ul></div>
+  </div>
+  <div class="section-title">🗺️ Plan de la fiche</div>
+  <div class="flow">
+    <div class="flow-step active-step">🧠 Tissu nerveux</div><div class="flow-arrow">→</div>
+    <div class="flow-step">⚡ Message nerveux</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🔗 Synapse</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🔄 Réflexe</div><div class="flow-arrow">→</div>
+    <div class="flow-step">📋 BILAN</div><div class="flow-arrow">→</div>
+    <div class="flow-step">✅ QCM</div>
+  </div>
+  <div class="info-box cyan" style="margin-top:20px">
+    <strong>💡 Méthode :</strong> Parcours les onglets <em>Ch.1</em> → <em>Ch.2</em> → <em>BILAN</em>, puis teste tes acquis avec le <em>QCM CAPES</em>.
+  </div>
+</div>
+
+<!-- ==================== CHAPITRE 1 ==================== -->
+<div class="tab-panel" id="tab-ch1">
+  <div class="section-title">I. Organisation générale du système nerveux (pp.162-164)</div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 00 — Introduction au système nerveux</div><div class="ph-sub">Manuel p.161</div><div class="ph-comment">Centres nerveux et nerfs — SNC + SNP</div><img class="ph-img" src="images/T4Ch1_Doc00_intro_systeme_nerveux.PNG" alt="Doc 00"/><button class="ph-remove">✕</button></div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Organisation SN de l'Homme</div><div class="ph-sub">Manuel p.164 (Doc 1)</div><div class="ph-comment">Schéma annoté : encéphale, moelle épinière, nerfs crâniens et rachidiens</div><img class="ph-img" src="images/T4Ch1_Doc01_organisation_SN_homme.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Organisation SN de la souris</div><div class="ph-sub">Manuel p.164 (Doc 2)</div><div class="ph-comment">Comparaison mammifère : mêmes structures homologues</div><img class="ph-img" src="images/T4Ch1_Doc02_organisation_SN_souris.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Coupe transversale encéphale</div><div class="ph-sub">Manuel p.164 (Doc 3)</div><div class="ph-comment">Substance grise (cortex + noyaux gris) / substance blanche en profondeur</div><img class="ph-img" src="images/T4Ch1_Doc03_coupe_encephale.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Coupe transversale moelle épinière</div><div class="ph-sub">Manuel p.164 (Doc 4)</div><div class="ph-comment">Substance grise en H central + substance blanche périphérique + canal épendyme</div><img class="ph-img" src="images/T4Ch1_Doc04_coupe_moelle.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card navy"><h4>🏛️ SNC</h4><ul><li>Encéphale (cerveau + cervelet + bulbe) + moelle épinière</li><li>Entouré par 3 méninges</li><li>Centres de sensibilité, motricité, émotion</li></ul></div>
+    <div class="card blue"><h4>🕸️ SNP</h4><ul><li>12 paires nerfs crâniens + 31 paires nerfs rachidiens</li><li>Nerfs rachidiens : mixtes (sensitifs + moteurs)</li><li>Racine dorsale (sensitive) + ventrale (motrice)</li></ul></div>
+    <div class="card purple"><h4>⚙️ SN autonome</h4><ul><li>Contrôle organes internes</li><li>Sympathique / parasympathique : antagonistes</li><li>Agit sur muscles lisses, cœur, glandes</li></ul></div>
+  </div>
+
+  <div class="section-title">II. Les deux substances des centres nerveux</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Substance</th><th>Constituants</th><th>Cerveau</th><th>Moelle épinière</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Substance grise</strong></td><td>Corps cellulaires + cellules gliales</td><td>Surface (cortex) + noyaux gris</td><td>En H central (cornes)</td></tr>
+        <tr><td><strong>Substance blanche</strong></td><td>Axones myélinisés + cellules gliales</td><td>Profondeur</td><td>Périphérie</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">III. La cellule nerveuse : le neurone (pp.165-168)</div>
+
+  <div class="img-row triple">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Substance grise au MO</div><div class="ph-sub">Manuel p.165 (Doc 5)</div><div class="ph-comment">Corps cellulaires de neurones + cellules gliales (x130 / x500)</div><img class="ph-img" src="images/T4Ch1_Doc05_substance_grise_MO.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Fibres nerveuses centrales</div><div class="ph-sub">Manuel p.166 (Doc 6)</div><div class="ph-comment">Coupe transversale : axones + gaine de myéline (x600)</div><img class="ph-img" src="images/T4Ch1_Doc06_fibres_nerveuses_centrales.PNG" alt="Doc 06"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — Structure d'un nerf</div><div class="ph-sub">Manuel p.167 (Doc 7)</div><div class="ph-comment">Fibres myélinisées + gaine de Schwann + vaisseaux sanguins</div><img class="ph-img" src="images/T4Ch1_Doc07_structure_nerf.PNG" alt="Doc 07"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Schéma du neurone</div><div class="ph-sub">Manuel p.168 (Doc 8)</div><div class="ph-comment">Corps cellulaire + dendrites + axone + gaine myéline + arborisation terminale</div><img class="ph-img" src="images/T4Ch1_Doc08_schema_neurone.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Différenciation du neurone embryonnaire</div><div class="ph-sub">Manuel p.168 (Doc 9)</div><div class="ph-comment">Étapes : émission des prolongements → axone + dendrites</div><img class="ph-img" src="images/T4Ch1_Doc09_differenciation_neurone_embryonnaire.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Dégénérescence wallérienne</div><div class="ph-sub">Manuel p.168 (Doc 10)</div><div class="ph-comment">Étapes a→d après section : dégénérescence du bout périphérique</div><img class="ph-img" src="images/T4Ch1_Doc10_degenerescence_wallerienne.PNG" alt="Doc 10"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11-12 — Réseau de neurones &amp; Synapses</div><div class="ph-sub">Manuel p.169 (Doc 11-12)</div><div class="ph-comment">MEB x20000 + types de synapses (axo-somatique, axo-dendritique, axo-axonique)</div><img class="ph-img" src="images/T4Ch1_Doc11_12_reseau_neurones_synapses.PNG" alt="Doc 11-12"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="diagram-box blue">
+    <p style="text-align:center;font-weight:700;color:var(--blue-dk);margin-bottom:14px">Structure d'un neurone — Schéma fonctionnel</p>
+    <div class="neuron-schema">
+      <div class="neuron-part" style="background:#7c3aed">🌿 Dendrites<br/><small>réception</small></div><div class="arrow-h">→</div>
+      <div class="neuron-part" style="background:#1d4ed8">⭕ Corps cellulaire<br/><small>noyau — subst. grise</small></div><div class="arrow-h">→</div>
+      <div class="neuron-part" style="background:#0891b2">➡️ Axone + myéline<br/><small>conduction — subst. blanche</small></div><div class="arrow-h">→</div>
+      <div class="neuron-part" style="background:#059669">🌳 Arborisation terminale<br/><small>transmission (synapse)</small></div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card blue"><h4>Fibre myélinisée</h4><ul><li>Axone + gaine de myéline + gaine de Schwann</li><li>Nœuds de Ranvier</li><li>Propagation saltatoire → rapide</li></ul></div>
+    <div class="card cyan"><h4>Fibre amyélinisée</h4><ul><li>Axone + gaine de Schwann seulement</li><li>Propagation continue → lente</li></ul></div>
+    <div class="card green"><h4>Preuve continuité</h4><ul><li>Dégénérescence wallérienne</li><li>Section → dégénérescence bout séparé du corps cellulaire</li></ul></div>
+  </div>
+
+  <div class="section-title">IV. La synapse (p.169)</div>
+  <div class="synapse-schema">
+    <div class="syn-pre"><div style="font-weight:700;margin-bottom:6px;color:#93c5fd">PRÉSYNAPTIQUE</div>Terminaison axonale<br/>Vésicules + neurotransmetteur</div>
+    <div class="syn-gap"><div style="font-weight:700;font-size:11px">FENTE</div>~20nm<br/>sens unique →</div>
+    <div class="syn-post"><div style="font-weight:700;margin-bottom:6px;color:var(--cyan)">POSTSYNAPTIQUE</div>Dendrite / corps cellulaire<br/>Récepteurs spécifiques</div>
+  </div>
+
+  <div class="info-box amber"><strong>Types :</strong> axo-somatique (1) | axo-dendritique (2) | axo-axonique (3). La jonction neurone-muscle = <strong>plaque motrice</strong>.</div>
+
+  <!-- ACTIVITE CHAPITRE 1 -->
+  <div class="section-title">📝 Activité — Le tissu nerveux</div>
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">1</div><div><h3>Organisation du système nerveux &amp; le neurone</h3><div style="font-size:12px;opacity:.75">Ch.1 — Synthèse pp.170-171</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill-ch1">
+        Chez l'Homme, le système nerveux comprend le SNC (encéphale + moelle épinière) et le SNP (nerfs). Les centres nerveux sont formés de deux substances : la substance
+        <span class="blank-select"><select id="c1_1"><option value="">—</option><option value="grise">grise</option><option value="blanche">blanche</option></select></span>
+        (corps cellulaires + cellules gliales) et la substance
+        <span class="blank-select"><select id="c1_2"><option value="">—</option><option value="blanche">blanche</option><option value="grise">grise</option></select></span>
+        (fibres nerveuses = axones myélinisés). Le
+        <span class="blank-select"><select id="c1_3"><option value="">—</option><option value="neurone">neurone</option><option value="gliocyte">gliocyte</option></select></span>
+        est l'unité de base du tissu nerveux. Son corps cellulaire est toujours situé dans la
+        <span class="blank-select"><select id="c1_4"><option value="">—</option><option value="substance grise ou dans un ganglion">substance grise ou dans un ganglion</option><option value="substance blanche">substance blanche</option></select></span>.
+        Il possède des prolongements ramifiés : les
+        <span class="blank-select"><select id="c1_5"><option value="">—</option><option value="dendrites">dendrites</option><option value="axones">axones</option></select></span>
+        (réception) et un prolongement long : l'
+        <span class="blank-select"><select id="c1_6"><option value="">—</option><option value="axone">axone</option><option value="dendrite">dendrite</option></select></span>
+        (conduction). Dans les nerfs, les fibres sont entourées d'une gaine de
+        <span class="blank-select"><select id="c1_7"><option value="">—</option><option value="Schwann">Schwann</option><option value="myéline">myéline</option></select></span>
+        (cellule avec noyau). Les fibres myélinisées possèdent en plus une gaine de
+        <span class="blank-select"><select id="c1_8"><option value="">—</option><option value="myéline">myéline</option><option value="Schwann">Schwann</option></select></span>
+        (lipidique, isolante). Les neurones communiquent au niveau des
+        <span class="blank-select"><select id="c1_9"><option value="">—</option><option value="synapses">synapses</option><option value="nœuds de Ranvier">nœuds de Ranvier</option></select></span>.
+        La jonction neurone-muscle est la
+        <span class="blank-select"><select id="c1_10"><option value="">—</option><option value="plaque motrice">plaque motrice</option><option value="synapse neuroneuronique">synapse neuroneuronique</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill('ch1',10,['grise','blanche','neurone','substance grise ou dans un ganglion','dendrites','axone','Schwann','myéline','synapses','plaque motrice'])">Vérifier</button>
+        <span id="score-ch1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill('ch1',10)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CHAPITRE 2 ==================== -->
+<div class="tab-panel" id="tab-ch2">
+
+  <div class="section-title">I. Le réflexe myotatique — Définition et éléments (pp.174-176)</div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Intro — Réflexes rotulien et achilléen</div><div class="ph-sub">Manuel p.174</div><div class="ph-comment">Photo EXAO + schémas : percussion tendon → extension</div><img class="ph-img" src="images/T4Ch2_Intro_reflexes_rotulien_achilleen.PNG" alt="Intro"/><button class="ph-remove">✕</button></div>
+
+  <div class="def-box"><div class="lbl">Définition</div><p>Le <strong>réflexe myotatique</strong> est une contraction involontaire d'un muscle en réponse à son propre étirement. Rôle : <strong>maintien de la posture</strong> et tonus musculaire.</p></div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Fuseau neuromusculaire (MO x800)</div><div class="ph-sub">Manuel p.176 (Doc 1)</div><div class="ph-comment">Fibres intrafusales + terminaison annulo-spiralée des fibres Ia</div><img class="ph-img" src="images/T4Ch2_Doc01_fuseau_neuromusculaire_MO.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Expériences de Magendie</div><div class="ph-sub">Manuel p.176 (Doc 2)</div><div class="ph-comment">Sections racines dorsale/ventrale + résultats : sensibilité / motricité</div><img class="ph-img" src="images/T4Ch2_Doc02_experiences_Magendie.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card blue"><h4>1⃣ Fuseau neuromusculaire</h4><ul><li>Récepteur sensoriel (mécanorécepteur)</li><li>Sensible à l'étirement</li><li>Fibres intrafusales + terminaisons Ia</li></ul></div>
+    <div class="card cyan"><h4>2⃣ Fibres Ia (afférentes)</h4><ul><li>Dendrites de neurones sensitifs</li><li>Corps cellulaire dans ganglion spinal</li><li>Racine dorsale → moelle épinière</li></ul></div>
+    <div class="card green"><h4>3⃣ Moelle épinière</h4><ul><li>Centre nerveux du réflexe</li><li>Motoneurones α (corne antérieure)</li><li>Interneurones inhibiteurs</li></ul></div>
+    <div class="card amber"><h4>4⃣ Fibres motrices α</h4><ul><li>Axones des motoneurones α</li><li>Racine ventrale → nerf rachidien</li><li>Vers les muscles effecteurs</li></ul></div>
+  </div>
+
+  <div class="section-title">II. Le potentiel de repos (pp.178-180)</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Dispositif d'enregistrement</div><div class="ph-sub">Manuel p.178 (Doc 3)</div><div class="ph-comment">Oscilloscope + cuve à nerf + électrodes de stimulation et réception</div><img class="ph-img" src="images/T4Ch2_Doc03_dispositif_enregistrement.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Potentiel de repos (tracé)</div><div class="ph-sub">Manuel p.178 (Doc 4)</div><div class="ph-comment">Passage de 0 à −70 mV quand la microélectrode pénètre dans l'axone</div><img class="ph-img" src="images/T4Ch2_Doc04_potentiel_repos_trace.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Tableau concentrations ioniques</div><div class="ph-sub">Manuel p.179 (Doc 5)</div><div class="ph-comment">Na⁺, K⁺, Cl⁻ dans LEC / LIC</div><img class="ph-img" src="images/T4Ch2_Doc05_tableau_concentrations_ioniques.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06-07 — Canaux de fuite + Pompe Na⁺/K⁺</div><div class="ph-sub">Manuel pp.179-180 (Doc 6-7)</div><div class="ph-comment">Canaux de fuite (passifs) + Pompe Na⁺/K⁺ (active, consomme ATP)</div><img class="ph-img" src="images/T4Ch2_Doc06_07_canaux_fuite_pompe.PNG" alt="Doc 06-07"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="formula"><span class="label">PR =</span><span><strong>− 70 mV</strong></span><span style="color:#94a3b8;font-size:12px">face interne − / face externe + → membrane polarisée</span></div>
+
+  <div class="card-grid">
+    <div class="card blue"><h4>Répartition ionique</h4><ul><li>LEC : [Na⁺] élevé, [K⁺] faible</li><li>LIC : [K⁺] élevé, [Na⁺] faible</li><li>Canaux de fuite toujours ouverts</li></ul></div>
+    <div class="card cyan"><h4>Pompe Na⁺/K⁺</h4><ul><li>Expulse 3 Na⁺, entre 2 K⁺</li><li>Transport actif → consomme ATP</li><li>Maintient le PR à −70 mV</li></ul></div>
+  </div>
+
+  <div class="section-title">III. Le potentiel d'action (pp.181-183)</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Enregistrement du PA</div><div class="ph-sub">Manuel p.181 (Doc 8)</div><div class="ph-comment">Stimulations S1→S7 : potentiels locaux puis PA (loi du tout ou rien)</div><img class="ph-img" src="images/T4Ch2_Doc08_enregistrement_PA.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Courbe du PA</div><div class="ph-sub">Manuel p.182 (Doc 9)</div><div class="ph-comment">Phases AB (dépolarisation), BC (repolarisation), CD (hyperpolarisation)</div><img class="ph-img" src="images/T4Ch2_Doc09_courbe_PA.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Perméabilité ionique / PA</div><div class="ph-sub">Manuel p.182 (Doc 10)</div><div class="ph-comment">Courbes de perméabilité Na⁺ et K⁺ durant les phases du PA</div><img class="ph-img" src="images/T4Ch2_Doc10_permeabilite_ionique_PA.PNG" alt="Doc 10"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — PA avec [Na⁺] décroissant</div><div class="ph-sub">Manuel p.183 (Doc 11)</div><div class="ph-comment">Calmar : eau de mer → dilution → diminution amplitude PA</div><img class="ph-img" src="images/T4Ch2_Doc11_PA_Na_decroissant.PNG" alt="Doc 11"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Interprétation ionique du PA</div><div class="ph-sub">Manuel p.183 (Doc 12)</div><div class="ph-comment">Schémas canaux voltage-dépendants : repos → dépol. → repol. → hyperpol.</div><img class="ph-img" src="images/T4Ch2_Doc12_interpretation_ionique_PA.PNG" alt="Doc 12"/><button class="ph-remove">✕</button></div>
+
+  <div class="flow">
+    <div class="flow-step">Repos<br/><small>−70 mV</small></div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">Dépolarisation<br/><small>entrée Na⁺</small></div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">Repolarisation<br/><small>sortie K⁺</small></div><div class="flow-arrow">→</div>
+    <div class="flow-step">Hyperpolarisation<br/><small>K⁺ continue</small></div><div class="flow-arrow">→</div>
+    <div class="flow-step">Retour PR<br/><small>pompe Na⁺/K⁺</small></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Phase</th><th>Ions</th><th>Potentiel</th><th>Canaux</th></tr></thead>
+      <tbody>
+        <tr><td>Dépolarisation</td><td>Entrée Na⁺</td><td>−70 → +30 mV</td><td>Na⁺ voltage-dép. ouverts à −50 mV</td></tr>
+        <tr><td>Repolarisation</td><td>Sortie K⁺</td><td>+30 → −70 mV</td><td>K⁺ voltage-dép. ouverts à +30 mV</td></tr>
+        <tr><td>Hyperpolarisation</td><td>Sortie K⁺ continue</td><td>&lt; −70 mV</td><td>K⁺ encore ouverts</td></tr>
+        <tr><td>Retour PR</td><td>Pompe Na⁺/K⁺</td><td>−70 mV</td><td>Tous fermés</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid">
+    <div class="card amber"><h4>⚡ Loi du Tout ou Rien</h4><p>Stimulation ≥ seuil (−50 mV) → PA d'amplitude fixe ~100 mV, durée ~1 ms. Infra-liminaire = aucun PA.</p></div>
+    <div class="card red"><h4>🚫 Période réfractaire</h4><p>Après un PA, fibre inexcitable quelques ms. Canaux Na⁺ fermés momentanément. Propagation unidirectionnelle.</p></div>
+  </div>
+
+  <div class="section-title">IV. Codage et naissance du message (p.184)</div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 13 — Naissance du message dans le fuseau</div><div class="ph-sub">Manuel p.184 (Doc 13)</div><div class="ph-comment">Électrodes A & B + masses croissantes → potentiel récepteur → PA codés en fréquence</div><img class="ph-img" src="images/T4Ch2_Doc13_naissance_message_fuseau.PNG" alt="Doc 13"/><button class="ph-remove">✕</button></div>
+
+  <div class="info-box cyan"><strong>Transduction sensorielle :</strong> Stimulus → potentiel de récepteur (amplitude ∝ intensité) → si ≥ seuil → train de PA codés en <strong>modulation de fréquence</strong> (↑intensité = ↑fréquence).</div>
+
+  <div class="section-title">V. Propagation du message nerveux (pp.185-186)</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 14 — Vitesse de propagation</div><div class="ph-sub">Manuel p.185 (Doc 14)</div><div class="ph-comment">Montage RA, RB, RC — distances S2A/B/C</div><img class="ph-img" src="images/T4Ch2_Doc14_vitesse_propagation.PNG" alt="Doc 14"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 15 — Tableau vitesse / diamètre</div><div class="ph-sub">Manuel p.186 (Doc 15)</div><div class="ph-comment">Myélinisées vs amyélinisées : relation diamètre-vitesse</div><img class="ph-img" src="images/T4Ch2_Doc15_tableau_vitesse_diametre.PNG" alt="Doc 15"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 16 — Propagation fibre amyélinisée</div><div class="ph-sub">Manuel p.186 (Doc 16)</div><div class="ph-comment">Continue : courants locaux de proche en proche</div><img class="ph-img" src="images/T4Ch2_Doc16_propagation_amyelinisee.PNG" alt="Doc 16"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 17 — Propagation saltatoire (myélinisée)</div><div class="ph-sub">Manuel p.186 (Doc 17)</div><div class="ph-comment">Le PA « saute » de nœud de Ranvier en nœud de Ranvier</div><img class="ph-img" src="images/T4Ch2_Doc17_propagation_saltatoire.PNG" alt="Doc 17"/><button class="ph-remove">✕</button></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card blue"><h4>Fibre amyélinisée</h4><ul><li>Propagation continue</li><li>Courants locaux</li><li>0,5 → 2 m/s</li></ul></div>
+    <div class="card cyan"><h4>Fibre myélinisée</h4><ul><li>Propagation saltatoire</li><li>Nœuds de Ranvier</li><li>30 → 120 m/s</li></ul></div>
+    <div class="card green"><h4>Règle générale</h4><ul><li>↑ diamètre = ↑ vitesse</li><li>Myélinisée > Amyélinisée</li><li>&lt; 300 000 km/s (courant électrique)</li></ul></div>
+  </div>
+
+  <div class="section-title">VI. Transmission synaptique (pp.187-191)</div>
+
+  <div class="img-row triple">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 18 — Ultrastructure synapse</div><div class="ph-sub">Manuel p.187 (Doc 18)</div><div class="ph-comment">ME : vésicules synaptiques, fente, membrane postsynaptique épaissie</div><img class="ph-img" src="images/T4Ch2_Doc18_ultrastructure_synapse.PNG" alt="Doc 18"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 19 — Synapse : repos vs activée</div><div class="ph-sub">Manuel p.187 (Doc 19)</div><div class="ph-comment">Fig. A (repos) / Fig. B (après PA) : exocytose des vésicules</div><img class="ph-img" src="images/T4Ch2_Doc19_etat_structural_synapse.PNG" alt="Doc 19"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 20 — Concentration Ca²⁺ présynaptique</div><div class="ph-sub">Manuel p.187 (Doc 20)</div><div class="ph-comment">Courbe en fonction du potentiel dépolarisant</div><img class="ph-img" src="images/T4Ch2_Doc20_concentration_ca_presynaptique.PNG" alt="Doc 20"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 21 — Enregistrements PPSE et PPSI</div><div class="ph-sub">Manuel p.188 (Doc 21)</div><div class="ph-comment">E1 (dépolarisation = PPSE) / E'1 (hyperpolarisation = PPSI)</div><img class="ph-img" src="images/T4Ch2_Doc21_enregistrements_PPSE_PPSI.PNG" alt="Doc 21"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 22 — Dispositif intégration PPS</div><div class="ph-sub">Manuel p.189 (Doc 22)</div><div class="ph-comment">N1, N2, N3, N4 + 6 oscilloscopes</div><img class="ph-img" src="images/T4Ch2_Doc22_dispositif_integration.PNG" alt="Doc 22"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 23 — Tableau intégration PPS</div><div class="ph-sub">Manuel pp.190-191 (Doc 23)</div><div class="ph-comment">Résultats sommation spatiale et temporelle</div><img class="ph-img" src="images/T4Ch2_Doc23_tableau_integration_PPS.PNG" alt="Doc 23"/><button class="ph-remove">✕</button></div>
+
+  <div class="flow" style="flex-direction:column;align-items:flex-start;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">① PA → ouverture Ca²⁺ V.D.</div><span style="font-size:13px;color:var(--gray6)">Entrée Ca²⁺</span></div>
+    <div style="padding-left:30px;color:var(--gray3)">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">② Exocytose vésicules</div><span style="font-size:13px;color:var(--gray6)">Libération neurotransmetteur</span></div>
+    <div style="padding-left:30px;color:var(--gray3)">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">③ Fixation récepteurs postsyn.</div><span style="font-size:13px;color:var(--gray6)">Ouverture canaux chimiodépendants</span></div>
+    <div style="padding-left:30px;color:var(--gray3)">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step active-step" style="min-width:200px">④ Mouvements ioniques → PPS</div><span style="font-size:13px;color:var(--gray6)">PPSE (Na⁺) ou PPSI (Cl⁻/K⁺)</span></div>
+    <div style="padding-left:30px;color:var(--gray3)">↓</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="flow-step" style="min-width:200px;border-color:var(--red);color:var(--red)">⑤ Inactivation neurotransmetteur</div><span style="font-size:13px;color:var(--gray6)">Dégradation ou recapture</span></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Ions</th><th>Effet</th><th>Potentiel</th><th>Résultat</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="color:var(--green)">PPSE</strong></td><td>Entrée Na⁺</td><td>Dépolarisation</td><td>Vers seuil</td><td>Favorise PA</td></tr>
+        <tr><td><strong style="color:var(--red)">PPSI</strong></td><td>Entrée Cl⁻ + sortie K⁺</td><td>Hyperpolarisation</td><td>Loin du seuil</td><td>Inhibe PA</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid">
+    <div class="card blue"><h4>🌐 Sommation spatiale</h4><p>Plusieurs synapses activées simultanément → somme algébrique PPSE − PPSI au cône axonique.</p></div>
+    <div class="card cyan"><h4>⏱️ Sommation temporelle</h4><p>Même synapse activée à haute fréquence → PPS successifs s'additionnent.</p></div>
+    <div class="card purple"><h4>🎯 Cône axonique</h4><p>Seul site où naissent les PA. L'intégration : si somme ≥ seuil → message transmis.</p></div>
+  </div>
+
+  <div class="section-title">VII. Circuit du réflexe myotatique (pp.192-201)</div>
+
+  <div class="img-row">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 24 — Dispositif enregistrement réflexe</div><div class="ph-sub">Manuel p.192 (Doc 24)</div><div class="ph-comment">R1→R5, moelle épinière, muscles M (étiré) et M' (antagoniste)</div><img class="ph-img" src="images/T4Ch2_Doc24_dispositif_enregistrement_reflexe.PNG" alt="Doc 24"/><button class="ph-remove">✕</button></div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 25 — Résultats enregistrements réflexe</div><div class="ph-sub">Manuel p.193 (Doc 25)</div><div class="ph-comment">Tracés O1→O5 : PA sensitif, PA moteur muscle étiré, PPSI antagoniste</div><img class="ph-img" src="images/T4Ch2_Doc25_resultats_enregistrements_reflexe.PNG" alt="Doc 25"/><button class="ph-remove">✕</button></div>
+  </div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma de synthèse — Structures du réflexe myotatique</div><div class="ph-sub">Manuel pp.200-201</div><div class="ph-comment">Neurone sensitif + motoneurone α + interneurone inhibiteur + synapses</div><img class="ph-img" src="images/T4Ch2_Schema_synthese_reflexe_myotatique.PNG" alt="Schéma"/><button class="ph-remove">✕</button></div>
+
+  <div class="card-grid">
+    <div class="card green"><h4>✅ Circuit excitateur</h4><ul><li>Neurone sensitif → 1 synapse → motoneurone α</li><li><strong>Monosynaptique</strong></li><li>→ Contraction muscle étiré</li></ul></div>
+    <div class="card red"><h4>🚫 Circuit inhibiteur</h4><ul><li>Neurone sensitif → interneurone inhibiteur → motoneurone α</li><li><strong>Polysynaptique</strong> (2 synapses)</li><li>→ Relâchement muscle antagoniste</li></ul></div>
+  </div>
+
+  <div class="info-box green"><strong>Innervation réciproque :</strong> Contraction du muscle étiré + relâchement simultané du muscle antagoniste.</div>
+
+  <div class="def-box"><div class="lbl">Tonus musculaire</div><p>Au repos, activité permanente de faible intensité des fuseaux → légère contraction de base = <strong>tonus musculaire</strong>.</p></div>
+
+  <!-- ACTIVITE CHAPITRE 2 -->
+  <div class="section-title">📝 Activité — Le message nerveux &amp; le réflexe</div>
+  <div class="activity-card">
+    <div class="activity-header"><div class="act-num">2</div><div><h3>Potentiel d'action, synapse &amp; réflexe myotatique</h3><div style="font-size:12px;opacity:.75">Ch.2 — Synthèse pp.194-201</div></div></div>
+    <div class="activity-body">
+      <div class="fill-text" id="fill-ch2">
+        Une stimulation ≥ seuil déclenche un
+        <span class="blank-select"><select id="c2_1"><option value="">—</option><option value="potentiel d'action">potentiel d'action</option><option value="potentiel de repos">potentiel de repos</option></select></span>.
+        La dépolarisation est due à l'entrée de
+        <span class="blank-select"><select id="c2_2"><option value="">—</option><option value="Na⁺">Na⁺</option><option value="K⁺">K⁺</option></select></span>,
+        la repolarisation à la sortie de
+        <span class="blank-select"><select id="c2_3"><option value="">—</option><option value="K⁺">K⁺</option><option value="Na⁺">Na⁺</option></select></span>.
+        Le PA obéit à la loi du
+        <span class="blank-select"><select id="c2_4"><option value="">—</option><option value="tout ou rien">tout ou rien</option><option value="gradient">gradient</option></select></span>.
+        La période
+        <span class="blank-select"><select id="c2_5"><option value="">—</option><option value="réfractaire">réfractaire</option><option value="de repos">de repos</option></select></span>
+        assure la propagation unidirectionnelle. Dans une fibre myélinisée, la propagation est
+        <span class="blank-select"><select id="c2_6"><option value="">—</option><option value="saltatoire">saltatoire</option><option value="continue">continue</option></select></span>.
+        Le message est codé en
+        <span class="blank-select"><select id="c2_7"><option value="">—</option><option value="modulation de fréquence">modulation de fréquence</option><option value="modulation d'amplitude">modulation d'amplitude</option></select></span>.<br/><br/>
+        Au niveau de la synapse, le PA présynaptique déclenche l'entrée de
+        <span class="blank-select"><select id="c2_8"><option value="">—</option><option value="Ca²⁺">Ca²⁺</option><option value="Na⁺">Na⁺</option></select></span>,
+        provoquant l'exocytose des vésicules et la libération du
+        <span class="blank-select"><select id="c2_9"><option value="">—</option><option value="neurotransmetteur">neurotransmetteur</option><option value="glucose">glucose</option></select></span>.
+        Une synapse excitatrice génère un
+        <span class="blank-select"><select id="c2_10"><option value="">—</option><option value="PPSE">PPSE</option><option value="PPSI">PPSI</option></select></span> (entrée Na⁺),
+        une synapse inhibitrice un
+        <span class="blank-select"><select id="c2_11"><option value="">—</option><option value="PPSI">PPSI</option><option value="PPSE">PPSE</option></select></span> (entrée Cl⁻).<br/><br/>
+        Le réflexe myotatique est un réflexe
+        <span class="blank-select"><select id="c2_12"><option value="">—</option><option value="médullaire">médullaire</option><option value="cérébral">cérébral</option></select></span>.
+        Le récepteur est le
+        <span class="blank-select"><select id="c2_13"><option value="">—</option><option value="fuseau neuromusculaire">fuseau neuromusculaire</option><option value="ganglion spinal">ganglion spinal</option></select></span>.
+        Le circuit excitateur est
+        <span class="blank-select"><select id="c2_14"><option value="">—</option><option value="monosynaptique">monosynaptique</option><option value="polysynaptique">polysynaptique</option></select></span>,
+        le circuit inhibiteur est
+        <span class="blank-select"><select id="c2_15"><option value="">—</option><option value="polysynaptique">polysynaptique</option><option value="monosynaptique">monosynaptique</option></select></span>.
+        Cette coordination s'appelle
+        <span class="blank-select"><select id="c2_16"><option value="">—</option><option value="innervation réciproque">innervation réciproque</option><option value="intégration spatiale">intégration spatiale</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+        <button class="check-btn" onclick="checkFill('ch2',16,['potentiel d\'action','Na⁺','K⁺','tout ou rien','réfractaire','saltatoire','modulation de fréquence','Ca²⁺','neurotransmetteur','PPSE','PPSI','médullaire','fuseau neuromusculaire','monosynaptique','polysynaptique','innervation réciproque'])">Vérifier</button>
+        <span id="score-ch2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetFill('ch2',16)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BILAN ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèses du manuel (pp.170-171 &amp; 194-201)</div>
+
+  <div class="bilan-fill">
+    <div class="bilan-fill-header"><h3>🧠 Synthèse Ch.1 — Le tissu nerveux</h3></div>
+    <div class="bilan-fill-body">
+      <div class="fill-text" id="bilan1">
+        Le système nerveux comprend le SNC (encéphale + moelle épinière) et le SNP (nerfs). La substance
+        <span class="blank-select"><select id="b1_1"><option value="">—</option><option value="grise">grise</option><option value="blanche">blanche</option></select></span>
+        contient les corps cellulaires, la substance
+        <span class="blank-select"><select id="b1_2"><option value="">—</option><option value="blanche">blanche</option><option value="grise">grise</option></select></span>
+        les axones myélinisés. Le
+        <span class="blank-select"><select id="b1_3"><option value="">—</option><option value="neurone">neurone</option><option value="gliocyte">gliocyte</option></select></span>
+        est l'unité de base : corps cellulaire dans la
+        <span class="blank-select"><select id="b1_4"><option value="">—</option><option value="substance grise ou ganglion">substance grise ou ganglion</option><option value="substance blanche">substance blanche</option></select></span>,
+        dendrites (réception), axone (conduction). La gaine de
+        <span class="blank-select"><select id="b1_5"><option value="">—</option><option value="Schwann">Schwann</option><option value="myéline">myéline</option></select></span>
+        entoure les fibres, avec ou sans gaine de
+        <span class="blank-select"><select id="b1_6"><option value="">—</option><option value="myéline">myéline</option><option value="Schwann">Schwann</option></select></span>.
+        Les neurones communiquent via les
+        <span class="blank-select"><select id="b1_7"><option value="">—</option><option value="synapses">synapses</option><option value="nœuds de Ranvier">nœuds de Ranvier</option></select></span>.
+        La jonction neurone-muscle est la
+        <span class="blank-select"><select id="b1_8"><option value="">—</option><option value="plaque motrice">plaque motrice</option><option value="synapse neuroneuronique">synapse neuroneuronique</option></select></span>.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn green-btn" onclick="checkBilan(1,8,['grise','blanche','neurone','substance grise ou ganglion','Schwann','myéline','synapses','plaque motrice'])">Vérifier</button>
+        <span id="score-b1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetBilan(1,8)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bilan-fill" style="margin-top:20px">
+    <div class="bilan-fill-header"><h3>⚡ Synthèse Ch.2 — Message nerveux &amp; Réflexe</h3></div>
+    <div class="bilan-fill-body">
+      <div class="fill-text" id="bilan2">
+        Le PR (−70 mV) est maintenu par la
+        <span class="blank-select"><select id="b2_1"><option value="">—</option><option value="pompe Na⁺/K⁺">pompe Na⁺/K⁺</option><option value="pompe à Ca²⁺">pompe à Ca²⁺</option></select></span>.
+        Le PA comporte : dépolarisation (entrée
+        <span class="blank-select"><select id="b2_2"><option value="">—</option><option value="Na⁺">Na⁺</option><option value="K⁺">K⁺</option></select></span>),
+        repolarisation (sortie
+        <span class="blank-select"><select id="b2_3"><option value="">—</option><option value="K⁺">K⁺</option><option value="Na⁺">Na⁺</option></select></span>).
+        Loi du
+        <span class="blank-select"><select id="b2_4"><option value="">—</option><option value="tout ou rien">tout ou rien</option><option value="gradient">gradient</option></select></span> :
+        amplitude fixe ~100 mV. Période
+        <span class="blank-select"><select id="b2_5"><option value="">—</option><option value="réfractaire">réfractaire</option><option value="de repos">de repos</option></select></span>
+        → unidirectionnelle. Propagation
+        <span class="blank-select"><select id="b2_6"><option value="">—</option><option value="saltatoire">saltatoire</option><option value="continue">continue</option></select></span>
+        dans les fibres myélinisées. Le message est codé en
+        <span class="blank-select"><select id="b2_7"><option value="">—</option><option value="modulation de fréquence">modulation de fréquence</option><option value="modulation d'amplitude">modulation d'amplitude</option></select></span>.<br/><br/>
+        À la synapse, l'entrée de
+        <span class="blank-select"><select id="b2_8"><option value="">—</option><option value="Ca²⁺">Ca²⁺</option><option value="Na⁺">Na⁺</option></select></span>
+        déclenche l'exocytose du
+        <span class="blank-select"><select id="b2_9"><option value="">—</option><option value="neurotransmetteur">neurotransmetteur</option><option value="glucose">glucose</option></select></span>.
+        PPSE = entrée Na⁺ (dépolarisation), PPSI = entrée
+        <span class="blank-select"><select id="b2_10"><option value="">—</option><option value="Cl⁻">Cl⁻</option><option value="Na⁺">Na⁺</option></select></span>
+        (hyperpolarisation). L'intégration se fait au
+        <span class="blank-select"><select id="b2_11"><option value="">—</option><option value="cône axonique">cône axonique</option><option value="nœud de Ranvier">nœud de Ranvier</option></select></span>.<br/><br/>
+        Le réflexe myotatique est
+        <span class="blank-select"><select id="b2_12"><option value="">—</option><option value="médullaire">médullaire</option><option value="cérébral">cérébral</option></select></span>.
+        Le récepteur est le fuseau neuromusculaire. Le circuit excitateur est
+        <span class="blank-select"><select id="b2_13"><option value="">—</option><option value="monosynaptique">monosynaptique</option><option value="polysynaptique">polysynaptique</option></select></span>,
+        le circuit inhibiteur est
+        <span class="blank-select"><select id="b2_14"><option value="">—</option><option value="polysynaptique">polysynaptique</option><option value="monosynaptique">monosynaptique</option></select></span>.
+        Cette coordination est l'
+        <span class="blank-select"><select id="b2_15"><option value="">—</option><option value="innervation réciproque">innervation réciproque</option><option value="intégration spatiale">intégration spatiale</option></select></span>.
+        Le tonus musculaire est maintenu par l'activité permanente des fuseaux.
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn green-btn" onclick="checkBilan(2,15,['pompe Na⁺/K⁺','Na⁺','K⁺','tout ou rien','réfractaire','saltatoire','modulation de fréquence','Ca²⁺','neurotransmetteur','Cl⁻','cône axonique','médullaire','monosynaptique','polysynaptique','innervation réciproque'])">Vérifier</button>
+        <span id="score-b2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetBilan(2,15)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QCM ==================== -->
+<div class="tab-panel" id="tab-qcm">
+  <div class="section-title">✅ 15 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13.5px;margin-bottom:6px">Chaque question peut avoir <strong>une ou plusieurs</strong> réponses correctes.</p>
+  <div class="info-box amber" style="margin-bottom:24px;font-size:13px">⚠️ Utilise <strong>Vérifier</strong> pour savoir si ta réponse est juste, puis <strong>Correction</strong> pour afficher l'explication complète.</div>
+
+  <div id="qcm-container"></div>
+
+  <div class="signature">INGÉNIEUR Mohamed CHAGRAOUI</div>
+</div>
+
+<script>
+// ===== QUESTIONS QCM =====
+const qcmData=[
+  {q:"Q1. Le neurone :",
+   opts:["a. est l'unique constituant du tissu nerveux","b. possède un corps cellulaire toujours situé dans la substance grise ou dans un ganglion","c. est formé d'un corps cellulaire, d'une fibre nerveuse et d'une arborisation terminale","d. établit des synapses uniquement avec d'autres neurones"],
+   correct:['b','c'],
+   fb:"✅ b et c. Le neurone n'est PAS l'unique constituant (cellules gliales). Il peut établir des synapses avec des cellules musculaires (plaque motrice). (Voir pp.168-169)"},
+  {q:"Q2. Le potentiel de repos (PR) d'un neurone :",
+   opts:["a. est une ddp entre l'intérieur et l'extérieur de la membrane","b. est dû à la répartition inégale des ions Na⁺ et K⁺","c. est maintenu grâce à la pompe Na⁺/K⁺","d. a une valeur de −50 mV"],
+   correct:['a','b','c'],
+   fb:"✅ a, b, c. Le PR vaut −70 mV (pas −50 mV). La valeur −50 mV est le seuil de déclenchement du PA. (Voir pp.178-180)"},
+  {q:"Q3. La pompe Na⁺/K⁺ :",
+   opts:["a. expulse 3 Na⁺ et fait entrer 2 K⁺","b. fonctionne selon le gradient (transport passif)","c. consomme de l'ATP","d. est une ATPase"],
+   correct:['a','c','d'],
+   fb:"✅ a, c, d. La pompe est un transport ACTIF (contre le gradient) → consomme ATP → c'est une ATPase. (Voir p.180)"},
+  {q:"Q4. Le potentiel d'action (PA) :",
+   opts:["a. est déclenché par une stimulation ≥ seuil","b. résulte d'une entrée de K⁺ suivie d'une sortie de Na⁺","c. a une amplitude proportionnelle à l'intensité","d. naît quand la dépolarisation atteint −50 mV"],
+   correct:['a','d'],
+   fb:"✅ a et d. La dépolarisation = entrée Na⁺ (pas K⁺). Amplitude CONSTANTE (loi tout ou rien). (Voir pp.181-183)"},
+  {q:"Q5. La propagation du PA :",
+   opts:["a. est unidirectionnelle grâce à la période réfractaire","b. est saltatoire dans les fibres amyélinisées","c. met en jeu des courants locaux","d. est plus rapide dans les fibres myélinisées"],
+   correct:['a','c','d'],
+   fb:"✅ a, c, d. La propagation saltatoire concerne les fibres MYÉLINISÉES (pas amyélinisées). (Voir pp.185-186)"},
+  {q:"Q6. Au niveau du récepteur sensoriel (fuseau neuromusculaire) :",
+   opts:["a. le stimulus est converti en potentiel de récepteur (transduction)","b. l'amplitude du potentiel de récepteur est proportionnelle à l'intensité","c. le potentiel de récepteur obéit à la loi du tout ou rien","d. le message est codé en modulation de fréquence"],
+   correct:['a','b','d'],
+   fb:"✅ a, b, d. Le potentiel de récepteur est GRADUÉ (proportionnel), pas « tout ou rien ». (Voir p.184)"},
+  {q:"Q7. Dans une synapse, le neurotransmetteur :",
+   opts:["a. est libéré suite à l'entrée de Ca²⁺","b. se fixe sur les récepteurs postsynaptiques","c. ouvre des canaux chimiodépendants","d. provoque toujours une dépolarisation"],
+   correct:['a','b','c'],
+   fb:"✅ a, b, c. Le neurotransmetteur peut être excitateur (PPSE) OU inhibiteur (PPSI). (Voir pp.187-188)"},
+  {q:"Q8. Une synapse inhibitrice :",
+   opts:["a. génère une hyperpolarisation","b. provoque l'entrée de Cl⁻ et la sortie de K⁺","c. rapproche le potentiel du seuil","d. utilise le GABA comme neurotransmetteur fréquent"],
+   correct:['a','b','d'],
+   fb:"✅ a, b, d. Une synapse inhibitrice ÉLOIGNE le potentiel du seuil (ne le rapproche pas). (Voir p.188)"},
+  {q:"Q9. La sommation spatiale :",
+   opts:["a. résulte de l'activation simultanée de plusieurs synapses","b. s'effectue au cône axonique","c. résulte de PA très rapprochés d'une même fibre","d. peut déclencher un PA si la somme ≥ seuil"],
+   correct:['a','b','d'],
+   fb:"✅ a, b, d. La réponse c décrit la sommation TEMPORELLE. (Voir pp.189-191)"},
+  {q:"Q10. Le réflexe myotatique :",
+   opts:["a. est un réflexe médullaire","b. met en jeu des récepteurs cutanés","c. joue un rôle dans le maintien de la posture","d. est monosynaptique pour le circuit excitateur"],
+   correct:['a','c','d'],
+   fb:"✅ a, c, d. Les récepteurs sont dans le MUSCLE (fuseaux), pas dans la peau. (Voir pp.174-176)"},
+  {q:"Q11. Les fuseaux neuromusculaires :",
+   opts:["a. sont des mécanorécepteurs sensibles à l'étirement","b. sont les effecteurs du réflexe","c. sont en relation avec les fibres Ia","d. contiennent des fibres intrafusales"],
+   correct:['a','c','d'],
+   fb:"✅ a, c, d. Les fuseaux sont les RÉCEPTEURS, pas les effecteurs (muscles). (Voir p.176)"},
+  {q:"Q12. L'innervation réciproque :",
+   opts:["a. implique un interneurone inhibiteur","b. provoque le relâchement du muscle antagoniste","c. est un circuit polysynaptique (2 synapses)","d. est un mécanisme volontaire"],
+   correct:['a','b','c'],
+   fb:"✅ a, b, c. L'innervation réciproque est INVOLONTAIRE (réflexe). (Voir pp.192-193)"},
+  {q:"Q13. La substance blanche :",
+   opts:["a. est constituée d'axones myélinisés","b. contient les corps cellulaires","c. est en périphérie dans la moelle épinière","d. constitue le cortex cérébral"],
+   correct:['a','c'],
+   fb:"✅ a et c. Le cortex cérébral est de la substance GRISE. La substance blanche contient les FIBRES. (Voir p.164)"},
+  {q:"Q14. La section de la racine antérieure entraîne :",
+   opts:["a. la dégénérescence des fibres motrices du côté périphérique","b. la perte de motricité dans la région innervée","c. la perte de sensibilité","d. la dégénérescence de la racine postérieure"],
+   correct:['a','b'],
+   fb:"✅ a et b. La racine antérieure est MOTRICE. La sensibilité (racine postérieure) est conservée. (Voir p.176)"},
+  {q:"Q15. L'augmentation d'intensité d'un stimulus (au-dessus du seuil) entraîne :",
+   opts:["a. une augmentation de la fréquence des PA","b. une augmentation de l'amplitude des PA","c. une augmentation du nombre de fibres recrutées","d. une augmentation de la durée du PA"],
+   correct:['a','c'],
+   fb:"✅ a et c. Les PA obéissent à la loi du tout ou rien : amplitude et durée CONSTANTES. (Voir pp.181-184)"}
+];
+
+// ===== BUILD QCM =====
+function buildQCM(){
+  const container=document.getElementById('qcm-container');
+  container.innerHTML='';
+  qcmData.forEach((d,i)=>{
+    const q=i+1;
+    const html=`
+      <div class="qcm-item" id="qi${q}">
+        <div class="qcm-q"><span class="qnum">${d.q}</span></div>
+        <div class="qcm-options">
+          ${d.opts.map((o,j)=>{
+            const v=String.fromCharCode(97+j);
+            return `<label class="qcm-opt"><input type="checkbox" data-q="${q}" data-v="${v}"/> ${o}</label>`;
+          }).join('')}
+        </div>
+        <div class="qcm-feedback" id="fb${q}"></div>
+        <div class="qcm-buttons">
+          <button class="qcm-verify-btn" onclick="verifyQCM(${q})">🟢 Vérifier</button>
+          <button class="qcm-correct-btn" onclick="correctQCM(${q})">🔵 Correction</button>
+          <button class="qcm-refresh-btn" onclick="refreshQCM(${q})">🔄 Rafraîchir</button>
+        </div>
+      </div>`;
+    container.insertAdjacentHTML('beforeend',html);
+  });
+}
+buildQCM();
+
+// ===== IMAGE PLACEHOLDERS =====
+function initPlaceholders(){
+  document.querySelectorAll('.img-placeholder').forEach(ph=>{
+    const inp=ph.querySelector('input[type=file]');
+    const img=ph.querySelector('img.ph-img');
+    const btn=ph.querySelector('.ph-remove');
+    if(!inp||!img)return;
+    if(img.src&&img.src.includes('images/')){
+      const testImg=new Image();
+      testImg.onload=function(){img.style.display='block';ph.classList.add('has-img');};
+      testImg.onerror=function(){img.style.display='none';ph.classList.remove('has-img');};
+      testImg.src=img.src;
+    }
+    inp.addEventListener('change',e=>{
+      const file=e.target.files[0];if(!file)return;
+      const reader=new FileReader();
+      reader.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};
+      reader.readAsDataURL(file);
+    });
+    if(btn) btn.addEventListener('click',e=>{e.stopPropagation();img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';});
+  });
+}
+document.addEventListener('DOMContentLoaded',initPlaceholders);
+
+function showTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  updateProgress();
+}
+function updateProgress(){
+  const tabs=document.querySelectorAll('.tab-btn');
+  const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));
+  document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';
+}
+document.addEventListener('DOMContentLoaded',updateProgress);
+
+// ===== FILL =====
+function checkFill(prefix,num,answers){
+  let correct=0;
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById(prefix+'_'+i);
+    if(!sel)continue;
+    const ok=sel.value===answers[i-1];
+    sel.className='';
+    if(sel.value!==''){if(ok){sel.className='correct';correct++;}else sel.className='wrong';}
+  }
+  const badge=document.getElementById('score-'+prefix);
+  badge.textContent=correct+'/'+num;
+  badge.className='score-badge '+(correct===num?'good':'bad');
+}
+function resetFill(prefix,num){
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById(prefix+'_'+i);
+    if(sel){sel.value='';sel.className='';}
+  }
+  const badge=document.getElementById('score-'+prefix);
+  badge.textContent='';badge.className='score-badge';
+}
+
+// ===== BILAN =====
+function checkBilan(n,num,answers){
+  let correct=0;
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById('b'+n+'_'+i);
+    if(!sel)continue;
+    const ok=sel.value===answers[i-1];
+    sel.className='';
+    if(sel.value!==''){if(ok){sel.className='correct';correct++;}else sel.className='wrong';}
+  }
+  const badge=document.getElementById('score-b'+n);
+  badge.textContent=correct+'/'+num;
+  badge.className='score-badge '+(correct===num?'good':'bad');
+}
+function resetBilan(n,num){
+  for(let i=1;i<=num;i++){
+    const sel=document.getElementById('b'+n+'_'+i);
+    if(sel){sel.value='';sel.className='';}
+  }
+  const badge=document.getElementById('score-b'+n);
+  badge.textContent='';badge.className='score-badge';
+}
+
+// ===== QCM FUNCTIONS =====
+function verifyQCM(q){
+  const checkboxes=document.querySelectorAll(`input[data-q="${q}"]`);
+  const checked=Array.from(checkboxes).filter(c=>c.checked).map(c=>c.dataset.v);
+  const correct=qcmData[q-1].correct;
+  const isFullyCorrect=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  const isPartial=!isFullyCorrect&&checked.some(v=>correct.includes(v));
+  const fb=document.getElementById('fb'+q);
+  const item=document.getElementById('qi'+q);
+  fb.className='qcm-feedback show '+(isFullyCorrect?'fb-ok':isPartial?'fb-partial':'fb-ko');
+  fb.innerHTML=(isFullyCorrect?'✅ Juste !':isPartial?'🟡 Partiel — il manque des réponses ou tu as coché une réponse fausse':'❌ Faux');
+  item.classList.remove('correct-item','wrong-item','partial-item');
+  item.classList.add(isFullyCorrect?'correct-item':isPartial?'partial-item':'wrong-item');
+}
+function correctQCM(q){
+  const cbxs=document.querySelectorAll(`input[data-q="${q}"]`);
+  const correct=qcmData[q-1].correct;
+  cbxs.forEach(cb=>{
+    const opt=cb.closest('.qcm-opt');
+    opt.classList.remove('opt-correct','opt-wrong','opt-missed');
+    if(correct.includes(cb.dataset.v)&&cb.checked) opt.classList.add('opt-correct');
+    else if(!correct.includes(cb.dataset.v)&&cb.checked) opt.classList.add('opt-wrong');
+    else if(correct.includes(cb.dataset.v)&&!cb.checked) opt.classList.add('opt-missed');
+  });
+  const fb=document.getElementById('fb'+q);
+  fb.className='qcm-feedback show fb-correction';
+  fb.innerHTML='🔵 '+qcmData[q-1].fb;
+  const item=document.getElementById('qi'+q);
+  const checked=Array.from(cbxs).filter(c=>c.checked).map(c=>c.dataset.v);
+  const isFullyCorrect=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  item.classList.remove('correct-item','wrong-item','partial-item');
+  item.classList.add(isFullyCorrect?'correct-item':'wrong-item');
+}
+function refreshQCM(q){
+  const cbxs=document.querySelectorAll(`input[data-q="${q}"]`);
+  cbxs.forEach(cb=>{cb.checked=false;cb.disabled=false;});
+  cbxs.forEach(cb=>{cb.closest('.qcm-opt').classList.remove('opt-correct','opt-wrong','opt-missed');});
+  const fb=document.getElementById('fb'+q);
+  fb.className='qcm-feedback';fb.innerHTML='';
+  document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');
+}
+</script>
+</body>
+</html>
