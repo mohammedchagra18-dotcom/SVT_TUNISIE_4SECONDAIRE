@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 2 — La Génétique | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;--navy3:#263d56;
+  --green:#059669;--green-lt:#ecfdf5;--green-dk:#047857;
+  --teal:#0f766e;--teal-lt:#f0fdfa;
+  --blue:#2563eb;--blue-lt:#eff6ff;--blue-dk:#1d4ed8;
+  --red:#dc2626;--red-lt:#fef2f2;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --indigo:#4338ca;--indigo-lt:#eef2ff;
+  --cyan:#0891b2;--cyan-lt:#ecfeff;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(5,150,105,.08);--shadow-md:0 4px 24px rgba(5,150,105,.13);
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f0fdfa;color:var(--gray8);font-size:15px;line-height:1.72}
+header{background:linear-gradient(135deg,#0d1b2a 0%,#1a2e1a 55%,#0f2d1a 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(13,27,42,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(5,150,105,.08)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#6ee7b7}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.6rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#6ee7b7}
+.hdr-sub{opacity:.7;font-size:.92rem;margin-top:3px;color:#a7f3d0}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#a7f3d0}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(5,150,105,.25);border:1px solid rgba(5,150,105,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#6ee7b7;margin-top:6px}
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#6ee7b7,#a78bfa);width:0%;transition:width .4s}
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 20px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:12px 10px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--green);background:var(--green-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--green);border-bottom-color:var(--green)}
+.tab-panel{display:none;padding:24px 30px;max-width:1100px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-family:'Crimson Pro',serif;font-size:1.2rem;color:var(--green-dk);border-left:4px solid var(--green);padding-left:10px;margin:28px 0 14px}
+.sub-title{font-size:.9rem;font-weight:600;color:var(--green);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.sub-title::before{content:'';display:block;width:18px;height:2px;background:var(--green);border-radius:2px}
+.def-box{background:var(--teal-lt);border:1.5px solid #99f6e4;border-radius:var(--radius);padding:12px 16px;margin:10px 0}
+.def-box .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--teal);margin-bottom:5px}
+.info-box{border-left:4px solid var(--green);background:var(--green-lt);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:10px 0;font-size:13px}
+.info-box.blue{border-left-color:var(--blue);background:var(--blue-lt)}.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}.info-box.red{border-left-color:var(--red);background:var(--red-lt)}.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}
+.info-box strong{color:var(--green-dk)}.info-box.blue strong{color:var(--blue-dk)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0}
+.card{background:#fff;border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);border-top:3px solid var(--green)}.card.blue{border-top-color:var(--blue)}.card.purple{border-top-color:var(--purple)}.card.red{border-top-color:var(--red)}.card.amber{border-top-color:var(--amber)}.card.navy{border-top-color:var(--navy)}.card.teal{border-top-color:var(--teal)}
+.card h4{font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--gray8)}.card ul{padding-left:16px;font-size:13px;color:var(--gray6)}.card ul li{margin-bottom:4px}.card p{font-size:13px;color:var(--gray6)}
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}thead tr{background:var(--navy2);color:#fff}th{padding:9px 12px;font-weight:600;text-align:left}td{padding:8px 12px;border-bottom:1px solid var(--gray2)}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:var(--gray1)}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:12px 0}
+.flow-step{background:#fff;border:2px solid var(--green);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--teal);text-align:center}
+.flow-step.active-step{background:var(--green);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:16px;font-weight:700}
+.cross-box{background:#fff;border:2px solid var(--gray2);border-radius:var(--radius);padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+.cross-box .cross-title{font-weight:700;color:var(--teal);font-size:.9rem;margin-bottom:10px}
+.cross-line{font-family:monospace;font-size:13px;color:var(--gray8);padding:3px 0;border-bottom:1px dashed var(--gray2);line-height:1.7}.cross-line:last-child{border:none}
+.tip-box{background:var(--amber-lt);border:2px solid var(--amber);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.tip-box .tip-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--amber);margin-bottom:4px}
+.mnemo-box{background:var(--purple-lt);border:2px solid var(--purple);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.mnemo-box .mnemo-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--purple);margin-bottom:4px}
+.accordion{border:2px solid var(--gray2);border-radius:var(--radius);margin:14px 0;overflow:hidden;background:#fff}
+.acc-header{background:var(--gray1);padding:14px 18px;cursor:pointer;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:background .2s}
+.acc-header:hover{background:var(--teal-lt)}
+.acc-header .acc-arrow{transition:transform .3s;font-size:18px;color:var(--green)}
+.acc-header.open .acc-arrow{transform:rotate(90deg)}
+.acc-body{display:none;padding:18px}
+.acc-body.show{display:block}
+.mini-act{background:var(--green-lt);border:2px dashed var(--green);border-radius:var(--radius);padding:14px 18px;margin:12px 0}
+.mini-act .ma-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green-dk);margin-bottom:8px}
+.mini-act .fill-text{font-size:13.5px;line-height:2.2}
+.blank-select{display:inline-block;margin:0 3px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--green);border-radius:6px;padding:2px 7px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--green-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:#d1fae5;border-style:solid;color:var(--green-dk)}
+.blank-select select.wrong{border-color:var(--red);background:var(--red-lt);border-style:solid;color:var(--red)}
+.check-btn{margin-top:10px;background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--green)}
+.score-badge{display:inline-block;margin-left:10px;background:var(--gray2);border-radius:20px;padding:4px 12px;font-size:12.5px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:6px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--green);color:var(--green)}
+.bilan-fill{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.bilan-fill-header{background:linear-gradient(135deg,var(--indigo),#3730a3);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.bilan-fill-header h3{font-size:.95rem;font-weight:600}
+.bilan-fill-body{padding:16px}.bilan-fill-body .fill-text{font-size:13.5px;line-height:2.2}
+.bilan-fill-body .blank-select select{border-color:var(--indigo);background:var(--indigo-lt)}
+.bilan-fill-body .check-btn{background:var(--indigo)}.bilan-fill-body .check-btn:hover{background:#3730a3}
+.exo-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:5px solid var(--indigo)}
+.exo-header{background:var(--indigo);color:#fff;padding:10px 16px;font-weight:700;font-size:13.5px}
+.exo-body{padding:16px;font-size:13.5px;line-height:1.9}
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:4px solid var(--green)}
+.qcm-item.correct-item{border-left-color:var(--green)}.qcm-item.wrong-item{border-left-color:var(--red)}.qcm-item.partial-item{border-left-color:var(--amber)}
+.qcm-q{padding:12px 16px 8px;font-weight:600;font-size:14px}.qcm-q .qnum{color:var(--teal);margin-right:5px}
+.qcm-options{padding:0 16px 12px}
+.qcm-opt{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;margin:3px 0;cursor:pointer;transition:background .15s;font-size:13.5px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:var(--amber-lt);color:var(--amber)}
+.qcm-feedback{margin:8px 16px 14px;padding:10px 14px;border-radius:8px;font-size:13px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.qcm-feedback.fb-correction{background:var(--cyan-lt);border:1px solid #67e8f9;color:#155e75}
+.qcm-buttons{display:flex;align-items:center;gap:8px;padding:0 16px 14px;flex-wrap:wrap}
+.qcm-verify-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-verify-btn:hover{background:var(--green-dk)}
+.qcm-correct-btn{background:var(--cyan);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-correct-btn:hover{background:#0e7490}
+.qcm-refresh-btn{background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;cursor:pointer}
+.qcm-refresh-btn:hover{border-color:var(--green);color:var(--green)}
+.img-placeholder{border:2.5px dashed #34d399;border-radius:var(--radius);background:var(--teal-lt);padding:16px;margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;position:relative}
+.img-placeholder:hover{border-color:var(--teal);background:#ccfbf1}
+.img-placeholder .ph-icon{font-size:1.8rem;opacity:.5}
+.img-placeholder .ph-label{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.img-placeholder .ph-sub{font-size:11px;color:var(--gray6);text-align:center}
+.img-placeholder .ph-comment{font-size:10.5px;color:var(--cyan);text-align:center;font-style:italic;margin-top:3px}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub,.img-placeholder.has-img .ph-comment{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:5px;right:7px;background:var(--red);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.signature{text-align:center;padding:16px;margin-top:28px;font-size:11.5px;color:var(--gray3);border-top:1px solid var(--gray2)}
+@media(max-width:640px){.img-row{grid-template-columns:1fr}header{padding:16px 16px 14px;flex-direction:column;gap:8px}.tab-panel{padding:16px 14px}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 2 — <span>La Génétique</span></div>
+    <div class="hdr-sub">Brassage génétique &amp; Génétique humaine</div>
+    <div class="hdr-pill">Chapitres 1 &amp; 2 — pp. 83–140</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Génétique</strong>
+    pp. 83 – 140<br/>
+    6 onglets · 25 images<br/>
+    31 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('ch1',this)">🔀 Ch.1 — Brassage</button>
+  <button class="tab-btn" onclick="showTab('ch2',this)">👨‍👩‍👧 Ch.2 — Génétique H.</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN</button>
+  <button class="tab-btn" onclick="showTab('exercices',this)">📝 Exercices</button>
+  <button class="tab-btn" onclick="showTab('qcm',this)">✅ QCM CAPES</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Pourquoi la génétique ?</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Intro Thème 2 — La Génétique</div><div class="ph-sub">Manuel p.81</div><div class="ph-comment">Mendel, polymorphisme des escargots, phocomélie de Roberts</div><img class="ph-img" src="images/T2_Intro_theme2.PNG" alt="Intro T2"/><button class="ph-remove">✕</button></div>
+
+  <p style="font-size:14px;color:var(--gray6);margin-bottom:18px">La génétique est la science qui étudie la <strong>transmission des caractères héréditaires</strong> des parents aux descendants. Ce thème couvre les mécanismes du <strong>brassage génétique</strong> lors de la reproduction sexuée (Ch.1) et les particularités de la <strong>génétique humaine</strong> : analyse d'arbres généalogiques, maladies héréditaires, diagnostic prénatal et risques liés à la consanguinité (Ch.2).</p>
+
+  <div class="section-title" style="margin-top:28px">📋 Objectifs du programme officiel</div>
+  <div class="card-grid">
+    <div class="card teal">
+      <h4>🔀 Ch.1 — Brassage de l'information génétique</h4>
+      <ul>
+        <li>Expliquer les conséquences génétiques de la méiose : brassages interchromosomique et intrachromosomique</li>
+        <li>Transmission de deux couples d'allèles chez les diploïdes : cas d'indépendance et cas de liaison génétique</li>
+        <li>Déterminer le pourcentage de recombinaison et établir une carte factorielle (distance en cM)</li>
+        <li>Résoudre des problèmes de dihybridisme avec échiquier de croisement</li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h4>👨‍👩‍👧 Ch.2 — Génétique humaine</h4>
+      <ul>
+        <li>Expliquer la transmission de caractères héréditaires autosomaux et liés au sexe</li>
+        <li>Analyser des arbres généalogiques et déterminer le mode de transmission</li>
+        <li>Expliquer les risques des mariages consanguins</li>
+        <li>Importance du diagnostic prénatal : caryotype, électrophorèse, sonde moléculaire</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:28px">🗺️ Plan de la fiche</div>
+  <div class="flow">
+    <div class="flow-step active-step">🔀 Méiose</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🧬 Dihybridisme</div><div class="flow-arrow">→</div>
+    <div class="flow-step">👨‍👩‍👧 Génétique H.</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🔬 Diagnostic</div><div class="flow-arrow">→</div>
+    <div class="flow-step">📋 BILAN</div><div class="flow-arrow">→</div>
+    <div class="flow-step">✅ QCM</div>
+  </div>
+
+  <div class="card-grid" style="margin-top:18px">
+    <div class="card amber"><h4>⚠️ Pièges CAPES — Ch.1</h4><ul><li>Crossing-over : prophase I, chromatides NON sœurs</li><li>2ⁿ gamètes = brassage INTER seulement</li><li>Test-cross : 1:1:1:1 si indépendants</li><li>Gènes liés : parentaux > recombinants</li><li>1 cM = 1% de recombinaison</li></ul></div>
+    <div class="card red"><h4>⚠️ Pièges CAPES — Ch.2</h4><ul><li>Ne pas confondre autosomique et lié à X</li><li>Dominant lié à X : père atteint → toutes filles atteintes</li><li>Récessif lié à X : garçon malade → mère conductrice</li><li>Consanguinité ↑ risque maladies récessives</li><li>Caryotype : anomalies chromosomiques, PAS géniques</li></ul></div>
+  </div>
+</div>
+
+<!-- ==================== CHAPITRE 1 ==================== -->
+<div class="tab-panel" id="tab-ch1">
+  <div class="section-title">🔀 Chapitre 1 — Le brassage de l'information génétique (pp.83–112)</div>
+
+  <!-- ACCORDEON 1 : MEIOSE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. La méiose — Source de diversité génétique <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La méiose est un ensemble de <strong>deux divisions successives</strong> (réductionnelle puis équationnelle) qui produit, à partir d'une cellule diploïde (2n), quatre cellules <strong>haploïdes (n)</strong>. Elle est précédée d'une <strong>seule réplication</strong> de l'ADN durant l'interphase.</p>
+
+    <div class="sub-title">1. Le brassage interchromosomique</div>
+    <p>Lors de l'<strong>anaphase I</strong>, la migration des chromosomes homologues de chaque paire se fait de manière <strong>aléatoire</strong> et <strong>indépendante</strong> d'une paire à l'autre. Pour un organisme à n paires de chromosomes, le nombre de combinaisons chromosomiques différentes dans les gamètes est <strong>2ⁿ</strong>. Chez l'Homme (n = 23) : 2²³ ≈ <strong>8,4 millions</strong> de gamètes génétiquement différents.</p>
+
+    <div class="sub-title">2. Le brassage intrachromosomique</div>
+    <p>En <strong>prophase I</strong>, les chromosomes homologues s'apparient étroitement (synapsis). Des échanges réciproques de fragments de chromatides <strong>non sœurs</strong> peuvent se produire : c'est le <strong>crossing-over</strong>. Le point d'échange observable au microscope est le <strong>chiasma</strong>. Ce mécanisme crée de <strong>nouvelles associations alléliques</strong> sur un même chromosome : les chromatides recombinées produiront des gamètes <strong>recombinants</strong>.</p>
+
+    <div class="sub-title">3. La fécondation amplifie la diversité</div>
+    <p>L'union aléatoire de deux gamètes (chacun parmi 2ⁿ possibilités) rétablit la diploïdie (2n). Le nombre de cellules-œufs théoriquement possibles est 2ⁿ × 2ⁿ = <strong>2²ⁿ</strong>. Chaque individu issu de la reproduction sexuée est donc <strong>génétiquement unique</strong> (sauf vrais jumeaux).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Étapes photographiques de la méiose</div><div class="ph-sub">Manuel p.87</div><div class="ph-comment">Les 8 photos des phases à identifier</div><img class="ph-img" src="images/T2Ch1_Doc01_etapes_meiose.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Brassage interchromosomique</div><div class="ph-sub">Manuel p.87</div><div class="ph-comment">4 configurations de migration en anaphase I → 2² = 4 gamètes</div><img class="ph-img" src="images/T2Ch1_Doc02_brassage_interchromosomique.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Brassage intrachromosomique</div><div class="ph-sub">Manuel p.88</div><div class="ph-comment">Photo du chiasma + schéma du crossing-over</div><img class="ph-img" src="images/T2Ch1_Doc03_brassage_intrachromosomique.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Caryotypes de la drosophile</div><div class="ph-sub">Manuel p.88</div><div class="ph-comment">Mâle et femelle 2n = 8 → 2⁴ = 16 gamètes différents</div><img class="ph-img" src="images/T2Ch1_Doc04_caryotypes_drosophile.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips — Ne pas confondre</div><strong>Interchromosomique</strong> = anaphase I, migration aléatoire des chromosomes → 2ⁿ gamètes.<br/><strong>Intrachromosomique</strong> = prophase I, crossing-over entre chromatides non sœurs → gamètes recombinants.</div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Ordre des phases</div><strong>P</strong>rophase I — <strong>M</strong>étaphase I — <strong>A</strong>naphase I — <strong>T</strong>élophase I → <strong>P</strong>rophase II — <strong>M</strong>étaphase II — <strong>A</strong>naphase II — <strong>T</strong>élophase II.<br/>Retiens : <strong>PMAT PMAT</strong> (deux fois !).</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — La méiose et les brassages</div><div class="fill-text" id="ma-meiose">
+      La méiose produit des cellules <span class="blank-select"><select id="ma1_1"><option value="">—</option><option value="haploïdes (n)">haploïdes (n)</option><option value="diploïdes (2n)">diploïdes (2n)</option></select></span>. Le brassage <span class="blank-select"><select id="ma1_2"><option value="">—</option><option value="interchromosomique">interchromosomique</option><option value="intrachromosomique">intrachromosomique</option></select></span> a lieu en anaphase I et produit <span class="blank-select"><select id="ma1_3"><option value="">—</option><option value="2ⁿ">2ⁿ</option><option value="n²">n²</option></select></span> gamètes. Le crossing-over se produit en <span class="blank-select"><select id="ma1_4"><option value="">—</option><option value="prophase I">prophase I</option><option value="anaphase I">anaphase I</option></select></span> entre chromatides <span class="blank-select"><select id="ma1_5"><option value="">—</option><option value="non sœurs">non sœurs</option><option value="sœurs">sœurs</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma1',5,['haploïdes (n)','interchromosomique','2ⁿ','prophase I','non sœurs'])">Vérifier</button>
+      <span id="score-ma1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma1',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : GENES INDEPENDANTS -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. Dihybridisme — Gènes indépendants (3ème loi de Mendel) <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Lorsque deux couples d'allèles sont situés sur <strong>deux paires différentes de chromosomes</strong>, ils se transmettent <strong>indépendamment</strong> l'un de l'autre lors de la méiose. C'est la <strong>3ème loi de Mendel</strong> ou <strong>loi de disjonction indépendante des couples d'allèles</strong>.</p>
+
+    <div class="cross-box"><div class="cross-title">🧬 Exemple type — Souris : pelage (G/n) × uniformité (U/p)</div>
+      <div class="cross-line">P₁ [G,U] × P₂ [n,p] → F1 : 100% [G,U] → G dominant sur n, U dominant sur p</div>
+      <div class="cross-line">F1 (G//n U//p) produit 4 types de gamètes équiprobables (1/4 chacun) : GU, Gp, nU, np</div>
+      <div class="cross-line">F1 × F1 → F2 : <strong>9/16 [G,U] : 3/16 [G,p] : 3/16 [n,U] : 1/16 [n,p]</strong></div>
+      <div class="cross-line">Résultats expérimentaux : 569 : 187 : 188 : 63 ≈ 9:3:3:1 ✓</div>
+    </div>
+
+    <p><strong>Test-cross</strong> (F1 × double récessif [n,p]) : les 4 phénotypes apparaissent en proportions <strong>1/4 : 1/4 : 1/4 : 1/4</strong> (équiprobables), confirmant que l'hybride F1 produit bien 4 types de gamètes en proportions égales.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Croisements souris — 4 générations</div><div class="ph-sub">Manuel pp.91–92</div><div class="ph-comment">Résultats statistiques : 569:187:188:63 ≈ 9:3:3:1</div><img class="ph-img" src="images/T2Ch1_Croisements_souris_4_generations.PNG" alt="Croisements souris"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Échiquier F1 × F1 — Gènes indépendants</div><div class="ph-sub">Manuel p.94</div><div class="ph-comment">Tableau 4×4 → 9:3:3:1 (3ème loi de Mendel)</div><img class="ph-img" src="images/T2Ch1_Echiquier_F1xF1_independants.PNG" alt="Échiquier"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips — Méthode rapide</div>En dihybridisme indépendant, on peut traiter <strong>chaque caractère séparément</strong> :<br/>[G] = 3/4, [n] = 1/4 ; [U] = 3/4, [p] = 1/4<br/>→ [G,U] = 3/4 × 3/4 = 9/16 ; [n,p] = 1/4 × 1/4 = 1/16</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Gènes indépendants</div><div class="fill-text" id="ma-indep">
+      Deux gènes situés sur des chromosomes <span class="blank-select"><select id="ma2_1"><option value="">—</option><option value="non homologues">non homologues</option><option value="homologues">homologues</option></select></span> → F2 : <span class="blank-select"><select id="ma2_2"><option value="">—</option><option value="9:3:3:1">9:3:3:1</option><option value="3:1">3:1</option></select></span>. Le test-cross donne <span class="blank-select"><select id="ma2_3"><option value="">—</option><option value="1:1:1:1">1:1:1:1</option><option value="3:1">3:1</option></select></span>. C'est la <span class="blank-select"><select id="ma2_4"><option value="">—</option><option value="3ème loi de Mendel">3ème loi de Mendel</option><option value="1ère loi de Mendel">1ère loi de Mendel</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma2',4,['non homologues','9:3:3:1','1:1:1:1','3ème loi de Mendel'])">Vérifier</button>
+      <span id="score-ma2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma2',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : GENES LIES -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III. Dihybridisme — Gènes liés (Linkage) <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Lorsque deux couples d'allèles sont situés sur <strong>la même paire de chromosomes</strong>, ils tendent à se transmettre ensemble : c'est la <strong>liaison génétique</strong> ou <strong>linkage</strong>. La 3ème loi de Mendel n'est <strong>pas vérifiée</strong> dans ce cas.</p>
+
+    <div class="cross-box"><div class="cross-title">🧬 Exemple — Drosophile : ailes vestigiales (vg) × yeux pourpres (pr)</div>
+      <div class="cross-line">P₁ [+ +] × P₂ [vg pr] → F1 : 100% [+ +] (phénotype sauvage)</div>
+      <div class="cross-line">Test-cross : ♀ F1 [+ +/vg pr] × ♂ [vg pr] → <strong>parentaux majoritaires + recombinants minoritaires</strong></div>
+      <div class="cross-line">p = % de recombinants = (nb recombinants / total) × 100</div>
+      <div class="cross-line"><strong>1% de recombinaison = 1 centimorgan (cM)</strong> → distance relative entre les deux gènes</div>
+    </div>
+
+    <p>Le pourcentage de recombinaison (p) est statistiquement constant pour deux gènes donnés. Plus les gènes sont <strong>éloignés</strong> sur le chromosome, plus la probabilité de crossing-over entre eux est grande → p élevé. La <strong>carte génétique</strong> (ou carte factorielle) représente la position relative des gènes sur les chromosomes.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Croisements drosophiles vg/bw</div><div class="ph-sub">Manuel pp.95–97</div><div class="ph-comment">Croisements 1→4 : parentaux > recombinants</div><img class="ph-img" src="images/T2Ch1_Croisements_drosophiles_vg_bw.PNG" alt="vg bw"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Carte génétique de la drosophile</div><div class="ph-sub">Manuel p.100</div><div class="ph-comment">4 groupes de linkage + distances en centimorgans</div><img class="ph-img" src="images/T2Ch1_Carte_genetique_drosophile.PNG" alt="Carte génétique"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="info-box amber"><strong>⚠️ Particularité :</strong> Chez le <strong>mâle</strong> de drosophile, il n'y a <strong>jamais</strong> de crossing-over → linkage total (0% de recombinaison).</div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique</div><strong>1 cM = 1% de recombinaison.</strong> Distance vg-pr chez la drosophile ≈ 11 cM. Pour 3 gènes : pr–b = 6 cM, b–vg = 17 cM, pr–vg = 11 cM.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Gènes liés</div><div class="fill-text" id="ma-lies">
+      Deux gènes sur <span class="blank-select"><select id="ma3_1"><option value="">—</option><option value="le même chromosome">le même chromosome</option><option value="des chromosomes différents">des chromosomes différents</option></select></span> → test-cross : <span class="blank-select"><select id="ma3_2"><option value="">—</option><option value="parentaux > recombinants">parentaux > recombinants</option><option value="1:1:1:1">1:1:1:1</option></select></span>. Le pourcentage de <span class="blank-select"><select id="ma3_3"><option value="">—</option><option value="recombinants">recombinants</option><option value="parentaux">parentaux</option></select></span> donne la distance en <span class="blank-select"><select id="ma3_4"><option value="">—</option><option value="cM">cM</option><option value="pb">pb</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma3',4,['le même chromosome','parentaux > recombinants','recombinants','cM'])">Vérifier</button>
+      <span id="score-ma3" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma3',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 4 : COMPARATIF -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">IV. Tableau comparatif — Gènes indépendants vs Gènes liés <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <div class="table-wrap"><table><thead><tr><th>Critère</th><th>Gènes indépendants</th><th>Gènes liés</th></tr></thead><tbody>
+      <tr><td><strong>Localisation</strong></td><td>2 paires ≠ de chromosomes</td><td>Même paire de chromosomes</td></tr>
+      <tr><td><strong>Gamètes F1</strong></td><td>4 types équiprobables (1/4 chacun)</td><td>Parentaux > Recombinants</td></tr>
+      <tr><td><strong>F1 × F1 (F2)</strong></td><td>9:3:3:1</td><td>Majorité de parentaux</td></tr>
+      <tr><td><strong>Test-cross</strong></td><td>1:1:1:1</td><td>(1−p)/2 : p/2 : p/2 : (1−p)/2</td></tr>
+      <tr><td><strong>3ème loi de Mendel</strong></td><td>✅ Vérifiée</td><td>❌ Exception</td></tr>
+      <tr><td><strong>Carte génétique</strong></td><td>Non applicable</td><td>p → distance en cM</td></tr>
+    </tbody></table></div>
+    <div class="tip-box"><div class="tip-lbl">💡 Démarche en dihybridisme</div><strong>1.</strong> Analyser F1 → dominance.<br/><strong>2.</strong> Analyser F2 ou test-cross → proportions 1:1:1:1 (indépendance) ou inégales (liaison) ?<br/><strong>3.</strong> Si liaison → calculer p = % recombinants → distance en cM.<br/><strong>4.</strong> Écrire les génotypes et construire l'échiquier de croisement.</div>
+  </div></div>
+</div>
+
+<!-- ==================== CHAPITRE 2 ==================== -->
+<div class="tab-panel" id="tab-ch2">
+  <div class="section-title">👨‍👩‍👧 Chapitre 2 — Génétique humaine (pp.113–140)</div>
+
+  <!-- ACCORDEON 1 : MODES DE TRANSMISSION -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. Particularités et modes de transmission <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La génétique humaine se heurte à des <strong>difficultés spécifiques</strong> : croisements dirigés impossibles, faible fécondité, longue durée entre générations, 2n = 46 chromosomes. Les généticiens utilisent donc des <strong>arbres généalogiques</strong> (pedigrees) avec des symboles conventionnels, des <strong>caryotypes</strong> et des techniques d'<strong>analyse de l'ADN</strong>.</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Symboles d'un arbre généalogique</div><div class="ph-sub">Manuel p.118</div><div class="ph-comment">Carré = ♂, rond = ♀, noir = atteint, blanc = sain, barré = décédé</div><img class="ph-img" src="images/T2Ch2_Symboles_arbre_genealogique.PNG" alt="Symboles"/><button class="ph-remove">✕</button></div>
+
+    <div class="sub-title">Les 5 modes de transmission</div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Arbre albinisme</div><div class="ph-sub">Manuel p.119</div><div class="ph-comment">Autosomique récessif : parents sains → enfant albinos</div><img class="ph-img" src="images/T2Ch2_Doc01_arbre_albinisme.PNG" alt="Albinisme"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Arbre myopathie Duchenne</div><div class="ph-sub">Manuel p.120</div><div class="ph-comment">Récessif lié à X : seuls les garçons sont atteints</div><img class="ph-img" src="images/T2Ch2_Doc02_arbre_myopathie_duchenne.PNG" alt="Myopathie"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Arbre polydactylie</div><div class="ph-sub">Manuel p.121</div><div class="ph-comment">Autosomique dominant : présent à chaque génération</div><img class="ph-img" src="images/T2Ch2_Doc03_arbre_polydactylie.PNG" alt="Polydactylie"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Arbre hypophosphatémie</div><div class="ph-sub">Manuel p.122</div><div class="ph-comment">Dominant lié à X : père atteint → toutes filles atteintes</div><img class="ph-img" src="images/T2Ch2_Doc04_arbre_hypophosphatemie.PNG" alt="Hypophosphatémie"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Mode</th><th>Caractéristiques clés</th><th>Exemples</th></tr></thead><tbody>
+      <tr><td><strong style="color:var(--blue)">Autosomique récessif</strong></td><td>♂ = ♀, saute des générations, parents sains → enfant malade possible si hétérozygotes, ↑ consanguinité</td><td>Albinisme, drépanocytose, phénylcétonurie, surdi-mutité</td></tr>
+      <tr><td><strong style="color:var(--green)">Autosomique dominant</strong></td><td>Présent à chaque génération, 1 parent au moins atteint, individu sain = homozygote récessif</td><td>Brachydactylie, polydactylie, chorée de Huntington</td></tr>
+      <tr><td><strong style="color:var(--red)">Récessif lié à X</strong></td><td>♂ > ♀, garçon malade → mère conductrice, fille atteinte → père atteint + mère conductrice</td><td>Hémophilie, daltonisme, myopathie de Duchenne</td></tr>
+      <tr><td><strong style="color:var(--purple)">Dominant lié à X</strong></td><td>Père atteint → toutes filles atteintes / aucun fils ; mère hétérozygote → 1/2 enfants atteints</td><td>Rachitisme vitamino-résistant (hypophosphatémie)</td></tr>
+      <tr><td><strong style="color:var(--amber)">Lié à Y (holandrique)</strong></td><td>Père → tous les fils / aucune fille ; transmission père → fils exclusivement</td><td>Hypertrichose des oreilles</td></tr>
+    </tbody></table></div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips — Déterminer un mode de transmission</div><strong>1.</strong> Observer si ♂ = ♀ (→ autosomal) ou ♂ > ♀ (→ lié à X récessif).<br/><strong>2.</strong> Parents sains → enfant malade → <strong>récessif</strong>.<br/><strong>3.</strong> Père atteint → toutes filles atteintes et aucun fils → <strong>dominant lié à X</strong>.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Modes de transmission</div><div class="fill-text" id="ma-modes">
+      Parents sains → enfant malade = mode <span class="blank-select"><select id="ma4_1"><option value="">—</option><option value="récessif">récessif</option><option value="dominant">dominant</option></select></span>. ♂ = ♀ = <span class="blank-select"><select id="ma4_2"><option value="">—</option><option value="autosomique">autosomique</option><option value="lié à X">lié à X</option></select></span>. Père atteint → toutes filles atteintes = <span class="blank-select"><select id="ma4_3"><option value="">—</option><option value="dominant lié à X">dominant lié à X</option><option value="récessif lié à X">récessif lié à X</option></select></span>. Garçon malade + mère saine = <span class="blank-select"><select id="ma4_4"><option value="">—</option><option value="récessif lié à X">récessif lié à X</option><option value="dominant lié à X">dominant lié à X</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma4',4,['récessif','autosomique','dominant lié à X','récessif lié à X'])">Vérifier</button>
+      <span id="score-ma4" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma4',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : CONSANGUINITE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. Mariage consanguin et risque génétique <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Un <strong>mariage consanguin</strong> est l'union de deux individus apparentés ayant au moins un ancêtre commun. Il <strong>augmente considérablement</strong> la probabilité que deux allèles récessifs identiques (provenant de l'ancêtre commun) se retrouvent chez l'enfant → ↑ risque de <strong>maladies autosomiques récessives</strong>.</p>
+    <p><strong>Exemple — Drépanocytose :</strong> Pour deux parents non apparentés dans la population générale, le risque d'avoir un enfant atteint est 1/50 × 1/50 × 1/4 = <strong>1/10 000</strong>. Pour deux cousins germains ayant un oncle atteint, le risque est 2/6 × 2/6 × 1/4 = <strong>1/36</strong>, soit environ <strong>280 fois plus élevé</strong>.</p>
+    <div class="info-box red"><strong>⚠️ Règle :</strong> Le mariage consanguin est <strong>déconseillé</strong> chaque fois qu'une tare récessive existe dans la famille ascendante ou chez les collatéraux. Le risque d'être porteur diminue de moitié à chaque génération.</div>
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Consanguinité</div><div class="fill-text" id="ma-consang">
+      Le mariage consanguin augmente le risque des maladies autosomiques <span class="blank-select"><select id="ma5_1"><option value="">—</option><option value="récessives">récessives</option><option value="dominantes">dominantes</option></select></span>. Il est <span class="blank-select"><select id="ma5_2"><option value="">—</option><option value="déconseillé">déconseillé</option><option value="recommandé">recommandé</option></select></span> si une tare récessive existe dans la famille. Le risque d'être porteur <span class="blank-select"><select id="ma5_3"><option value="">—</option><option value="diminue de moitié">diminue de moitié</option><option value="augmente">augmente</option></select></span> à chaque génération.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma5',3,['récessives','déconseillé','diminue de moitié'])">Vérifier</button>
+      <span id="score-ma5" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma5',3)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : DIAGNOSTIC PRENATAL -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III. Diagnostic prénatal — Anomalies chromosomiques et géniques <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Le diagnostic prénatal permet de détecter des anomalies avant la naissance à partir de tissus fœtaux prélevés par <strong>amniocentèse</strong> (17ème semaine), <strong>prélèvement de sang fœtal</strong> ou <strong>choriocentèse</strong> (villosités choriales).</p>
+
+    <div class="sub-title">1. Aberrations chromosomiques</div>
+    <p>La réalisation du <strong>caryotype</strong> à partir de cellules fœtales bloquées en métaphase (colchicine) permet de repérer des anomalies de nombre ou de structure.</p>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Caryotypes normaux</div><div class="ph-sub">Manuel p.127</div><div class="ph-comment">Homme 46,XY — Femme 46,XX</div><img class="ph-img" src="images/T2Ch2_Doc06_caryotypes_normaux.PNG" alt="Caryotypes"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — Caryotype trisomie 21</div><div class="ph-sub">Manuel p.127</div><div class="ph-comment">Normal 46 vs Trisomie 21 : 47,XX,+21 ou 47,XY,+21</div><img class="ph-img" src="images/T2Ch2_Doc07_caryotype_trisomie21.PNG" alt="Trisomie 21"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Anomalie</th><th>Formule</th><th>Signes cliniques</th></tr></thead><tbody>
+      <tr><td><strong>Trisomie 21</strong></td><td>47, +21</td><td>Retard mental, yeux obliques, doigts courts, cardiopathies</td></tr>
+      <tr><td><strong>Syndrome de Turner</strong></td><td>45, X0</td><td>♀, petite taille, stérilité, caractères sexuels peu développés</td></tr>
+      <tr><td><strong>Syndrome de Klinefelter</strong></td><td>47, XXY</td><td>♂, testicules réduits, stérilité, caractères sexuels ambigus</td></tr>
+    </tbody></table></div>
+
+    <div class="sub-title">2. Maladies géniques</div>
+    <p><strong>Analyse des protéines :</strong> l'<strong>électrophorèse</strong> sépare les protéines selon leur charge et leur masse moléculaire. Exemple : distinction entre HbA (normale) et HbS (drépanocytose) → diagnostic de la drépanocytose.</p>
+    <p><strong>Analyse de l'ADN :</strong> utilisation d'une <strong>sonde moléculaire radioactive</strong> (séquence d'ADN complémentaire du gène recherché). Étapes : ① Extraction ADN → ② Fragmentation par <strong>enzymes de restriction</strong> → ③ Électrophorèse → ④ Hybridation avec la sonde → ⑤ <strong>Autoradiographie</strong>.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Arbre drépanocytose + électrophorèse Hb</div><div class="ph-sub">Manuel pp.128–129</div><div class="ph-comment">HbA (normale) vs HbS (drépanocytose) — diagnostic du fœtus</div><img class="ph-img" src="images/T2Ch2_Doc08_arbre_drepanocytose.PNG" alt="Drépanocytose"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Sonde moléculaire — Étapes</div><div class="ph-sub">Manuel pp.129–130</div><div class="ph-comment">Extraction → Restriction → Électrophorèse → Hybridation → Autoradiographie</div><img class="ph-img" src="images/T2Ch2_Doc10_sonde_moleculaire_etapes.PNG" alt="Sonde"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Étapes de la sonde moléculaire</div><strong>C.E.S.H.A.</strong> : <strong>C</strong>ulture cellulaire → <strong>E</strong>xtraction ADN → <strong>S</strong>éparation (électrophorèse) → <strong>H</strong>ybridation (sonde radioactive) → <strong>A</strong>utoradiographie.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Diagnostic prénatal</div><div class="fill-text" id="ma-diag">
+      La trisomie 21 est détectée par <span class="blank-select"><select id="ma6_1"><option value="">—</option><option value="caryotype">caryotype</option><option value="électrophorèse">électrophorèse</option></select></span> (47, +21). La drépanocytose est diagnostiquée par <span class="blank-select"><select id="ma6_2"><option value="">—</option><option value="électrophorèse de l'Hb">électrophorèse de l'Hb</option><option value="caryotype">caryotype</option></select></span>. Les enzymes de <span class="blank-select"><select id="ma6_3"><option value="">—</option><option value="restriction">restriction</option><option value="ligation">ligation</option></select></span> découpent l'ADN avant l'hybridation avec la sonde <span class="blank-select"><select id="ma6_4"><option value="">—</option><option value="radioactive">radioactive</option><option value="fluorescente">fluorescente</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma6',4,['caryotype','électrophorèse de l\'Hb','restriction','radioactive'])">Vérifier</button>
+      <span id="score-ma6" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma6',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== BILAN ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèses interactives</div>
+
+  <div class="bilan-fill"><div class="bilan-fill-header"><h3>🔀 Ch.1 — Brassage génétique (pp.97–100)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Carte génétique des chromosomes de la drosophile</div><div class="ph-sub">Manuel p.100</div><div class="ph-comment">4 groupes de linkage + distances en centimorgans (cM)</div><img class="ph-img" src="images/T2Ch1_Carte_genetique_drosophile.PNG" alt="Carte"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan1">
+      La méiose produit des gamètes <span class="blank-select"><select id="b1_1"><option value="">—</option><option value="haploïdes">haploïdes</option><option value="diploïdes">diploïdes</option></select></span>. Le brassage <span class="blank-select"><select id="b1_2"><option value="">—</option><option value="interchromosomique">interchromosomique</option><option value="intrachromosomique">intrachromosomique</option></select></span> (anaphase I) produit 2ⁿ gamètes. Le <span class="blank-select"><select id="b1_3"><option value="">—</option><option value="crossing-over">crossing-over</option><option value="test-cross">test-cross</option></select></span> en prophase I crée des recombinants. Deux gènes <span class="blank-select"><select id="b1_4"><option value="">—</option><option value="indépendants">indépendants</option><option value="liés">liés</option></select></span> donnent F2 = 9:3:3:1 et test-cross = 1:1:1:1. Deux gènes <span class="blank-select"><select id="b1_5"><option value="">—</option><option value="liés">liés</option><option value="indépendants">indépendants</option></select></span> montrent parentaux > recombinants. La distance s'exprime en <span class="blank-select"><select id="b1_6"><option value="">—</option><option value="centimorgans (cM)">centimorgans (cM)</option><option value="paires de bases (pb)">paires de bases (pb)</option></select></span>.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkBilan(1,['haploïdes','interchromosomique','crossing-over','indépendants','liés','centimorgans (cM)'])">Vérifier</button>
+      <span id="score-b1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan(1,6)">Réinitialiser</button>
+    </div>
+  </div></div>
+
+  <div class="bilan-fill" style="margin-top:20px"><div class="bilan-fill-header"><h3>👨‍👩‍👧 Ch.2 — Génétique humaine (pp.131–135)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Origine de la trisomie 21 — Schéma</div><div class="ph-sub">Manuel pp.132–133</div><div class="ph-comment">Non-disjonction en méiose I ou II → gamète à 2 chromosomes 21</div><img class="ph-img" src="images/T2Ch2_Doc07_caryotype_trisomie21.PNG" alt="Trisomie"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan2">
+      L'outil principal en génétique humaine est l'<span class="blank-select"><select id="b2_1"><option value="">—</option><option value="arbre généalogique">arbre généalogique</option><option value="croisement dirigé">croisement dirigé</option></select></span>. Une maladie autosomique récessive touche ♂ = ♀ ; parents sains peuvent avoir un enfant malade. Une maladie dominante liée à X : père atteint → <span class="blank-select"><select id="b2_2"><option value="">—</option><option value="toutes ses filles atteintes">toutes ses filles atteintes</option><option value="tous ses fils atteints">tous ses fils atteints</option></select></span>. Le mariage consanguin ↑ le risque de maladies <span class="blank-select"><select id="b2_3"><option value="">—</option><option value="récessives">récessives</option><option value="dominantes">dominantes</option></select></span>. La trisomie 21 résulte d'une <span class="blank-select"><select id="b2_4"><option value="">—</option><option value="non-disjonction méiotique">non-disjonction méiotique</option><option value="délétion">délétion</option></select></span>. Les maladies géniques sont diagnostiquées par <span class="blank-select"><select id="b2_5"><option value="">—</option><option value="électrophorèse ou sonde moléculaire">électrophorèse ou sonde moléculaire</option><option value="caryotype uniquement">caryotype uniquement</option></select></span>.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkBilan(2,['arbre généalogique','toutes ses filles atteintes','récessives','non-disjonction méiotique','électrophorèse ou sonde moléculaire'])">Vérifier</button>
+      <span id="score-b2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan(2,5)">Réinitialiser</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<div class="tab-panel" id="tab-exercices">
+  <div class="section-title">📝 Exercices du manuel</div>
+
+  <div class="exo-card"><div class="exo-header">🧬 Ch.1 — Exercice 3 (p.102) : Tomates — gènes indépendants</div>
+    <div class="exo-body">
+      <p style="color:var(--gray6);margin-bottom:10px">Variété A : gros fruits (g) sensible (s) × Variété B : petits fruits (P) résistante (R). F1 : 100% petits fruits résistants. Test-cross F1 × A : 251 [P,R] : 246 [P,s] : 254 [g,R] : 249 [g,s].</p>
+      <div class="fill-text" id="exo1">
+        <strong>1.</strong> Dominance : P <span class="blank-select"><select id="ex1_1"><option value="">—</option><option value="> g">> g</option><option value="< g">< g</option></select></span>, R <span class="blank-select"><select id="ex1_2"><option value="">—</option><option value="> s">> s</option><option value="< s">< s</option></select></span>.
+        <strong>2.</strong> Test-cross : proportions <span class="blank-select"><select id="ex1_3"><option value="">—</option><option value="1:1:1:1 → gènes INDÉPENDANTS">1:1:1:1 → gènes INDÉPENDANTS</option><option value="inégales → gènes LIÉS">inégales → gènes LIÉS</option></select></span>.
+        <strong>3.</strong> Génotype F1 : <span class="blank-select"><select id="ex1_4"><option value="">—</option><option value="P//g R//s">P//g R//s</option><option value="PR//gs">PR//gs</option></select></span>.
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick="checkExo('ex1',4,['> g','> s','1:1:1:1 → gènes INDÉPENDANTS','P//g R//s'])">Vérifier</button>
+        <span id="score-ex1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex1',4)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-card"><div class="exo-header">🐭 Ch.2 — Exercice 2 (p.137) : Myopathie — arbre + électrophorèse</div>
+    <div class="exo-body">
+      <div class="img-row">
+        <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Arbre myopathie</div><div class="ph-sub">Manuel p.137</div><div class="ph-comment">Famille tunisienne avec myopathie des ceintures</div><img class="ph-img" src="images/T2Ch2_Exo2_arbre_myopathie_duchenne.PNG" alt="Exo2 arbre"/><button class="ph-remove">✕</button></div>
+        <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 13 — Électrophorèse ADN</div><div class="ph-sub">Manuel p.137</div><div class="ph-comment">Fragments ADN du gène de la myopathie</div><img class="ph-img" src="images/T2Ch2_Exo2_electrophorese_ADN_myopathie.PNG" alt="Exo2 electro"/><button class="ph-remove">✕</button></div>
+      </div>
+      <div class="fill-text" id="exo2">
+        <strong>1.</strong> Allèle malade = <span class="blank-select"><select id="ex2_1"><option value="">—</option><option value="récessif">récessif</option><option value="dominant">dominant</option></select></span> (parents sains → enfants malades V1, V2).
+        <strong>2.</strong> V3 possède <span class="blank-select"><select id="ex2_2"><option value="">—</option><option value="les deux allèles">les deux allèles</option><option value="un seul allèle">un seul allèle</option></select></span> → exclut l'hypothèse <span class="blank-select"><select id="ex2_3"><option value="">—</option><option value="liée à X">liée à X</option><option value="autosomique">autosomique</option></select></span>.
+        <strong>3.</strong> Génotypes : IV1 = <span class="blank-select"><select id="ex2_4"><option value="">—</option><option value="N//m">N//m</option><option value="N//N">N//N</option></select></span>, V1 = <span class="blank-select"><select id="ex2_5"><option value="">—</option><option value="m//m">m//m</option><option value="N//m">N//m</option></select></span>.
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick="checkExo('ex2',5,['récessif','les deux allèles','liée à X','N//m','m//m'])">Vérifier</button>
+        <span id="score-ex2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex2',5)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-card"><div class="exo-header">🦴 Ch.2 — Exercice 3 (p.138) : Rachitisme vitamino-résistant</div>
+    <div class="exo-body">
+      <div class="img-row">
+        <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 3 — Arbre rachitisme</div><div class="ph-sub">Manuel p.138</div><div class="ph-comment">Famille avec hypophosphatémie (rachitisme vitamino-résistant)</div><img class="ph-img" src="images/T2Ch2_Exo3_arbre_rachitisme.PNG" alt="Exo3 arbre"/><button class="ph-remove">✕</button></div>
+        <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 4 — Électrophorèse ADN</div><div class="ph-sub">Manuel p.138</div><div class="ph-comment">Fragments ADN du gène du rachitisme</div><img class="ph-img" src="images/T2Ch2_Exo3_electrophorese_ADN_rachitisme.PNG" alt="Exo3 electro"/><button class="ph-remove">✕</button></div>
+      </div>
+      <div class="fill-text" id="exo3">
+        <strong>1a.</strong> I₂ est <span class="blank-select"><select id="ex3_1"><option value="">—</option><option value="hétérozygote">hétérozygote</option><option value="homozygote">homozygote</option></select></span> (2 allèles en électrophorèse) ET atteint → allèle malade = <span class="blank-select"><select id="ex3_2"><option value="">—</option><option value="DOMINANT">DOMINANT</option><option value="RÉCESSIF">RÉCESSIF</option></select></span>.
+        <strong>1b.</strong> I₃ n'a qu'1 allèle → hypothèse autosomique <span class="blank-select"><select id="ex3_3"><option value="">—</option><option value="rejetée">rejetée</option><option value="confirmée">confirmée</option></select></span> → gène <span class="blank-select"><select id="ex3_4"><option value="">—</option><option value="lié à X">lié à X</option><option value="autosomal">autosomal</option></select></span>.
+        <strong>2.</strong> Fœtus II₂ = <span class="blank-select"><select id="ex3_5"><option value="">—</option><option value="fille hétérozygote ATTEINTE">fille hétérozygote ATTEINTE</option><option value="garçon sain">garçon sain</option></select></span>.
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick="checkExo('ex3',5,['hétérozygote','DOMINANT','rejetée','lié à X','fille hétérozygote ATTEINTE'])">Vérifier</button>
+        <span id="score-ex3" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex3',5)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QCM ==================== -->
+<div class="tab-panel" id="tab-qcm">
+  <div class="section-title">✅ 31 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13px;margin-bottom:4px">Q1–Q7 : Ch.1 manuel · Q8–Q16 : Ch.2 manuel · Q17–Q31 : complémentaires</p>
+  <div class="info-box amber" style="margin-bottom:20px;font-size:12.5px">⚠️ Utilise <strong>Vérifier</strong> pour savoir si ta réponse est juste, puis <strong>Correction</strong> pour l'explication complète.</div>
+  <div id="qcm-container"></div>
+  <div class="signature">INGÉNIEUR Mohamed CHAGRAOUI</div>
+</div>
+
+<script>
+// ===== QCM DATA =====
+const qcmData=[
+  {q:"Q1 (Ch.1). La méiose :",opts:["a. est un ensemble de deux divisions cellulaires successives","b. aboutit à la formation de cellules haploïdes","c. aboutit à la formation de cellules diploïdes","d. est caractérisée par 2 phases de réplication"],correct:['a','b'],fb:"✅ a,b. La méiose produit des cellules HAPLOÏDES (pas diploïdes). Une seule réplication (interphase). (p.87)"},
+  {q:"Q2 (Ch.1). La 1ère division de la méiose :",opts:["a. appariement aléatoire des chromosomes en prophase","b. échanges de chromatides entre tous les chromosomes","c. disjonction des chromosomes homologues","d. appariement des chromosomes homologues en prophase"],correct:['c','d'],fb:"✅ c,d. L'appariement n'est PAS aléatoire — spécifique entre homologues. (p.87)"},
+  {q:"Q3 (Ch.1). Le crossing-over :",opts:["a. se produit en prophase I","b. se réalise entre chromosomes homologues","c. se réalise entre deux chromatides sœurs","d. produit de nouvelles associations alléliques"],correct:['a','b','d'],fb:"✅ a,b,d. Entre chromatides NON SŒURS (pas sœurs) de chromosomes homologues. (p.88)"},
+  {q:"Q4 (Ch.1). Le brassage intrachromosomique :",opts:["a. affecte les gènes liés","b. conduit à la variabilité génétique","c. se produit en anaphase I","d. se produit en prophase I"],correct:['a','b','d'],fb:"✅ a,b,d. Intra = prophase I (pas anaphase). Affecte les gènes liés. (p.88)"},
+  {q:"Q5 (Ch.1). Le brassage interchromosomique :",opts:["a. affecte des gènes non liés","b. se réalise en 1ère division de méiose","c. conduit à des associations nouvelles","d. se produit en prophase I"],correct:['a','b','c'],fb:"✅ a,b,c. Inter = ANAPHASE I (pas prophase). Affecte gènes non liés. (p.87)"},
+  {q:"Q6 (Ch.1). Le test-cross :",opts:["a. permet de connaître les types de gamètes produits par les hétérozygotes","b. consiste à croiser F1 avec un individu homozygote","c. sert à déterminer si les gènes sont liés ou indépendants","d. sert à déterminer le génotype d'un individu de phénotype dominant"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Toutes vraies. (pp.94–99)"},
+  {q:"Q7 (Ch.1). La dominance éventuelle se détermine si :",opts:["a. la moitié des F1 ont le caractère","b. la totalité des F2 ont le caractère","c. la totalité des F1 ont le caractère","d. on a en F2 une ségrégation 3/4, 1/4"],correct:['c','d'],fb:"✅ c,d. 100% F1 = phénotype dominant ET 3:1 en F2. (p.91)"},
+  {q:"Q8 (Ch.2). Les difficultés de la génétique humaine :",opts:["a. la fécondité est restreinte","b. la durée des générations est longue","c. les croisements dirigés sont possibles","d. la garniture chromosomique est complexe"],correct:['a','b','d'],fb:"✅ a,b,d. Croisements dirigés IMPOSSIBLES (c faux). (p.118)"},
+  {q:"Q9 (Ch.2). Maladie autosomique récessive :",opts:["a. tout individu sain est homozygote","b. un couple normal ne donne jamais d'enfants atteints","c. tout garçon atteint n'hérite que de sa mère","d. le mariage consanguin augmente le risque"],correct:['d'],fb:"✅ d. A faux : sain peut être porteur. B faux : Aa×Aa→aa. C faux : lié à X. (pp.131–132)"},
+  {q:"Q10 (Ch.2). Femme atteinte récessif lié à X :",opts:["a. est issue d'un père atteint","b. est issue d'une mère obligatoirement atteinte","c. tous ses garçons sont atteints","d. toutes ses filles sont atteintes"],correct:['a','c'],fb:"✅ a,c. XᵃXᵃ → père XᵃY (atteint). Ses fils reçoivent tous Xᵃ → malades. (p.131)"},
+  {q:"Q11 (Ch.2). Anomalie autosomale dominante :",opts:["a. s'exprime à l'état homozygote et hétérozygote","b. apparaît obligatoirement dans toutes les générations","c. peut être portée par le chromosome X","d. descendants d'un père atteint homozygote tous atteints"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : autosomale ≠ portée par X. (pp.131–132)"},
+  {q:"Q12 (Ch.2). Mariage consanguin :",opts:["a. union entre deux individus ayant un ancêtre commun","b. augmente le risque des anomalies récessives","c. mariage entre individus de même groupe sanguin","d. conseillé en cas d'anomalie récessive"],correct:['a','b'],fb:"✅ a,b. C faux : ≠ même groupe sanguin. D faux : DÉCONSEILLÉ. (pp.123–124)"},
+  {q:"Q13 (Ch.2). Caryotype normal humain :",opts:["a. 46 chromosomes + paire chromosomes sexuels","b. 46 chromosomes identiques 2 par 2 chez la femme","c. 22 paires d'autosomes + X chez la femme","d. 22 paires d'autosomes + paire chromosomes sexuels"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : 22 paires autosomes + XX (pas un seul X). (p.127)"},
+  {q:"Q14 (Ch.2). Analyse du caryotype de l'embryon :",opts:["a. détecter des gènes mutés","b. connaître le sexe","c. dénombrer 23 paires d'autosomes","d. dénombrer 22 paires d'autosomes"],correct:['b','d'],fb:"✅ b,d. Caryotype ≠ détecter gènes mutés — il montre les chromosomes. (p.127)"},
+  {q:"Q15 (Ch.2). Trisomie 21 :",opts:["a. aberration pouvant apparaître chez les deux sexes","b. uniquement chez les garçons","c. dû à un chromosome X supplémentaire","d. dû à un autosome supplémentaire (paire 21)"],correct:['a','d'],fb:"✅ a,d. Apparaît chez les 2 sexes, 3 chromosomes 21. (pp.127–132)"},
+  {q:"Q16 (Ch.2). Détection anomalies géniques :",opts:["a. caryotype","b. analyse ADN par électrophorèse","c. détermination groupe sanguin","d. analyse des protéines"],correct:['b','d'],fb:"✅ b,d. Caryotype ≠ détecter anomalies géniques. (pp.128–130)"},
+  {q:"Q17. Chez l'espèce humaine (2n=46), le brassage inter :",opts:["a. 2²³ types de gamètes","b. 46² types de gamètes","c. 23 types de gamètes","d. environ 8,4 millions de gamètes"],correct:['a','d'],fb:"✅ a,d. 2²³ ≈ 8,4 millions. (p.87)"},
+  {q:"Q18. F2 dihybride gènes indépendants :",opts:["a. 9:3:3:1","b. phénotypes nouveaux recombinés","c. 3:1 pour chaque caractère séparément","d. tous les individus hétérozygotes"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : certains sont homozygotes. (p.94)"},
+  {q:"Q19. Test-cross gènes liés, p=20% :",opts:["a. parentaux 40% chacun","b. recombinants 10% chacun","c. distance = 20 cM","d. AB et ab = recombinants"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : AB et ab sont PARENTAUX. (p.99)"},
+  {q:"Q20. Maladie autosomique récessive :",opts:["a. ♂=♀","b. parents sains → enfant malade possible","c. chaque génération","d. favorisée par mariage consanguin"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : peut sauter des générations. (p.131)"},
+  {q:"Q21. Maladie récessive liée à X :",opts:["a. ♂ > ♀","b. garçon malade → mère conductrice","c. fille atteinte → père atteint","d. père atteint transmet à tous ses fils"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : père transmet X aux FILLES. (p.131)"},
+  {q:"Q22. Maladie dominante liée à X :",opts:["a. père atteint → toutes filles atteintes","b. père atteint → aucun fils via le père","c. ♂ atteint → mère obligatoirement atteinte","d. plus fréquente chez les ♂"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : plus fréquente chez ♀. (pp.131–132)"},
+  {q:"Q23. Trisomie 21 :",opts:["a. non-disjonction en méiose I ou II","b. caryotype 47 chromosomes","c. risque ↑ avec âge maternel","d. crossing-over anormal"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : crossing-over non impliqué. (pp.132–133)"},
+  {q:"Q24. Sonde moléculaire radioactive :",opts:["a. hybride avec séquence complémentaire","b. coupe l'ADN en fragments","c. révélée par autoradiographie","d. spécifique d'une séquence"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : enzymes de restriction. (pp.129–130)"},
+  {q:"Q25. Drépanocytose diagnostiquée par :",opts:["a. électrophorèse Hb","b. caryotype","c. analyse ADN (sonde)","d. numération globulaire"],correct:['a','c'],fb:"✅ a,c. Caryotype normal — anomalie génique, pas chromosomique. (pp.128–129)"},
+  {q:"Q26. Syndrome de Turner :",opts:["a. atteint uniquement les femmes","b. petite taille + stérilité","c. non-disjonction X","d. caryotype 47,XXY"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : 47,XXY = KLINEFELTER. (p.134)"},
+  {q:"Q27. Syndrome de Klinefelter :",opts:["a. atteint uniquement les hommes","b. testicules peu développés","c. stérilité","d. caryotype 47,XXY"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Toutes vraies. (p.134)"},
+  {q:"Q28. Caryotype normal femme :",opts:["a. 46,XX","b. 22 paires autosomes + XX","c. 23 paires total","d. 44 autosomes + XX"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Formulations équivalentes. (p.127)"},
+  {q:"Q29. Cellules bloquées pour caryotype en :",opts:["a. métaphase (colchicine)","b. prophase","c. anaphase","d. interphase"],correct:['a'],fb:"✅ a. Colchicine bloque en MÉTAPHASE. (p.126)"},
+  {q:"Q30. Parents sains → enfant malade :",opts:["a. maladie obligatoirement récessive","b. deux parents porteurs (hétérozygotes)","c. obligatoirement autosomique","d. peut être autosomique ou lié à X"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : peut être récessif lié à X. (p.131)"},
+  {q:"Q31. Électrophorèse de l'hémoglobine :",opts:["a. sépare HbA (normale) de HbS","b. diagnostic prénatal drépanocytose","c. détecte trisomie 21","d. repose sur différence de charge des protéines"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : électrophorèse ≠ caryotype. (pp.128–129)"}
+];
+
+function buildQCM(){
+  const c=document.getElementById('qcm-container');c.innerHTML='';
+  qcmData.forEach((d,i)=>{
+    const q=i+1;
+    c.insertAdjacentHTML('beforeend',`<div class="qcm-item" id="qi${q}"><div class="qcm-q"><span class="qnum">${d.q}</span></div><div class="qcm-options">${d.opts.map((o,j)=>{const v=String.fromCharCode(97+j);return`<label class="qcm-opt"><input type="checkbox" data-q="${q}" data-v="${v}"/> ${o}</label>`;}).join('')}</div><div class="qcm-feedback" id="fb${q}"></div><div class="qcm-buttons"><button class="qcm-verify-btn" onclick="verifyQCM(${q})">🟢 Vérifier</button><button class="qcm-correct-btn" onclick="correctQCM(${q})">🔵 Correction</button><button class="qcm-refresh-btn" onclick="refreshQCM(${q})">🔄 Rafraîchir</button></div></div>`);
+  });
+}
+buildQCM();
+
+function initPlaceholders(){
+  document.querySelectorAll('.img-placeholder').forEach(ph=>{
+    const inp=ph.querySelector('input[type=file]'),img=ph.querySelector('img.ph-img'),btn=ph.querySelector('.ph-remove');
+    if(!inp||!img)return;
+    if(img.src&&img.src.includes('images/')){const t=new Image();t.onload=()=>{img.style.display='block';ph.classList.add('has-img');};t.onerror=()=>{img.style.display='none';ph.classList.remove('has-img');};t.src=img.src;}
+    inp.addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};r.readAsDataURL(f);});
+    if(btn)btn.addEventListener('click',e=>{e.stopPropagation();img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';});
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{updateProgress();initPlaceholders();});
+
+function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');updateProgress();}
+function updateProgress(){const tabs=document.querySelectorAll('.tab-btn');const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';}
+function toggleAccordion(h){const b=h.nextElementSibling;const o=b.classList.contains('show');b.classList.toggle('show');if(o)h.classList.remove('open');else h.classList.add('open');}
+
+function checkMini(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetMini(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+function checkBilan(n,a){const l=a.length;let c=0;for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-b'+n);b.textContent=c+'/'+l;b.className='score-badge '+(c===l?'good':'bad');}
+function resetBilan(n,l){for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-b'+n);b.textContent='';b.className='score-badge';}
+function checkExo(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetExo(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+
+function verifyQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v),correct=qcmData[q-1].correct;
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  const partial=!full&&checked.some(v=>correct.includes(v));
+  const fb=document.getElementById('fb'+q),item=document.getElementById('qi'+q);
+  fb.className='qcm-feedback show '+(full?'fb-ok':partial?'fb-partial':'fb-ko');
+  fb.innerHTML=(full?'✅ Juste !':partial?'🟡 Partiel':'❌ Faux');
+  item.classList.remove('correct-item','wrong-item','partial-item');
+  item.classList.add(full?'correct-item':partial?'partial-item':'wrong-item');
+}
+function correctQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),correct=qcmData[q-1].correct;
+  cbs.forEach(cb=>{const opt=cb.closest('.qcm-opt');opt.classList.remove('opt-correct','opt-wrong','opt-missed');
+    if(correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-correct');
+    else if(!correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-wrong');
+    else if(correct.includes(cb.dataset.v)&&!cb.checked)opt.classList.add('opt-missed');});
+  const fb=document.getElementById('fb'+q);fb.className='qcm-feedback show fb-correction';fb.innerHTML='🔵 '+qcmData[q-1].fb;
+  const item=document.getElementById('qi'+q),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v);
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  item.classList.remove('correct-item','wrong-item','partial-item');item.classList.add(full?'correct-item':'wrong-item');
+}
+function refreshQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`);cbs.forEach(cb=>{cb.checked=false;cb.disabled=false;});
+  cbs.forEach(cb=>{cb.closest('.qcm-opt').classList.remove('opt-correct','opt-wrong','opt-missed');});
+  document.getElementById('fb'+q).className='qcm-feedback';document.getElementById('fb'+q).innerHTML='';
+  document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');
+}
+</script>
+</body>
+</html>
