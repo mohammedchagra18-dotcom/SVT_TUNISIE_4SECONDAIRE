@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 5 — Fiche 1 : Le Soi, le Non Soi &amp; Les Acteurs | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;--navy3:#263d56;
+  --red:#dc2626;--red-lt:#fef2f2;--red-dk:#991b1b;--red-md:#ef4444;
+  --rose:#e11d48;--rose-lt:#fff1f2;
+  --blue:#2563eb;--blue-lt:#eff6ff;--blue-dk:#1d4ed8;
+  --green:#059669;--green-lt:#ecfdf5;--green-dk:#047857;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --indigo:#4338ca;--indigo-lt:#eef2ff;
+  --cyan:#0891b2;--cyan-lt:#ecfeff;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(220,38,38,.07);--shadow-md:0 4px 24px rgba(220,38,38,.12);
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fff5f5;color:var(--gray8);font-size:15px;line-height:1.72}
+header{background:linear-gradient(135deg,#1a0000 0%,#4c0519 55%,#2d0010 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(180,0,30,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(220,38,38,.08)}
+header::after{content:'';position:absolute;left:28%;bottom:-25px;width:130px;height:130px;border-radius:50%;background:rgba(124,58,237,.06)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#fca5a5}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.8rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#fca5a5}
+.hdr-sub{opacity:.7;font-size:.95rem;margin-top:3px;color:#fecaca}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#fecaca}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(220,38,38,.25);border:1px solid rgba(220,38,38,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#fca5a5;margin-top:6px;letter-spacing:.5px}
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#fca5a5,#c084fc);width:0%;transition:width .4s}
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 20px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:13px 12px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--red);background:var(--red-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red)}
+.tab-panel{display:none;padding:24px 30px;max-width:1100px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-family:'Crimson Pro',serif;font-size:1.2rem;color:var(--rose);border-left:4px solid var(--red);padding-left:10px;margin:28px 0 14px}
+.sub-title{font-size:.9rem;font-weight:600;color:var(--red);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.sub-title::before{content:'';display:block;width:18px;height:2px;background:var(--red);border-radius:2px}
+.def-box{background:var(--rose-lt);border:1.5px solid #fecdd3;border-radius:var(--radius);padding:12px 16px;margin:10px 0}.def-box .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--rose);margin-bottom:5px}
+.info-box{border-left:4px solid var(--red);background:var(--red-lt);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:10px 0;font-size:13px}
+.info-box.blue{border-left-color:var(--blue);background:var(--blue-lt)}.info-box.green{border-left-color:var(--green);background:var(--green-lt)}.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}.info-box.cyan{border-left-color:var(--cyan);background:var(--cyan-lt)}.info-box.indigo{border-left-color:var(--indigo);background:var(--indigo-lt)}
+.info-box strong{color:var(--rose)}.info-box.blue strong{color:var(--blue-dk)}.info-box.green strong{color:var(--green)}.info-box.purple strong{color:var(--purple)}.info-box.amber strong{color:var(--amber)}.info-box.cyan strong{color:var(--cyan)}.info-box.indigo strong{color:var(--indigo)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0}
+.card{background:#fff;border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);border-top:3px solid var(--red)}.card.blue{border-top-color:var(--blue)}.card.green{border-top-color:var(--green)}.card.purple{border-top-color:var(--purple)}.card.amber{border-top-color:var(--amber)}.card.cyan{border-top-color:var(--cyan)}.card.navy{border-top-color:var(--navy)}.card.indigo{border-top-color:var(--indigo)}.card.rose{border-top-color:var(--rose)}
+.card h4{font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--gray8)}.card ul{padding-left:16px;font-size:13px;color:var(--gray6)}.card ul li{margin-bottom:4px}.card p{font-size:13px;color:var(--gray6)}
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}thead tr{background:var(--navy2);color:#fff}th{padding:9px 12px;font-weight:600;text-align:left}td{padding:8px 12px;border-bottom:1px solid var(--gray2)}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:var(--gray1)}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:12px 0}
+.flow-step{background:#fff;border:2px solid var(--red);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--rose);text-align:center}
+.flow-step.active-step{background:var(--red);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:16px;font-weight:700}
+.tip-box{background:var(--amber-lt);border:2px solid var(--amber);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.tip-box .tip-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--amber);margin-bottom:4px}
+.mnemo-box{background:var(--purple-lt);border:2px solid var(--purple);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.mnemo-box .mnemo-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--purple);margin-bottom:4px}
+.accordion{border:2px solid var(--gray2);border-radius:var(--radius);margin:14px 0;overflow:hidden;background:#fff}
+.acc-header{background:var(--gray1);padding:14px 18px;cursor:pointer;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:background .2s}
+.acc-header:hover{background:var(--rose-lt)}
+.acc-header .acc-arrow{transition:transform .3s;font-size:18px;color:var(--red)}
+.acc-header.open .acc-arrow{transform:rotate(90deg)}
+.acc-body{display:none;padding:18px}
+.acc-body.show{display:block}
+.mini-act{background:var(--rose-lt);border:2px dashed var(--red);border-radius:var(--radius);padding:14px 18px;margin:12px 0}
+.mini-act .ma-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--rose);margin-bottom:8px}
+.mini-act .fill-text{font-size:13.5px;line-height:2.2}
+.blank-select{display:inline-block;margin:0 3px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--red);border-radius:6px;padding:2px 7px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--red-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:var(--green-lt);border-style:solid;color:var(--green)}
+.blank-select select.wrong{border-color:var(--red);background:#ffe4e6;border-style:solid;color:var(--red)}
+.check-btn{margin-top:10px;background:var(--rose);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--red)}
+.score-badge{display:inline-block;margin-left:10px;background:var(--gray2);border-radius:20px;padding:4px 12px;font-size:12.5px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:6px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--red);color:var(--red)}
+.exo-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:5px solid var(--indigo)}
+.exo-header{background:var(--indigo);color:#fff;padding:10px 16px;font-weight:700;font-size:13.5px}
+.exo-body{padding:16px;font-size:13.5px;line-height:1.9}
+.exo-body .fill-text{font-size:13.5px;line-height:2.2}
+.exo-body .blank-select select{border-color:var(--indigo);background:var(--indigo-lt)}
+.exo-body .check-btn{background:var(--indigo)}.exo-body .check-btn:hover{background:#3730a3}
+.bilan-fill{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.bilan-fill-header{background:linear-gradient(135deg,var(--indigo),#3730a3);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.bilan-fill-header h3{font-size:.95rem;font-weight:600}
+.bilan-fill-body{padding:16px}.bilan-fill-body .fill-text{font-size:13.5px;line-height:2.2}
+.bilan-fill-body .blank-select select{border-color:var(--indigo);background:var(--indigo-lt)}
+.bilan-fill-body .check-btn{background:var(--indigo)}.bilan-fill-body .check-btn:hover{background:#3730a3}
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:4px solid var(--red)}
+.qcm-item.correct-item{border-left-color:var(--green)}.qcm-item.wrong-item{border-left-color:var(--red)}.qcm-item.partial-item{border-left-color:var(--amber)}
+.qcm-q{padding:12px 16px 8px;font-weight:600;font-size:14px}.qcm-q .qnum{color:var(--rose);margin-right:5px}
+.qcm-options{padding:0 16px 12px}
+.qcm-opt{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;margin:3px 0;cursor:pointer;transition:background .15s;font-size:13.5px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--red);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:var(--amber-lt);color:var(--amber)}
+.qcm-feedback{margin:8px 16px 14px;padding:10px 14px;border-radius:8px;font-size:13px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.qcm-feedback.fb-correction{background:var(--cyan-lt);border:1px solid #67e8f9;color:#155e75}
+.qcm-buttons{display:flex;align-items:center;gap:8px;padding:0 16px 14px;flex-wrap:wrap}
+.qcm-verify-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-verify-btn:hover{background:var(--green-dk)}
+.qcm-correct-btn{background:var(--cyan);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-correct-btn:hover{background:#0e7490}
+.qcm-refresh-btn{background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;cursor:pointer}
+.qcm-refresh-btn:hover{border-color:var(--red);color:var(--red)}
+.img-placeholder{border:2.5px dashed #fca5a5;border-radius:var(--radius);background:var(--rose-lt);padding:16px;margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;position:relative}
+.img-placeholder:hover{border-color:var(--red);background:#ffe4e6}
+.img-placeholder .ph-icon{font-size:1.8rem;opacity:.5}
+.img-placeholder .ph-label{font-size:11px;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.img-placeholder .ph-sub{font-size:11px;color:var(--gray6);text-align:center}
+.img-placeholder .ph-comment{font-size:10.5px;color:var(--cyan);text-align:center;font-style:italic;margin-top:3px}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub,.img-placeholder.has-img .ph-comment{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:5px;right:7px;background:var(--red);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.antibody-schema{background:#fff;border:2px solid #fecdd3;border-radius:var(--radius);padding:20px;margin:14px 0;box-shadow:var(--shadow)}
+.ab-title{font-weight:700;color:var(--rose);font-size:.95rem;margin-bottom:14px;text-align:center}
+.ab-y{display:flex;flex-direction:column;align-items:center;gap:0;margin:10px auto;max-width:420px}
+.ab-arms{display:flex;gap:12px;justify-content:center}
+.ab-arm{background:linear-gradient(180deg,#fecdd3 0%,#fecdd3 40%,#fca5a5 100%);border-radius:8px 8px 0 0;width:120px;padding:8px 10px;text-align:center;font-size:12px;border:2px solid var(--rose)}
+.ab-arm .vari{background:#fff;border-radius:4px;padding:3px 6px;font-size:11px;font-weight:700;color:var(--rose);margin-bottom:4px;display:block}
+.ab-arm .const{font-size:11px;color:var(--gray6);display:block}
+.ab-stem{background:var(--red-lt);border:2px solid var(--red);border-top:none;border-radius:0 0 8px 8px;width:100px;margin:0 auto;padding:8px 10px;text-align:center;font-size:12px;font-weight:600;color:var(--rose)}
+.ab-labels{display:flex;gap:30px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.ab-label{background:var(--indigo-lt);border-radius:6px;padding:5px 10px;font-size:12px;color:var(--indigo);font-weight:600}
+.organs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.organ-box{border-radius:var(--radius);padding:14px 16px;font-size:13.5px}
+.organ-box.primary{background:var(--purple-lt);border:2px solid #c4b5fd}
+.organ-box.secondary{background:var(--blue-lt);border:2px solid #bfdbfe}
+.organ-box h4{font-weight:700;margin-bottom:8px;font-size:.9rem}
+.organ-box.primary h4{color:var(--purple)}.organ-box.secondary h4{color:var(--blue-dk)}
+.organ-box ul{padding-left:16px;color:var(--gray6)}.organ-box ul li{margin-bottom:4px}
+.signature{text-align:center;padding:16px;margin-top:28px;font-size:11.5px;color:var(--gray3);border-top:1px solid var(--gray2)}
+@media(max-width:640px){.img-row{grid-template-columns:1fr}header{padding:16px 16px 14px;flex-direction:column;gap:8px}.tab-panel{padding:16px 14px}.card-grid{grid-template-columns:1fr}.organs-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 5 — <span>Fiche 1</span></div>
+    <div class="hdr-sub">Le Soi &amp; le Non Soi · Les Acteurs de l'Immunité Spécifique</div>
+    <div class="hdr-pill">Chapitres 1 &amp; 2 — pp. 266–304</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Immunologie</strong>
+    pp. 266 – 304<br/>
+    6 onglets · 42 images<br/>
+    24 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('ch1',this)">🔴 Ch.1 — Soi &amp; Non Soi</button>
+  <button class="tab-btn" onclick="showTab('ch2',this)">⚔️ Ch.2 — Acteurs</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN</button>
+  <button class="tab-btn" onclick="showTab('exercices',this)">📝 Exercices</button>
+  <button class="tab-btn" onclick="showTab('qcm',this)">✅ QCM CAPES</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Pourquoi l'immunologie ?</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Intro Thème 5 — L'Immunité</div><div class="ph-sub">Manuel pp.264-265</div><div class="ph-comment">Jenner, Pasteur, grippe, eczéma — introduction au système immunitaire</div><img class="ph-img" src="images/T5_Intro_theme5.PNG" alt="Intro T5"/><button class="ph-remove">✕</button></div>
+  <p style="font-size:14px;color:var(--gray6);margin-bottom:18px">L'organisme est en contact permanent avec des germes pathogènes, mais les infections restent rares grâce au <strong>système immunitaire</strong>. Cette fiche couvre la distinction entre le <em>soi</em> et le <em>non soi</em> (Ch.1) et présente les acteurs cellulaires et moléculaires de la réponse immunitaire spécifique (Ch.2).</p>
+  <div class="section-title" style="margin-top:28px">📋 Objectifs du programme officiel</div>
+  <div class="card-grid">
+    <div class="card rose"><h4>🔴 Ch.1 — Le soi et le non soi</h4><ul><li>Identifier les marqueurs des groupes sanguins (ABO, Rh)</li><li>Comprendre les marqueurs tissulaires HLA et le CMH</li><li>Définir la notion de soi modifié</li><li>Reconnaître l'histocompatibilité et le rejet de greffe</li></ul></div>
+    <div class="card purple"><h4>⚔️ Ch.2 — Les acteurs de l'immunité</h4><ul><li>Propriétés de l'immunité spécifique</li><li>Distinguer RIMH et RIMC</li><li>Identifier les cellules et molécules de l'immunité</li><li>Structure et fonction des anticorps</li></ul></div>
+  </div>
+  <div class="section-title" style="margin-top:28px">🗺️ Plan de la fiche</div>
+  <div class="flow">
+    <div class="flow-step active-step">🔴 Soi & Non Soi</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🧬 HLA & CMH</div><div class="flow-arrow">→</div>
+    <div class="flow-step">⚔️ Acteurs</div><div class="flow-arrow">→</div>
+    <div class="flow-step">📋 BILAN</div><div class="flow-arrow">→</div>
+    <div class="flow-step">✅ QCM</div>
+  </div>
+</div>
+
+<!-- ==================== CHAPITRE 1 ==================== -->
+<div class="tab-panel" id="tab-ch1">
+  <div class="section-title">🔴 Chapitre 1 — Le Soi et le Non Soi (pp.266–281)</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Intro Ch.1 — Rejet de greffe de peau</div><div class="ph-sub">Manuel p.266</div><div class="ph-comment">Photos : greffe acceptée (autogreffe) vs rejetée (allogreffe) après 2 semaines</div><img class="ph-img" src="images/T5Ch1_Doc00_intro_rejet_greffe.PNG" alt="Intro Ch1"/><button class="ph-remove">✕</button></div>
+
+  <!-- ACCORDEON 1 : GROUPES SANGUINS ABO -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. Les marqueurs des groupes sanguins — Système ABO <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Lorsqu'on mélange deux sangs incompatibles, il se produit une <strong>agglutination</strong> : les hématies forment des amas par accollement. Cette réaction est due à la rencontre entre des <strong>agglutinogènes</strong> (glycoprotéines membranaires sur les hématies) et des <strong>agglutinines</strong> (anticorps plasmatiques).</p>
+    <p>Il existe 2 types d'agglutinogènes (A et B) et 2 types d'agglutinines correspondantes (anti-A et anti-B). Dans un même sang, un agglutinogène ne peut <strong>pas coexister</strong> avec l'agglutinine qui lui correspond.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Résultat du mélange de deux sangs</div><div class="ph-sub">Manuel p.269</div><div class="ph-comment">Agglutination visible à l'œil nu (amas rouges)</div><img class="ph-img" src="images/T5Ch1_Doc01_hemagglutination.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Observation microscopique d'un agglutinat</div><div class="ph-sub">Manuel p.269</div><div class="ph-comment">Hématies accolées par leurs membranes (aspect grumeleux)</div><img class="ph-img" src="images/T5Ch1_Doc02_observation_microscopique_agglutinat.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Expérience plasma / globules S1, S2, S3</div><div class="ph-sub">Manuel p.269</div><div class="ph-comment">Séparation plasma/globules → identification facteurs agglutination</div><img class="ph-img" src="images/T5Ch1_Doc03_separation_plasma_globules.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Nature des marqueurs des groupes sanguins</div><div class="ph-sub">Manuel p.270</div><div class="ph-comment">MEB ×60 000 + schéma : agglutinogènes = glycoprotéines</div><img class="ph-img" src="images/T5Ch1_Doc04_nature_marqueurs_ABO.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Tableau récapitulatif des 4 groupes sanguins</div><div class="ph-sub">Manuel p.271</div><div class="ph-comment">A, B, AB, O — agglutinogènes et agglutinines</div><img class="ph-img" src="images/T5Ch1_Tableau_groupes_sanguins.PNG" alt="Tableau ABO"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma des transfusions possibles</div><div class="ph-sub">Manuel p.271</div><div class="ph-comment">Flèches donneur → receveur entre les 4 groupes</div><img class="ph-img" src="images/T5Ch1_Schema_transfusions_possibles.PNG" alt="Schéma transfusions"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Groupe</th><th>Agglutinogènes (hématies)</th><th>Agglutinines (plasma)</th></tr></thead><tbody>
+      <tr><td><strong style="color:var(--blue)">A</strong></td><td>A</td><td>Anti-B</td></tr>
+      <tr><td><strong style="color:var(--red)">B</strong></td><td>B</td><td>Anti-A</td></tr>
+      <tr><td><strong style="color:var(--purple)">AB</strong></td><td>A et B</td><td>Aucune</td></tr>
+      <tr><td><strong style="color:var(--green)">O</strong></td><td>Aucun</td><td>Anti-A + Anti-B</td></tr>
+    </tbody></table></div>
+    <div class="info-box blue"><strong>Règle de transfusion :</strong> Les agglutinogènes du DONNEUR ne doivent pas rencontrer les agglutinines correspondantes chez le RECEVEUR. Le groupe O = donneur universel. Le groupe AB = receveur universel.</div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div>Pour déterminer un groupe sanguin : <strong>Test 1</strong> = sérums tests (anti-A, anti-B) + hématies à analyser → agglutination révèle l'agglutinogène. <strong>Test 2</strong> = globules tests (A, B) + sérum à analyser → agglutination révèle l'agglutinine.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Groupes sanguins ABO</div><div class="fill-text" id="ma-abo">
+      L'agglutination est due à la réaction entre les <span class="blank-select"><select id="ma1_1"><option value="">—</option><option value="agglutinogènes">agglutinogènes</option><option value="agglutinines">agglutinines</option></select></span> du donneur et les <span class="blank-select"><select id="ma1_2"><option value="">—</option><option value="agglutinines">agglutinines</option><option value="agglutinogènes">agglutinogènes</option></select></span> du receveur. Le groupe <span class="blank-select"><select id="ma1_3"><option value="">—</option><option value="O">O</option><option value="AB">AB</option></select></span> est donneur universel, le groupe <span class="blank-select"><select id="ma1_4"><option value="">—</option><option value="AB">AB</option><option value="O">O</option></select></span> est receveur universel.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma1',4,['agglutinogènes','agglutinines','O','AB'])">Vérifier</button>
+      <span id="score-ma1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma1',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : RHESUS -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. Le facteur Rhésus (Rh) et la maladie hémolytique <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Le <strong>facteur Rhésus</strong> est un autre marqueur des hématies. Les personnes <strong>Rh+</strong> (85%) possèdent l'antigène D, les <strong>Rh−</strong> (15%) ne le possèdent pas. Contrairement au système ABO, les anticorps anti-Rh n'apparaissent <strong>que lors d'un contact</strong> d'un individu Rh− avec du sang Rh+ (transfusion, grossesse).</p>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Incompatibilité Rhésus mère/enfant</div><div class="ph-sub">Manuel p.272</div><div class="ph-comment">1ère grossesse → sensibilisation, 2ème → maladie hémolytique du nouveau-né</div><img class="ph-img" src="images/T5Ch1_Doc05_incompatibilite_rhesus.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+    <div class="card-grid">
+      <div class="card red"><h4>⚠️ Maladie hémolytique</h4><ul><li>Mère Rh− × Père Rh+ → fœtus Rh+</li><li>1er accouchement : hématies fœtales → mère → anti-D</li><li>2ème grossesse : anti-D traversent placenta</li><li>→ lyse hématies fœtales (anémie, ictère)</li></ul></div>
+      <div class="card green"><h4>🛡️ Prévention</h4><ul><li>Injection d'anti-D à la mère dans les 72h après 1er accouchement</li><li>Destruction des hématies fœtales Rh+ avant sensibilisation</li></ul></div>
+    </div>
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div>Rh− ne possède PAS d'anti-D naturellement (≠ ABO). Les anti-D n'apparaissent qu'APRÈS exposition au Rh+.</div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : HLA -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III. Les marqueurs tissulaires — Système HLA et CMH <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les <strong>molécules HLA</strong> (Human Leucocyte Antigen) sont des glycoprotéines membranaires découvertes par <strong>Jean Dausset</strong> (1956). Elles sont présentes sur <strong>toutes les cellules nucléées</strong> et sont <strong>spécifiques</strong> à chaque individu (sauf vrais jumeaux).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Survie du greffon / degré de parenté</div><div class="ph-sub">Manuel p.273</div><div class="ph-comment">Graphique % survie : frère/sœur > parents > non apparentés</div><img class="ph-img" src="images/T5Ch1_Doc06_survie_greffon_parente.PNG" alt="Doc 06"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — Expériences de greffe chez les animaux</div><div class="ph-sub">Manuel p.273</div><div class="ph-comment">Schémas : autogreffe, xénogreffe, allogreffe, isogreffe</div><img class="ph-img" src="images/T5Ch1_Doc07_experiences_greffe_animaux.PNG" alt="Doc 07"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Évolution de l'état du greffon</div><div class="ph-sub">Manuel p.274</div><div class="ph-comment">Tableau J1→J9 : autogreffe vs allogreffe 1ère vs 2ème</div><img class="ph-img" src="images/T5Ch1_Doc08_evolution_etat_greffon.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Configuration des HLA classes I et II</div><div class="ph-sub">Manuel p.275</div><div class="ph-comment">Structure moléculaire + schémas : HLA I (toutes cellules) / HLA II (immunitaires)</div><img class="ph-img" src="images/T5Ch1_Doc09_HLA_classes_I_II.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Gènes du CMH et nombre d'allèles</div><div class="ph-sub">Manuel p.275</div><div class="ph-comment">Tableau : 4 gènes (A,B,C,D) + polymorphisme extrême (B→188 allèles)</div><img class="ph-img" src="images/T5Ch1_Doc10_tableau_genes_CMH.PNG" alt="Doc 10"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — Mécanisme de reconnaissance du soi modifié</div><div class="ph-sub">Manuel p.276</div><div class="ph-comment">Peptide normal → tolérance / Peptide viral → complexe HLA-peptide = soi modifié → rejet</div><img class="ph-img" src="images/T5Ch1_Doc11_mecanisme_soi_modifie.PNG" alt="Doc 11"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Classe</th><th>Localisation</th><th>Gènes</th><th>Cible</th></tr></thead><tbody>
+      <tr><td><strong style="color:var(--blue)">HLA I</strong></td><td>Toutes les cellules nucléées</td><td>CMH A, B, C</td><td>LT8 (cytotoxiques)</td></tr>
+      <tr><td><strong style="color:var(--purple)">HLA II</strong></td><td>Cellules immunitaires (macrophages, LB, LT)</td><td>CMH D</td><td>LT4 (auxiliaires)</td></tr>
+    </tbody></table></div>
+
+    <div class="sub-title">Le Soi modifié</div>
+    <p>Dans les cellules, des enzymes découpent les protéines en fragments peptidiques exposés à la surface associés aux molécules HLA. Si la cellule est <strong>normale</strong> → peptides du soi → tolérance. Si la cellule est <strong>anormale</strong> (infectée, cancéreuse) → peptides du non soi → le complexe HLA-peptide anormal = <strong>soi modifié</strong> → déclenche une réaction immunitaire.</p>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Ordre des greffes</div><strong>A-I-A-X</strong> : <strong>A</strong>utogreffe (soi-même → accepté) — <strong>I</strong>sogreffe (vrais jumeaux → accepté) — <strong>A</strong>llogreffe (même espèce → rejet) — <strong>X</strong>énogreffe (espèces ≠ → rejet). Le rejet est d'autant plus rapide que la parenté génétique est éloignée.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — HLA et CMH</div><div class="fill-text" id="ma-hla">
+      Les molécules <span class="blank-select"><select id="ma2_1"><option value="">—</option><option value="HLA">HLA</option><option value="ABO">ABO</option></select></span> sont les marqueurs tissulaires. Les gènes du <span class="blank-select"><select id="ma2_2"><option value="">—</option><option value="CMH">CMH</option><option value="TCR">TCR</option></select></span> (chromosome 6) contrôlent leur synthèse. La classe I est sur <span class="blank-select"><select id="ma2_3"><option value="">—</option><option value="toutes les cellules nucléées">toutes les cellules nucléées</option><option value="les cellules immunitaires">les cellules immunitaires</option></select></span>. Le <span class="blank-select"><select id="ma2_4"><option value="">—</option><option value="soi modifié">soi modifié</option><option value="soi normal">soi normal</option></select></span> (cellule infectée) déclenche la réponse immunitaire.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma2',4,['HLA','CMH','toutes les cellules nucléées','soi modifié'])">Vérifier</button>
+      <span id="score-ma2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma2',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== CHAPITRE 2 ==================== -->
+<div class="tab-panel" id="tab-ch2">
+  <div class="section-title">⚔️ Chapitre 2 — Les Acteurs de l'Immunité Spécifique (pp.282–305)</div>
+
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Intro Ch.2 — Vaccination, sérothérapie, plasmaphérèse</div><div class="ph-sub">Manuel pp.282-283</div><div class="ph-comment">Photos : vaccination tétanos, cheval immunisé, plasmaphérèse</div><img class="ph-img" src="images/T5Ch2_Intro_vaccination_tetanos.PNG" alt="Intro Ch2"/><button class="ph-remove">✕</button></div>
+
+  <!-- ACCORDEON 1 : PROPRIETES -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. Propriétés de l'immunité spécifique <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Expériences souris A→D (toxines)</div><div class="ph-sub">Manuel p.286</div><div class="ph-comment">Souris A (toxine tétanique→mort), B (toxine diphtérique→mort), C (anatoxine→survie), D (anatoxine tétanique puis toxine diphtérique→mort)</div><img class="ph-img" src="images/T5Ch2_Doc01_experiences_souris_toxines.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Transfert de sérum (souris C→E)</div><div class="ph-sub">Manuel pp.286-287</div><div class="ph-comment">La souris E reçoit le sérum de C puis la toxine tétanique → survie</div><img class="ph-img" src="images/T5Ch2_Doc02_transfert_serum_souris.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Transfert de lymphocytes (greffe de peau)</div><div class="ph-sub">Manuel p.287</div><div class="ph-comment">Souris S2 rejette greffon S1 → Lymphocytes S2 → S4 → rejet accéléré (3 jours)</div><img class="ph-img" src="images/T5Ch2_Doc03_transfert_lymphocytes_greffe.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+
+    <div class="card-grid">
+      <div class="card red"><h4>🎯 Spécificité</h4><p>Ne protège QUE contre l'Ag inducteur. Souris C (tétanos) meurt avec la diphtérie.</p></div>
+      <div class="card blue"><h4>🧠 Mémoire</h4><p>Réponse 2aire plus rapide, intense et durable. Greffon rejeté en 3j (au lieu de 12j).</p></div>
+      <div class="card green"><h4>🌈 Diversité</h4><p>Capacité de reconnaître tous les Ag possibles. Millions de clones différents préexistants.</p></div>
+      <div class="card amber"><h4>🔄 Transférabilité</h4><p>Sérum → anticorps (RIMH). Lymphocytes vivants → immunité cellulaire (RIMC).</p></div>
+    </div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Propriétés de l'immunité</div><div class="fill-text" id="ma-prop">
+      L'immunité spécifique se caractérise par 4 propriétés : la <span class="blank-select"><select id="ma3_1"><option value="">—</option><option value="spécificité">spécificité</option><option value="universalité">universalité</option></select></span>, la <span class="blank-select"><select id="ma3_2"><option value="">—</option><option value="mémoire">mémoire</option><option value="rapidité">rapidité</option></select></span> (réponse 2aire + rapide), la diversité et la <span class="blank-select"><select id="ma3_3"><option value="">—</option><option value="transférabilité">transférabilité</option><option value="génétique">génétique</option></select></span> (par sérum ou lymphocytes). La vaccination exploite la <span class="blank-select"><select id="ma3_4"><option value="">—</option><option value="mémoire">mémoire</option><option value="spécificité">spécificité</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma3',4,['spécificité','mémoire','transférabilité','mémoire'])">Vérifier</button>
+      <span id="score-ma3" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma3',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : RIMH vs RIMC -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. RIMH vs RIMC — Les deux types de réponse <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Expériences cobayes diphtérie vs tuberculose</div><div class="ph-sub">Manuel p.288</div><div class="ph-comment">Expérience I : sérum anti-diphtérie → survie (RIMH) / Expérience II : lymphocytes anti-BK → survie (RIMC)</div><img class="ph-img" src="images/T5Ch2_Doc04_RIMH_RIMC_cobayes.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Expérience filtrat toxine + sérum</div><div class="ph-sub">Manuel p.289</div><div class="ph-comment">Particules poudre + sérum → filtration → identification effecteur humoral</div><img class="ph-img" src="images/T5Ch2_Doc05_experience_filtrat_toxine.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th></th><th>RIMH (Humorale)</th><th>RIMC (Cellulaire)</th></tr></thead><tbody>
+      <tr><td><strong>Effecteur</strong></td><td>Anticorps (sérum)</td><td>Lymphocytes T vivants</td></tr>
+      <tr><td><strong>Transfert</strong></td><td>Par le sérum</td><td>Par lymphocytes vivants</td></tr>
+      <tr><td><strong>Cibles</strong></td><td>Toxines, bactéries extracellulaires</td><td>BK, listériose, cellules infectées, greffes</td></tr>
+      <tr><td><strong>Application</strong></td><td>Sérothérapie</td><td>Rejet de greffe</td></tr>
+    </tbody></table></div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — RIMH vs RIMC</div><div class="fill-text" id="ma-rim">
+      La <span class="blank-select"><select id="ma4_1"><option value="">—</option><option value="RIMH">RIMH</option><option value="RIMC">RIMC</option></select></span> est transférable par le sérum et efficace contre les toxines. La <span class="blank-select"><select id="ma4_2"><option value="">—</option><option value="RIMC">RIMC</option><option value="RIMH">RIMH</option></select></span> est transférable par lymphocytes vivants et responsable du rejet de greffe.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma4',2,['RIMH','RIMC'])">Vérifier</button>
+      <span id="score-ma4" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma4',2)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : FORMATION ET MATURATION -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III. Formation et maturation des lymphocytes <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Toutes les cellules immunitaires <strong>naissent dans la moelle osseuse rouge</strong> à partir de cellules souches totipotentes. La <strong>maturation</strong> consiste en l'acquisition de <strong>récepteurs spécifiques</strong> AVANT tout contact avec l'antigène.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Évolution leucocytes lors infection</div><div class="ph-sub">Manuel p.290</div><div class="ph-comment">Graphique : ↑ nombre leucocytes pendant infection → retour normal guérison</div><img class="ph-img" src="images/T5Ch2_Doc06_evolution_leucocytes_infection.PNG" alt="Doc 06"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — Frottis sanguins (leucocytes)</div><div class="ph-sub">Manuel p.290</div><div class="ph-comment">Monocyte ×4000, Lymphocyte ×8000, Granulocyte ×5600</div><img class="ph-img" src="images/T5Ch2_Doc07_frottis_sanguins_leucocytes.PNG" alt="Doc 07"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Expériences irradiation + greffe moelle osseuse</div><div class="ph-sub">Manuel p.291</div><div class="ph-comment">Tableau : déficit immunitaire → irradiation → greffe moelle → retour normal</div><img class="ph-img" src="images/T5Ch2_Doc08_experiences_irradiation_greffe_moelle.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Emplacement anatomique du thymus</div><div class="ph-sub">Manuel p.292</div><div class="ph-comment">Organe bilobé dans le thorax, derrière le sternum</div><img class="ph-img" src="images/T5Ch2_Doc09_emplacement_thymus.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Souris «nude» sans thymus</div><div class="ph-sub">Manuel p.292</div><div class="ph-comment">Absence de poils + tolérance des greffes (même xénogreffes)</div><img class="ph-img" src="images/T5Ch2_Doc10_souris_nude.PNG" alt="Doc 10"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — Tableau expériences + rôle du thymus</div><div class="ph-sub">Manuel p.292</div><div class="ph-comment">Irradiation + thymectomie + greffe moelle/thymus → RIMH/RIMC</div><img class="ph-img" src="images/T5Ch2_Doc11_tableau_role_thymus.PNG" alt="Doc 11"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="organs-grid">
+      <div class="organ-box primary"><h4>🦴 Organes lymphoïdes PRIMAIRES</h4><ul><li><strong>Moelle osseuse rouge</strong> : naissance cellules souches → maturation LB (Ig de surface)</li><li><strong>Thymus</strong> : maturation LT → acquisition TCR + marqueurs CD4/CD8</li></ul></div>
+      <div class="organ-box secondary"><h4>🫁 Organes lymphoïdes SECONDAIRES</h4><ul><li><strong>Rate, ganglions lymphatiques, amygdales</strong></li><li>Stockage des lymphocytes immunocompétents</li><li>Lieu de rencontre avec l'antigène</li><li>Amplification de la réponse immunitaire</li></ul></div>
+    </div>
+
+    <div class="card-grid" style="margin-top:14px">
+      <div class="card purple"><h4>🔵 Lymphocytes B (LB)</h4><ul><li>Né et mature dans la moelle osseuse</li><li>Récepteur : Ig de surface (Y)</li><li>Effecteur RIMH → plasmocyte</li><li>Reconnaît Ag libre</li></ul></div>
+      <div class="card blue"><h4>🟢 Lymphocytes T (LT)</h4><ul><li>Né moelle, mature dans le thymus</li><li>Récepteur : TCR (2 chaînes)</li><li>LT4 (CD4) = auxiliaires</li><li>LT8 (CD8) = cytotoxiques</li></ul></div>
+      <div class="card amber"><h4>🟡 Macrophage</h4><ul><li>Issu des monocytes sanguins</li><li>Phagocytose</li><li>Cellule présentatrice d'Ag (CPAg)</li><li>Pont entre immunité innée et spécifique</li></ul></div>
+    </div>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Configuration moléculaire du TCR</div><div class="ph-sub">Manuel p.293</div><div class="ph-comment">2 chaînes polypeptidiques : parties variables + constantes + membrane LT</div><img class="ph-img" src="images/T5Ch2_Doc12_TCR_configuration.PNG" alt="Doc 12"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 13 — Double reconnaissance TCR/HLA/épitope</div><div class="ph-sub">Manuel p.294</div><div class="ph-comment">TCR reconnaît simultanément HLA du soi + épitope du non soi</div><img class="ph-img" src="images/T5Ch2_Doc13_double_reconnaissance.PNG" alt="Doc 13"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 14 — Reconnaissance des cellules infectées par les LT</div><div class="ph-sub">Manuel p.294</div><div class="ph-comment">LT8 reconnaît cellule cible via complexe HLA I + peptide viral</div><img class="ph-img" src="images/T5Ch2_Doc14_reconnaissance_cellules_infectees.PNG" alt="Doc 14"/><button class="ph-remove">✕</button></div>
+
+    <div class="info-box indigo"><strong>Double reconnaissance des LT :</strong> Le TCR reconnaît le non soi <strong>dans le contexte du soi</strong>. Un LT ne reconnaît un antigène QUE s'il est présenté par une molécule HLA. Les LB, eux, reconnaissent l'antigène libre sans présentation.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Formation et maturation</div><div class="fill-text" id="ma-mat">
+      Toutes les cellules naissent dans la <span class="blank-select"><select id="ma5_1"><option value="">—</option><option value="moelle osseuse">moelle osseuse</option><option value="rate">rate</option></select></span>. Les LB y maturent avec des <span class="blank-select"><select id="ma5_2"><option value="">—</option><option value="Ig de surface (Y)">Ig de surface (Y)</option><option value="TCR">TCR</option></select></span>. Les LT maturent dans le <span class="blank-select"><select id="ma5_3"><option value="">—</option><option value="thymus">thymus</option><option value="foie">foie</option></select></span> et acquièrent le <span class="blank-select"><select id="ma5_4"><option value="">—</option><option value="TCR">TCR</option><option value="CMH">CMH</option></select></span>. La double reconnaissance signifie que le LT reconnaît l'épitope <span class="blank-select"><select id="ma5_5"><option value="">—</option><option value="associé au HLA du soi">associé au HLA du soi</option><option value="libre dans le sang">libre dans le sang</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma5',5,['moelle osseuse','Ig de surface (Y)','thymus','TCR','associé au HLA du soi'])">Vérifier</button>
+      <span id="score-ma5" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma5',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 4 : ANTICORPS -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">IV. Structure et fonction des anticorps <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les anticorps sont des <strong>immunoglobulines (Ig)</strong>, protéines de la famille des γ-globulines, produites par les <strong>plasmocytes</strong> (LB activés). Chaque anticorps est constitué de <strong>4 chaînes polypeptidiques</strong> identiques deux à deux : 2 chaînes <strong>lourdes H</strong> (heavy) + 2 chaînes <strong>légères L</strong> (light), reliées par des <strong>ponts disulfures (S-S)</strong>.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 15 — Récepteurs Y des LB</div><div class="ph-sub">Manuel p.295</div><div class="ph-comment">Immunofluorescence : bactéries (vert) fixées par Ig de surface (rouge)</div><img class="ph-img" src="images/T5Ch2_Doc15_recepteurs_Y_LB.PNG" alt="Doc 15"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 16 — Électrophorèse protéines sériques</div><div class="ph-sub">Manuel p.295</div><div class="ph-comment">Sérum normal vs malade hépatite : ↑ pic γ-globulines = anticorps</div><img class="ph-img" src="images/T5Ch2_Doc16_electrophorese_proteines.PNG" alt="Doc 16"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 17 — Liaison anticorps-antigène</div><div class="ph-sub">Manuel p.295</div><div class="ph-comment">Schéma : sites anticorps (variables) fixent épitopes de l'antigène</div><img class="ph-img" src="images/T5Ch2_Doc17_liaison_anticorps_antigene.PNG" alt="Doc 17"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 18 — Expérience lapins L1/L2 (toxine tétanique)</div><div class="ph-sub">Manuel p.296</div><div class="ph-comment">L1 immunisé → sérum + toxine → précipité → L2 inoculé → survie</div><img class="ph-img" src="images/T5Ch2_Doc18_experience_lapins_toxine.PNG" alt="Doc 18"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 19 — Configuration moléculaire de l'anticorps (ME)</div><div class="ph-sub">Manuel p.296</div><div class="ph-comment">Photo au microscope électronique : structure en Y</div><img class="ph-img" src="images/T5Ch2_Doc19_configuration_moleculaire_Ac.PNG" alt="Doc 19"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 20 — Structure de l'anticorps (schéma légendé)</div><div class="ph-sub">Manuel p.296</div><div class="ph-comment">Schéma numéroté 1→8 : chaînes H/L, ponts S-S, sites anticorps, Fc</div><img class="ph-img" src="images/T5Ch2_Doc20_structure_anticorps_legende.PNG" alt="Doc 20"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="antibody-schema">
+      <div class="ab-title">🔬 Structure de l'anticorps (Immunoglobuline)</div>
+      <div class="ab-y">
+        <div class="ab-arms">
+          <div class="ab-arm"><span class="vari">Site anticorps (Fab)</span><span class="const">Parties variables H+L</span></div>
+          <div class="ab-arm"><span class="vari">Site anticorps (Fab)</span><span class="const">Parties variables H+L</span></div>
+        </div>
+        <div class="ab-stem">Fragment Fc (constant)<br/><small>site effecteur → opsonisation</small></div>
+      </div>
+      <div class="ab-labels">
+        <div class="ab-label">2 chaînes H</div>
+        <div class="ab-label">2 chaînes L</div>
+        <div class="ab-label">Ponts S-S</div>
+        <div class="ab-label">2 Fab (variables)</div>
+        <div class="ab-label">1 Fc (constant)</div>
+      </div>
+    </div>
+
+    <div class="info-box indigo"><strong>Opsonisation :</strong> Après fixation de l'anticorps sur l'antigène (complexe immun), le fragment Fc se fixe sur des récepteurs spécifiques des phagocytes → facilite la phagocytose.</div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique</div><strong>FAB = Fragment Antigen Binding</strong> (fixe l'antigène) — <strong>FC = Fragment Crystallizable</strong> (constant, fixe les cellules). 2 Fab variables + 1 Fc constant = 4 chaînes (2H+2L).</div>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 21 — Organes lymphoïdes</div><div class="ph-sub">Manuel p.297</div><div class="ph-comment">Schéma : primaires (moelle, thymus) + secondaires (rate, ganglions, amygdales)</div><img class="ph-img" src="images/T5Ch2_Doc21_organes_lymphoides.PNG" alt="Doc 21"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 22 — Évolution LB dans la rate après GRM</div><div class="ph-sub">Manuel p.297</div><div class="ph-comment">Tableau J0→J40 : ↑ LB après 1ère injection (pic J4) et 2ème (pic J32)</div><img class="ph-img" src="images/T5Ch2_Doc22_tableau_nombre_LB_rate.PNG" alt="Doc 22"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 23 — Évolution taille ganglions J3/J5/J7</div><div class="ph-sub">Manuel p.297</div><div class="ph-comment">Augmentation taille ganglions lors réaction immunitaire</div><img class="ph-img" src="images/T5Ch2_Doc23_evolution_ganglions_reaction.PNG" alt="Doc 23"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 24 — Cellules drainées ganglions lors greffe</div><div class="ph-sub">Manuel p.298</div><div class="ph-comment">Graphique : ↑ cellules drainées par ganglions durant rejet greffe</div><img class="ph-img" src="images/T5Ch2_Doc24_evolution_cellules_drainees.PNG" alt="Doc 24"/><button class="ph-remove">✕</button></div>
+    </div>
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 25 — Lymphocytes moelle et ganglions</div><div class="ph-sub">Manuel p.298</div><div class="ph-comment">Graphique évolution nombre lymphocytes moelle osseuse et ganglions</div><img class="ph-img" src="images/T5Ch2_Doc25_lymphocytes_moelle_ganglions.PNG" alt="Doc 25"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 26 — Schéma synthèse formation/maturation</div><div class="ph-sub">Manuel p.298</div><div class="ph-comment">Cellule souche → moelle → thymus (LT) / moelle (LB) → organes 2aires</div><img class="ph-img" src="images/T5Ch2_Doc26_schema_synthese_formation.PNG" alt="Doc 26"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Anticorps</div><div class="fill-text" id="ma-ac">
+      L'anticorps est formé de <span class="blank-select"><select id="ma6_1"><option value="">—</option><option value="4 chaînes (2H+2L)">4 chaînes (2H+2L)</option><option value="2 chaînes">2 chaînes</option></select></span>. Les sites de fixation de l'antigène (Fab) sont situés aux extrémités <span class="blank-select"><select id="ma6_2"><option value="">—</option><option value="variables">variables</option><option value="constantes">constantes</option></select></span>. Le fragment <span class="blank-select"><select id="ma6_3"><option value="">—</option><option value="Fc">Fc</option><option value="Fab">Fab</option></select></span> (constant) permet l'<span class="blank-select"><select id="ma6_4"><option value="">—</option><option value="opsonisation">opsonisation</option><option value="transcription">transcription</option></select></span> (fixation sur phagocytes).
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma6',4,['4 chaînes (2H+2L)','variables','Fc','opsonisation'])">Vérifier</button>
+      <span id="score-ma6" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma6',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== BILAN ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèses interactives</div>
+
+  <div class="bilan-fill"><div class="bilan-fill-header"><h3>🔴 Ch.1 — Le Soi et le Non Soi (pp.277-279)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma des transfusions possibles</div><div class="ph-sub">Manuel p.271</div><div class="ph-comment">Flèches donneur → receveur : O donneur universel, AB receveur universel</div><img class="ph-img" src="images/T5Ch1_Schema_transfusions_possibles.PNG" alt="Transfusions"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan1">
+      L'organisme tolère le <span class="blank-select"><select id="b1_1"><option value="">—</option><option value="soi">soi</option><option value="non soi">non soi</option></select></span> et rejette le <span class="blank-select"><select id="b1_2"><option value="">—</option><option value="non soi">non soi</option><option value="soi">soi</option></select></span>. Les marqueurs sanguins sont les <span class="blank-select"><select id="b1_3"><option value="">—</option><option value="agglutinogènes">agglutinogènes</option><option value="agglutinines">agglutinines</option></select></span> (glycoprotéines sur hématies). La règle de transfusion : agglutinogènes du <span class="blank-select"><select id="b1_4"><option value="">—</option><option value="donneur">donneur</option><option value="receveur">receveur</option></select></span> ≠ agglutinines du <span class="blank-select"><select id="b1_5"><option value="">—</option><option value="receveur">receveur</option><option value="donneur">donneur</option></select></span>. Le facteur <span class="blank-select"><select id="b1_6"><option value="">—</option><option value="Rhésus">Rhésus</option><option value="ABO">ABO</option></select></span> (Rh+/Rh−) cause la maladie hémolytique si mère Rh− et fœtus Rh+. Les marqueurs tissulaires <span class="blank-select"><select id="b1_7"><option value="">—</option><option value="HLA">HLA</option><option value="ABO">ABO</option></select></span> sont contrôlés par le <span class="blank-select"><select id="b1_8"><option value="">—</option><option value="CMH">CMH</option><option value="TCR">TCR</option></select></span> (chromosome 6). Le <span class="blank-select"><select id="b1_9"><option value="">—</option><option value="soi modifié">soi modifié</option><option value="soi normal">soi normal</option></select></span> (cellule infectée) déclenche la réponse immunitaire.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkBilan(1,['soi','non soi','agglutinogènes','donneur','receveur','Rhésus','HLA','CMH','soi modifié'])">Vérifier</button>
+      <span id="score-b1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan(1,9)">Réinitialiser</button>
+    </div>
+  </div></div>
+
+  <div class="bilan-fill" style="margin-top:20px"><div class="bilan-fill-header"><h3>⚔️ Ch.2 — Les Acteurs de l'Immunité (pp.299-302)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma synthèse formation/maturation/stockage</div><div class="ph-sub">Manuel p.298</div><div class="ph-comment">Cellule souche → moelle → thymus (LT) ou moelle (LB) → organes secondaires</div><img class="ph-img" src="images/T5Ch2_Doc26_schema_synthese_formation.PNG" alt="Synthèse"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan2">
+      L'immunité spécifique a 4 propriétés : <span class="blank-select"><select id="b2_1"><option value="">—</option><option value="spécificité">spécificité</option><option value="universalité">universalité</option></select></span>, mémoire, diversité, transférabilité. La RIMH utilise les <span class="blank-select"><select id="b2_2"><option value="">—</option><option value="anticorps">anticorps</option><option value="lymphocytes T">lymphocytes T</option></select></span>. La RIMC utilise les <span class="blank-select"><select id="b2_3"><option value="">—</option><option value="lymphocytes T">lymphocytes T</option><option value="anticorps">anticorps</option></select></span>. Toutes les cellules naissent dans la <span class="blank-select"><select id="b2_4"><option value="">—</option><option value="moelle osseuse">moelle osseuse</option><option value="rate">rate</option></select></span>. Les LB maturent dans la moelle avec des <span class="blank-select"><select id="b2_5"><option value="">—</option><option value="Ig de surface">Ig de surface</option><option value="TCR">TCR</option></select></span>. Les LT maturent dans le <span class="blank-select"><select id="b2_6"><option value="">—</option><option value="thymus">thymus</option><option value="foie">foie</option></select></span> avec le <span class="blank-select"><select id="b2_7"><option value="">—</option><option value="TCR">TCR</option><option value="CMH">CMH</option></select></span>. L'anticorps = <span class="blank-select"><select id="b2_8"><option value="">—</option><option value="4 chaînes (2H+2L)">4 chaînes (2H+2L)</option><option value="2 chaînes">2 chaînes</option></select></span> avec 2 Fab (<span class="blank-select"><select id="b2_9"><option value="">—</option><option value="variables">variables</option><option value="constantes">constantes</option></select></span>) et 1 Fc (<span class="blank-select"><select id="b2_10"><option value="">—</option><option value="constant">constant</option><option value="variable">variable</option></select></span>).
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkBilan(2,['spécificité','anticorps','lymphocytes T','moelle osseuse','Ig de surface','thymus','TCR','4 chaînes (2H+2L)','variables','constant'])">Vérifier</button>
+      <span id="score-b2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan(2,10)">Réinitialiser</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<div class="tab-panel" id="tab-exercices">
+  <div class="section-title">📝 Exercices du manuel</div>
+
+  <div class="exo-card"><div class="exo-header">🧪 Ch.1 — Exercice 2 (p.280) : Groupes sanguins X et Y</div>
+    <div class="exo-body">
+      <p style="margin-bottom:12px;color:var(--gray6)">On réalise le test 1 (sérums tests + hématies) et le test 2 (globules tests + sérum).</p>
+      <div class="table-wrap"><table><thead><tr><th colspan="2">Test 1 — Sérums tests + hématies</th></tr></thead><tbody>
+        <tr><td>Sérum anti-A</td><td>Sérum anti-B</td></tr>
+        <tr><td style="background:var(--red-lt)">X : pas d'agglutination</td><td style="background:var(--red-lt)">X : pas d'agglutination</td></tr>
+        <tr><td style="background:var(--green-lt)">Y : agglutination ✅</td><td style="background:var(--red-lt)">Y : pas d'agglutination</td></tr>
+      </tbody></table></div>
+      <div class="fill-text" id="exo1">
+        <strong>1.</strong> X ne porte aucun agglutinogène → groupe <span class="blank-select"><select id="ex1_1"><option value="">—</option><option value="O">O</option><option value="A">A</option></select></span>.
+        Y porte l'agglutinogène <span class="blank-select"><select id="ex1_2"><option value="">—</option><option value="A">A</option><option value="B">B</option></select></span> → groupe <span class="blank-select"><select id="ex1_3"><option value="">—</option><option value="A">A</option><option value="B">B</option></select></span>.
+        <strong>2.</strong> Sérum X contient <span class="blank-select"><select id="ex1_4"><option value="">—</option><option value="anti-A et anti-B">anti-A et anti-B</option><option value="anti-A seulement">anti-A seulement</option></select></span>.
+        Sérum Y contient <span class="blank-select"><select id="ex1_5"><option value="">—</option><option value="anti-B seulement">anti-B seulement</option><option value="anti-A et anti-B">anti-A et anti-B</option></select></span>.
+        <strong>3.</strong> Y peut-il donner à X ? <span class="blank-select"><select id="ex1_6"><option value="">—</option><option value="Non">Non</option><option value="Oui">Oui</option></select></span>
+        car X possède des <span class="blank-select"><select id="ex1_7"><option value="">—</option><option value="anti-A">anti-A</option><option value="anti-B">anti-B</option></select></span> qui agglutineraient les hématies <span class="blank-select"><select id="ex1_8"><option value="">—</option><option value="A">A</option><option value="B">B</option></select></span> de Y.
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick="checkExo('ex1',8,['O','A','A','anti-A et anti-B','anti-B seulement','Non','anti-A','A'])">Vérifier</button>
+        <span id="score-ex1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex1',8)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-card"><div class="exo-header">🐭 Ch.2 — Exercice 2 (p.304) : Expériences de greffe chez la souris</div>
+    <div class="exo-body">
+      <p style="margin-bottom:10px;color:var(--gray6)">Souches A, B, C. A1, B, C = donneurs. A2→A5 = receveurs.</p>
+      <div style="background:var(--gray1);border-radius:8px;padding:12px;font-size:13px;margin-bottom:12px">
+        <p><strong>Exp.1 :</strong> A2 reçoit greffon A1 (✅) + B (❌ 12 j).</p>
+        <p><strong>Exp.2 :</strong> A2 reçoit B (❌ 6 j) + C (❌ 12 j).</p>
+        <p><strong>Exp.3 :</strong> Sérum A2→A3 + greffon B → ❌ 12 j. Lymphocytes A2→A4 + greffon B → ❌ 6 j.</p>
+        <p><strong>Exp.4 :</strong> A5 sans thymus + greffon B → pas de rejet.</p>
+      </div>
+      <div class="fill-text" id="exo2">
+        <strong>1.</strong> A1 et A2 ont mêmes <span class="blank-select"><select id="ex2_1"><option value="">—</option><option value="HLA (CMH)">HLA (CMH)</option><option value="groupes sanguins">groupes sanguins</option></select></span> → <span class="blank-select"><select id="ex2_2"><option value="">—</option><option value="isogreffe">isogreffe</option><option value="allogreffe">allogreffe</option></select></span>.
+        <strong>2.</strong> Rejet B en 6 j (vs 12 j) prouve la <span class="blank-select"><select id="ex2_3"><option value="">—</option><option value="mémoire immunologique">mémoire immunologique</option><option value="spécificité">spécificité</option></select></span>.
+        <strong>3.</strong> Le sérum n'a PAS transféré → rejet ≠ <span class="blank-select"><select id="ex2_4"><option value="">—</option><option value="RIMH">RIMH</option><option value="RIMC">RIMC</option></select></span>.
+        Les lymphocytes ont transféré → c'est une <span class="blank-select"><select id="ex2_5"><option value="">—</option><option value="RIMC">RIMC</option><option value="RIMH">RIMH</option></select></span>.
+        <strong>4.</strong> Sans thymus, pas de rejet → le <span class="blank-select"><select id="ex2_6"><option value="">—</option><option value="thymus">thymus</option><option value="foie">foie</option></select></span> est indispensable à la <span class="blank-select"><select id="ex2_7"><option value="">—</option><option value="RIMC">RIMC</option><option value="RIMH">RIMH</option></select></span>.
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick="checkExo('ex2',7,['HLA (CMH)','isogreffe','mémoire immunologique','RIMH','RIMC','thymus','RIMC'])">Vérifier</button>
+        <span id="score-ex2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex2',7)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QCM ==================== -->
+<div class="tab-panel" id="tab-qcm">
+  <div class="section-title">✅ 24 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13px;margin-bottom:4px">Q1–Q4 : Ch.1 manuel · Q5–Q9 : Ch.2 manuel · Q10–Q24 : complémentaires</p>
+  <div class="info-box amber" style="margin-bottom:20px;font-size:12.5px">⚠️ Utilise <strong>Vérifier</strong> pour savoir si ta réponse est juste, puis <strong>Correction</strong> pour l'explication.</div>
+  <div id="qcm-container"></div>
+  <div class="signature">INGÉNIEUR Mohamed CHAGRAOUI</div>
+</div>
+
+<script>
+// ===== QCM DATA =====
+const qcmData=[
+  {q:"Q1 (Ch.1). Le CMH désigne :",opts:["a. des marqueurs biologiques sur les globules rouges","b. les gènes gouvernant la synthèse des molécules HLA","c. les molécules HLA marquant l'identité biologique","d. le complexe majeur d'histocompatibilité"],correct:['b','d'],fb:"✅ b,d. Le CMH = gènes (b) et Complexe Majeur d'Histocompatibilité (d). Les molécules HLA sont les PRODUITS du CMH. (p.275)"},
+  {q:"Q2 (Ch.1). Individu du groupe A :",opts:["a. agglutinogènes B sur ses hématies","b. agglutinines B dans son sérum","c. agglutinogènes A sur ses globules blancs","d. agglutinines A sur ses hématies"],correct:['b'],fb:"✅ b. Groupe A = agglutinogène A sur HÉMATIES + agglutinine anti-B dans le SÉRUM. (p.271)"},
+  {q:"Q3 (Ch.1). Transfusion A → B : agglutination car :",opts:["a. anticorps anti-B du donneur fixent anticorps anti-A du receveur","b. anticorps anti-A du receveur fixent antigènes A du donneur","c. antigènes A du donneur fixent antigènes B du receveur","d. donneur et receveur n'ont pas le même CMH"],correct:['b'],fb:"✅ b. Receveur B possède anti-A → fixent agglutinogènes A du donneur → agglutination. (p.271)"},
+  {q:"Q4 (Ch.1). Rejet d'un greffon si :",opts:["a. donneur et receveur ont le même CMH","b. donneur et receveur ont des CMH différents","c. donneur et receveur ont le même groupe sanguin","d. donneur et receveur ont des groupes sanguins différents"],correct:['b'],fb:"✅ b. Rejet = HLA différents. Groupe sanguin n'intervient PAS dans le rejet de greffe. (p.273-274)"},
+  {q:"Q5 (Ch.2). Le vaccin contient :",opts:["a. des agents atténués (affaiblis)","b. des substances qui tuent les microbes","c. des anticorps spécifiques","d. des phagocytes"],correct:['a'],fb:"✅ a. Vaccin = agents ATTÉNUÉS ou inactivés. PAS d'anticorps (c'est la sérothérapie). (p.283-285)"},
+  {q:"Q6 (Ch.2). La sérothérapie assure :",opts:["a. l'immunisation définitive","b. le développement d'une immunité durable","c. la protection immédiate contre une toxine","d. l'acquisition d'une immunité cellulaire"],correct:['c'],fb:"✅ c. Sérothérapie = anticorps tout faits → protection IMMÉDIATE mais NON durable. (p.283-285)"},
+  {q:"Q7 (Ch.2). Le thymus :",opts:["a. où naissent les LT","b. où les LT âgés viennent mourir","c. où les LT deviennent compétents","d. sans lequel il n'y aurait pas de RIMC"],correct:['c','d'],fb:"✅ c,d. Thymus = MATURATION (pas naissance) des LT. Sans thymus → pas de LT → pas de RIMC. (p.292)"},
+  {q:"Q8 (Ch.2). Les LT8 :",opts:["a. sont des cellules immunocompétentes","b. naissent dans le thymus","c. sont appelés aussi LTc","d. interviennent dans les RIMH"],correct:['a','c'],fb:"✅ a,c. LT8 = immunocompétents (a) = LTc cytotoxiques (c). Naissent dans MOELLE (b faux). RIMC (d faux). (p.293-294)"},
+  {q:"Q9 (Ch.2). Propriétés de l'immunité spécifique :",opts:["a. spécificité","b. mémoire immunologique","c. transférabilité","d. diversité"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Les 4 propriétés. (p.286-287)"},
+  {q:"Q10. L'agglutination lors d'une transfusion incompatible :",opts:["a. réaction agglutinogènes donneur + agglutinines receveur","b. réaction agglutinines donneur + agglutinogènes receveur","c. peut provoquer des accidents mortels","d. est due aux molécules HLA"],correct:['a','c'],fb:"✅ a,c. HLA n'intervient pas dans l'agglutination. (p.269)"},
+  {q:"Q11. Les molécules HLA :",opts:["a. glycoprotéines membranaires marqueurs du soi","b. identiques chez tous les individus d'une même espèce","c. classe I sur toutes les cellules nucléées","d. classe II sur les cellules immunitaires"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : HLA SPÉCIFIQUES à chaque individu. (p.275)"},
+  {q:"Q12. Le «soi modifié» :",opts:["a. cellules infectées ou cancéreuses","b. expose un complexe HLA-peptide anormal","c. est toléré par le système immunitaire","d. déclenche une réaction immunitaire de rejet"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : soi modifié est RECONNU comme non soi. (p.276)"},
+  {q:"Q13. La RIMH :",opts:["a. transférable par le sérum sans les cellules","b. efficace contre toxines et bactéries extracellulaires","c. efficace contre le bacille de Koch","d. implique des anticorps comme effecteurs"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : BK nécessite la RIMC. (p.288)"},
+  {q:"Q14. Les lymphocytes B (LB) :",opts:["a. naissent et maturent dans la moelle osseuse","b. acquièrent des immunoglobulines de surface","c. se différencient en plasmocytes sécréteurs d'anticorps","d. acquièrent leur TCR dans le thymus"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : TCR acquis dans le THYMUS par les LT. (p.291-293)"},
+  {q:"Q15. Les lymphocytes T (LT) :",opts:["a. acquièrent leur immunocompétence dans le thymus","b. portent un récepteur TCR à leur surface","c. reconnaissent l'antigène libre sans présentation","d. comprennent LT4 (auxiliaires) et LT8 (cytotoxiques)"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : LT ne reconnaissent PAS l'Ag libre — double reconnaissance. (p.293-294)"},
+  {q:"Q16. La double reconnaissance par le TCR :",opts:["a. LT reconnaît simultanément HLA et épitope","b. LT peut reconnaître un antigène libre","c. LT ne reconnaît le non soi que dans le contexte du soi (HLA)","d. TCR comporte deux sites : HLA et épitope"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : LT ne reconnaissent PAS l'Ag libre. (p.294)"},
+  {q:"Q17. La structure de l'anticorps :",opts:["a. 4 chaînes reliées par ponts disulfures","b. 2 chaînes lourdes H + 2 chaînes légères L","c. 2 sites anticorps (parties variables)","d. fragment Fc variable selon l'antigène"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : Fc est CONSTANT (pas variable). (p.296)"},
+  {q:"Q18. Le fragment Fc de l'anticorps :",opts:["a. assure l'opsonisation (fixation sur phagocytes)","b. est la partie variable qui reconnaît l'épitope","c. facilite la phagocytose du complexe immun","d. constitué par la partie constante des chaînes H"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : partie variable = Fab (reconnaît l'Ag). (p.296)"},
+  {q:"Q19. Le thymus :",opts:["a. lieu de maturation des LT","b. indispensable à la RIMC","c. lieu de naissance des cellules souches","d. organe lymphoïde primaire"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : cellules souches naissent dans la MOELLE. (p.292)"},
+  {q:"Q20. La vaccination :",opts:["a. inocule un antigène sous forme atténuée","b. stimule la mémoire immunologique","c. confère une immunité active et durable","d. apporte une protection immédiate par anticorps"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : c'est la SÉROTHÉRAPIE qui apporte des anticorps. (p.283-285)"},
+  {q:"Q21. L'immunité spécifique se caractérise par :",opts:["a. spécificité","b. mémoire immunologique","c. transférabilité","d. universalité dès la naissance"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : immunité spécifique = ACQUISE, pas innée. (p.286-287)"},
+  {q:"Q22. Le CMH :",opts:["a. ensemble de gènes sur le chromosome 6","b. contrôle la synthèse des molécules HLA","c. identique chez tous les individus sauf vrais jumeaux","d. comprend 4 gènes très polymorphes"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : CMH DIFFÉRENT chez tous (sauf vrais jumeaux). (p.275)"},
+  {q:"Q23. Le rejet d'une allogreffe :",opts:["a. survient si HLA donneur/receveur différents","b. plus rapide lors d'un 2ème contact (mémoire)","c. est une RIMC","d. transférable par le sérum"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : rejet = RIMC, transférable par LYMPHOCYTES. (p.273-274, 288)"},
+  {q:"Q24. Maladie hémolytique du nouveau-né :",opts:["a. mère Rh− et fœtus Rh+","b. due aux anti-D maternels traversant le placenta","c. apparaît dès la 1ère grossesse","d. prévenue par injection anti-D à la mère après 1er accouchement"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : apparaît lors de la 2ème grossesse (ou ultérieure). (p.272)"}
+];
+
+function buildQCM(){
+  const c=document.getElementById('qcm-container');c.innerHTML='';
+  qcmData.forEach((d,i)=>{
+    const q=i+1;
+    c.insertAdjacentHTML('beforeend',`<div class="qcm-item" id="qi${q}"><div class="qcm-q"><span class="qnum">${d.q}</span></div><div class="qcm-options">${d.opts.map((o,j)=>{const v=String.fromCharCode(97+j);return`<label class="qcm-opt"><input type="checkbox" data-q="${q}" data-v="${v}"/> ${o}</label>`;}).join('')}</div><div class="qcm-feedback" id="fb${q}"></div><div class="qcm-buttons"><button class="qcm-verify-btn" onclick="verifyQCM(${q})">🟢 Vérifier</button><button class="qcm-correct-btn" onclick="correctQCM(${q})">🔵 Correction</button><button class="qcm-refresh-btn" onclick="refreshQCM(${q})">🔄 Rafraîchir</button></div></div>`);
+  });
+}
+buildQCM();
+
+function initPlaceholders(){
+  document.querySelectorAll('.img-placeholder').forEach(ph=>{
+    const inp=ph.querySelector('input[type=file]'),img=ph.querySelector('img.ph-img'),btn=ph.querySelector('.ph-remove');
+    if(!inp||!img)return;
+    if(img.src&&img.src.includes('images/')){const t=new Image();t.onload=()=>{img.style.display='block';ph.classList.add('has-img');};t.onerror=()=>{img.style.display='none';ph.classList.remove('has-img');};t.src=img.src;}
+    inp.addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};r.readAsDataURL(f);});
+    if(btn)btn.addEventListener('click',e=>{e.stopPropagation();img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';});
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{updateProgress();initPlaceholders();});
+
+function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');updateProgress();}
+function updateProgress(){const tabs=document.querySelectorAll('.tab-btn');const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';}
+function toggleAccordion(h){const b=h.nextElementSibling;const o=b.classList.contains('show');b.classList.toggle('show');if(o)h.classList.remove('open');else h.classList.add('open');}
+
+function checkMini(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetMini(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+function checkBilan(n,a){const l=a.length;let c=0;for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-b'+n);b.textContent=c+'/'+l;b.className='score-badge '+(c===l?'good':'bad');}
+function resetBilan(n,l){for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-b'+n);b.textContent='';b.className='score-badge';}
+function checkExo(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetExo(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+
+function verifyQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v),correct=qcmData[q-1].correct;
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  const partial=!full&&checked.some(v=>correct.includes(v));
+  const fb=document.getElementById('fb'+q),item=document.getElementById('qi'+q);
+  fb.className='qcm-feedback show '+(full?'fb-ok':partial?'fb-partial':'fb-ko');
+  fb.innerHTML=(full?'✅ Juste !':partial?'🟡 Partiel':'❌ Faux');
+  item.classList.remove('correct-item','wrong-item','partial-item');
+  item.classList.add(full?'correct-item':partial?'partial-item':'wrong-item');
+}
+function correctQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),correct=qcmData[q-1].correct;
+  cbs.forEach(cb=>{const opt=cb.closest('.qcm-opt');opt.classList.remove('opt-correct','opt-wrong','opt-missed');
+    if(correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-correct');
+    else if(!correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-wrong');
+    else if(correct.includes(cb.dataset.v)&&!cb.checked)opt.classList.add('opt-missed');});
+  const fb=document.getElementById('fb'+q);fb.className='qcm-feedback show fb-correction';fb.innerHTML='🔵 '+qcmData[q-1].fb;
+  const item=document.getElementById('qi'+q),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v);
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  item.classList.remove('correct-item','wrong-item','partial-item');item.classList.add(full?'correct-item':'wrong-item');
+}
+function refreshQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`);cbs.forEach(cb=>{cb.checked=false;cb.disabled=false;});
+  cbs.forEach(cb=>{cb.closest('.qcm-opt').classList.remove('opt-correct','opt-wrong','opt-missed');});
+  document.getElementById('fb'+q).className='qcm-feedback';document.getElementById('fb'+q).innerHTML='';
+  document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');
+}
+</script>
+</body>
+</html>
