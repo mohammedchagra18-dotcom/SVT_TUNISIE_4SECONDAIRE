@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 3 — L'Évolution biologique | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;
+  --green:#059669;--green-lt:#ecfdf5;--green-dk:#047857;
+  --emerald:#10b981;--emerald-lt:#d1fae5;
+  --forest:#064e3b;--forest2:#065f46;
+  --blue:#2563eb;--blue-lt:#eff6ff;
+  --red:#dc2626;--red-lt:#fef2f2;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --cyan:#0891b2;--cyan-lt:#ecfeff;
+  --indigo:#4338ca;--indigo-lt:#eef2ff;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(5,150,105,.07);--shadow-md:0 4px 24px rgba(5,150,105,.12);
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f0fdf4;color:var(--gray8);font-size:15px;line-height:1.72}
+
+header{background:linear-gradient(135deg,var(--forest) 0%,#065f46 55%,var(--forest2) 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(6,78,59,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(16,185,129,.08)}
+header::after{content:'';position:absolute;left:28%;bottom:-25px;width:130px;height:130px;border-radius:50%;background:rgba(217,119,6,.06)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#a7f3d0}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.8rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#a7f3d0}
+.hdr-sub{opacity:.7;font-size:.92rem;margin-top:3px;color:#d1fae5}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#d1fae5}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(16,185,129,.25);border:1px solid rgba(16,185,129,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#a7f3d0;margin-top:6px;letter-spacing:.5px}
+
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#a7f3d0,#fcd34d);width:0%;transition:width .4s}
+
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 22px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:13px 12px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--green);background:var(--green-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--green);border-bottom-color:var(--green)}
+
+.tab-panel{display:none;padding:24px 30px;max-width:1100px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.section-title{font-family:'Crimson Pro',serif;font-size:1.25rem;color:var(--green-dk);border-left:4px solid var(--green);padding-left:10px;margin:28px 0 14px}
+.sub-title{font-size:.9rem;font-weight:600;color:var(--green-dk);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.sub-title::before{content:'';display:block;width:18px;height:2px;background:var(--green);border-radius:2px}
+
+.def-box{background:var(--emerald-lt);border:1.5px solid #a7f3d0;border-radius:var(--radius);padding:12px 16px;margin:10px 0}
+.def-box .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--green-dk);margin-bottom:5px}
+.info-box{border-left:4px solid var(--green);background:var(--green-lt);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:10px 0;font-size:13px}
+.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}.info-box.blue{border-left-color:var(--blue);background:var(--blue-lt)}.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}.info-box.emerald{border-left-color:var(--emerald);background:var(--emerald-lt)}
+.info-box strong{color:var(--green-dk)}.info-box.amber strong{color:var(--amber)}.info-box.blue strong{color:var(--blue)}.info-box.purple strong{color:var(--purple)}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0}
+.card{background:#fff;border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);border-top:3px solid var(--green)}.card.amber{border-top-color:var(--amber)}.card.purple{border-top-color:var(--purple)}.card.blue{border-top-color:var(--blue)}.card.emerald{border-top-color:var(--emerald)}.card.navy{border-top-color:var(--navy)}
+.card h4{font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--gray8)}.card ul{padding-left:16px;font-size:13px;color:var(--gray6)}.card ul li{margin-bottom:4px}.card p{font-size:13px;color:var(--gray6)}
+
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}thead tr{background:var(--navy2);color:#fff}th{padding:9px 12px;font-weight:600;text-align:left}td{padding:8px 12px;border-bottom:1px solid var(--gray2)}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:var(--gray1)}
+
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:12px 0}
+.flow-step{background:#fff;border:2px solid var(--green);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--green-dk);text-align:center}
+.flow-step.active-step{background:var(--green);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:16px;font-weight:700}
+
+.tip-box{background:var(--amber-lt);border:2px solid var(--amber);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.tip-box .tip-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--amber);margin-bottom:4px}
+.mnemo-box{background:var(--purple-lt);border:2px solid var(--purple);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.mnemo-box .mnemo-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--purple);margin-bottom:4px}
+
+.accordion{border:2px solid var(--gray2);border-radius:var(--radius);margin:14px 0;overflow:hidden;background:#fff}
+.acc-header{background:var(--gray1);padding:14px 18px;cursor:pointer;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:background .2s}
+.acc-header:hover{background:var(--emerald-lt)}
+.acc-header .acc-arrow{transition:transform .3s;font-size:18px;color:var(--green)}
+.acc-header.open .acc-arrow{transform:rotate(90deg)}
+.acc-body{display:none;padding:18px}
+.acc-body.show{display:block}
+
+.mini-act{background:var(--green-lt);border:2px dashed var(--green);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.mini-act .ma-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green-dk);margin-bottom:8px}
+.mini-act .fill-text{font-size:13.5px;line-height:2.2}
+
+.blank-select{display:inline-block;margin:0 3px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--green);border-radius:6px;padding:2px 7px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--green-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:#d1fae5;border-style:solid;color:var(--green-dk)}
+.blank-select select.wrong{border-color:var(--red);background:var(--red-lt);border-style:solid;color:var(--red)}
+.check-btn{margin-top:10px;background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--green-dk)}
+.score-badge{display:inline-block;margin-left:10px;background:var(--gray2);border-radius:20px;padding:4px 12px;font-size:12.5px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:6px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--green);color:var(--green)}
+
+.bilan-fill{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.bilan-fill-header{background:linear-gradient(135deg,var(--indigo),#3730a3);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.bilan-fill-header h3{font-size:.95rem;font-weight:600}
+.bilan-fill-body{padding:16px}.bilan-fill-body .fill-text{font-size:13.5px;line-height:2.2}
+.bilan-fill-body .blank-select select{border-color:var(--indigo);background:var(--indigo-lt)}
+.bilan-fill-body .check-btn{background:var(--indigo)}.bilan-fill-body .check-btn:hover{background:#3730a3}
+
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:4px solid var(--green)}
+.qcm-item.correct-item{border-left-color:var(--green)}.qcm-item.wrong-item{border-left-color:var(--red)}.qcm-item.partial-item{border-left-color:var(--amber)}
+.qcm-q{padding:12px 16px 8px;font-weight:600;font-size:14px}.qcm-q .qnum{color:var(--green-dk);margin-right:5px}
+.qcm-options{padding:0 16px 12px}
+.qcm-opt{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;margin:3px 0;cursor:pointer;transition:background .15s;font-size:13.5px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:var(--amber-lt);color:var(--amber)}
+.qcm-feedback{margin:8px 16px 14px;padding:10px 14px;border-radius:8px;font-size:13px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.qcm-feedback.fb-correction{background:var(--cyan-lt);border:1px solid #67e8f9;color:#155e75}
+.qcm-buttons{display:flex;align-items:center;gap:8px;padding:0 16px 14px;flex-wrap:wrap}
+.qcm-verify-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-verify-btn:hover{background:var(--green-dk)}
+.qcm-correct-btn{background:var(--cyan);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-correct-btn:hover{background:#0e7490}
+.qcm-refresh-btn{background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;cursor:pointer}
+.qcm-refresh-btn:hover{border-color:var(--green);color:var(--green)}
+
+.img-placeholder{border:2.5px dashed #34d399;border-radius:var(--radius);background:var(--emerald-lt);padding:16px;margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;position:relative}
+.img-placeholder:hover{border-color:var(--green);background:#ccfbf1}
+.img-placeholder .ph-icon{font-size:1.8rem;opacity:.5}
+.img-placeholder .ph-label{font-size:11px;font-weight:700;color:var(--green-dk);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.img-placeholder .ph-sub{font-size:11px;color:var(--gray6);text-align:center}
+.img-placeholder .ph-comment{font-size:10.5px;color:var(--cyan);text-align:center;font-style:italic;margin-top:3px}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub,.img-placeholder.has-img .ph-comment{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:5px;right:7px;background:var(--red);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.signature{text-align:center;padding:16px;margin-top:28px;font-size:11.5px;color:var(--gray3);border-top:1px solid var(--gray2)}
+@media(max-width:640px){.img-row{grid-template-columns:1fr}header{padding:16px 16px 14px;flex-direction:column;gap:8px}.tab-panel{padding:16px 14px}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 3 — <span>L'Évolution biologique</span></div>
+    <div class="hdr-sub">Phylogénie · Mécanismes · Spéciation</div>
+    <div class="hdr-pill">Chapitre unique — pp. 141–160</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Évolution</strong>
+    pp. 141 – 160<br/>
+    5 onglets · 15 images<br/>
+    15 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('phylo',this)">🔬 I. Phylogénie</button>
+  <button class="tab-btn" onclick="showTab('mecanismes',this)">🧬 II. Mécanismes</button>
+  <button class="tab-btn" onclick="showTab('speciation',this)">🐦 III. Spéciation</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN &amp; QCM</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Introduction — L'Évolution biologique</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Page d'introduction — Darwin et les pinsons</div><div class="ph-sub">Manuel p.141</div><div class="ph-comment">Charles Darwin (1809-1882), voyage aux Galápagos, diversité des pinsons</div><img class="ph-img" src="images/T3_Doc00_intro_Darwin_pinsons.PNG" alt="Intro"/><button class="ph-remove">✕</button></div>
+
+  <p style="font-size:14px;color:var(--gray6);margin-bottom:18px">La <strong>théorie de l'évolution</strong>, fondée par Charles Darwin au XIXᵉ siècle, stipule que toutes les espèces actuelles et fossiles descendent d'un <strong>ancêtre commun</strong> et se sont transformées au cours du temps. Ce thème explore les <strong>preuves de l'évolution</strong> (phylogénie), les <strong>mécanismes</strong> qui la sous-tendent (mutations, sélection naturelle) et le processus de <strong>spéciation</strong> (apparition de nouvelles espèces).</p>
+
+  <div class="section-title" style="margin-top:28px">📋 Objectifs du programme officiel</div>
+  <div class="card-grid">
+    <div class="card emerald">
+      <h4>🔬 Argumenter l'idée de l'évolution</h4>
+      <ul>
+        <li>Données de l'anatomie comparée (organes homologues)</li>
+        <li>Données de l'embryologie comparée</li>
+        <li>Données de la biologie moléculaire (séquences protéiques)</li>
+        <li>Établir des arbres phylogénétiques</li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <h4>🧬 Expliquer les mécanismes</h4>
+      <ul>
+        <li>Mutations géniques (substitution, addition, délétion)</li>
+        <li>Mutations chromosomiques (amplification, polyploïdie)</li>
+        <li>Sélection naturelle (tri des formes adaptées)</li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h4>🐦 Expliquer la spéciation</h4>
+      <ul>
+        <li>Isolement géographique → isolement reproductif</li>
+        <li>Exemple des pinsons des îles Galápagos</li>
+        <li>Notion d'espèce (interfécondité)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:28px">🗺️ Plan de la fiche</div>
+  <div class="flow">
+    <div class="flow-step active-step">🔬 Phylogénie</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🧬 Mécanismes</div><div class="flow-arrow">→</div>
+    <div class="flow-step">🐦 Spéciation</div><div class="flow-arrow">→</div>
+    <div class="flow-step">📋 BILAN & QCM</div>
+  </div>
+
+  <div class="info-box amber" style="margin-top:20px"><strong>💡 À savoir :</strong> Lamarck (1744-1829) proposait une théorie basée sur l'usage/non-usage des organes (transformations adaptatives transmises à la descendance). Darwin (1809-1882) y oppose la <strong>sélection naturelle</strong> : les variations sont aléatoires, et le milieu trie les plus adaptées.</div>
+</div>
+
+<!-- ==================== I. PHYLOGENIE ==================== -->
+<div class="tab-panel" id="tab-phylo">
+  <div class="section-title">🔬 I. La phylogénie des espèces (pp.144–147)</div>
+
+  <!-- ACCORDEON 1 : ANATOMIE COMPAREE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I.1 — Anatomie comparée <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>L'anatomie comparée étudie les <strong>organes homologues</strong> : des organes qui ont la <strong>même organisation fondamentale</strong> malgré des adaptations différentes liées au mode de vie. Exemple : le membre antérieur des vertébrés tétrapodes (homme, cheval, oiseau, chauve-souris) présente le même plan d'organisation (humérus, radius, cubitus, carpes, métacarpes, phalanges).</p>
+    <p>L'appareil circulatoire montre une <strong>complexification croissante</strong> des poissons (1 oreillette + 1 ventricule) aux mammifères (2 oreillettes + 2 ventricules), suggérant une filiation évolutive.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Squelettes des membres antérieurs</div><div class="ph-sub">Manuel p.144</div><div class="ph-comment">Homme, cheval, oiseau, chauve-souris : même plan d'organisation = organes homologues</div><img class="ph-img" src="images/T3_Doc01_squelettes_membres_vertebres.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Évolution du cœur des vertébrés</div><div class="ph-sub">Manuel p.144</div><div class="ph-comment">Poissons → Batraciens → Reptiles → Oiseaux/Mammifères : complexification</div><img class="ph-img" src="images/T3_Doc02_evolution_coeur_vertebres.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div><strong>Organes homologues</strong> = même plan d'organisation, même origine embryologique → suggèrent un <strong>ancêtre commun</strong>. ≠ <strong>Organes analogues</strong> = même fonction mais organisation différente (ex : aile d'oiseau / aile d'insecte).</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Anatomie comparée</div><div class="fill-text" id="ma-anat">
+      Les membres antérieurs des vertébrés ont le même <span class="blank-select"><select id="ma1_1"><option value="">—</option><option value="plan d'organisation">plan d'organisation</option><option value="milieu de vie">milieu de vie</option></select></span> : ce sont des organes <span class="blank-select"><select id="ma1_2"><option value="">—</option><option value="homologues">homologues</option><option value="analogues">analogues</option></select></span>. Le cœur passe de <span class="blank-select"><select id="ma1_3"><option value="">—</option><option value="2 cavités">2 cavités</option><option value="4 cavités">4 cavités</option></select></span> (poissons) à <span class="blank-select"><select id="ma1_4"><option value="">—</option><option value="4 cavités">4 cavités</option><option value="2 cavités">2 cavités</option></select></span> (mammifères).
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma1',4,['plan d\'organisation','homologues','2 cavités','4 cavités'])">Vérifier</button>
+      <span id="score-ma1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma1',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : EMBRYOLOGIE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I.2 — Embryologie comparée <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les embryons de tous les vertébrés présentent des <strong>ressemblances frappantes</strong> aux premiers stades de développement. Notamment, tous possèdent des <strong>fentes branchiales</strong> à un stade précoce. Celles-ci persistent et deviennent fonctionnelles chez les poissons (branchies), mais régressent chez les vertébrés terrestres (reptiles, oiseaux, mammifères).</p>
+    <p>Cette similitude suggère une <strong>origine commune</strong> à tous les vertébrés, probablement aquatique. Le groupe le plus primitif est celui dont l'embryon présente le <strong>moins de transformations</strong> par rapport à l'adulte.</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Stades embryonnaires de vertébrés</div><div class="ph-sub">Manuel p.145</div><div class="ph-comment">Poisson, batracien, reptile, oiseau, mammifère : ressemblance aux stades précoces</div><img class="ph-img" src="images/T3_Doc03_stades_embryonnaires_vertebres.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique</div><strong>« L'ontogenèse récapitule la phylogenèse »</strong> (Haeckel) : le développement embryonnaire d'un individu retrace brièvement l'histoire évolutive de son espèce. Les fentes branchiales des embryons humains = vestige de notre lointain ancêtre aquatique.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Embryologie</div><div class="fill-text" id="ma-embryo">
+      Tous les embryons de vertébrés possèdent des <span class="blank-select"><select id="ma2_1"><option value="">—</option><option value="fentes branchiales">fentes branchiales</option><option value="ailes">ailes</option></select></span> aux premiers stades. Elles persistent chez les <span class="blank-select"><select id="ma2_2"><option value="">—</option><option value="poissons">poissons</option><option value="mammifères">mammifères</option></select></span> et régressent chez les vertébrés <span class="blank-select"><select id="ma2_3"><option value="">—</option><option value="terrestres">terrestres</option><option value="aquatiques">aquatiques</option></select></span>. Le groupe le plus primitif est celui qui présente le <span class="blank-select"><select id="ma2_4"><option value="">—</option><option value="moins de transformations">moins de transformations</option><option value="plus de transformations">plus de transformations</option></select></span> entre l'embryon et l'adulte.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma2',4,['fentes branchiales','poissons','terrestres','moins de transformations'])">Vérifier</button>
+      <span id="score-ma2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma2',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : BIOLOGIE MOLECULAIRE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I.3 — Biologie moléculaire <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La comparaison des <strong>séquences d'acides aminés</strong> de protéines homologues (myoglobine, cytochrome C, hémoglobine…) chez différentes espèces permet d'établir des <strong>liens de parenté</strong>.</p>
+    <p><strong>Principe :</strong> plus le nombre de différences en acides aminés entre deux espèces est <strong>élevé</strong>, plus leur <strong>ancêtre commun est éloigné</strong> dans le temps, et inversement. Les mutations s'accumulent à un rythme relativement constant (horloge moléculaire).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Séquences myoglobine</div><div class="ph-sub">Manuel p.146</div><div class="ph-comment">Tableau : Homme vs Gibbon vs Chien vs Manchot</div><img class="ph-img" src="images/T3_Doc04_tableau_myoglobine_especes.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Arbre phylogénétique (cytochrome C)</div><div class="ph-sub">Manuel p.147</div><div class="ph-comment">20 espèces : arbre construit par ordinateur selon différences séquences</div><img class="ph-img" src="images/T3_Doc05_arbre_phylogenetique_cytochromeC.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Espèces comparées</th><th>Différences (myoglobine)</th></tr></thead><tbody>
+      <tr><td>Homme — Gibbon</td><td>2 (très proches)</td></tr>
+      <tr><td>Homme — Chien</td><td>10</td></tr>
+      <tr><td>Homme — Manchot</td><td>16 (très éloignés)</td></tr>
+    </tbody></table></div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div><strong>Plus le nombre de différences est GRAND → plus l'ancêtre commun est ANCIEN.</strong> L'arbre phylogénétique (ou cladogramme) représente les relations de parenté : chaque nœud = un ancêtre commun hypothétique.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Biologie moléculaire</div><div class="fill-text" id="ma-molec">
+      La comparaison des séquences d'<span class="blank-select"><select id="ma3_1"><option value="">—</option><option value="acides aminés">acides aminés</option><option value="glucides">glucides</option></select></span> permet d'établir des liens de parenté. Plus le nombre de différences est <span class="blank-select"><select id="ma3_2"><option value="">—</option><option value="élevé">élevé</option><option value="faible">faible</option></select></span>, plus l'ancêtre commun est <span class="blank-select"><select id="ma3_3"><option value="">—</option><option value="éloigné dans le temps">éloigné dans le temps</option><option value="proche dans le temps">proche dans le temps</option></select></span>. Les différences sont dues aux <span class="blank-select"><select id="ma3_4"><option value="">—</option><option value="mutations">mutations</option><option value="crossing-over">crossing-over</option></select></span>. L'arbre phylogénétique représente les <span class="blank-select"><select id="ma3_5"><option value="">—</option><option value="relations de parenté">relations de parenté</option><option value="milieux de vie">milieux de vie</option></select></span> entre espèces.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma3',5,['acides aminés','élevé','éloigné dans le temps','mutations','relations de parenté'])">Vérifier</button>
+      <span id="score-ma3" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma3',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== II. MECANISMES ==================== -->
+<div class="tab-panel" id="tab-mecanismes">
+  <div class="section-title">🧬 II. Les mécanismes de l'évolution (pp.148–153)</div>
+
+  <!-- ACCORDEON 1 : MUTATIONS GENIQUES -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II.1 — Mutations géniques <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les <strong>mutations géniques</strong> (ou ponctuelles) sont des modifications de la séquence de l'ADN : <strong>substitution</strong> (remplacement d'un nucléotide), <strong>addition</strong> ou <strong>délétion</strong>. Elles créent de <strong>nouveaux allèles</strong> et sont à l'origine de la <strong>diversité génétique</strong>.</p>
+
+    <div class="sub-title">Exemple 1 — Diversité des motifs chez un papillon</div>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Diversité génétique chez un papillon</div><div class="ph-sub">Manuel p.148</div><div class="ph-comment">Variabilité des motifs alaires au sein d'une même espèce</div><img class="ph-img" src="images/T3_Doc06_diversite_papillon.PNG" alt="Doc 06"/><button class="ph-remove">✕</button></div>
+
+    <div class="sub-title">Exemple 2 — Évolution de la patte du cheval</div>
+    <p>Les études paléontologiques montrent une transformation progressive du membre des équidés : réduction du nombre de doigts (de 5 à 1), allongement des os, adaptation à la course en milieu ouvert. Cette évolution résulte de <strong>mutations cumulées</strong> orientées par la sélection naturelle sur environ 60 millions d'années.</p>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — Évolution de la patte du cheval</div><div class="ph-sub">Manuel p.149</div><div class="ph-comment">Phenacodus → Eohippus → Miohippus → Merychippus → Equus</div><img class="ph-img" src="images/T3_Doc07_evolution_patte_cheval.PNG" alt="Doc 07"/><button class="ph-remove">✕</button></div>
+
+    <div class="sub-title">Exemple 3 — Amplification génique des globines</div>
+    <p>Les gènes codant pour les différentes chaînes de globine (α, β, γ, δ…) dérivent tous d'un <strong>gène ancestral unique</strong> par <strong>duplications successives</strong> suivies de mutations indépendantes. L'amplification génique augmente la taille du génome et crée de nouveaux gènes.</p>
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Arbre phylogénétique des globines</div><div class="ph-sub">Manuel p.150</div><div class="ph-comment">Duplications successives à partir d'un gène ancestral → diversité des globines</div><img class="ph-img" src="images/T3_Doc08_arbre_phylogenetique_globines.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div><strong>Mutation + Reproduction sexuée = diversité génétique.</strong> Les mutations sont <strong>aléatoires</strong> (non orientées), mais la sélection naturelle <strong>trie</strong> les plus adaptées.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Mutations géniques</div><div class="fill-text" id="ma-mutgen">
+      Une mutation génique est une modification de la séquence d'<span class="blank-select"><select id="ma4_1"><option value="">—</option><option value="ADN">ADN</option><option value="ARN">ARN</option></select></span>. Elle crée de nouveaux <span class="blank-select"><select id="ma4_2"><option value="">—</option><option value="allièles">allièles</option><option value="chromosomes">chromosomes</option></select></span>. L'évolution de la patte du cheval résulte de mutations <span class="blank-select"><select id="ma4_3"><option value="">—</option><option value="cumulées">cumulées</option><option value="uniques">uniques</option></select></span>. Les gènes des globines dérivent d'un <span class="blank-select"><select id="ma4_4"><option value="">—</option><option value="gène ancestral">gène ancestral</option><option value="gène muté">gène muté</option></select></span> par duplications. Les mutations sont <span class="blank-select"><select id="ma4_5"><option value="">—</option><option value="aléatoires">aléatoires</option><option value="orientées">orientées</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma4',5,['ADN','allièles','cumulées','gène ancestral','aléatoires'])">Vérifier</button>
+      <span id="score-ma4" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma4',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : MUTATIONS CHROMOSOMIQUES -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II.2 — Mutations chromosomiques <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les <strong>mutations chromosomiques</strong> modifient le nombre ou la structure des chromosomes. Exemples :</p>
+    <p><strong>Caryotypes de drosophiles :</strong> des fusions de chromosomes ont créé de nouvelles espèces à partir de <em>Drosophila virilis</em>. La comparaison des caryotypes montre des remaniements qui isolent reproductivement les porteurs.</p>
+    <p><strong>Polyploïdie chez le blé :</strong> <em>Triticum monococcum</em> (2n=14) → <em>T. durum</em> (4n=28) → <em>T. aestivum</em> (6n=42). La polyploïdie résulte de la fécondation de gamètes non réduits (diploïdes).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Caryotypes de différentes espèces de drosophiles</div><div class="ph-sub">Manuel p.151</div><div class="ph-comment">Fusions chromosomiques → nouvelles espèces</div><img class="ph-img" src="images/T3_Doc09_caryotypes_drosophiles.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 10 — Phalène du bouleau</div><div class="ph-sub">Manuel p.151</div><div class="ph-comment">Forme claire (typique) + forme sombre (carbonaria) — sélection naturelle</div><img class="ph-img" src="images/T3_Doc10_phalene_bouleau.PNG" alt="Doc 10"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips</div><strong>Polyploïdie</strong> = mécanisme fréquent de spéciation chez les végétaux (blé, coton, tabac…). Les individus polyploïdes sont souvent plus vigoureux et ne peuvent plus se croiser avec l'espèce originelle → isolement reproductif immédiat.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Mutations chromosomiques</div><div class="fill-text" id="ma-mutchr">
+      Les caryotypes des drosophiles diffèrent par des <span class="blank-select"><select id="ma5_1"><option value="">—</option><option value="fusions chromosomiques">fusions chromosomiques</option><option value="mutations ponctuelles">mutations ponctuelles</option></select></span>. Le blé tendre est <span class="blank-select"><select id="ma5_2"><option value="">—</option><option value="hexaploïde (6n=42)">hexaploïde (6n=42)</option><option value="diploïde (2n=14)">diploïde (2n=14)</option></select></span>. La polyploïdie crée un <span class="blank-select"><select id="ma5_3"><option value="">—</option><option value="isolement reproductif">isolement reproductif</option><option value="brassage génétique">brassage génétique</option></select></span>. Les mutations chromosomiques se produisent au cours de la <span class="blank-select"><select id="ma5_4"><option value="">—</option><option value="méiose">méiose</option><option value="mitose">mitose</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma5',4,['fusions chromosomiques','hexaploïde (6n=42)','isolement reproductif','méiose'])">Vérifier</button>
+      <span id="score-ma5" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma5',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : SELECTION NATURELLE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II.3 — La sélection naturelle <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La <strong>sélection naturelle</strong> est un processus <strong>orienté</strong> (≠ mutations aléatoires) qui <strong>favorise la survie et la reproduction</strong> des individus dont le phénotype est le <strong>mieux adapté</strong> aux conditions du milieu.</p>
+    <p><strong>Exemple — La phalène du bouleau :</strong> Avant la révolution industrielle, la forme <strong>claire</strong> dominait (camouflage sur troncs recouverts de lichens clairs). Avec l'industrialisation (Manchester, 19ᵉ siècle), les troncs noircissent (pollution). La forme <strong>sombre</strong> (carbonaria) devient majoritaire (≤ 90% des populations) car mieux camouflée face aux oiseaux prédateurs. Après les lois anti-pollution, la forme claire redevient fréquente.</p>
+
+    <div class="info-box amber"><strong>⚠️ Attention :</strong> La sélection naturelle ne « crée » pas les variations — elle les <strong>trie</strong>. Les mutations fournissent la diversité sur laquelle agit la sélection.</div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique</div><strong>Mutation = hasard (non orienté) + Sélection = nécessité (orientée par le milieu) = Évolution</strong>. Darwin résumait : <em>« La sélection naturelle, c'est la survie du plus apte. »</em></div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Sélection naturelle</div><div class="fill-text" id="ma-selec">
+      La sélection naturelle est un processus <span class="blank-select"><select id="ma6_1"><option value="">—</option><option value="orienté">orienté</option><option value="aléatoire">aléatoire</option></select></span>. Dans l'exemple de la phalène du bouleau, la forme <span class="blank-select"><select id="ma6_2"><option value="">—</option><option value="sombre">sombre</option><option value="claire">claire</option></select></span> est devenue majoritaire en zone polluée. Les individus les mieux <span class="blank-select"><select id="ma6_3"><option value="">—</option><option value="adaptés/camouflés">adaptés/camouflés</option><option value="visibles">visibles</option></select></span> échappent aux prédateurs. La sélection naturelle agit sur les <span class="blank-select"><select id="ma6_4"><option value="">—</option><option value="phénotypes">phénotypes</option><option value="génotypes">génotypes</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma6',4,['orienté','sombre','adaptés/camouflés','phénotypes'])">Vérifier</button>
+      <span id="score-ma6" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma6',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== III. SPECIATION ==================== -->
+<div class="tab-panel" id="tab-speciation">
+  <div class="section-title">🐦 III. La spéciation (pp.152–153)</div>
+
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III.1 — Les pinsons des îles Galápagos <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La <strong>spéciation</strong> est l'ensemble des processus qui aboutissent à l'apparition de <strong>nouvelles espèces</strong> à partir d'une espèce originelle. L'exemple emblématique est celui des <strong>pinsons des Galápagos</strong> étudiés par Darwin.</p>
+
+    <div class="sub-title">Étapes de la spéciation</div>
+    <p><strong>1. Migration et isolement géographique :</strong> Une forme ancestrale de pinsons venue d'Amérique du Sud colonise les îles centrales de l'archipel. <strong>2. Migration vers les îles périphériques :</strong> les populations se retrouvent <strong>isolées géographiquement</strong> les unes des autres. <strong>3. Divergence génétique :</strong> chaque population accumule des mutations indépendantes, adaptées à son milieu (type de nourriture → forme du bec). <strong>4. Isolement reproductif :</strong> les différences génétiques deviennent telles que les individus des différentes populations ne peuvent plus se croiser (ou donnent une descendance stérile).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — Répartition géographique des pinsons</div><div class="ph-sub">Manuel p.152</div><div class="ph-comment">Îles centrales (niches variées) + îles périphériques (Geospiza conirostris)</div><img class="ph-img" src="images/T3_Doc11_repartition_pinsons_galapagos.PNG" alt="Doc 11"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Étapes de l'évolution des pinsons</div><div class="ph-sub">Manuel p.153</div><div class="ph-comment">Schéma : diversification → adaptation → isolement → spéciation</div><img class="ph-img" src="images/T3_Doc12_etapes_evolution_pinsons.PNG" alt="Doc 12"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">Types d'isolement reproductif</div>
+    <div class="card-grid">
+      <div class="card emerald"><h4>🌍 Isolement géographique</h4><p>Populations séparées par une barrière physique (mer, montagne, rivière).</p></div>
+      <div class="card amber"><h4>🌿 Isolement écologique</h4><p>Partenaire potentiel non rencontré → niches écologiques différentes.</p></div>
+      <div class="card blue"><h4>⏰ Isolement saisonnier</h4><p>Périodes de reproduction différentes.</p></div>
+      <div class="card purple"><h4>🧬 Isolement génétique</h4><p>Incompatibilité génétique → pas de brassage possible.</p></div>
+    </div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Spéciation</div><strong>M.I.D.I.</strong> : <strong>M</strong>igration → <strong>I</strong>solement géographique → <strong>D</strong>ivergence génétique → <strong>I</strong>solement reproductif = spéciation.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Spéciation</div><div class="fill-text" id="ma-spec">
+      La spéciation est l'apparition de <span class="blank-select"><select id="ma7_1"><option value="">—</option><option value="nouvelles espèces">nouvelles espèces</option><option value="nouveaux organes">nouveaux organes</option></select></span> à partir d'une espèce originelle. L'étape initiale est l'<span class="blank-select"><select id="ma7_2"><option value="">—</option><option value="isolement géographique">isolement géographique</option><option value="mutation">mutation</option></select></span>. Dans chaque population isolée s'accumulent des <span class="blank-select"><select id="ma7_3"><option value="">—</option><option value="mutations">mutations</option><option value="crossing-over">crossing-over</option></select></span> indépendantes. L'étape finale est l'<span class="blank-select"><select id="ma7_4"><option value="">—</option><option value="isolement reproductif">isolement reproductif</option><option value="isolement géographique">isolement géographique</option></select></span>. La <span class="blank-select"><select id="ma7_5"><option value="">—</option><option value="sélection naturelle">sélection naturelle</option><option value="dérive génétique">dérive génétique</option></select></span> favorise les formes les mieux adaptées.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkMini('ma7',5,['nouvelles espèces','isolement géographique','mutations','isolement reproductif','sélection naturelle'])">Vérifier</button>
+      <span id="score-ma7" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma7',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== BILAN & QCM ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèse interactive</div>
+
+  <div class="bilan-fill"><div class="bilan-fill-header"><h3>🦕 L'Évolution biologique — Synthèse (pp.154–157)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Arbre phylogénétique simplifié</div><div class="ph-sub">Manuel p.155</div><div class="ph-comment">Homme, Gibbon, Chien, Manchot — ancêtres communs A1, A2, A3</div><img class="ph-img" src="images/T3_Schema_arbre_homme_gibbon_chien_manchot.PNG" alt="Arbre"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan1">
+      La théorie de l'évolution stipule que toutes les espèces descendent d'un <span class="blank-select"><select id="b1_1"><option value="">—</option><option value="ancêtre commun">ancêtre commun</option><option value="acte créateur">acte créateur</option></select></span>. La phylogénie s'appuie sur l'anatomie comparée (organes <span class="blank-select"><select id="b1_2"><option value="">—</option><option value="homologues">homologues</option><option value="analogues">analogues</option></select></span>), l'embryologie (<span class="blank-select"><select id="b1_3"><option value="">—</option><option value="fentes branchiales">fentes branchiales</option><option value="ailes">ailes</option></select></span>) et la biologie moléculaire (comparaison séquences d'<span class="blank-select"><select id="b1_4"><option value="">—</option><option value="acides aminés">acides aminés</option><option value="glucides">glucides</option></select></span>). Les mutations <span class="blank-select"><select id="b1_5"><option value="">—</option><option value="géniques">géniques</option><option value="électriques">électriques</option></select></span> créent de nouveaux allèles. Les mutations <span class="blank-select"><select id="b1_6"><option value="">—</option><option value="chromosomiques">chromosomiques</option><option value="géniques">géniques</option></select></span> modifient le nombre/l'organisation des chromosomes. La <span class="blank-select"><select id="b1_7"><option value="">—</option><option value="sélection naturelle">sélection naturelle</option><option value="dérive génétique">dérive génétique</option></select></span> trie les phénotypes les plus adaptés. La spéciation nécessite un <span class="blank-select"><select id="b1_8"><option value="">—</option><option value="isolement reproductif">isolement reproductif</option><option value="brassage génétique">brassage génétique</option></select></span> précédé d'un isolement géographique.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick="checkBilan(1,['ancêtre commun','homologues','fentes branchiales','acides aminés','géniques','chromosomiques','sélection naturelle','isolement reproductif'])">Vérifier</button>
+      <span id="score-b1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan(1,8)">Réinitialiser</button>
+    </div>
+  </div></div>
+
+  <div class="section-title" style="margin-top:32px">✅ 15 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13px;margin-bottom:4px">Q1-Q5 : Phylogénie · Q6-Q10 : Mécanismes · Q11-Q15 : Spéciation & Synthèse</p>
+  <div class="info-box amber" style="margin-bottom:20px;font-size:12.5px">⚠️ Utilise <strong>Vérifier</strong> pour savoir si ta réponse est juste, puis <strong>Correction</strong> pour l'explication.</div>
+  <div id="qcm-container"></div>
+  <div class="signature">INGÉNIEUR Mohamed CHAGRAOUI</div>
+</div>
+
+<script>
+const qcmData=[
+  {q:"Q1. La théorie de l'évolution biologique :",opts:["a. implique une transformation du génome des espèces","b. explique l'existence d'espèces fossiles différentes des actuelles","c. admet que tous les êtres vivants descendent d'un ancêtre commun","d. affirme que les espèces sont immuables"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : les espèces évoluent (≠ immuables)."},
+  {q:"Q2. Un organe homologue :",opts:["a. a le même plan d'organisation qu'un organe d'une autre espèce","b. a la même fonction qu'un organe d'une autre espèce","c. suggère l'existence d'un ancêtre commun","d. résulte d'une adaptation à des milieux différents"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : c'est la définition d'un organe ANALOGUE."},
+  {q:"Q3. Les fentes branchiales des embryons :",opts:["a. existent chez tous les vertébrés aux premiers stades","b. persistent chez les mammifères adultes","c. régressent chez les vertébrés terrestres","d. suggèrent une origine aquatique des vertébrés"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : elles régressent chez les mammifères."},
+  {q:"Q4. En biologie moléculaire, plus le nombre de différences en AA est élevé :",opts:["a. plus l'ancêtre commun est récent","b. plus l'ancêtre commun est éloigné dans le temps","c. moins les espèces sont apparentées","d. plus les espèces sont apparentées"],correct:['b','c'],fb:"✅ b,c. +différences = +éloigné dans le temps = -apparenté."},
+  {q:"Q5. Un arbre phylogénétique représente :",opts:["a. les relations de parenté entre espèces","b. la succession chronologique des fossiles uniquement","c. des ancêtres communs hypothétiques aux nœuds","d. la classification par milieu de vie"],correct:['a','c'],fb:"✅ a,c. B faux : aussi des espèces actuelles. D faux : classification par parenté."},
+  {q:"Q6. Les mutations géniques :",opts:["a. sont des modifications de la séquence d'ADN","b. créent de nouveaux allèles","c. sont toujours favorables","d. sont à l'origine de la diversité génétique"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : les mutations sont majoritairement neutres ou défavorables."},
+  {q:"Q7. L'évolution de la patte du cheval :",opts:["a. montre une réduction du nombre de doigts","b. résulte de mutations cumulées sur 60 MA","c. est un exemple de mutation chromosomique","d. est orientée par la sélection naturelle"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : exemples de mutations GÉNIQUES cumulées."},
+  {q:"Q8. La polyploïdie chez le blé :",opts:["a. résulte de la fécondation de gamètes non réduits","b. crée un isolement reproductif immédiat","c. concerne des mutations géniques ponctuelles","d. est un mécanisme fréquent de spéciation chez les végétaux"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : polyploïdie = mutation CHROMOSOMIQUE (nombre)."},
+  {q:"Q9. La sélection naturelle :",opts:["a. est un processus orienté par les conditions du milieu","b. crée les variations génétiques","c. favorise la survie des individus les plus adaptés","d. agit sur les phénotypes"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : la sélection TRIE les variations, ne les crée pas."},
+  {q:"Q10. Dans l'exemple de la phalène du bouleau :",opts:["a. la forme claire était majoritaire avant l'industrialisation","b. la forme sombre est devenue minoritaire en zone polluée","c. le milieu a opéré une sélection entre les deux variétés","d. la pollution a créé la mutation « carbonaria »"],correct:['a','c'],fb:"✅ a,c. B faux : forme sombre MAJORITAIRE. D faux : pollution ne crée pas la mutation."},
+  {q:"Q11. La spéciation :",opts:["a. est l'apparition de nouvelles espèces à partir d'une espèce originelle","b. nécessite un isolement géographique initial","c. aboutit à un isolement reproductif","d. est le résultat uniquement de mutations géniques"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : mutations géniques + chromosomiques + sélection."},
+  {q:"Q12. Les pinsons des Galápagos :",opts:["a. ont une forme de bec adaptée à leur régime alimentaire","b. dérivent tous d'une espèce ancestrale sud-américaine","c. se sont diversifiés par sélection naturelle","d. présentent tous le même type de bec"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : grande diversité de formes de becs."},
+  {q:"Q13. L'isolement reproductif peut être :",opts:["a. écologique (niches différentes)","b. saisonnier (reproduction décalée)","c. éthologique (comportement différent)","d. génétique (incompatibilité)"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Les 4 types d'isolement reproductif."},
+  {q:"Q14. L'amplification génique :",opts:["a. augmente la taille du génome","b. crée de nouveaux gènes par duplication","c. est illustrée par l'évolution des gènes de globine","d. est un type de mutation génique ponctuelle"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : amplification = mutation chromosomique (pas ponctuelle)."},
+  {q:"Q15. Darwin vs Lamarck :",opts:["a. Lamarck pensait que les caractères acquis se transmettent","b. Darwin a proposé la théorie de la sélection naturelle","c. Les deux admettaient l'évolution des espèces","d. Darwin pensait que l'usage d'un organe le développe"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : c'est la théorie de LAMARCK (usage/non-usage)."}
+];
+
+function buildQCM(){const c=document.getElementById('qcm-container');c.innerHTML='';qcmData.forEach((d,i)=>{const q=i+1;c.insertAdjacentHTML('beforeend',`<div class="qcm-item" id="qi${q}"><div class="qcm-q"><span class="qnum">${d.q}</span></div><div class="qcm-options">${d.opts.map((o,j)=>{const v=String.fromCharCode(97+j);return`<label class="qcm-opt"><input type="checkbox" data-q="${q}" data-v="${v}"/> ${o}</label>`;}).join('')}</div><div class="qcm-feedback" id="fb${q}"></div><div class="qcm-buttons"><button class="qcm-verify-btn" onclick="verifyQCM(${q})">🟢 Vérifier</button><button class="qcm-correct-btn" onclick="correctQCM(${q})">🔵 Correction</button><button class="qcm-refresh-btn" onclick="refreshQCM(${q})">🔄 Rafraîchir</button></div></div>`);});}buildQCM();
+
+function initPlaceholders(){document.querySelectorAll('.img-placeholder').forEach(ph=>{const inp=ph.querySelector('input[type=file]'),img=ph.querySelector('img.ph-img'),btn=ph.querySelector('.ph-remove');if(!inp||!img)return;if(img.src&&img.src.includes('images/')){const t=new Image();t.onload=()=>{img.style.display='block';ph.classList.add('has-img');};t.onerror=()=>{img.style.display='none';ph.classList.remove('has-img');};t.src=img.src;}inp.addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};r.readAsDataURL(f);});if(btn)btn.addEventListener('click',e=>{e.stopPropagation();img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';});});}
+document.addEventListener('DOMContentLoaded',()=>{updateProgress();initPlaceholders();});
+
+function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');updateProgress();}
+function updateProgress(){const tabs=document.querySelectorAll('.tab-btn');const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';}
+function toggleAccordion(h){const b=h.nextElementSibling;const o=b.classList.contains('show');b.classList.toggle('show');if(o)h.classList.remove('open');else h.classList.add('open');}
+
+function checkMini(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetMini(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+function checkBilan(n,a){const l=a.length;let c=0;for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-b'+n);b.textContent=c+'/'+l;b.className='score-badge '+(c===l?'good':'bad');}
+function resetBilan(n,l){for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-b'+n);b.textContent='';b.className='score-badge';}
+
+function verifyQCM(q){const cbs=document.querySelectorAll(`input[data-q="${q}"]`),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v),correct=qcmData[q-1].correct;const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));const partial=!full&&checked.some(v=>correct.includes(v));const fb=document.getElementById('fb'+q),item=document.getElementById('qi'+q);fb.className='qcm-feedback show '+(full?'fb-ok':partial?'fb-partial':'fb-ko');fb.innerHTML=(full?'✅ Juste !':partial?'🟡 Partiel':'❌ Faux');item.classList.remove('correct-item','wrong-item','partial-item');item.classList.add(full?'correct-item':partial?'partial-item':'wrong-item');}
+function correctQCM(q){const cbs=document.querySelectorAll(`input[data-q="${q}"]`),correct=qcmData[q-1].correct;cbs.forEach(cb=>{const opt=cb.closest('.qcm-opt');opt.classList.remove('opt-correct','opt-wrong','opt-missed');if(correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-correct');else if(!correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-wrong');else if(correct.includes(cb.dataset.v)&&!cb.checked)opt.classList.add('opt-missed');});const fb=document.getElementById('fb'+q);fb.className='qcm-feedback show fb-correction';fb.innerHTML='🔵 '+qcmData[q-1].fb;const item=document.getElementById('qi'+q),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v);const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));item.classList.remove('correct-item','wrong-item','partial-item');item.classList.add(full?'correct-item':'wrong-item');}
+function refreshQCM(q){const cbs=document.querySelectorAll(`input[data-q="${q}"]`);cbs.forEach(cb=>{cb.checked=false;cb.disabled=false;});cbs.forEach(cb=>{cb.closest('.qcm-opt').classList.remove('opt-correct','opt-wrong','opt-missed');});document.getElementById('fb'+q).className='qcm-feedback';document.getElementById('fb'+q).innerHTML='';document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');}
+</script>
+</body>
+</html>
