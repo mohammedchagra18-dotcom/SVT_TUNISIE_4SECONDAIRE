@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thème 5 — Fiche 2 : Déroulement &amp; Dysfonctionnement | SVT 4ème</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0d1b2a;--navy2:#1b2d42;
+  --red:#dc2626;--red-lt:#fef2f2;--red-dk:#991b1b;
+  --rose:#e11d48;--rose-lt:#fff1f2;
+  --blue:#2563eb;--blue-lt:#eff6ff;--blue-dk:#1d4ed8;
+  --green:#059669;--green-lt:#ecfdf5;
+  --purple:#7c3aed;--purple-lt:#f5f3ff;
+  --amber:#d97706;--amber-lt:#fffbeb;
+  --cyan:#0891b2;--cyan-lt:#ecfeff;
+  --indigo:#4338ca;--indigo-lt:#eef2ff;
+  --emerald:#10b981;--emerald-lt:#d1fae5;
+  --gray1:#f8fafc;--gray2:#e2e8f0;--gray3:#cbd5e1;
+  --gray6:#475569;--gray8:#1e293b;
+  --shadow:0 2px 14px rgba(220,38,38,.07);--shadow-md:0 4px 24px rgba(220,38,38,.12);
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fff5f5;color:var(--gray8);font-size:15px;line-height:1.72}
+header{background:linear-gradient(135deg,#1a0000 0%,#4c0519 55%,#2d0010 100%);color:#fff;padding:24px 36px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(180,0,30,.45);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(220,38,38,.08)}
+header::after{content:'';position:absolute;left:28%;bottom:-25px;width:130px;height:130px;border-radius:50%;background:rgba(124,58,237,.06)}
+.hdr-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:5px;color:#fca5a5}
+.hdr-title{font-family:'Crimson Pro',serif;font-size:1.6rem;font-weight:700;line-height:1.2}
+.hdr-title span{color:#fca5a5}
+.hdr-sub{opacity:.7;font-size:.92rem;margin-top:3px;color:#fecaca}
+.hdr-right{text-align:right;font-size:12px;opacity:.75;line-height:2;z-index:1;color:#fecaca}
+.hdr-right strong{display:block;font-size:13px;font-weight:700;opacity:1;color:#fff}
+.hdr-pill{display:inline-block;background:rgba(220,38,38,.25);border:1px solid rgba(220,38,38,.4);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#fca5a5;margin-top:6px;letter-spacing:.5px}
+.progress-wrap{background:rgba(255,255,255,.1);height:3px}
+.progress-bar{height:3px;background:linear-gradient(90deg,#fca5a5,#c084fc);width:0%;transition:width .4s}
+.tabs-nav{background:#fff;border-bottom:2px solid var(--gray2);display:flex;padding:0 20px;gap:2px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto}
+.tab-btn{padding:12px 10px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;color:var(--gray6);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--red);background:var(--red-lt);border-radius:6px 6px 0 0}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red)}
+.tab-panel{display:none;padding:24px 30px;max-width:1100px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-family:'Crimson Pro',serif;font-size:1.2rem;color:var(--rose);border-left:4px solid var(--red);padding-left:10px;margin:28px 0 14px}
+.sub-title{font-size:.9rem;font-weight:600;color:var(--red);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.sub-title::before{content:'';display:block;width:18px;height:2px;background:var(--red);border-radius:2px}
+.def-box{background:var(--rose-lt);border:1.5px solid #fecdd3;border-radius:var(--radius);padding:12px 16px;margin:10px 0}
+.def-box .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--rose);margin-bottom:5px}
+.info-box{border-left:4px solid var(--red);background:var(--red-lt);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:10px 0;font-size:13px}
+.info-box.blue{border-left-color:var(--blue);background:var(--blue-lt)}.info-box.green{border-left-color:var(--green);background:var(--green-lt)}.info-box.purple{border-left-color:var(--purple);background:var(--purple-lt)}.info-box.amber{border-left-color:var(--amber);background:var(--amber-lt)}.info-box.emerald{border-left-color:var(--emerald);background:var(--emerald-lt)}
+.info-box strong{color:var(--rose)}.info-box.blue strong{color:var(--blue-dk)}.info-box.green strong{color:var(--green)}.info-box.purple strong{color:var(--purple)}.info-box.amber strong{color:var(--amber)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0}
+.card{background:#fff;border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);border-top:3px solid var(--red)}.card.blue{border-top-color:var(--blue)}.card.green{border-top-color:var(--green)}.card.purple{border-top-color:var(--purple)}.card.amber{border-top-color:var(--amber)}.card.emerald{border-top-color:var(--emerald)}.card.navy{border-top-color:var(--navy)}
+.card h4{font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--gray8)}.card ul{padding-left:16px;font-size:13px;color:var(--gray6)}.card ul li{margin-bottom:4px}.card p{font-size:13px;color:var(--gray6)}
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}thead tr{background:var(--navy2);color:#fff}th{padding:9px 12px;font-weight:600;text-align:left}td{padding:8px 12px;border-bottom:1px solid var(--gray2)}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:var(--gray1)}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:12px 0}
+.flow-step{background:#fff;border:2px solid var(--red);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--rose);text-align:center}
+.flow-step.active-step{background:var(--red);color:#fff}
+.flow-arrow{color:var(--gray3);font-size:16px;font-weight:700}
+.tip-box{background:var(--amber-lt);border:2px solid var(--amber);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.tip-box .tip-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--amber);margin-bottom:4px}
+.mnemo-box{background:var(--purple-lt);border:2px solid var(--purple);border-radius:var(--radius);padding:12px 16px;margin:12px 0;font-size:13.5px}
+.mnemo-box .mnemo-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--purple);margin-bottom:4px}
+.accordion{border:2px solid var(--gray2);border-radius:var(--radius);margin:14px 0;overflow:hidden;background:#fff}
+.acc-header{background:var(--gray1);padding:14px 18px;cursor:pointer;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:background .2s}
+.acc-header:hover{background:var(--rose-lt)}
+.acc-header .acc-arrow{transition:transform .3s;font-size:18px;color:var(--red)}
+.acc-header.open .acc-arrow{transform:rotate(90deg)}
+.acc-body{display:none;padding:18px}
+.acc-body.show{display:block}
+.mini-act{background:var(--red-lt);border:2px dashed var(--red);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.mini-act .ma-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--rose);margin-bottom:8px}
+.mini-act .fill-text{font-size:13.5px;line-height:2.2}
+.blank-select{display:inline-block;margin:0 3px;vertical-align:middle}
+.blank-select select{border:2px dashed var(--red);border-radius:6px;padding:2px 7px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--red-lt);color:var(--navy);cursor:pointer;outline:none;transition:all .2s}
+.blank-select select.correct{border-color:var(--green);background:#d1fae5;border-style:solid;color:var(--green)}
+.blank-select select.wrong{border-color:var(--red);background:#ffe4e6;border-style:solid;color:var(--red)}
+.check-btn{margin-top:10px;background:var(--rose);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.check-btn:hover{background:var(--red)}
+.score-badge{display:inline-block;margin-left:10px;background:var(--gray2);border-radius:20px;padding:4px 12px;font-size:12.5px;font-weight:600}
+.score-badge.good{background:var(--green-lt);color:var(--green)}.score-badge.bad{background:var(--red-lt);color:var(--red)}
+.reset-btn{margin-top:6px;background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:8px;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--red);color:var(--red)}
+.bilan-fill{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden}
+.bilan-fill-header{background:linear-gradient(135deg,var(--indigo),#3730a3);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.bilan-fill-header h3{font-size:.95rem;font-weight:600}
+.bilan-fill-body{padding:16px}.bilan-fill-body .fill-text{font-size:13.5px;line-height:2.2}
+.bilan-fill-body .blank-select select{border-color:var(--indigo);background:var(--indigo-lt)}
+.bilan-fill-body .check-btn{background:var(--indigo)}.bilan-fill-body .check-btn:hover{background:#3730a3}
+.exo-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:5px solid var(--indigo)}
+.exo-header{background:var(--indigo);color:#fff;padding:10px 16px;font-weight:700;font-size:13.5px}
+.exo-body{padding:16px;font-size:13.5px;line-height:1.9}
+.qcm-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden;border-left:4px solid var(--red)}
+.qcm-item.correct-item{border-left-color:var(--green)}.qcm-item.wrong-item{border-left-color:var(--red)}.qcm-item.partial-item{border-left-color:var(--amber)}
+.qcm-q{padding:12px 16px 8px;font-weight:600;font-size:14px}.qcm-q .qnum{color:var(--rose);margin-right:5px}
+.qcm-options{padding:0 16px 12px}
+.qcm-opt{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;margin:3px 0;cursor:pointer;transition:background .15s;font-size:13.5px;user-select:none}
+.qcm-opt:hover{background:var(--gray1)}
+.qcm-opt input[type=checkbox]{margin-top:3px;accent-color:var(--red);cursor:pointer;flex-shrink:0}
+.qcm-opt.opt-correct{background:var(--green-lt);color:var(--green);font-weight:600}
+.qcm-opt.opt-wrong{background:var(--red-lt);color:var(--red)}
+.qcm-opt.opt-missed{background:var(--amber-lt);color:var(--amber)}
+.qcm-feedback{margin:8px 16px 14px;padding:10px 14px;border-radius:8px;font-size:13px;display:none}
+.qcm-feedback.show{display:block}
+.qcm-feedback.fb-ok{background:var(--green-lt);border:1px solid #a7f3d0;color:#065f46}
+.qcm-feedback.fb-ko{background:var(--red-lt);border:1px solid #fecaca;color:#991b1b}
+.qcm-feedback.fb-partial{background:var(--amber-lt);border:1px solid #fde68a;color:#92400e}
+.qcm-feedback.fb-correction{background:var(--cyan-lt);border:1px solid #67e8f9;color:#155e75}
+.qcm-buttons{display:flex;align-items:center;gap:8px;padding:0 16px 14px;flex-wrap:wrap}
+.qcm-verify-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-verify-btn:hover{background:#047857}
+.qcm-correct-btn{background:var(--cyan);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer}
+.qcm-correct-btn:hover{background:#0e7490}
+.qcm-refresh-btn{background:transparent;color:var(--gray6);border:1px solid var(--gray3);border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12.5px;cursor:pointer}
+.qcm-refresh-btn:hover{border-color:var(--red);color:var(--red)}
+.img-placeholder{border:2.5px dashed #fca5a5;border-radius:var(--radius);background:var(--rose-lt);padding:16px;margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;position:relative}
+.img-placeholder:hover{border-color:var(--rose);background:#ffe4e6}
+.img-placeholder .ph-icon{font-size:1.8rem;opacity:.5}
+.img-placeholder .ph-label{font-size:11px;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.img-placeholder .ph-sub{font-size:11px;color:var(--gray6);text-align:center}
+.img-placeholder .ph-comment{font-size:10.5px;color:var(--cyan);text-align:center;font-style:italic;margin-top:3px}
+.img-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-placeholder img.ph-img{max-width:100%;border-radius:6px;display:none}
+.img-placeholder.has-img{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.img-placeholder.has-img .ph-icon,.img-placeholder.has-img .ph-label,.img-placeholder.has-img .ph-sub,.img-placeholder.has-img .ph-comment{display:none}
+.img-placeholder.has-img img.ph-img{display:block}
+.img-placeholder .ph-remove{display:none;position:absolute;top:5px;right:7px;background:var(--red);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;align-items:center;justify-content:center;z-index:2}
+.img-placeholder.has-img .ph-remove{display:flex}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.signature{text-align:center;padding:16px;margin-top:28px;font-size:11.5px;color:var(--gray3);border-top:1px solid var(--gray2)}
+@media(max-width:640px){.img-row{grid-template-columns:1fr}header{padding:16px 16px 14px;flex-direction:column;gap:8px}.tab-panel{padding:16px 14px}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<header>
+  <div>
+    <div class="hdr-badge">SVT 4ème Secondaire — Sciences expérimentales</div>
+    <div class="hdr-title">Thème 5 — <span>Fiche 2</span></div>
+    <div class="hdr-sub">Déroulement de la Réponse Immunitaire · Dysfonctionnements</div>
+    <div class="hdr-pill">Chapitres 3 &amp; 4 — pp. 306–338</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Immunologie</strong>
+    pp. 306 – 338<br/>
+    6 onglets · 23 images<br/>
+    21 QCM CAPES
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('contexte',this)">🎯 Contexte</button>
+  <button class="tab-btn" onclick="showTab('ch3',this)">🔬 Ch.3 — Déroulement</button>
+  <button class="tab-btn" onclick="showTab('ch4',this)">🤧 Ch.4 — Dysfonctionnements</button>
+  <button class="tab-btn" onclick="showTab('bilan',this)">📋 BILAN</button>
+  <button class="tab-btn" onclick="showTab('exercices',this)">📝 Exercices</button>
+  <button class="tab-btn" onclick="showTab('qcm',this)">✅ QCM CAPES</button>
+</nav>
+
+<!-- ==================== CONTEXTE ==================== -->
+<div class="tab-panel active" id="tab-contexte">
+  <div class="section-title">🎯 Introduction — Thème 5, Fiche 2</div>
+  <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma de synthèse — Les 3 phases de la réponse immunitaire</div><div class="ph-sub">Manuel p.316</div><div class="ph-comment">Induction → Amplification → Effectrice : le déroulement complet de la réponse spécifique</div><img class="ph-img" src="images/T5Ch3_Doc17_schema_synthese_3_phases.PNG" alt="Synthèse 3 phases"/><button class="ph-remove">✕</button></div>
+
+  <p style="font-size:14px;color:var(--gray6);margin-bottom:18px">Cette fiche couvre le <strong>déroulement complet</strong> de la réponse immunitaire spécifique en 3 phases successives (induction, amplification, effectrice) et la <strong>coopération cellulaire</strong> indispensable (Ch.3), puis aborde les <strong>dysfonctionnements</strong> du système immunitaire : allergies (hypersensibilité immédiate) et SIDA (immunodéficience acquise) (Ch.4).</p>
+
+  <div class="section-title" style="margin-top:28px">📋 Objectifs du programme officiel</div>
+  <div class="card-grid">
+    <div class="card red">
+      <h4>🔬 Ch.3 — Déroulement de la réponse immunitaire spécifique</h4>
+      <ul>
+        <li>Décrire la phase d'induction : reconnaissance de l'antigène, présentation par le macrophage (CPAg), activation des lymphocytes</li>
+        <li>Expliquer la phase d'amplification : sélection clonale, multiplication et différenciation des LB et LT</li>
+        <li>Décrire la phase effectrice : neutralisation et élimination de l'antigène (RIMH et RIMC)</li>
+        <li>Mettre en évidence la coopération cellulaire et le rôle des interleukines (IL1, IL2)</li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h4>🤧 Ch.4 — Dysfonctionnement du système immunitaire</h4>
+      <ul>
+        <li>Expliquer le mécanisme d'une allergie (hypersensibilité immédiate) : IgE, mastocytes, histamine</li>
+        <li>Expliquer le SIDA : mode d'action du VIH (rétrovirus) sur les LT4</li>
+        <li>Identifier les modes de contagion et les mesures de prévention</li>
+        <li>Distinguer séropositivité et SIDA déclaré</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:28px">🗺️ Plan de la fiche</div>
+  <div class="flow">
+    <div class="flow-step active-step">🔬 Induction</div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">📈 Amplification</div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">⚔️ Effectrice</div><div class="flow-arrow">→</div>
+    <div class="flow-step active-step">🤝 Coopération</div><div class="flow-arrow">→</div>
+    <div class="flow-step purple">🤧 Allergies</div><div class="flow-arrow">→</div>
+    <div class="flow-step green">🦠 SIDA</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">📋 BILAN</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">✅ QCM</div>
+  </div>
+
+  <div class="card-grid" style="margin-top:18px">
+    <div class="card amber"><h4>⚠️ Pièges CAPES — Ch.3</h4><ul><li>IL1 = macrophage, IL2 = LT4</li><li>Sélection clonale AVANT multiplication</li><li>Plasmocyte = courte durée de vie</li><li>Perforine = LTc, Anticorps = plasmocytes</li></ul></div>
+    <div class="card indigo"><h4>⚠️ Pièges CAPES — Ch.4</h4><ul><li>IgE (allergies) ≠ IgG (réponse classique)</li><li>VIH = rétrovirus (ARN → ADN)</li><li>Séropositivité ≠ SIDA déclaré</li><li>Provirus = ADN viral intégré</li></ul></div>
+  </div>
+</div>
+
+<!-- ==================== CHAPITRE 3 ==================== -->
+<div class="tab-panel" id="tab-ch3">
+  <div class="section-title">🔬 Chapitre 3 — Déroulement de la réponse immunitaire spécifique (pp.306–326)</div>
+
+  <!-- ACCORDEON 1 : INDUCTION -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. Phase d'induction — Reconnaissance de l'antigène <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>La phase d'induction se déroule dans les <strong>organes lymphoïdes secondaires</strong> (rate, ganglions). Elle débute par la <strong>reconnaissance de l'antigène</strong> par les lymphocytes spécifiques et aboutit à la <strong>sélection clonale</strong>.</p>
+
+    <div class="sub-title">1. Le macrophage, cellule présentatrice d'antigène (CPAg)</div>
+    <p>Le macrophage <strong>phagocyte</strong> l'antigène, le <strong>dégrade en peptides</strong>, puis expose ces peptides à sa surface associés aux molécules <strong>HLA II</strong>. Il présente ce complexe aux <strong>LT4</strong>. Il sécrète également l'<strong>interleukine 1 (IL1)</strong> qui active les LT4. C'est le <strong>premier signal d'activation</strong>.</p>
+
+    <div class="sub-title">2. La reconnaissance par les lymphocytes</div>
+    <p>Les <strong>LB</strong> reconnaissent l'antigène <strong>libre</strong> via leurs immunoglobulines de surface (récepteurs Y). Ils peuvent également jouer le rôle de CPAg après endocytose du complexe récepteur-antigène. Les <strong>LT4</strong> effectuent une <strong>double reconnaissance</strong> : leur TCR reconnaît simultanément la molécule HLA II et l'épitope présenté. Les <strong>LT8</strong> reconnaissent via leur TCR le complexe HLA I + peptide (sur les cellules infectées).</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Présentation Ag par macrophage au LT4</div><div class="ph-sub">Manuel p.308</div><div class="ph-comment">Électronographie + schéma : macrophage (CPAg) présente peptide + HLA II au LT4</div><img class="ph-img" src="images/T5Ch3_Doc01_presentation_Ag_LT.PNG" alt="Doc 01"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Rôle des LB dans la phase d'induction</div><div class="ph-sub">Manuel p.309</div><div class="ph-comment">Contact LT4-LB : le LB peut aussi servir de CPAg après endocytose</div><img class="ph-img" src="images/T5Ch3_Doc02_role_LB_phase_induction.PNG" alt="Doc 02"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">3. La sélection clonale</div>
+    <p>Parmi les millions de clones de lymphocytes préexistants constituant le <strong>répertoire immunologique</strong>, SEUL le clone portant le récepteur <strong>complémentaire à l'épitope</strong> de l'antigène est <strong>sélectionné</strong>. Cette sélection clonale assure la <strong>spécificité</strong> de la réponse.</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Sélection et multiplication clonale des LB</div><div class="ph-sub">Manuel p.309</div><div class="ph-comment">Schéma : pénétration Ag → sélection du clone → multiplication par mitoses</div><img class="ph-img" src="images/T5Ch3_Doc03_selection_clonale_LB.PNG" alt="Doc 03"/><button class="ph-remove">✕</button></div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips — Qui fait quoi ?</div><strong>IL1</strong> = macrophage → active LT4. <strong>IL2</strong> = LT4 activé → active TOUS les lymphocytes spécifiques. <strong>HLA II</strong> = CPAg → LT4. <strong>HLA I</strong> = cellules infectées → LT8.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Phase d'induction</div><div class="fill-text" id="ma-induc">
+      L'antigène est phagocyté par le <span class="blank-select"><select id="ma1_1"><option value="">—</option><option value="macrophage">macrophage</option><option value="LT4">LT4</option></select></span> qui le présente via HLA II aux <span class="blank-select"><select id="ma1_2"><option value="">—</option><option value="LT4">LT4</option><option value="LB">LB</option></select></span>. Le macrophage sécrète l'<span class="blank-select"><select id="ma1_3"><option value="">—</option><option value="IL1">IL1</option><option value="IL2">IL2</option></select></span> qui active les LT4. Les LT4 activés sécrètent alors l'<span class="blank-select"><select id="ma1_4"><option value="">—</option><option value="IL2">IL2</option><option value="IL1">IL1</option></select></span>. La <span class="blank-select"><select id="ma1_5"><option value="">—</option><option value="sélection clonale">sélection clonale</option><option value="phagocytose">phagocytose</option></select></span> trie le clone portant le récepteur complémentaire à l'antigène.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma1",5,["macrophage","LT4","IL1","IL2","sélection clonale"])'>Vérifier</button>
+      <span id="score-ma1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma1',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : AMPLIFICATION -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. Phase d'amplification et de différenciation <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Sous l'effet de l'<strong>IL2</strong> (sécrétée par les LT4 activés), le clone sélectionné subit une <strong>multiplication clonale</strong> (amplification) puis se <strong>différencie</strong> en cellules effectrices et cellules mémoire.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Numération LB, plasmocytes, Ac (RIMH)</div><div class="ph-sub">Manuel p.310</div><div class="ph-comment">Courbes : évolution J0→J40 du nombre de LB, plasmocytes et anticorps</div><img class="ph-img" src="images/T5Ch3_Doc04_numeration_LB_plasmocytes_Ac.PNG" alt="Doc 04"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 06 — Numération LT (RIMC)</div><div class="ph-sub">Manuel p.311</div><div class="ph-comment">Courbes de prolifération des LT au cours de la RIMC</div><img class="ph-img" src="images/T5Ch3_Doc06_numeration_LT_RIMC.PNG" alt="Doc 06"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">Dans la RIMH</div>
+    <p>Les LB activés se multiplient puis se différencient en <strong>plasmocytes</strong> (cellules sécrétrices d'anticorps, jusqu'à 5000 Ac/s) et en <strong>LB mémoire</strong> (longue durée de vie).</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Plasmocyte en ME</div><div class="ph-sub">Manuel p.310</div><div class="ph-comment">Électronographie : REG très développé, noyau volumineux, mitochondries</div><img class="ph-img" src="images/T5Ch3_Doc05_plasmocyte_ME.PNG" alt="Doc 05"/><button class="ph-remove">✕</button></div>
+
+    <div class="sub-title">Dans la RIMC</div>
+    <p>Les LT8 activés se multiplient puis se différencient en <strong>LTc</strong> (lymphocytes cytotoxiques, cellules tueuses) et en <strong>LT8 mémoire</strong>.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 07 — LTc s'attaquant à une cellule non soi</div><div class="ph-sub">Manuel p.311</div><div class="ph-comment">ME : contact étroit entre LTc et cellule cible</div><img class="ph-img" src="images/T5Ch3_Doc07_LTc_attaque_cellule.PNG" alt="Doc 07"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 08 — Différenciation cellulaire et mémoire</div><div class="ph-sub">Manuel p.311</div><div class="ph-comment">Schéma : réponse 1aire → cellules mémoire → réponse 2aire plus rapide et intense</div><img class="ph-img" src="images/T5Ch3_Doc08_differenciation_et_memoire.PNG" alt="Doc 08"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th></th><th>RIMH</th><th>RIMC</th></tr></thead><tbody>
+      <tr><td><strong>Cellule activée</strong></td><td>LB</td><td>LT8</td></tr>
+      <tr><td><strong>Multiplication</strong></td><td>Clone de LB</td><td>Clone de LT8</td></tr>
+      <tr><td><strong>Cellule effectrice</strong></td><td>Plasmocyte → Anticorps</td><td>LTc → Perforine</td></tr>
+      <tr><td><strong>Cellule mémoire</strong></td><td>LB mémoire</td><td>LT8 mémoire</td></tr>
+    </tbody></table></div>
+
+    <div class="tip-box"><div class="tip-lbl">💡 Tips — Cellules mémoire</div>Les cellules mémoire ont une <strong>longue durée de vie</strong> (plusieurs années). Lors d'un 2ème contact avec le même antigène, elles permettent une réponse <strong>plus rapide, plus intense et plus durable</strong>. C'est la base de la <strong>vaccination</strong>.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Amplification et différenciation</div><div class="fill-text" id="ma-ampli">
+      Sous l'effet de l'<span class="blank-select"><select id="ma2_1"><option value="">—</option><option value="IL2">IL2</option><option value="IL1">IL1</option></select></span>, le clone sélectionné se multiplie. Dans la RIMH, les LB deviennent des <span class="blank-select"><select id="ma2_2"><option value="">—</option><option value="plasmocytes">plasmocytes</option><option value="LTc">LTc</option></select></span> sécréteurs d'anticorps. Dans la RIMC, les LT8 deviennent des <span class="blank-select"><select id="ma2_3"><option value="">—</option><option value="LTc">LTc</option><option value="plasmocytes">plasmocytes</option></select></span> cytotoxiques. Les cellules <span class="blank-select"><select id="ma2_4"><option value="">—</option><option value="mémoire">mémoire</option><option value="effectrices">effectrices</option></select></span> assurent une réponse secondaire plus rapide.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma2",4,["IL2","plasmocytes","LTc","mémoire"])'>Vérifier</button>
+      <span id="score-ma2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma2',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 3 : EFFECTRICE -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">III. Phase effectrice — Élimination de l'antigène <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <div class="sub-title">1. RIMH — Neutralisation, opsonisation et phagocytose</div>
+    <p>Les anticorps sécrétés par les plasmocytes se fixent sur l'antigène et forment un <strong>complexe immun</strong> qui <strong>neutralise</strong> l'antigène (bloque sa multiplication ou sa toxicité). Le <strong>fragment Fc</strong> des anticorps se fixe sur les récepteurs des macrophages : c'est l'<strong>opsonisation</strong>, qui facilite la phagocytose du complexe immun. Le <strong>complément</strong> (ensemble de protéines sériques) est activé par le complexe immun et forme des pores dans la membrane du pathogène → <strong>lyse</strong>.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 09 — Macrophage phagocytant une bactérie</div><div class="ph-sub">Manuel p.312</div><div class="ph-comment">ME + courbe évolution phagocytose lors de la RIMH</div><img class="ph-img" src="images/T5Ch3_Doc09_phagocytose_bacterie_RIMH.PNG" alt="Doc 09"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 11 — Étapes opsonisation et phagocytose</div><div class="ph-sub">Manuel p.313</div><div class="ph-comment">Schéma étapes 1→3 : complexe immun → fixation Fc → phagocytose</div><img class="ph-img" src="images/T5Ch3_Doc11_etapes_opsonisation_phagocytose.PNG" alt="Doc 11"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">2. RIMC — Lyse par les LTc (perforine)</div>
+    <p>Le LTc reconnaît la cellule cible (infectée ou cancéreuse) via son TCR qui identifie le complexe <strong>HLA I + peptide anormal</strong>. Il libère alors de la <strong>perforine</strong>, protéine qui <strong>polymérise</strong> en présence de Ca²⁺ et forme des <strong>canaux</strong> dans la membrane de la cellule cible. L'eau et les enzymes protéolytiques pénètrent → <strong>lyse cellulaire</strong>. Le LTc survit et peut détruire plusieurs cellules cibles successivement.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 12 — Action LTc sur cellule cible</div><div class="ph-sub">Manuel p.313</div><div class="ph-comment">Étapes 1-2 : reconnaissance LTc → attaque de la cellule cible</div><img class="ph-img" src="images/T5Ch3_Doc12_action_LTc_cellule_cible_etapes.PNG" alt="Doc 12"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 13 — Cytolyse par perforine</div><div class="ph-sub">Manuel p.313</div><div class="ph-comment">Schéma : perforine → polymérisation → canaux → H₂O + enzymes → lyse</div><img class="ph-img" src="images/T5Ch3_Doc13_cytolyse_perforine.PNG" alt="Doc 13"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — RIMH vs RIMC</div><strong>RIMH = Anticorps → Neutralisation → Opsonisation → Phagocytose (A.N.O.P.)</strong><br/><strong>RIMC = Perforine → Canaux → Lyse (P.C.L.)</strong></div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Phase effectrice</div><div class="fill-text" id="ma-effec">
+      Dans la RIMH, les anticorps forment un <span class="blank-select"><select id="ma3_1"><option value="">—</option><option value="complexe immun">complexe immun</option><option value="épitope">épitope</option></select></span> avec l'antigène. Le fragment <span class="blank-select"><select id="ma3_2"><option value="">—</option><option value="Fc">Fc</option><option value="Fab">Fab</option></select></span> se fixe sur les macrophages → <span class="blank-select"><select id="ma3_3"><option value="">—</option><option value="opsonisation">opsonisation</option><option value="neutralisation">neutralisation</option></select></span>. Dans la RIMC, les LTc libèrent de la <span class="blank-select"><select id="ma3_4"><option value="">—</option><option value="perforine">perforine</option><option value="histamine">histamine</option></select></span> qui forme des canaux → <span class="blank-select"><select id="ma3_5"><option value="">—</option><option value="lyse">lyse</option><option value="multiplication">multiplication</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma3",5,["complexe immun","Fc","opsonisation","perforine","lyse"])'>Vérifier</button>
+      <span id="score-ma3" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma3',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 4 : COOPERATION -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">IV. Coopération cellulaire et interleukines <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Les expériences de <strong>Mosier</strong> et de <strong>Claman</strong> ont prouvé que la production d'anticorps nécessite <strong>trois types cellulaires</strong> : macrophage + LT4 + LB. Aucune cellule seule ne peut déclencher la réponse.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 14 — Expérience cultures cellulaires</div><div class="ph-sub">Manuel p.314</div><div class="ph-comment">Tableau : M, LB, LT seuls ou combinés — production γ-globulines</div><img class="ph-img" src="images/T5Ch3_Doc14_experience_cooperation_cellules.PNG" alt="Doc 14"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 15 — Expérience de Claman</div><div class="ph-sub">Manuel pp.314-315</div><div class="ph-comment">Souris irradiées + injection LB/LT/LB+LT + GRM → agglutination</div><img class="ph-img" src="images/T5Ch3_Doc15_experience_Claman_LB_LT.PNG" alt="Doc 15"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <p>La communication entre ces cellules se fait par des <strong>interleukines</strong>, véritables hormones du système immunitaire : l'<strong>IL1</strong> (macrophage → LT4) et l'<strong>IL2</strong> (LT4 → tous les lymphocytes activés). Les LT4 sont le <strong>chef d'orchestre</strong> de la réponse immunitaire : sans eux, pas d'IL2, donc pas de RIMH ni de RIMC.</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 16 — Interleukines et communication cellulaire</div><div class="ph-sub">Manuel p.315</div><div class="ph-comment">Surnageant de culture LT activés → transféré à LB et LT → prolifération</div><img class="ph-img" src="images/T5Ch3_Doc16_interleukines_communication.PNG" alt="Doc 16"/><button class="ph-remove">✕</button></div>
+
+    <div class="table-wrap"><table><thead><tr><th>Interleukine</th><th>Origine</th><th>Cible</th><th>Effet</th></tr></thead><tbody>
+      <tr><td><strong style="color:var(--blue)">IL1</strong></td><td>Macrophage (CPAg)</td><td>LT4</td><td>Active les LT4 → sécrétion d'IL2</td></tr>
+      <tr><td><strong style="color:var(--red)">IL2</strong></td><td>LT4 activé</td><td>LT4, LB, LT8</td><td>Multiplication et différenciation de TOUS les lymphocytes activés</td></tr>
+    </tbody></table></div>
+
+    <div class="info-box amber"><strong>Rôle central des LT4 :</strong> Sans LT4 → pas d'IL2 → pas de prolifération des LB ni des LT8 → pas de RIMH ni de RIMC. C'est pourquoi le VIH, qui détruit les LT4, provoque un effondrement du système immunitaire.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Coopération cellulaire</div><div class="fill-text" id="ma-coop">
+      L'<span class="blank-select"><select id="ma4_1"><option value="">—</option><option value="IL1">IL1</option><option value="IL2">IL2</option></select></span> est sécrétée par le macrophage et active les <span class="blank-select"><select id="ma4_2"><option value="">—</option><option value="LT4">LT4</option><option value="LB">LB</option></select></span>. Ceux-ci sécrètent l'<span class="blank-select"><select id="ma4_3"><option value="">—</option><option value="IL2">IL2</option><option value="IL1">IL1</option></select></span> qui active <span class="blank-select"><select id="ma4_4"><option value="">—</option><option value="tous les lymphocytes">tous les lymphocytes</option><option value="les macrophages">les macrophages</option></select></span>. Les LT4 sont le chef d'orchestre de la réponse immunitaire.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma4",4,["IL1","LT4","IL2","tous les lymphocytes"])'>Vérifier</button>
+      <span id="score-ma4" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma4',4)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== CHAPITRE 4 ==================== -->
+<div class="tab-panel" id="tab-ch4">
+  <div class="section-title">🤧 Chapitre 4 — Dysfonctionnement du système immunitaire (pp.327–338)</div>
+
+  <!-- ACCORDEON 1 : ALLERGIES -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">I. Les allergies — Hypersensibilité immédiate <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>L'<strong>allergie</strong> (ou hypersensibilité immédiate) est une <strong>réaction exagérée</strong> du système immunitaire contre des substances normalement inoffensives appelées <strong>allergènes</strong> (pollen, poussière, acariens, aliments, médicaments, venins…).</p>
+
+    <div class="sub-title">Phase 1 — Sensibilisation (1er contact)</div>
+    <p>Lors du premier contact avec l'allergène, des LB se différencient en plasmocytes qui produisent des <strong>IgE</strong> (et non des IgG comme dans une réponse classique). Ces IgE se fixent sur les récepteurs de surface des <strong>mastocytes</strong> (cellules présentes dans la peau et les muqueuses). <strong>Aucun symptôme</strong> n'est ressenti lors de cette phase de sensibilisation.</p>
+
+    <div class="sub-title">Phase 2 — Réaction allergique (2ème contact)</div>
+    <p>Lors d'un deuxième contact, l'allergène se fixe sur <strong>deux molécules d'IgE adjacentes</strong> fixées sur un mastocyte (pontage). Ce pontage déclenche la <strong>dégranulation</strong> du mastocyte qui libère de l'<strong>histamine</strong> et d'autres médiateurs chimiques. L'histamine provoque : <strong>vasodilatation</strong> (rougeur, œdème), <strong>contraction des muscles lisses bronchiques</strong> (asthme, difficultés respiratoires), <strong>hypersécrétion de mucus</strong> (rhinite).</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 01 — Mécanisme de la réaction allergique (2 phases)</div><div class="ph-sub">Manuel p.330</div><div class="ph-comment">1er contact = sensibilisation (IgE + mastocytes) / 2ème contact = dégranulation + histamine</div><img class="ph-img" src="images/T5Ch4_Doc01_mecanisme_allergie_2phases.PNG" alt="Doc Allergie"/><button class="ph-remove">✕</button></div>
+
+    <div class="info-box amber"><strong>Choc anaphylactique :</strong> Forme la plus grave d'allergie — chute brutale de la pression artérielle, <strong>œdème de Quincke</strong> (gonflement du visage et de la gorge → risque d'asphyxie). Peut survenir après piqûre de guêpe, injection de pénicilline… Traitement d'urgence : <strong>adrénaline</strong>. Traitement de fond : <strong>antihistaminiques</strong>.</div>
+
+    <div class="card-grid">
+      <div class="card amber"><h4>🌿 Allergène</h4><p>Antigène inoffensif déclenchant une réponse exagérée chez certains individus.</p></div>
+      <div class="card red"><h4>⚡ IgE</h4><p>Immunoglobulines spécifiques des allergies (≠ IgG). Se fixent sur les mastocytes.</p></div>
+      <div class="card purple"><h4>💥 Mastocyte</h4><p>Cellule de la peau/muqueuses — libère l'histamine par dégranulation.</p></div>
+      <div class="card emerald"><h4>🧪 Histamine</h4><p>Médiateur responsable des symptômes : vasodilatation, bronchoconstriction, œdème.</p></div>
+    </div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Allergie</div><strong>S.I.D.A.</strong> (pour l'allergie) : <strong>S</strong>ensibilisation (1er contact, pas de symptômes) → <strong>I</strong>gE → <strong>D</strong>égranulation → <strong>A</strong>ction de l'histamine. Traitement : <strong>Anti-Histaminiques</strong>.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Les allergies</div><div class="fill-text" id="ma-aller">
+      L'allergie est une réaction <span class="blank-select"><select id="ma5_1"><option value="">—</option><option value="exagérée">exagérée</option><option value="normale">normale</option></select></span> du système immunitaire. Les <span class="blank-select"><select id="ma5_2"><option value="">—</option><option value="IgE">IgE</option><option value="IgG">IgG</option></select></span> se fixent sur les <span class="blank-select"><select id="ma5_3"><option value="">—</option><option value="mastocytes">mastocytes</option><option value="plasmocytes">plasmocytes</option></select></span>. Le 2ème contact libère de l'<span class="blank-select"><select id="ma5_4"><option value="">—</option><option value="histamine">histamine</option><option value="adrénaline">adrénaline</option></select></span>. Le traitement utilise des <span class="blank-select"><select id="ma5_5"><option value="">—</option><option value="antihistaminiques">antihistaminiques</option><option value="antibiotiques">antibiotiques</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma5",5,["exagérée","IgE","mastocytes","histamine","antihistaminiques"])'>Vérifier</button>
+      <span id="score-ma5" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma5',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+
+  <!-- ACCORDEON 2 : SIDA -->
+  <div class="accordion"><div class="acc-header" onclick="toggleAccordion(this)">II. Le SIDA — Immunodéficience acquise <span class="acc-arrow">▶</span></div><div class="acc-body">
+    <p>Le <strong>SIDA</strong> (Syndrome d'ImmunoDéficience Acquise) est causé par le <strong>VIH</strong> (Virus de l'Immunodéficience Humaine). C'est un <strong>rétrovirus</strong> (2 molécules d'ARN) enveloppé, possédant une enzyme clé : la <strong>transcriptase reverse</strong> (ou réverse) qui permet de transcrire l'ARN viral en ADN.</p>
+
+    <div class="sub-title">Cellules cibles</div>
+    <p>Le VIH infecte principalement les <strong>LT4</strong> et les <strong>macrophages</strong>, qui possèdent à leur surface le récepteur <strong>CD4</strong>. La protéine virale <strong>gp120</strong> reconnaît spécifiquement ce récepteur.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 02 — Structure du VIH</div><div class="ph-sub">Manuel p.331</div><div class="ph-comment">Enveloppe lipidique, capside, 2 ARN + transcriptase reverse, gp120</div><img class="ph-img" src="images/T5Ch4_Doc02_structure_VIH.PNG" alt="VIH structure"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 05 — Mode d'action du VIH (cycle complet)</div><div class="ph-sub">Manuel p.333</div><div class="ph-comment">Étapes 1→9 : fixation → injection → transcription reverse → intégration → multiplication</div><img class="ph-img" src="images/T5Ch4_Doc05_mode_action_VIH_cycle.PNG" alt="VIH cycle"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">Cycle viral (9 étapes)</div>
+    <div class="flow" style="flex-direction:column;align-items:flex-start;gap:4px;margin:16px 0">
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">① Fixation gp120 → CD4</div><span style="font-size:11px;color:var(--gray6)">Reconnaissance LT4</span></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">② Injection ARN + transcriptase reverse</div></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">③ Transcription ARN → ADN</div></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">④ Intégration ADN viral → génome LT4</div><span style="font-size:11px;color:var(--gray6)">= PROVIRUS (forme latente)</span></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">⑤→⑥ Transcription → Traduction</div><span style="font-size:11px;color:var(--gray6)">ARNm → protéines virales</span></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step active-step" style="min-width:160px">⑦ Assemblage + Bourgeonnement</div><span style="font-size:11px;color:var(--gray6)">→ nouveaux virions</span></div>
+      <div style="padding-left:20px;color:var(--gray3)">↓</div>
+      <div style="display:flex;align-items:center;gap:8px"><div class="flow-step" style="min-width:160px;border-color:var(--red);color:var(--red)">⑧ Destruction LT4 → IMMUNODÉFICIENCE</div></div>
+    </div>
+
+    <div class="img-row">
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 03 — Dosages chez personnes atteintes</div><div class="ph-sub">Manuel p.332</div><div class="ph-comment">Courbes sur 10 ans : VIH, LT4, anticorps anti-VIH</div><img class="ph-img" src="images/T5Ch4_Doc03_dosages_personnes_atteintes_VIH.PNG" alt="VIH dosages"/><button class="ph-remove">✕</button></div>
+      <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Doc 04 — Évolution LT4 et LT8</div><div class="ph-sub">Manuel p.332</div><div class="ph-comment">Courbes semaines → années : chute progressive des LT4</div><img class="ph-img" src="images/T5Ch4_Doc04_evolution_LT4_LT8_semaines_VIH.PNG" alt="VIH LT4"/><button class="ph-remove">✕</button></div>
+    </div>
+
+    <div class="sub-title">Séropositivité et SIDA déclaré</div>
+    <p>La <strong>séropositivité</strong> désigne la présence d'anticorps anti-VIH dans le sang (≠ SIDA). Une personne séropositive peut rester <strong>asymptomatique</strong> pendant plusieurs années. Le <strong>SIDA déclaré</strong> survient lorsque le nombre de LT4 chute en dessous d'un seuil critique → l'immunité s'effondre → <strong>maladies opportunistes</strong> (tuberculose, toxoplasmose, sarcome de Kaposi, candidoses…).</p>
+
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Page synthèse SIDA</div><div class="ph-sub">Manuel p.336</div><div class="ph-comment">Récapitulatif : mode d'action VIH, évolution, prévention</div><img class="ph-img" src="images/T5Ch4_Doc06_page_synthese_SIDA.PNG" alt="SIDA synthèse"/><button class="ph-remove">✕</button></div>
+
+    <div class="card-grid">
+      <div class="card red"><h4>🦠 VIH</h4><ul><li>Rétrovirus à ARN</li><li>Transcriptase reverse</li><li>Cible : LT4 (récepteur CD4)</li><li>Provirus = ADN intégré</li></ul></div>
+      <div class="card amber"><h4>🩸 Transmission</h4><ul><li>Rapports sexuels</li><li>Échange seringues</li><li>Transfusion contaminée</li><li>Mère-fœtus</li></ul></div>
+      <div class="card purple"><h4>🛡️ Prévention</h4><ul><li>Préservatifs</li><li>Seringues stériles</li><li>Contrôle sang transfusé</li><li>Traitement antirétroviral</li></ul></div>
+    </div>
+
+    <div class="info-box red"><strong>Pourquoi pas de vaccin ?</strong> Grande <strong>variabilité génétique</strong> du VIH (mutations fréquentes). Le VIH détruit les LT4 nécessaires à la réponse vaccinale. Il reste latent sous forme de provirus intégré dans les cellules.</div>
+
+    <div class="mnemo-box"><div class="mnemo-lbl">🧠 Mnémotechnique — Cycle VIH</div><strong>F.I.T.I.A.T.A.B.D.</strong> : <strong>F</strong>ixation → <strong>I</strong>njection → <strong>T</strong>ranscription reverse → <strong>I</strong>ntégration → <strong>A</strong>ctivation → <strong>T</strong>ranscription → <strong>A</strong>ssemblage → <strong>B</strong>ourgeonnement → <strong>D</strong>estruction LT4.</div>
+
+    <div class="mini-act"><div class="ma-title">✏️ Mini-activité — Le SIDA</div><div class="fill-text" id="ma-sida">
+      Le VIH est un <span class="blank-select"><select id="ma6_1"><option value="">—</option><option value="rétrovirus">rétrovirus</option><option value="adénovirus">adénovirus</option></select></span> à ARN. Il possède une <span class="blank-select"><select id="ma6_2"><option value="">—</option><option value="transcriptase reverse">transcriptase reverse</option><option value="ADN polymérase">ADN polymérase</option></select></span>. Il cible les <span class="blank-select"><select id="ma6_3"><option value="">—</option><option value="LT4">LT4</option><option value="LB">LB</option></select></span> via le récepteur CD4. L'ADN viral intégré = <span class="blank-select"><select id="ma6_4"><option value="">—</option><option value="provirus">provirus</option><option value="épitope">épitope</option></select></span>. La destruction des LT4 entraîne des <span class="blank-select"><select id="ma6_5"><option value="">—</option><option value="maladies opportunistes">maladies opportunistes</option><option value="allergies">allergies</option></select></span>.
+    </div>
+    <div style="margin-top:8px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkMini("ma6",5,["rétrovirus","transcriptase reverse","LT4","provirus","maladies opportunistes"])'>Vérifier</button>
+      <span id="score-ma6" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetMini('ma6',5)">Réinitialiser</button>
+    </div></div>
+  </div></div>
+</div>
+
+<!-- ==================== BILAN ==================== -->
+<div class="tab-panel" id="tab-bilan">
+  <div class="section-title">📋 BILAN — Synthèses interactives</div>
+
+  <div class="bilan-fill"><div class="bilan-fill-header"><h3>🔬 Ch.3 — Déroulement de la réponse immunitaire (pp.317-321)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Schéma synthèse — Les 3 phases</div><div class="ph-sub">Manuel p.316</div><div class="ph-comment">Induction → Amplification → Effectrice : schéma global simplifié</div><img class="ph-img" src="images/T5Ch3_Doc17_schema_synthese_3_phases.PNG" alt="Synthèse"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan1">
+      La réponse immunitaire comprend 3 phases : <span class="blank-select"><select id="b1_1"><option value="">—</option><option value="induction">induction</option><option value="effectrice">effectrice</option></select></span>, amplification, <span class="blank-select"><select id="b1_2"><option value="">—</option><option value="effectrice">effectrice</option><option value="induction">induction</option></select></span>. Le <span class="blank-select"><select id="b1_3"><option value="">—</option><option value="macrophage">macrophage</option><option value="LB">LB</option></select></span> phagocyte l'Ag et le présente aux <span class="blank-select"><select id="b1_4"><option value="">—</option><option value="LT4">LT4</option><option value="LT8">LT8</option></select></span> via HLA II. L'<span class="blank-select"><select id="b1_5"><option value="">—</option><option value="IL1">IL1</option><option value="IL2">IL2</option></select></span> active les LT4 → sécrétion d'<span class="blank-select"><select id="b1_6"><option value="">—</option><option value="IL2">IL2</option><option value="IL1">IL1</option></select></span> → multiplication clonale. LB → <span class="blank-select"><select id="b1_7"><option value="">—</option><option value="plasmocytes">plasmocytes</option><option value="LTc">LTc</option></select></span> (anticorps). LT8 → <span class="blank-select"><select id="b1_8"><option value="">—</option><option value="LTc">LTc</option><option value="plasmocytes">plasmocytes</option></select></span> (perforine). RIMH = <span class="blank-select"><select id="b1_9"><option value="">—</option><option value="complexe immun + opsonisation">complexe immun + opsonisation</option><option value="perforine + lyse">perforine + lyse</option></select></span>. RIMC = <span class="blank-select"><select id="b1_10"><option value="">—</option><option value="perforine + lyse">perforine + lyse</option><option value="complexe immun + opsonisation">complexe immun + opsonisation</option></select></span>.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkBilan("b1",["induction","effectrice","macrophage","LT4","IL1","IL2","plasmocytes","LTc","complexe immun + opsonisation","perforine + lyse"])'>Vérifier</button>
+      <span id="score-b1" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan('b1',10)">Réinitialiser</button>
+    </div>
+  </div></div>
+
+  <div class="bilan-fill" style="margin-top:20px"><div class="bilan-fill-header"><h3>🤧 Ch.4 — Dysfonctionnements (pp.334-336)</h3></div><div class="bilan-fill-body">
+    <div class="img-placeholder"><input type="file" accept="image/*"/><div class="ph-icon">🖼️</div><div class="ph-label">Synthèse VIH — Cycle complet</div><div class="ph-sub">Manuel p.336</div><div class="ph-comment">Fixation → Injection → Transcription reverse → Intégration → Bourgeonnement</div><img class="ph-img" src="images/T5Ch4_Doc06_page_synthese_SIDA.PNG" alt="SIDA"/><button class="ph-remove">✕</button></div>
+    <div class="fill-text" id="bilan2">
+      Allergie = <span class="blank-select"><select id="b2_1"><option value="">—</option><option value="hypersensibilité immédiate">hypersensibilité immédiate</option><option value="immunodéficience">immunodéficience</option></select></span>. 1er contact → <span class="blank-select"><select id="b2_2"><option value="">—</option><option value="IgE">IgE</option><option value="IgG">IgG</option></select></span> → fixation <span class="blank-select"><select id="b2_3"><option value="">—</option><option value="mastocytes">mastocytes</option><option value="plasmocytes">plasmocytes</option></select></span>. 2ème contact → dégranulation → <span class="blank-select"><select id="b2_4"><option value="">—</option><option value="histamine">histamine</option><option value="adrénaline">adrénaline</option></select></span>. SIDA = <span class="blank-select"><select id="b2_5"><option value="">—</option><option value="immunodéficience acquise">immunodéficience acquise</option><option value="hypersensibilité">hypersensibilité</option></select></span> causé par le <span class="blank-select"><select id="b2_6"><option value="">—</option><option value="VIH (rétrovirus)">VIH (rétrovirus)</option><option value="BK (bactérie)">BK (bactérie)</option></select></span>. L'ARN viral → <span class="blank-select"><select id="b2_7"><option value="">—</option><option value="ADN proviral">ADN proviral</option><option value="ARNm">ARNm</option></select></span> par transcriptase reverse. <span class="blank-select"><select id="b2_8"><option value="">—</option><option value="Provirus">Provirus</option><option value="Épitope">Épitope</option></select></span> = ADN viral intégré dans génome LT4. Destruction LT4 → <span class="blank-select"><select id="b2_9"><option value="">—</option><option value="maladies opportunistes">maladies opportunistes</option><option value="allergies">allergies</option></select></span>. Pas de <span class="blank-select"><select id="b2_10"><option value="">—</option><option value="vaccin">vaccin</option><option value="traitement">traitement</option></select></span> à cause de la grande variabilité génétique du VIH.
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+      <button class="check-btn" onclick='checkBilan("b2",["hypersensibilité immédiate","IgE","mastocytes","histamine","immunodéficience acquise","VIH (rétrovirus)","ADN proviral","Provirus","maladies opportunistes","vaccin"])'>Vérifier</button>
+      <span id="score-b2" class="score-badge"></span>
+      <button class="reset-btn" onclick="resetBilan('b2',10)">Réinitialiser</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ==================== EXERCICES ==================== -->
+<div class="tab-panel" id="tab-exercices">
+  <div class="section-title">📝 Exercices du manuel</div>
+
+  <div class="exo-card"><div class="exo-header">🐹 Ch.3 — Exercice 2 (p.322) : Immunité anti-diphtérique</div>
+    <div class="exo-body">
+      <p style="color:var(--gray6);margin-bottom:12px">Un cobaye A immunisé contre la diphtérie. 15 jours plus tard : sérum et lymphocytes transférés à B et C.</p>
+      <div style="background:var(--gray1);border-radius:8px;padding:12px;font-size:13px;margin-bottom:12px">
+        <p>🐹 <strong>A</strong> (immunisé) → sérum → 🐹 <strong>B</strong> + toxine → <strong style="color:var(--green)">SURVIE ✅</strong></p>
+        <p>🐹 <strong>A</strong> (immunisé) → lymphocytes → 🐹 <strong>C</strong> + toxine → <strong style="color:var(--red)">MORT ❌</strong></p>
+      </div>
+      <div class="fill-text" id="exo1">
+        <strong>1.</strong> Sérum protège → immunité <span class="blank-select"><select id="ex1_1"><option value="">—</option><option value="transférable">transférable</option><option value="innée">innée</option></select></span>.
+        <strong>2.</strong> Effecteur = <span class="blank-select"><select id="ex1_2"><option value="">—</option><option value="anticorps">anticorps</option><option value="lymphocytes">lymphocytes</option></select></span> → <span class="blank-select"><select id="ex1_3"><option value="">—</option><option value="RIMH">RIMH</option><option value="RIMC">RIMC</option></select></span>.
+        <strong>3.</strong> Application = <span class="blank-select"><select id="ex1_4"><option value="">—</option><option value="sérothérapie">sérothérapie</option><option value="vaccination">vaccination</option></select></span>.
+      </div>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick='checkExo("ex1",["transférable","anticorps","RIMH","sérothérapie"])'>Vérifier</button>
+        <span id="score-ex1" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex1',4)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-card"><div class="exo-header">📊 Ch.3 — Exercice 4 (p.323) : Tableau comparatif RIMH vs RIMC</div>
+    <div class="exo-body">
+      <div class="table-wrap"><table><thead><tr><th></th><th>RIMH</th><th>RIMC</th></tr></thead><tbody>
+        <tr><td><strong>Cellules effectrices</strong></td><td><span class="blank-select"><select id="ex2_1"><option value="">—</option><option value="Plasmocytes">Plasmocytes</option><option value="LTc">LTc</option></select></span></td><td><span class="blank-select"><select id="ex2_2"><option value="">—</option><option value="LTc">LTc</option><option value="Plasmocytes">Plasmocytes</option></select></span></td></tr>
+        <tr><td><strong>Molécules sécrétées</strong></td><td><span class="blank-select"><select id="ex2_3"><option value="">—</option><option value="Anticorps">Anticorps</option><option value="Perforine">Perforine</option></select></span></td><td><span class="blank-select"><select id="ex2_4"><option value="">—</option><option value="Perforine">Perforine</option><option value="Anticorps">Anticorps</option></select></span></td></tr>
+        <tr><td><strong>Résultat</strong></td><td><span class="blank-select"><select id="ex2_5"><option value="">—</option><option value="Complexe immun → opsonisation">Complexe immun → opsonisation</option><option value="Lyse de la cellule infectée">Lyse de la cellule infectée</option></select></span></td><td><span class="blank-select"><select id="ex2_6"><option value="">—</option><option value="Lyse de la cellule infectée">Lyse de la cellule infectée</option><option value="Complexe immun → opsonisation">Complexe immun → opsonisation</option></select></span></td></tr>
+      </tbody></table></div>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick='checkExo("ex2",["Plasmocytes","LTc","Anticorps","Perforine","Complexe immun → opsonisation","Lyse de la cellule infectée"])'>Vérifier</button>
+        <span id="score-ex2" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex2',6)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-card"><div class="exo-header">🐰 Ch.4 — Exercice 2 (p.338) : Choc anaphylactique à l'ovalbumine</div>
+    <div class="exo-body">
+      <p style="color:var(--gray6);margin-bottom:10px">1ère injection ovalbumine (0,1 mg). 2 semaines plus tard, 2ème injection → toux, dyspnée, mort par asphyxie sans traitement.</p>
+      <div class="fill-text" id="exo3">
+        <strong>1.</strong> Phénomène = <span class="blank-select"><select id="ex3_1"><option value="">—</option><option value="Choc anaphylactique">Choc anaphylactique</option><option value="Immunisation">Immunisation</option></select></span>.
+        <strong>2.</strong> Ovalbumine = <span class="blank-select"><select id="ex3_2"><option value="">—</option><option value="allergène">allergène</option><option value="anticorps">anticorps</option></select></span>.
+        <strong>3.</strong> 1er contact → <span class="blank-select"><select id="ex3_3"><option value="">—</option><option value="IgE">IgE</option><option value="IgG">IgG</option></select></span> → <span class="blank-select"><select id="ex3_4"><option value="">—</option><option value="mastocytes">mastocytes</option><option value="plasmocytes">plasmocytes</option></select></span>.
+        <strong>4.</strong> 2ème contact → <span class="blank-select"><select id="ex3_5"><option value="">—</option><option value="histamine">histamine</option><option value="insuline">insuline</option></select></span> → bronchoconstriction.
+        <strong>5.</strong> Traitement = <span class="blank-select"><select id="ex3_6"><option value="">—</option><option value="antihistaminiques">antihistaminiques</option><option value="antibiotiques">antibiotiques</option></select></span>.
+      </div>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px">
+        <button class="check-btn" onclick='checkExo("ex3",["Choc anaphylactique","allergène","IgE","mastocytes","histamine","antihistaminiques"])'>Vérifier</button>
+        <span id="score-ex3" class="score-badge"></span>
+        <button class="reset-btn" onclick="resetExo('ex3',6)">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QCM ==================== -->
+<div class="tab-panel" id="tab-qcm">
+  <div class="section-title">✅ 21 Questions QCM — Style CAPES</div>
+  <p style="color:var(--gray6);font-size:13px;margin-bottom:4px">Q1-Q2 : Ch.3 manuel · Q3-Q6 : Ch.4 manuel · Q7-Q21 : complémentaires</p>
+  <div class="info-box amber" style="margin-bottom:20px;font-size:12.5px">⚠️ Utilise <strong>Vérifier</strong> pour savoir si ta réponse est juste, puis <strong>Correction</strong> pour l'explication.</div>
+  <div id="qcm-container"></div>
+  <div class="signature">INGÉNIEUR Mohamed CHAGRAOUI</div>
+</div>
+
+<script>
+const qcmData=[
+  {q:"Q1 (Ch.3). Les effecteurs du rejet de greffe sont :",opts:["a. des anticorps spécifiques","b. des LT4","c. des macrophages","d. des lymphocytes cytotoxiques (LTc)"],correct:['d'],fb:"✅ d. Rejet de greffe = RIMC → effecteurs = LTc. (p.322)"},
+  {q:"Q2 (Ch.3). Les contacts entre cellules immunitaires permettent :",opts:["a. la présentation de l'antigène","b. l'activation des lymphocytes","c. la synthèse d'anticorps","d. l'élimination de l'antigène"],correct:['a','b'],fb:"✅ a,b. Synthèse Ac = plasmocytes. Élimination = phase effectrice. (p.322)"},
+  {q:"Q3 (Ch.4). Principales cellules cibles du VIH :",opts:["a. les LB","b. les LT4","c. les LTc","d. les macrophages"],correct:['b','d'],fb:"✅ b,d. VIH cible LT4 et macrophages via le récepteur CD4. (p.338)"},
+  {q:"Q4 (Ch.4). Formation de l'ADN proviral nécessite :",opts:["a. une ARN polymérase","b. une ADN polymérase","c. une transcriptase réverse","d. une ligase"],correct:['c'],fb:"✅ c. Transcriptase reverse = enzyme clé des rétrovirus (ARN→ADN). (p.338)"},
+  {q:"Q5 (Ch.4). Suite à une contamination par le VIH :",opts:["a. formation d'ARN proviral à partir d'ADN viral","b. formation de transcriptase reverse","c. l'individu devient immédiatement séropositif","d. l'individu devient immédiatement contagieux"],correct:['d'],fb:"✅ d. Contagieux dès la contamination. Séropositivité apparaît après quelques semaines. (p.338)"},
+  {q:"Q6 (Ch.4). Le schéma représente :",opts:["a. un plasmocyte","b. le VIH","c. un globule rouge","d. un lymphocyte T4"],correct:['b'],fb:"✅ b. Structure du VIH : enveloppe, capside, ARN, transcriptase reverse. (p.338)"},
+  {q:"Q7. La phase d'induction :",opts:["a. débute par la reconnaissance de l'Ag par les lymphocytes","b. implique la présentation par le macrophage aux LT4","c. aboutit à l'élimination de l'antigène","d. comprend la sécrétion d'IL1"],correct:['a','b','d'],fb:"✅ a,b,d. C = phase effectrice (pas induction)."},
+  {q:"Q8. L'IL2 :",opts:["a. est sécrétée par les macrophages","b. active la multiplication de tous les lymphocytes spécifiques","c. est spécifique d'un antigène donné","d. est sécrétée par les LT4 activés"],correct:['b','d'],fb:"✅ b,d. IL2 = LT4 (pas macrophage = IL1). Non spécifique d'un antigène."},
+  {q:"Q9. La sélection clonale :",opts:["a. trie le clone portant le récepteur complémentaire","b. se produit après la multiplication","c. a lieu dans les organes lymphoïdes secondaires","d. concerne tous les clones indistinctement"],correct:['a','c'],fb:"✅ a,c. Sélection AVANT multiplication. Ne concerne QUE le clone spécifique."},
+  {q:"Q10. Le plasmocyte :",opts:["a. est issu d'un LB activé","b. possède un REG très développé","c. produit jusqu'à 5000 Ac/s","d. est une cellule mémoire à longue durée de vie"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : plasmocyte = COURTE durée de vie. LB mémoire = longue."},
+  {q:"Q11. La perforine :",opts:["a. est produite par les plasmocytes","b. polymérise en canaux membranaires","c. est libérée par les LTc","d. agit avec le complément uniquement"],correct:['b','c'],fb:"✅ b,c. Perforine = LTc (pas plasmocytes). Agit seule, pas avec le complément."},
+  {q:"Q12. Le complément :",opts:["a. est un ensemble de protéines sériques","b. est activé par le complexe immun","c. ne participe qu'à la RIMC","d. peut lyser directement les bactéries"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : complément participe à la RIMH (pas RIMC)."},
+  {q:"Q13. L'opsonisation :",opts:["a. facilite la phagocytose","b. est assurée par le fragment Fab","c. consiste en la fixation du Fc sur le macrophage","d. fait partie de la phase effectrice RIMH"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : opsonisation = Fc (pas Fab). Fab = reconnaissance."},
+  {q:"Q14. Les LT suppresseurs :",opts:["a. sécrètent des facteurs immunosuppresseurs","b. arrêtent la réponse quand l'Ag est éliminé","c. sont aussi appelés LTc","d. sont indispensables au déclenchement"],correct:['a','b'],fb:"✅ a,b. LT suppresseurs = arrêt réponse. Différents des LTc."},
+  {q:"Q15. Dans une allergie :",opts:["a. IgE se fixent sur les mastocytes","b. l'histamine provoque vasodilatation et bronchoconstriction","c. le 1er contact déclenche les symptômes","d. les symptômes apparaissent au 2ème contact"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : 1er contact = sensibilisation SANS symptômes."},
+  {q:"Q16. Le VIH est un rétrovirus car :",opts:["a. il possède une transcriptase reverse","b. son génome est constitué d'ADN double brin","c. il transforme son ARN en ADN","d. il s'intègre sous forme de provirus"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : VIH a un génome ARN (pas ADN)."},
+  {q:"Q17. Une personne séropositive :",opts:["a. possède des anticorps anti-VIH","b. a nécessairement le SIDA déclaré","c. peut rester asymptomatique des années","d. ne peut pas transmettre le virus"],correct:['a','c'],fb:"✅ a,c. B faux : séropositif ≠ SIDA. D faux : peut transmettre."},
+  {q:"Q18. Le cycle du VIH comprend :",opts:["a. transcription ARN → ADN","b. intégration dans le génome du LT4","c. traduction en protéines virales","d. bourgeonnement des nouveaux virions"],correct:['a','b','c','d'],fb:"✅ a,b,c,d. Toutes les étapes sont correctes."},
+  {q:"Q19. Maladies opportunistes chez un sidéen :",opts:["a. surviennent quand les LT4 sont très bas","b. dues à des germes normalement contrôlés","c. apparaissent dès la contamination","d. sont la cause directe fréquente du décès"],correct:['a','b','d'],fb:"✅ a,b,d. C faux : apparaissent tardivement (SIDA déclaré)."},
+  {q:"Q20. La réponse secondaire se caractérise par :",opts:["a. un délai plus court","b. une production d'Ac plus faible","c. une intensité plus élevée","d. l'intervention des lymphocytes mémoire"],correct:['a','c','d'],fb:"✅ a,c,d. B faux : production d'Ac PLUS élevée qu'en réponse primaire."},
+  {q:"Q21. Pas de vaccin anti-SIDA car :",opts:["a. le VIH mute très rapidement","b. le VIH détruit les LT4 nécessaires à la réponse vaccinale","c. le VIH reste latent sous forme de provirus","d. la transcriptase reverse est trop lente"],correct:['a','b','c'],fb:"✅ a,b,c. D faux : transcriptase reverse fonctionne bien (c'est le problème)."}
+];
+
+function buildQCM(){
+  const c=document.getElementById('qcm-container');c.innerHTML='';
+  qcmData.forEach((d,i)=>{
+    const q=i+1;
+    c.insertAdjacentHTML('beforeend',`<div class="qcm-item" id="qi${q}"><div class="qcm-q"><span class="qnum">${d.q}</span></div><div class="qcm-options">${d.opts.map((o,j)=>{const v=String.fromCharCode(97+j);return`<label class="qcm-opt"><input type="checkbox" data-q="${q}" data-v="${v}"/> ${o}</label>`;}).join('')}</div><div class="qcm-feedback" id="fb${q}"></div><div class="qcm-buttons"><button class="qcm-verify-btn" onclick="verifyQCM(${q})">🟢 Vérifier</button><button class="qcm-correct-btn" onclick="correctQCM(${q})">🔵 Correction</button><button class="qcm-refresh-btn" onclick="refreshQCM(${q})">🔄 Rafraîchir</button></div></div>`);
+  });
+}
+buildQCM();
+
+function initPlaceholders(){
+  document.querySelectorAll('.img-placeholder').forEach(ph=>{
+    const inp=ph.querySelector('input[type=file]'),img=ph.querySelector('img.ph-img'),btn=ph.querySelector('.ph-remove');
+    if(!inp||!img)return;
+    if(img.src&&img.src.includes('images/')){const t=new Image();t.onload=()=>{img.style.display='block';ph.classList.add('has-img');};t.onerror=()=>{img.style.display='none';ph.classList.remove('has-img');};t.src=img.src;}
+    inp.addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{img.src=ev.target.result;ph.classList.add('has-img');img.style.display='block';};r.readAsDataURL(f);});
+    if(btn)btn.addEventListener('click',e=>{e.stopPropagation();img.src='';ph.classList.remove('has-img');inp.value='';img.style.display='none';});
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{updateProgress();initPlaceholders();});
+
+function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');updateProgress();}
+function updateProgress(){const tabs=document.querySelectorAll('.tab-btn');const idx=Array.from(tabs).indexOf(document.querySelector('.tab-btn.active'));document.getElementById('progressBar').style.width=((idx+1)/tabs.length*100)+'%';}
+function toggleAccordion(h){const b=h.nextElementSibling;const o=b.classList.contains('show');b.classList.toggle('show');if(o)h.classList.remove('open');else h.classList.add('open');}
+
+function checkMini(p,n,a){let c=0;for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+n;b.className='score-badge '+(c===n?'good':'bad');}
+function resetMini(p,n){for(let i=1;i<=n;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+function checkBilan(n,a){const l=a.length;let c=0;for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+n);b.textContent=c+'/'+l;b.className='score-badge '+(c===l?'good':'bad');}
+function resetBilan(n,l){for(let i=1;i<=l;i++){const s=document.getElementById('b'+n+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+n);b.textContent='';b.className='score-badge';}
+function checkExo(p,a){const l=a.length;let c=0;for(let i=1;i<=l;i++){const s=document.getElementById(p+'_'+i);if(!s)continue;const ok=s.value===a[i-1];s.className='';if(s.value!==''){s.className=ok?'correct':'wrong';if(ok)c++;}}const b=document.getElementById('score-'+p);b.textContent=c+'/'+l;b.className='score-badge '+(c===l?'good':'bad');}
+function resetExo(p,l){for(let i=1;i<=l;i++){const s=document.getElementById(p+'_'+i);if(s){s.value='';s.className='';}}const b=document.getElementById('score-'+p);b.textContent='';b.className='score-badge';}
+
+function verifyQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v),correct=qcmData[q-1].correct;
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  const partial=!full&&checked.some(v=>correct.includes(v));
+  const fb=document.getElementById('fb'+q),item=document.getElementById('qi'+q);
+  fb.className='qcm-feedback show '+(full?'fb-ok':partial?'fb-partial':'fb-ko');
+  fb.innerHTML=(full?'✅ Juste !':partial?'🟡 Partiel':'❌ Faux');
+  item.classList.remove('correct-item','wrong-item','partial-item');
+  item.classList.add(full?'correct-item':partial?'partial-item':'wrong-item');
+}
+function correctQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`),correct=qcmData[q-1].correct;
+  cbs.forEach(cb=>{const opt=cb.closest('.qcm-opt');opt.classList.remove('opt-correct','opt-wrong','opt-missed');
+    if(correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-correct');
+    else if(!correct.includes(cb.dataset.v)&&cb.checked)opt.classList.add('opt-wrong');
+    else if(correct.includes(cb.dataset.v)&&!cb.checked)opt.classList.add('opt-missed');});
+  const fb=document.getElementById('fb'+q);fb.className='qcm-feedback show fb-correction';fb.innerHTML='🔵 '+qcmData[q-1].fb;
+  const item=document.getElementById('qi'+q),checked=Array.from(cbs).filter(c=>c.checked).map(c=>c.dataset.v);
+  const full=checked.length===correct.length&&correct.every(v=>checked.includes(v))&&checked.every(v=>correct.includes(v));
+  item.classList.remove('correct-item','wrong-item','partial-item');item.classList.add(full?'correct-item':'wrong-item');
+}
+function refreshQCM(q){
+  const cbs=document.querySelectorAll(`input[data-q="${q}"]`);cbs.forEach(cb=>{cb.checked=false;cb.disabled=false;});
+  cbs.forEach(cb=>{cb.closest('.qcm-opt').classList.remove('opt-correct','opt-wrong','opt-missed');});
+  document.getElementById('fb'+q).className='qcm-feedback';document.getElementById('fb'+q).innerHTML='';
+  document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');
+}
+</script>
+</body>
+</html>
