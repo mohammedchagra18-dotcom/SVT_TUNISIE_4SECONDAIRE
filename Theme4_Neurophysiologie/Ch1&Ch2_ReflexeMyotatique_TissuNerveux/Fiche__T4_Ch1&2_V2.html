@@ -818,6 +818,50 @@ function refreshQCM(q){
   fb.className='qcm-feedback';fb.innerHTML='';
   document.getElementById('qi'+q).classList.remove('correct-item','wrong-item','partial-item');
 }
+</script> 
+<script>
+// ===== CORRECTION DES FONCTIONS DE VÉRIFICATION =====
+function checkFill(prefix, num, answers) {
+  let correct = 0;
+  for (let i = 1; i <= num; i++) {
+    const sel = document.getElementById(prefix + '_' + i);
+    if (!sel) continue;
+    const ok = sel.value === answers[i - 1];
+    sel.className = '';
+    if (sel.value !== '') {
+      sel.className = ok ? 'correct' : 'wrong';
+      if (ok) correct++;
+    }
+  }
+  const badge = document.getElementById('score-' + prefix);
+  if (badge) {
+    badge.textContent = correct + '/' + num;
+    badge.className = 'score-badge ' + (correct === num ? 'good' : 'bad');
+  }
+}
+
+function checkBilan(n, num, answers) {
+  checkFill('b' + n, num, answers);
+}
+
+function resetFill(prefix, num) {
+  for (let i = 1; i <= num; i++) {
+    const sel = document.getElementById(prefix + '_' + i);
+    if (sel) {
+      sel.value = '';
+      sel.className = '';
+    }
+  }
+  const badge = document.getElementById('score-' + prefix);
+  if (badge) {
+    badge.textContent = '';
+    badge.className = 'score-badge';
+  }
+}
+
+function resetBilan(n, num) {
+  resetFill('b' + n, num);
+}
 </script>
 </body>
 </html>
